@@ -80,10 +80,14 @@ function getCartSummary(req, settings) {
 // Global middleware to provide common view data
 async function commonViewData(req) {
     const settings = await models.getSettings();
+    const categories = await models.getCategories();
+    const subcategories = await models.getSubcategories();
     const cart = req.session.cart || {};
     const cartCount = Object.values(cart).reduce((sum, item) => sum + (Number(item.quantity) || 1), 0);
     return {
         settings,
+        categories,
+        subcategories,
         cart_count: cartCount,
         raw_session: req.session,
         admin_logged_in: !!req.session.admin_logged_in,

@@ -178,15 +178,15 @@
             width: 24px;
             height: 24px;
             border-radius: 6px;
-            background: #fdf5e6;
-            border: 1px solid rgba(122, 21, 48, 0.2);
+            background: #fff1f2;
+            border: 1px solid rgba(225, 29, 72, 0.2);
             display: inline-flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
             flex-shrink: 0;
             transition: all 0.22s ease;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
             vertical-align: middle;
         }
         .nav-cat-icon-badge .nav-cat-icon-img {
@@ -203,25 +203,25 @@
             margin: 0 !important;
         }
         .nav-category-link:hover .nav-cat-icon-badge {
-            border-color: #7a1530;
+            border-color: #e11d48;
             background: #ffffff;
-            box-shadow: 0 2px 6px rgba(122, 21, 48, 0.22);
+            box-shadow: 0 2px 6px rgba(225, 29, 72, 0.22);
             transform: translateY(-1px) scale(1.08);
         }
         .nav-cat-name {
             font-size: 14px;
-            font-weight: 700;
+            font-weight: 600;
             letter-spacing: 0.2px;
         }
         .nav-cat-caret {
             font-size: 10px;
-            color: #8c7178;
+            color: #94a3b8;
             margin-left: 3px;
             transition: transform 0.25s ease, color 0.2s ease;
         }
         .nav-menu-categories > li.has-dropdown:hover .nav-cat-caret {
             transform: rotate(180deg);
-            color: #7a1530;
+            color: #e11d48;
         }
 
         /* Desktop Dropdown Hover Visibility */
@@ -297,7 +297,7 @@
     </script>
     <style id="site-critical-preloader-css">
         html {
-            background-color: #FFF4E0;
+            background-color: #ffffff;
             scroll-behavior: smooth;
         }
         body.preloader-active-body {
@@ -526,114 +526,218 @@
         $headerPhone = ($headerPhoneSetting && !empty($headerPhoneSetting['value'])) ? $headerPhoneSetting['value'] : '';
         $headerWhatsapp = ($headerWhatsappSetting && !empty($headerWhatsappSetting['value'])) ? $headerWhatsappSetting['value'] : ($headerPhone ?: '');
         $currentFullUrl = current_url();
+        $isHomeActive = ($currentFullUrl == base_url('/') || $currentFullUrl == base_url('index.php') || $currentFullUrl == base_url('home'));
+        $isNewArrivalsActive = (strpos($currentFullUrl, 'collections/new-arrivals') !== false);
+        $isCollectionsActive = ($currentFullUrl == base_url('collections') || $currentFullUrl == base_url('collections/index.php') || $currentFullUrl == base_url('collections/'));
+        $isBestSellerActive = (strpos($currentFullUrl, 'collections/best-sellers') !== false || strpos($currentFullUrl, 'collections/best-seller') !== false);
+        $isContactUsActive = (strpos($currentFullUrl, 'contact-us') !== false);
+
+        // Fetch header categories from settings
+        $categoryModel = new \App\Models\CategoryModel();
+        $settingsModel = new \App\Models\SettingsModel();
+        $headerCatSetting = $settingsModel->where('key', 'header_categories')->first();
+        
+        $topCategories = [];
+        if ($headerCatSetting && !empty($headerCatSetting['value'])) {
+            $selectedCatData = json_decode($headerCatSetting['value'], true);
+            if (is_array($selectedCatData) && count($selectedCatData) > 0) {
+                foreach ($selectedCatData as $catData) {
+                    $name = is_array($catData) ? ($catData['name'] ?? '') : $catData;
+                    $customImg = is_array($catData) ? ($catData['image'] ?? '') : '';
+                    $name = trim($name);
+                    
+                    if (!empty($name)) {
+                        $dbCat = $categoryModel->where('LOWER(TRIM(name))', strtolower($name))->first();
+                        if (!$dbCat) {
+                            $dbCat = $categoryModel->like('name', $name, 'both')->first();
+                        }
+                        
+                        if ($dbCat) {
+                            $dbCat['name'] = $name;
+                            $dbCat['header_icon'] = !empty($customImg) ? $customImg : (!empty($dbCat['image']) ? $dbCat['image'] : '');
+                            $topCategories[] = $dbCat;
+                        } else {
+                            $topCategories[] = [
+                                'id' => null,
+                                'name' => ucfirst($name),
+                                'slug' => url_title($name, '-', true),
+                                'header_icon' => $customImg
+                            ];
+                        }
+                    }
+                }
+            }
+        } else {
+            $topCategories = $categoryModel->findAll();
+        }
+
+        $subcategoryModel = new \App\Models\SubcategoryModel();
+
+        $headerCartCount = 0;
+        $sessCart = session()->get('cart') ?? [];
+        foreach ($sessCart as $sc) {
+            $headerCartCount += (int)($sc['quantity'] ?? 1);
+        }
     ?>
-    <header class="main-header">
-        <div class="header-top">
-            <div class="header-left">
+    <!-- ==========================================================================
+         MODERN LUXURY STOREFRONT HEADER (Clean Single-Row GlowCare Architecture)
+         ========================================================================== -->
+    <header class="main-header modern-header-wrapper" id="siteModernHeader">
+        <div class="modern-header-container">
+            <!-- LEFT: Mobile Menu Button + Brand Logo -->
+            <div class="modern-header-left">
                 <button type="button" class="mobile-nav-toggle-btn" id="mobileNavToggleBtn" aria-label="Open Navigation Menu">
                     <i class="fa-solid fa-bars"></i>
                 </button>
-            </div>
-
-            <div class="logo-container">
-                <a href="<?= base_url('/') ?>" class="logo-brand-wrap">
-                    <img src="<?= ($logoSetting && !empty($logoSetting['value'])) ? base_url($logoSetting['value']) : base_url('assets/images/logo.png') ?>" alt="<?= esc($headerBizName) ?>" class="logo-container-img" onerror="this.onerror=null;this.src='<?= base_url('assets/images/logo.png') ?>';">
-                    <span class="logo-container-link"><?= esc($headerBizName) ?></span>
-                </a>
-            </div>
-
-            <div class="header-actions">
-                <?php if(!empty($headerWhatsapp) || !empty($headerPhone)): 
-                    $waTarget = !empty($headerWhatsapp) ? preg_replace('/[^0-9]/', '', $headerWhatsapp) : preg_replace('/[^0-9]/', '', $headerPhone);
-                    if (strlen($waTarget) === 10) {
-                        $waTarget = '91' . $waTarget;
-                    } elseif (strlen($waTarget) === 11 && strpos($waTarget, '0') === 0) {
-                        $waTarget = '91' . substr($waTarget, 1);
-                    }
-                ?>
-                <a href="https://wa.me/<?= esc($waTarget) ?>?text=<?= urlencode('Hello ' . $headerBizName . ', I have an inquiry about sarees.') ?>" target="_blank" class="header-contact-btn" title="Contact Us on WhatsApp">
-                    <i class="fa-brands fa-whatsapp header-contact-icon"></i>
-                    <div class="header-contact-text">
-                        <span class="header-contact-label">Help & Support</span>
-                        <span class="header-contact-val"><?= esc($headerPhone ?: ('+' . $waTarget)) ?></span>
+                <a href="<?= base_url('/') ?>" class="modern-brand-link">
+                    <?php if ($logoSetting && !empty($logoSetting['value'])): ?>
+                        <img src="<?= base_url($logoSetting['value']) ?>" alt="<?= esc($headerBizName) ?>" class="modern-brand-logo-img" onerror="this.style.display='none';">
+                    <?php else: ?>
+                        <div class="modern-brand-logo-circle">
+                            <i class="fa-solid fa-spa"></i>
+                        </div>
+                    <?php endif; ?>
+                    <div class="modern-brand-text">
+                        <span class="modern-brand-title"><?= esc($headerBizName) ?></span>
+                        <span class="modern-brand-tagline">Pure Silk &amp; Handlooms</span>
                     </div>
                 </a>
-                <?php endif; ?>
+            </div>
 
-                <div class="currency-selector" id="countryCurrencyToggle" role="button" tabindex="0" title="Select Country & Currency" style="cursor: pointer;">
-                    <img src="https://flagcdn.com/w40/in.png" alt="India" class="india-flag" id="headerSelectedFlag" style="width: 20px; height: 14px; object-fit: cover; border-radius: 2px;">
-                    <span class="currency-text" id="headerSelectedCurrency">INR ₹</span>
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            <!-- CENTER: Modern Single-Row Navigation Menu -->
+            <nav class="modern-desktop-nav" aria-label="Main Navigation">
+                <ul class="modern-nav-list">
+                    <li class="modern-nav-item <?= $isHomeActive ? 'active' : '' ?>">
+                        <a href="<?= base_url('/') ?>" class="modern-nav-link">Home</a>
+                    </li>
+                    <li class="modern-nav-item has-dropdown">
+                        <a href="<?= base_url('collections') ?>" class="modern-nav-link dropdown-toggle-link">
+                            <span>Categories</span>
+                            <i class="fa-solid fa-chevron-down modern-caret"></i>
+                        </a>
+                        <!-- Category Dropdown Card -->
+                        <div class="modern-dropdown-menu">
+                            <div class="modern-dropdown-grid">
+                                <?php foreach($topCategories as $topCat): 
+                                    $subCats = [];
+                                    if (!empty($topCat['id'])) {
+                                        $subCats = $subcategoryModel->where('parent_category_id', $topCat['id'])->findAll();
+                                    }
+                                    $hasSubs = count($subCats) > 0;
+                                ?>
+                                <div class="modern-dropdown-cat-col">
+                                    <a href="<?= base_url('category/' . $topCat['slug']) ?>" class="modern-dropdown-cat-head">
+                                        <?php if(!empty($topCat['header_icon'])): ?>
+                                            <img src="<?= base_url(ltrim($topCat['header_icon'], '/')) ?>" alt="<?= esc($topCat['name']) ?>" class="modern-cat-thumb">
+                                        <?php else: ?>
+                                            <span class="modern-cat-icon-fallback"><i class="fa-solid fa-gem"></i></span>
+                                        <?php endif; ?>
+                                        <span class="modern-cat-name"><?= esc($topCat['name']) ?></span>
+                                    </a>
+                                    <?php if($hasSubs): ?>
+                                    <ul class="modern-subcat-list">
+                                        <?php foreach(array_slice($subCats, 0, 4) as $sc): ?>
+                                        <li>
+                                            <a href="<?= base_url('category/' . $sc['slug']) ?>" class="modern-subcat-link"><?= esc($sc['name']) ?></a>
+                                        </li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                    <?php endif; ?>
+                                </div>
+                                <?php endforeach; ?>
+                            </div>
+                            <div class="modern-dropdown-footer">
+                                <a href="<?= base_url('collections') ?>" class="modern-view-all-link">
+                                    <span>View All Saree Collections</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="modern-nav-item <?= $isNewArrivalsActive ? 'active' : '' ?>">
+                        <a href="<?= base_url('collections/new-arrivals') ?>" class="modern-nav-link">
+                            <span>New Arrivals</span>
+                            <span class="modern-badge-pill new">NEW</span>
+                        </a>
+                    </li>
+                    <li class="modern-nav-item <?= $isBestSellerActive ? 'active' : '' ?>">
+                        <a href="<?= base_url('collections/best-sellers') ?>" class="modern-nav-link">
+                            <span>Best Sellers</span>
+                            <span class="modern-badge-pill hot">HOT</span>
+                        </a>
+                    </li>
+                    <li class="modern-nav-item <?= $isCollectionsActive ? 'active' : '' ?>">
+                        <a href="<?= base_url('collections') ?>" class="modern-nav-link">Collections</a>
+                    </li>
+                    <li class="modern-nav-item <?= $isContactUsActive ? 'active' : '' ?>">
+                        <a href="<?= base_url('contact-us') ?>" class="modern-nav-link">Contact Us</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- RIGHT: Pill Search Bar + Currency + Account + Cart -->
+            <div class="modern-header-actions">
+                <!-- Sleek Pill Search Bar (GlowCare design) -->
+                <form action="<?= base_url('search') ?>" method="GET" class="modern-pill-search-form" id="modernPillSearchForm">
+                    <input type="text" name="q" placeholder="Search for sarees, silk, cottons..." required autocomplete="off">
+                    <button type="submit" aria-label="Search Submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+
+                <!-- Currency Selector Pill -->
+                <div class="modern-currency-pill" id="countryCurrencyToggle" role="button" tabindex="0" title="Select Currency">
+                    <img src="https://flagcdn.com/w40/in.png" alt="India" id="headerSelectedFlag" class="modern-currency-flag">
+                    <span id="headerSelectedCurrency" class="modern-currency-code">INR ₹</span>
+                    <i class="fa-solid fa-chevron-down" style="font-size: 8px; opacity: 0.6;"></i>
                 </div>
-                <a href="#" id="auth-icon-toggle" class="icon-link" aria-label="Account" title="Login with Google">
-                    <!-- User Icon -->
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                </a>
-                <a href="#" id="search-icon-toggle" class="icon-link" aria-label="Search" title="Search">
-                    <!-- Search Icon -->
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                </a>
-                <?php
-                    $headerCartCount = 0;
-                    $sessCart = session()->get('cart') ?? [];
-                    foreach ($sessCart as $sc) {
-                        $headerCartCount += (int)($sc['quantity'] ?? 1);
-                    }
-                ?>
-                <a href="<?= base_url('cart') ?>" id="header-cart-toggle" class="icon-link" aria-label="Shopping Cart" title="Shopping Cart" style="position: relative;" onclick="openCartDrawer(event);">
-                    <!-- Cart Icon -->
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-                    <span class="header-cart-badge" id="header-cart-badge" style="<?= $headerCartCount > 0 ? '' : 'display: none;' ?>"><?= $headerCartCount ?></span>
+
+                <!-- Account Icon Button -->
+                <a href="#" id="auth-icon-toggle" class="modern-icon-btn" aria-label="Account" title="My Account">
+                    <i class="fa-regular fa-user"></i>
                 </a>
 
-                <div class="search-dropdown" id="search-dropdown">
-                    <form action="<?= base_url('search') ?>" method="GET" class="search-form">
-                        <input type="text" name="q" placeholder="Search for sarees, cottons..." required>
-                        <button type="submit" aria-label="Search Submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-                    </form>
-                </div>
+                <!-- Shopping Cart Icon Button with Pink Badge -->
+                <a href="<?= base_url('cart') ?>" id="header-cart-toggle" class="modern-icon-btn modern-cart-btn" aria-label="Shopping Cart" title="View Cart" onclick="openCartDrawer(event);">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="modern-cart-badge-pill" id="header-cart-badge" style="<?= $headerCartCount > 0 ? '' : 'display: none;' ?>"><?= $headerCartCount ?></span>
+                </a>
 
-                <!-- Auth Dropdown Modal -->
-                <div class="auth-dropdown" id="auth-dropdown">
+                <!-- Modern Auth Dropdown Modal -->
+                <div class="auth-dropdown modern-auth-card" id="auth-dropdown">
                     <div class="auth-header-top">
-                        <h4><?= session()->get('customer_logged_in') ? 'My Customer Account' : 'Sign in or create account' ?></h4>
+                        <h4><?= session()->get('customer_logged_in') ? 'My Customer Account' : 'Sign in to Selvi Tex' ?></h4>
                         <button class="auth-close" id="auth-close-btn">&times;</button>
                     </div>
                     <div class="auth-body">
                         <?php if(session()->get('customer_logged_in')): ?>
-                            <div style="background: rgba(255,255,255,0.1); padding: 12px 14px; border-radius: 6px; margin-bottom: 10px;">
-                                <div style="font-weight: 700; font-size: 14px; color: #fef08a;"><?= esc(session()->get('customer_name')) ?></div>
-                                <div style="font-size: 12px; color: #e2e8f0;"><?= esc(session()->get('customer_email')) ?></div>
+                            <div class="modern-auth-user-info">
+                                <div class="user-name"><?= esc(session()->get('customer_name')) ?></div>
+                                <div class="user-email"><?= esc(session()->get('customer_email')) ?></div>
                             </div>
-                            <a href="<?= base_url('customer/dashboard') ?>" class="btn-shop-pay" style="background-color: #c59b27; color: #1e1e1e; font-weight: 800; text-align: center; margin-bottom: 8px;">
+                            <a href="<?= base_url('customer/dashboard') ?>" class="modern-auth-primary-btn">
                                 <i class="fa-solid fa-gauge-high"></i> Customer Dashboard &amp; Orders
                             </a>
-                            <a href="<?= base_url('cart') ?>" class="btn-half" style="width: 100%; box-sizing: border-box; text-align: center; margin-bottom: 8px;">
+                            <a href="<?= base_url('cart') ?>" class="modern-auth-secondary-btn">
                                 <i class="fa-solid fa-bag-shopping"></i> View Active Cart
                             </a>
-                            <a href="<?= base_url('customer/logout') ?>" class="btn-half" style="width: 100%; box-sizing: border-box; text-align: center; background: rgba(239, 68, 68, 0.2); color: #fca5a5;">
+                            <a href="<?= base_url('customer/logout') ?>" class="modern-auth-logout-btn">
                                 <i class="fa-solid fa-arrow-right-from-bracket"></i> Sign Out
                             </a>
                         <?php else: ?>
-                            <a href="<?= base_url('login/google?action=redirect') ?>" class="btn-google">
-                                <i class="fa-brands fa-google" style="color: #ea4335; font-size: 16px; margin-right: 6px;"></i> Continue with Google
+                            <a href="<?= base_url('login/google?action=redirect') ?>" class="modern-google-btn">
+                                <i class="fa-brands fa-google" style="color: #ea4335;"></i> Continue with Google
                             </a>
-                            
-                            <div class="auth-divider"><span>OR</span></div>
-                            
-                            <form action="<?= base_url('login/process') ?>" method="POST" class="auth-email-form">
-                                <div class="auth-input-group">
+                            <div class="modern-auth-sep"><span>OR</span></div>
+                            <form action="<?= base_url('login/process') ?>" method="POST" class="modern-email-form">
+                                <div class="modern-auth-input-wrap">
                                     <input type="email" name="email" placeholder="Enter your email" required>
                                     <button type="submit"><i class="fa-solid fa-arrow-right"></i></button>
                                 </div>
-                                <label class="auth-checkbox">
-                                    <input type="checkbox" checked> Email me with offers
-                                </label>
                             </form>
-                            
-                            <div class="auth-footer-btns">
-                                <a href="<?= base_url('login/google') ?>" class="btn-half"><i class="fa-solid fa-box"></i> Orders</a>
-                                <a href="<?= base_url('login/google') ?>" class="btn-half"><i class="fa-regular fa-user"></i> Sign In</a>
+                            <div class="modern-auth-footer-links">
+                                <a href="<?= base_url('login/google') ?>"><i class="fa-solid fa-box"></i> Orders</a>
+                                <a href="<?= base_url('contact-us') ?>"><i class="fa-regular fa-comment"></i> Support</a>
                             </div>
                         <?php endif; ?>
                     </div>
@@ -641,12 +745,14 @@
             </div>
         </div>
 
+        <!-- Mobile Navigation Drawer -->
         <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
-
-        <nav class="main-nav" id="storefrontMainNav">
+        <nav class="main-nav modern-mobile-drawer" id="storefrontMainNav">
             <div class="mobile-nav-drawer-header">
                 <div class="mobile-nav-brand-wrap">
-                    <div class="mobile-nav-crown-badge"><i class="fa-solid fa-crown"></i></div>
+                    <div class="modern-brand-logo-circle" style="width: 34px; height: 34px; font-size: 15px;">
+                        <i class="fa-solid fa-spa"></i>
+                    </div>
                     <div>
                         <div class="mobile-nav-drawer-title"><?= esc($headerBizName) ?></div>
                         <div class="mobile-nav-drawer-sub">Pure Silk &amp; Handlooms</div>
@@ -654,212 +760,45 @@
                 </div>
                 <button type="button" class="mobile-nav-close-btn" id="mobileNavCloseBtn" aria-label="Close Navigation Menu">&times;</button>
             </div>
-            <?php
-                $isHomeActive = ($currentFullUrl == base_url('/') || $currentFullUrl == base_url('index.php') || $currentFullUrl == base_url('home'));
-                $isNewArrivalsActive = (strpos($currentFullUrl, 'collections/new-arrivals') !== false);
-                $isCollectionsActive = ($currentFullUrl == base_url('collections') || $currentFullUrl == base_url('collections/index.php') || $currentFullUrl == base_url('collections/'));
-                $isBestSellerActive = (strpos($currentFullUrl, 'collections/best-sellers') !== false || strpos($currentFullUrl, 'collections/best-seller') !== false);
-                $isContactUsActive = (strpos($currentFullUrl, 'contact-us') !== false);
+            
+            <div class="mobile-nav-drawer-body">
+                <form action="<?= base_url('search') ?>" method="GET" class="mobile-search-form" style="margin: 12px 16px;">
+                    <div class="modern-pill-search-form" style="width: 100%;">
+                        <input type="text" name="q" placeholder="Search sarees..." required>
+                        <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                </form>
 
-                // Fetch header categories from settings
-                $categoryModel = new \App\Models\CategoryModel();
-                $settingsModel = new \App\Models\SettingsModel();
-                $headerCatSetting = $settingsModel->where('key', 'header_categories')->first();
-                
-                $topCategories = [];
-                if ($headerCatSetting && !empty($headerCatSetting['value'])) {
-                    $selectedCatData = json_decode($headerCatSetting['value'], true);
-                    if (is_array($selectedCatData) && count($selectedCatData) > 0) {
-                        foreach ($selectedCatData as $catData) {
-                            $name = is_array($catData) ? ($catData['name'] ?? '') : $catData;
-                            $customImg = is_array($catData) ? ($catData['image'] ?? '') : '';
-                            $name = trim($name);
-                            
-                            if (!empty($name)) {
-                                $dbCat = $categoryModel->where('LOWER(TRIM(name))', strtolower($name))->first();
-                                if (!$dbCat) {
-                                    $dbCat = $categoryModel->like('name', $name, 'both')->first();
-                                }
-                                
-                                if ($dbCat) {
-                                    $dbCat['name'] = $name;
-                                    $dbCat['header_icon'] = !empty($customImg) ? $customImg : (!empty($dbCat['image']) ? $dbCat['image'] : '');
-                                    $topCategories[] = $dbCat;
-                                } else {
-                                    $topCategories[] = [
-                                        'id' => null,
-                                        'name' => ucfirst($name),
-                                        'slug' => url_title($name, '-', true),
-                                        'header_icon' => $customImg
-                                    ];
-                                }
-                            }
-                        }
-                    }
-                } else {
-                    $topCategories = $categoryModel->findAll();
-                }
+                <ul class="mobile-drawer-links">
+                    <li><a href="<?= base_url('/') ?>" class="<?= $isHomeActive ? 'active' : '' ?>"><i class="fa-solid fa-house"></i> Home</a></li>
+                    <li><a href="<?= base_url('collections/new-arrivals') ?>" class="<?= $isNewArrivalsActive ? 'active' : '' ?>"><i class="fa-solid fa-sparkles" style="color: #e11d48;"></i> New Arrivals <span class="modern-badge-pill new">NEW</span></a></li>
+                    <li><a href="<?= base_url('collections/best-sellers') ?>" class="<?= $isBestSellerActive ? 'active' : '' ?>"><i class="fa-solid fa-fire" style="color: #e11d48;"></i> Best Sellers <span class="modern-badge-pill hot">HOT</span></a></li>
+                    <li><a href="<?= base_url('collections') ?>" class="<?= $isCollectionsActive ? 'active' : '' ?>"><i class="fa-solid fa-layer-group"></i> All Collections</a></li>
+                    <li><a href="<?= base_url('contact-us') ?>" class="<?= $isContactUsActive ? 'active' : '' ?>"><i class="fa-solid fa-envelope"></i> Contact Us</a></li>
+                </ul>
 
-                $subcategoryModel = new \App\Models\SubcategoryModel();
-            ?>
-
-            <!-- ROW 1: Default Navigation Links -->
-            <div class="nav-row-primary">
-                <ul class="nav-menu-default">
-                    <li class="nav-item <?= $isHomeActive ? 'active' : '' ?>">
-                        <a href="<?= base_url('/') ?>" class="nav-main-link <?= $isHomeActive ? 'active' : '' ?>">
-                            <i class="fa-solid fa-house nav-item-icon"></i>
-                            <span>Home</span>
+                <div class="mobile-drawer-cat-heading">Shop By Category</div>
+                <ul class="mobile-drawer-cat-list">
+                    <?php foreach($topCategories as $topCat): ?>
+                    <li>
+                        <a href="<?= base_url('category/' . $topCat['slug']) ?>">
+                            <i class="fa-solid fa-chevron-right" style="font-size: 11px; color: #e11d48; margin-right: 8px;"></i>
+                            <?= esc($topCat['name']) ?>
                         </a>
                     </li>
-                    <li class="nav-item <?= $isNewArrivalsActive ? 'active' : '' ?>">
-                        <a href="<?= base_url('collections/new-arrivals') ?>" id="nav-cat-new-arrivals" class="nav-main-link <?= $isNewArrivalsActive ? 'active' : '' ?>">
-                            <i class="fa-solid fa-sparkles nav-item-icon" style="color: #eab308;"></i>
-                            <span>New Arrivals</span>
-                            <span class="nav-pill-badge new">NEW</span>
-                        </a>
-                    </li>
-                    <li class="nav-item <?= $isCollectionsActive ? 'active' : '' ?>">
-                        <a href="<?= base_url('collections') ?>" id="nav-cat-all-collections" class="nav-main-link <?= $isCollectionsActive ? 'active' : '' ?>">
-                            <i class="fa-solid fa-border-all nav-item-icon"></i>
-                            <span>All collections</span>
-                        </a>
-                    </li>
-                    <li class="nav-item <?= $isBestSellerActive ? 'active' : '' ?>">
-                        <a href="<?= base_url('collections/best-sellers') ?>" id="nav-cat-best-seller" class="nav-main-link <?= $isBestSellerActive ? 'active' : '' ?>">
-                            <i class="fa-solid fa-fire nav-item-icon" style="color: #ef4444;"></i>
-                            <span>Best seller</span>
-                            <span class="nav-pill-badge hot">HOT</span>
-                        </a>
-                    </li>
-                    <li class="nav-item <?= $isContactUsActive ? 'active' : '' ?>">
-                        <a href="<?= base_url('contact-us') ?>" id="nav-contact-us" class="nav-main-link <?= $isContactUsActive ? 'active' : '' ?>">
-                            <i class="fa-solid fa-envelope-open-text nav-item-icon" style="color: #7a1530;"></i>
-                            <span>Contact Us</span>
-                        </a>
-                    </li>
+                    <?php endforeach; ?>
                 </ul>
             </div>
 
-            <!-- ROW 2: Dynamically Created Categories Strip -->
-            <?php if(!empty($topCategories)): ?>
-            <div class="nav-row-categories">
-                <div class="nav-mobile-section-heading">
-                    <i class="fa-solid fa-layer-group" style="color: #7a1530; margin-right: 4px;"></i> Shop Categories
-                </div>
-                <div class="nav-categories-scroll-track">
-                    <ul class="nav-menu-categories">
-                        <?php foreach($topCategories as $topCat): 
-                            $subCategories = [];
-                            if (!empty($topCat['id'])) {
-                                $subCategories = $subcategoryModel->where('parent_category_id', $topCat['id'])->findAll();
-                            }
-                            $hasSubs = count($subCategories) > 0;
-                            
-                            $isCatActive = (strpos($currentFullUrl, 'category/' . $topCat['slug']) !== false);
-                            if (!$isCatActive && $hasSubs) {
-                                foreach ($subCategories as $subCheck) {
-                                    if (!empty($subCheck['slug']) && strpos($currentFullUrl, 'category/' . $subCheck['slug']) !== false) {
-                                        $isCatActive = true;
-                                        break;
-                                    }
-                                }
-                            }
-
-                            // Smart icon fallback if no custom image uploaded
-                            $catLower = strtolower($topCat['name'] ?? '');
-                            if (strpos($catLower, 'cotton') !== false) {
-                                $catIconClass = 'fa-solid fa-seedling';
-                                $catIconColor = '#15803d';
-                            } elseif (strpos($catLower, 'silk') !== false) {
-                                $catIconClass = 'fa-solid fa-gem';
-                                $catIconColor = '#b45309';
-                            } elseif (strpos($catLower, 'dhoti') !== false || strpos($catLower, 'men') !== false) {
-                                $catIconClass = 'fa-solid fa-person';
-                                $catIconColor = '#0284c7';
-                            } elseif (strpos($catLower, 'kurti') !== false || strpos($catLower, 'women') !== false || strpos($catLower, 'dress') !== false) {
-                                $catIconClass = 'fa-solid fa-person-dress';
-                                $catIconColor = '#db2777';
-                            } else {
-                                $catIconClass = 'fa-solid fa-layer-group';
-                                $catIconColor = '#7a1530';
-                            }
-                        ?>
-                        <li class="nav-item <?= $hasSubs ? 'has-dropdown' : '' ?> <?= $isCatActive ? 'active' : '' ?>">
-                            <div class="nav-link-wrapper">
-                                <a href="<?= base_url('category/' . $topCat['slug']) ?>" id="nav-cat-<?= $topCat['slug'] ?>" class="nav-main-link nav-category-link <?= $isCatActive ? 'active' : '' ?>">
-                                    <span class="nav-cat-icon-badge">
-                                        <?php if(!empty($topCat['header_icon'])): ?>
-                                            <img src="<?= base_url(ltrim($topCat['header_icon'], '/')) ?>" alt="<?= esc($topCat['name']) ?>" class="nav-cat-icon-img">
-                                        <?php else: ?>
-                                            <i class="<?= $catIconClass ?> nav-item-icon" style="color: <?= $catIconColor ?>;"></i>
-                                        <?php endif; ?>
-                                    </span>
-                                    <span class="nav-cat-name"><?= esc($topCat['name']) ?></span>
-                                    <?php if($hasSubs): ?>
-                                        <i class="fa-solid fa-chevron-down nav-cat-caret"></i>
-                                    <?php endif; ?>
-                                </a>
-                                <?php if($hasSubs): ?>
-                                    <button type="button" class="mobile-submenu-toggle" aria-label="Toggle subcategories">
-                                        <i class="fa-solid fa-chevron-down"></i>
-                                    </button>
-                                <?php endif; ?>
-                            </div>
-                            <?php if($hasSubs): ?>
-                            <div class="dropdown-menu">
-                                <ul class="dropdown-subcategories-list">
-                                    <?php foreach($subCategories as $subCat): 
-                                        $subImg = '';
-                                        if (!empty($subCat['image'])) {
-                                            $subImg = (strpos($subCat['image'], 'http') === 0) ? $subCat['image'] : base_url(ltrim($subCat['image'], '/'));
-                                        }
-                                        if (empty($subImg)) {
-                                            $subImg = base_url('assets/images/placeholder.jpg');
-                                        }
-                                        $isSubActive = (strpos($currentFullUrl, 'category/' . $subCat['slug']) !== false);
-                                    ?>
-                                    <li>
-                                        <a href="<?= base_url('category/' . $subCat['slug']) ?>" id="nav-sub-<?= $subCat['slug'] ?>" class="dropdown-sub-link <?= $isSubActive ? 'active' : '' ?>">
-                                            <img src="<?= $subImg ?>" alt="<?= esc($subCat['name']) ?>" class="dropdown-sub-thumb" loading="lazy">
-                                            <span class="dropdown-sub-text"><?= esc($subCat['name']) ?></span>
-                                            <i class="fa-solid fa-angle-right dropdown-sub-arrow"></i>
-                                        </a>
-                                    </li>
-                                    <?php endforeach; ?>
-                                </ul>
-                            </div>
-                            <?php endif; ?>
-                        </li>
-                        <?php endforeach; ?>
-                    </ul>
-                </div>
-            </div>
-            <?php endif; ?>
             <div class="mobile-nav-drawer-footer">
-                <div class="mobile-nav-footer-quick">
-                    <a href="<?= base_url('login/google') ?>" class="mobile-nav-footer-btn">
-                        <i class="fa-regular fa-user"></i>
-                        <span><?= session()->get('customer_logged_in') ? 'My Account' : 'Sign In' ?></span>
-                    </a>
-                    <a href="<?= base_url('cart') ?>" class="mobile-nav-footer-btn" onclick="closeMobileNav(); openCartDrawer(event);">
-                        <i class="fa-solid fa-bag-shopping"></i>
-                        <span>My Cart</span>
-                    </a>
-                </div>
-                <?php if(!empty($headerWhatsapp) || !empty($headerPhone)): 
-                    $waClean = !empty($headerWhatsapp) ? preg_replace('/[^0-9]/', '', $headerWhatsapp) : preg_replace('/[^0-9]/', '', $headerPhone);
-                    if (strlen($waClean) === 10) {
-                        $waClean = '91' . $waClean;
-                    } elseif (strlen($waClean) === 11 && strpos($waClean, '0') === 0) {
-                        $waClean = '91' . substr($waClean, 1);
-                    }
-                ?>
-                <a href="https://wa.me/<?= esc($waClean) ?>?text=<?= urlencode('Hello ' . $headerBizName . ', I have an inquiry about saree collections.') ?>" target="_blank" class="mobile-nav-wa-btn">
-                    <i class="fa-brands fa-whatsapp"></i>
-                    <span>Chat with Weaver Support</span>
+                <a href="<?= base_url('login/google') ?>" class="mobile-drawer-btn">
+                    <i class="fa-regular fa-user"></i>
+                    <span><?= session()->get('customer_logged_in') ? 'My Account' : 'Sign In' ?></span>
                 </a>
-                <?php endif; ?>
+                <a href="<?= base_url('cart') ?>" class="mobile-drawer-btn" onclick="closeMobileNav(); openCartDrawer(event);">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span>My Cart (<?= $headerCartCount ?>)</span>
+                </a>
             </div>
         </nav>
     </header>

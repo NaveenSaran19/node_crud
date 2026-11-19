@@ -31,96 +31,738 @@ body {
 }
 
 /* --------------------------------------------------------------------------
-   MODERN HEADER
+   MODERN UNIFIED SINGLE-ROW HEADER (GlowCare Reference Aesthetic)
    -------------------------------------------------------------------------- */
-.header-wrapper, .site-header, .header-container {
-    background: rgba(255, 255, 255, 0.95) !important;
-    backdrop-filter: blur(16px) !important;
-    -webkit-backdrop-filter: blur(16px) !important;
+.main-header,
+header.main-header,
+.modern-header-wrapper {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
     border-bottom: 1px solid #f1f5f9 !important;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.03) !important;
+    box-shadow: 0 4px 20px -2px rgba(225, 29, 72, 0.04), 0 2px 6px -1px rgba(0, 0, 0, 0.02) !important;
+    position: sticky !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 1000 !important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
-/* Announcement Bar */
-.announcement-bar, .top-announcement-bar {
-    background: var(--theme-gradient) !important;
-    color: #ffffff !important;
-    font-weight: 600 !important;
-    letter-spacing: 0.3px !important;
-    padding: 8px 16px !important;
+.modern-header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 12px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    position: relative;
+    box-sizing: border-box;
 }
 
-/* Pill Search Bar */
-.header-search-bar, .search-container, .desktop-search-form {
-    border-radius: var(--theme-radius-pill) !important;
+/* Brand Identity */
+.modern-header-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-shrink: 0;
+}
+
+.modern-brand-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none !important;
+}
+
+.modern-brand-logo-img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
+.modern-brand-logo-circle {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #fff1f2 0%, #ffe4e6 100%);
+    border: 1.5px solid #fecdd3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #e11d48;
+    font-size: 19px;
+    box-shadow: 0 2px 10px rgba(225, 29, 72, 0.15);
+    transition: transform 0.25s ease;
+}
+
+.modern-brand-link:hover .modern-brand-logo-circle {
+    transform: scale(1.08);
+}
+
+.modern-brand-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.modern-brand-title {
+    font-size: 21px;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.3px;
+    line-height: 1.15;
+    font-family: 'Outfit', -apple-system, sans-serif;
+}
+
+.modern-brand-tagline {
+    font-size: 11px;
+    font-weight: 600;
+    color: #e11d48;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    margin-top: 1px;
+}
+
+/* Desktop Single-Row Navigation Menu */
+.modern-desktop-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.modern-nav-list {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.modern-nav-item {
+    position: relative;
+}
+
+.modern-nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14.5px;
+    font-weight: 600;
+    color: #334155 !important;
+    text-decoration: none !important;
+    padding: 8px 14px;
+    border-radius: 9999px;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.modern-nav-link:hover,
+.modern-nav-item.active .modern-nav-link {
+    color: #e11d48 !important;
+    background: #fff1f2;
+}
+
+.modern-caret {
+    font-size: 10px;
+    color: #94a3b8;
+    transition: transform 0.25s ease, color 0.2s ease;
+}
+
+.modern-nav-item.has-dropdown:hover .modern-caret {
+    transform: rotate(180deg);
+    color: #e11d48;
+}
+
+/* Nav Badges */
+.modern-badge-pill {
+    font-size: 9px;
+    font-weight: 800;
+    padding: 2px 7px;
+    border-radius: 9999px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    line-height: 1;
+}
+
+.modern-badge-pill.new {
+    background: #fef08a;
+    color: #854d0e;
+}
+
+.modern-badge-pill.hot {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+/* Categories Dropdown Card */
+.modern-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 16px 45px -8px rgba(0, 0, 0, 0.12), 0 0 1px 1px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f1f5f9;
+    padding: 22px;
+    min-width: 440px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1050;
+}
+
+.modern-dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: 0;
+    right: 0;
+    height: 12px;
+    background: transparent;
+}
+
+.modern-nav-item.has-dropdown:hover .modern-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+}
+
+.modern-dropdown-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.modern-dropdown-cat-col {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.modern-dropdown-cat-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none !important;
+    padding: 8px 12px;
+    border-radius: 12px;
+    background: #f8fafc;
+    border: 1px solid #f1f5f9;
+    transition: all 0.2s ease;
+}
+
+.modern-dropdown-cat-head:hover {
+    background: #fff1f2;
+    border-color: #fecdd3;
+    transform: translateX(2px);
+}
+
+.modern-cat-thumb {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.modern-cat-icon-fallback {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: #ffe4e6;
+    color: #e11d48;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+}
+
+.modern-cat-name {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.modern-dropdown-cat-head:hover .modern-cat-name {
+    color: #e11d48;
+}
+
+.modern-subcat-list {
+    list-style: none;
+    padding: 0 0 0 42px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.modern-subcat-link {
+    font-size: 12.5px;
+    color: #64748b !important;
+    text-decoration: none !important;
+    transition: color 0.15s ease;
+}
+
+.modern-subcat-link:hover {
+    color: #e11d48 !important;
+    padding-left: 2px;
+}
+
+.modern-dropdown-footer {
+    border-top: 1px solid #f1f5f9;
+    padding-top: 14px;
+    text-align: center;
+}
+
+.modern-view-all-link {
+    font-size: 13px;
+    font-weight: 700;
+    color: #e11d48 !important;
+    text-decoration: none !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: gap 0.2s ease;
+}
+
+.modern-view-all-link:hover {
+    gap: 9px;
+}
+
+/* RIGHT ACTIONS (Search Pill + Currency + Account + Cart) */
+.modern-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+    position: relative;
+}
+
+/* Pill Search Bar (Matching GlowCare Design) */
+.modern-pill-search-form {
+    display: flex;
+    align-items: center;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 9999px;
+    padding: 4px 6px 4px 16px;
+    width: 250px;
+    transition: all 0.25s ease;
+}
+
+.modern-pill-search-form:focus-within {
+    border-color: #f43f5e;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.1);
+    width: 290px;
+}
+
+.modern-pill-search-form input {
+    border: none !important;
+    background: transparent !important;
+    outline: none !important;
+    font-size: 13px !important;
+    color: #0f172a !important;
+    width: 100% !important;
+    padding: 6px 0 !important;
+}
+
+.modern-pill-search-form input::placeholder {
+    color: #94a3b8;
+}
+
+.modern-pill-search-form button {
+    border: none;
+    background: #e11d48;
+    color: #ffffff;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    flex-shrink: 0;
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.modern-pill-search-form button:hover {
+    background: #be123c;
+    transform: scale(1.05);
+}
+
+/* Currency Selector Pill */
+.modern-currency-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 6px 12px;
+    border-radius: 9999px;
+    cursor: pointer;
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #334155;
+    transition: all 0.2s ease;
+}
+
+.modern-currency-pill:hover {
+    background: #fff1f2;
+    border-color: #fecdd3;
+    color: #e11d48;
+}
+
+.modern-currency-flag {
+    width: 18px;
+    height: 13px;
+    border-radius: 2px;
+    object-fit: cover;
+}
+
+/* Action Icon Buttons */
+.modern-icon-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    color: #334155 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    text-decoration: none !important;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.modern-icon-btn:hover {
+    background: #fff1f2;
+    border-color: #fecdd3;
+    color: #e11d48 !important;
+    transform: translateY(-1px);
+}
+
+.modern-cart-btn {
+    background: #fff1f2;
+    border-color: #ffe4e6;
+    color: #e11d48 !important;
+}
+
+.modern-cart-badge-pill {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background: #e11d48;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 800;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+    box-shadow: 0 2px 6px rgba(225, 29, 72, 0.4);
+    border: 2px solid #ffffff;
+}
+
+/* Modern Auth Card Dropdown */
+.modern-auth-card {
+    border-radius: 20px !important;
+    box-shadow: 0 20px 45px -8px rgba(0,0,0,0.15) !important;
+    border: 1px solid #f1f5f9 !important;
+    background: #ffffff !important;
+    color: #0f172a !important;
+    overflow: hidden;
+    position: absolute;
+    top: calc(100% + 14px);
+    right: 0;
+    min-width: 320px;
+    z-index: 10000;
+}
+
+.modern-auth-card .auth-header-top {
     background: #f8fafc !important;
-    border: 1px solid #e2e8f0 !important;
-    transition: all 0.25s ease !important;
-    overflow: hidden !important;
+    padding: 16px 20px !important;
+    border-bottom: 1px solid #f1f5f9 !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.header-search-bar:focus-within, .search-container:focus-within {
-    border-color: var(--theme-primary) !important;
-    box-shadow: 0 0 0 4px var(--theme-primary-light) !important;
+.modern-auth-card .auth-header-top h4 {
+    color: #0f172a !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    margin: 0;
+}
+
+.modern-auth-card .auth-close {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #64748b;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.modern-auth-card .auth-body {
+    padding: 18px 20px;
+}
+
+.modern-auth-user-info {
+    background: #fff1f2;
+    padding: 12px 14px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+.modern-auth-user-info .user-name {
+    font-weight: 700;
+    font-size: 14px;
+    color: #be123c;
+}
+
+.modern-auth-user-info .user-email {
+    font-size: 12px;
+    color: #64748b;
+}
+
+.modern-auth-primary-btn {
+    display: block;
+    background: #e11d48 !important;
+    color: #ffffff !important;
+    font-weight: 700;
+    font-size: 13.5px;
+    text-align: center;
+    padding: 10px 14px;
+    border-radius: 10px;
+    text-decoration: none !important;
+    margin-bottom: 8px;
+    transition: background 0.2s ease;
+}
+
+.modern-auth-primary-btn:hover {
+    background: #be123c !important;
+}
+
+.modern-auth-secondary-btn {
+    display: block;
+    background: #f1f5f9 !important;
+    color: #334155 !important;
+    font-weight: 600;
+    font-size: 13px;
+    text-align: center;
+    padding: 8px 12px;
+    border-radius: 10px;
+    text-decoration: none !important;
+    margin-bottom: 8px;
+}
+
+.modern-auth-logout-btn {
+    display: block;
+    background: #fee2e2 !important;
+    color: #dc2626 !important;
+    font-weight: 600;
+    font-size: 13px;
+    text-align: center;
+    padding: 8px 12px;
+    border-radius: 10px;
+    text-decoration: none !important;
+}
+
+.modern-google-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    color: #1e293b !important;
+    font-weight: 700;
+    font-size: 13.5px;
+    padding: 10px 16px;
+    border-radius: 10px;
+    text-decoration: none !important;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.modern-google-btn:hover {
+    background: #f8fafc;
+    border-color: #94a3b8;
+}
+
+.modern-auth-sep {
+    display: flex;
+    align-items: center;
+    margin: 14px 0;
+    color: #94a3b8;
+    font-size: 11px;
+}
+
+.modern-auth-sep::before,
+.modern-auth-sep::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #e2e8f0;
+}
+
+.modern-auth-sep span {
+    padding: 0 8px;
+}
+
+.modern-auth-input-wrap {
+    display: flex;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.modern-auth-input-wrap input {
+    border: none !important;
+    background: transparent !important;
+    outline: none !important;
+    padding: 9px 12px !important;
+    font-size: 13px !important;
+    color: #0f172a !important;
+    width: 100% !important;
+}
+
+.modern-auth-input-wrap button {
+    border: none;
+    background: #e11d48;
+    color: #ffffff;
+    padding: 0 14px;
+    cursor: pointer;
+}
+
+.modern-auth-footer-links {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 14px;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 10px;
+}
+
+.modern-auth-footer-links a {
+    color: #64748b !important;
+    font-size: 12px;
+    text-decoration: none !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.modern-auth-footer-links a:hover {
+    color: #e11d48 !important;
+}
+
+/* Mobile Drawer */
+.modern-mobile-drawer {
     background: #ffffff !important;
 }
 
-.header-search-input, .search-input {
-    border: none !important;
-    outline: none !important;
-    background: transparent !important;
-    padding: 10px 18px !important;
-    font-size: 14px !important;
-    color: var(--theme-text-dark) !important;
+.mobile-drawer-links {
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
 }
 
-.header-search-btn, .search-submit-btn {
-    background: transparent !important;
-    color: var(--theme-text-muted) !important;
-    border: none !important;
-    padding: 0 16px !important;
-    transition: color 0.2s ease !important;
+.mobile-drawer-links li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    color: #334155;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    border-bottom: 1px solid #f8fafc;
 }
 
-.header-search-btn:hover {
-    color: var(--theme-primary) !important;
+.mobile-drawer-links li a:hover,
+.mobile-drawer-links li a.active {
+    color: #e11d48;
+    background: #fff1f2;
 }
 
-/* Header Action Icons & Badges */
-.header-action-btn, .header-icon-link {
-    color: var(--theme-text-dark) !important;
-    transition: all 0.2s ease !important;
-    border-radius: 50% !important;
+.mobile-drawer-cat-heading {
+    padding: 14px 20px 8px;
+    font-size: 12px;
+    font-weight: 800;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-.header-action-btn:hover {
-    color: var(--theme-primary) !important;
-    background: var(--theme-primary-light) !important;
+.mobile-drawer-cat-list {
+    list-style: none;
+    padding: 0 0 16px;
+    margin: 0;
 }
 
-.cart-count-badge, .header-cart-badge, .cart-badge {
-    background: var(--theme-primary) !important;
-    color: #ffffff !important;
-    font-weight: 700 !important;
-    font-size: 11px !important;
-    border-radius: var(--theme-radius-pill) !important;
-    border: 2px solid #ffffff !important;
-    box-shadow: 0 2px 6px rgba(225, 29, 72, 0.4) !important;
+.mobile-drawer-cat-list li a {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #475569;
+    text-decoration: none;
 }
 
-/* Navigation Links */
-.nav-link, .nav-category-link {
-    color: var(--theme-text-dark) !important;
-    font-weight: 600 !important;
-    font-size: 14px !important;
-    border-radius: var(--theme-radius-pill) !important;
-    padding: 8px 16px !important;
-    transition: all 0.2s ease !important;
+.mobile-drawer-cat-list li a:hover {
+    color: #e11d48;
+    background: #fff1f2;
 }
 
-.nav-link:hover, .nav-category-link:hover, .nav-link.active {
-    color: var(--theme-primary) !important;
-    background: var(--theme-primary-light) !important;
+/* Hard Suppression of Old Stacked Split Navigation Bars */
+.header-top,
+.nav-row-primary,
+.nav-row-categories,
+.logo-container,
+.nav-menu-default {
+    display: none !important;
+}
+
+/* Responsive Controls */
+@media (max-width: 1024px) {
+    .modern-desktop-nav,
+    .modern-pill-search-form {
+        display: none !important;
+    }
+    .mobile-nav-toggle-btn {
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        color: #0f172a;
+        font-size: 16px;
+        cursor: pointer;
+    }
+}
+
+@media (min-width: 1025px) {
+    .mobile-nav-toggle-btn {
+        display: none !important;
+    }
 }
 
 /* --------------------------------------------------------------------------

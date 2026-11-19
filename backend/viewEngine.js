@@ -38,7 +38,7 @@ function compileAndExecute(phpCode, data, viewName = 'unknown') {
         empty: (val) => val == null || val === '' || val === false || (Array.isArray(val) && val.length === 0) || (typeof val === 'object' && Object.keys(val).length === 0),
         count: (val) => !val ? 0 : (Array.isArray(val) ? val.length : (typeof val === 'object' ? Object.keys(val).length : 0)),
         in_array: (needle, haystack) => Array.isArray(haystack) ? haystack.includes(needle) : false,
-        strpos: (h, n) => String(h || '').indexOf(n),
+        strpos: (h, n) => { const idx = String(h || '').indexOf(n); return idx === -1 ? false : idx; },
         time: () => Math.floor(Date.now() / 1000),
         trim: (s) => String(s || '').trim(),
         round: (n, d = 0) => Math.round(Number(n) * Math.pow(10, d)) / Math.pow(10, d),
@@ -49,6 +49,11 @@ function compileAndExecute(phpCode, data, viewName = 'unknown') {
         json_decode: (s) => { try { return JSON.parse(s); } catch { return []; } },
         number_format: (n, d = 2) => Number(n || 0).toLocaleString('en-IN', { minimumFractionDigits: d, maximumFractionDigits: d }),
         strip_tags: (s) => String(s || '').replace(/<[^>]*>/g, ''),
+        url_title: (str, sep = '-', lower = true) => {
+            let s = String(str || '').trim();
+            if (lower) s = s.toLowerCase();
+            return s.replace(/[^a-z0-9]+/gi, sep).replace(new RegExp(`^\\${sep}+|\\${sep}+$`, 'g'), '');
+        },
         file_exists: (fp) => typeof fp === 'string' && fs.existsSync(fp),
         FCPATH: path.join(__dirname, '../public/'),
         csrf_field: () => '',
@@ -105,7 +110,7 @@ function compileAndExecute(phpCode, data, viewName = 'unknown') {
         array_slice: (arr, start, len) => len !== undefined ? (arr || []).slice(start, start + len) : (arr || []).slice(start),
         array_values: (obj) => Object.values(obj || {}),
         array_keys: (obj) => Object.keys(obj || {}),
-        is_array: (a) => Array.isArray(a),
+        is_array: (a) => a != null && (Array.isArray(a) || typeof a === 'object'),
         filter_var: (v, f) => v,
         ucwords: (s) => String(s || '').replace(/\b\w/g, l => l.toUpperCase()),
         ucfirst: (s) => String(s || '').charAt(0).toUpperCase() + String(s || '').slice(1),
@@ -195,14 +200,59 @@ function compileAndExecute(phpCode, data, viewName = 'unknown') {
         array_unique: (a) => Array.from(new Set(a || [])),
         newModel: (modelName) => {
             const settings = data.settings || {};
+            const categories = data.categories || [];
+            const subcategories = data.subcategories || [];
+            let currentFilter = null;
+            let currentModel = modelName;
+
             const chain = {
-                where: (k, v) => chain,
+                where: (k, v) => {
+                    currentFilter = { col: k, val: v };
+                    return chain;
+                },
                 orderBy: (col, dir) => chain,
-                like: () => chain,
+                like: (col, val) => {
+                    currentFilter = { col, val, isLike: true };
+                    return chain;
+                },
                 limit: () => chain,
                 select: () => chain,
-                first: () => null,
-                findAll: () => []
+                first: () => {
+                    if (currentModel === 'SettingsModel') {
+                        const key = currentFilter ? currentFilter.val : null;
+                        if (key && settings[key] !== undefined) {
+                            return { key, value: settings[key] };
+                        }
+                        return null;
+                    }
+                    if (currentModel === 'CategoryModel') {
+                        if (currentFilter) {
+                            const val = String(currentFilter.val || '').toLowerCase();
+                            const found = categories.find(c => String(c.name || '').toLowerCase() === val || String(c.slug || '').toLowerCase() === val || (currentFilter.isLike && String(c.name || '').toLowerCase().includes(val)));
+                            return found || null;
+                        }
+                        return categories[0] || null;
+                    }
+                    if (currentModel === 'SubcategoryModel') {
+                        if (currentFilter && currentFilter.col === 'parent_category_id') {
+                            return subcategories.find(s => s.parent_category_id == currentFilter.val) || null;
+                        }
+                        return subcategories[0] || null;
+                    }
+                    return null;
+                },
+                findAll: () => {
+                    if (currentModel === 'CategoryModel') {
+                        return categories;
+                    }
+                    if (currentModel === 'SubcategoryModel') {
+                        if (currentFilter && currentFilter.col === 'parent_category_id') {
+                            return subcategories.filter(s => s.parent_category_id == currentFilter.val);
+                        }
+                        return subcategories;
+                    }
+                    return [];
+                }
             };
             return chain;
         },

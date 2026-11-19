@@ -1,8 +1,8 @@
 :root {
-    --primary-color: #7A1530; /* Deep Maroon */
-    --secondary-color: #FFF4E0; /* Cream */
-    --text-light: #FFF4E0;
-    --text-dark: #333333;
+    --primary-color: #e11d48; /* Vibrant Modern Rose */
+    --secondary-color: #fff1f2; /* Soft Blush */
+    --text-light: #ffffff;
+    --text-dark: #0f172a;
 }
 
 /* CRITICAL: Explicitly Protect Font Awesome Icons from font-family overrides */
@@ -76,8 +76,8 @@ img, svg, video {
    USER STYLES
    ======================================= */
 .main-header {
-    background-color: var(--primary-color) !important;
-    color: var(--text-light) !important;
+    background-color: #ffffff !important;
+    color: #0f172a !important;
     display: flex !important;
     flex-direction: column !important;
     padding: 0 !important;
@@ -87,7 +87,8 @@ img, svg, video {
     left: 0 !important;
     width: 100% !important;
     z-index: 9999 !important;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.18) !important;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.04) !important;
+    border-bottom: 1px solid #f1f5f9 !important;
 }
 
 .header-top {
