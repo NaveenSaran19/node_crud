@@ -1,0 +1,116 @@
+/* ==========================================================================
+   MODERN ADMIN PANEL THEME (Matching Rose & Modern Aesthetic)
+   ========================================================================== */
+
+:root {
+    --primary-color: #e11d48 !important;
+    --primary-hover: #be123c !important;
+    --primary-light: #fff1f2 !important;
+    --primary-glow: rgba(225, 29, 72, 0.2) !important;
+    --sidebar-bg: #0f172a !important;
+    --sidebar-active-bg: rgba(225, 29, 72, 0.15) !important;
+    --sidebar-active-color: #f43f5e !important;
+    --bg-main: #f8fafc !important;
+    --card-bg: #ffffff !important;
+    --text-primary: #0f172a !important;
+    --text-secondary: #64748b !important;
+    --border-color: #e2e8f0 !important;
+    --radius-card: 16px !important;
+    --radius-pill: 9999px !important;
+}
+
+/* Sidebar Branding & Active Items */
+.sidebar {
+    background: var(--sidebar-bg) !important;
+    border-right: 1px solid #1e293b !important;
+}
+
+.sidebar-brand {
+    border-bottom: 1px solid #1e293b !important;
+}
+
+.menu-item.active, .menu-item:hover {
+    background: var(--sidebar-active-bg) !important;
+    color: var(--sidebar-active-color) !important;
+}
+
+.menu-item.active i, .menu-item:hover i {
+    color: var(--sidebar-active-color) !important;
+}
+
+.submenu-item.active, .submenu-item:hover {
+    color: var(--sidebar-active-color) !important;
+    background: rgba(225, 29, 72, 0.1) !important;
+}
+
+/* Buttons */
+.btn-primary, button[type="submit"]:not(.btn-danger):not(.btn-secondary) {
+    background: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: #ffffff !important;
+    border-radius: var(--radius-pill) !important;
+    padding: 10px 22px !important;
+    font-weight: 700 !important;
+    transition: all 0.2s ease !important;
+    box-shadow: 0 4px 12px rgba(225, 29, 72, 0.25) !important;
+}
+
+.btn-primary:hover, button[type="submit"]:hover:not(.btn-danger):not(.btn-secondary) {
+    background: var(--primary-hover) !important;
+    border-color: var(--primary-hover) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 18px rgba(225, 29, 72, 0.35) !important;
+}
+
+/* Dashboard Cards */
+.stat-card, .metric-card, .dashboard-card, .premium-card {
+    border-radius: var(--radius-card) !important;
+    border: 1px solid #f1f5f9 !important;
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04) !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.stat-card:hover, .metric-card:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 10px 25px -4px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Topbar */
+.topbar {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(12px) !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+}
+
+/* Tables */
+.datatable-wrapper, table.admin-table {
+    border-radius: var(--radius-card) !important;
+    overflow: hidden !important;
+    border: 1px solid #e2e8f0 !important;
+}
+
+table.admin-table th {
+    background: #f8fafc !important;
+    color: #475569 !important;
+    font-weight: 700 !important;
+    font-size: 13px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* Badges */
+.badge-success, .status-badge.active, .status-badge.completed {
+    background: #ecfdf5 !important;
+    color: #065f46 !important;
+    border-radius: var(--radius-pill) !important;
+    padding: 4px 12px !important;
+    font-weight: 700 !important;
+}
+
+.badge-pending, .status-badge.pending {
+    background: #fffbeb !important;
+    color: #b45309 !important;
+    border-radius: var(--radius-pill) !important;
+    padding: 4px 12px !important;
+    font-weight: 700 !important;
+}

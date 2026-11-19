@@ -133,6 +133,7 @@
     <link rel="stylesheet" href="<?= base_url('assets/css/style.css') ?>?v=<?= time() ?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/trust-highlights.css') ?>?v=<?= time() ?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/product-variants.css') ?>?v=<?= time() ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/saree-modern.css') ?>?v=<?= time() ?>">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 

@@ -19,7 +19,7 @@
         }
         if (!isset($businessShortName)) {
             $shortNameSetting = $settingsModel->where('key', 'short_name')->first();
-            $businessShortName = $shortNameSetting ? esc($shortNameSetting['value']) : 'SSPTEX';
+            $businessShortName = $shortNameSetting ? esc($shortNameSetting['value']) : 'Selvi Tex';
         }
         $logoSetting = $settingsModel->where('key', 'business_logo')->first();
         $hasCustomLogo = false;
@@ -66,6 +66,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="<?= base_url('assets/css/admin-global.css') ?>?v=<?= time() ?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/admin-datatable.css') ?>?v=<?= time() ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/admin-modern.css') ?>?v=<?= time() ?>">
     <!-- Global Dynamic Typography Styles for Admin Panel -->
     <style id="admin-dynamic-typography">
         :root {

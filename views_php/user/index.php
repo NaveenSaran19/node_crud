@@ -23,14 +23,21 @@
                                 <div class="hero-overlay-scrim"></div>
                             </div>
                             <div class="hero-content">
-                                <span class="hero-tagline"><i class="fa-solid fa-crown"></i> Exclusive Heritage Collection</span>
+                                <span class="hero-tagline"><i class="fa-solid fa-sparkles"></i> Radiate Elegance Every Day</span>
                                 <h1 class="hero-title"><?= esc($bTitle) ?></h1>
-                                <p class="hero-subtitle">Discover handcrafted pure silk, cotton &amp; festive handlooms crafted with timeless artistry</p>
+                                <p class="hero-subtitle">Discover handcrafted pure silk, soft cotton &amp; bridal handloom sarees crafted with timeless artistry.</p>
                                 <div class="hero-btn-wrap">
                                     <a href="<?= esc($bLink) ?>" class="hero-btn hero-explore-btn">
-                                        <i class="fa-solid fa-compass"></i> Explore New Arrivals <i class="fa-solid fa-arrow-right"></i>
+                                        Shop Now <i class="fa-solid fa-arrow-right"></i>
+                                    </a>
+                                    <a href="<?= base_url('collections') ?>" class="hero-secondary-btn">
+                                        Explore Categories <i class="fa-solid fa-table-cells-large"></i>
                                     </a>
                                 </div>
+                            </div>
+                            <div class="hero-floating-badge">
+                                <div class="badge-val">100%</div>
+                                <div class="badge-label">Original Weaves</div>
                             </div>
                         </div>
                     <?php endforeach; ?>
@@ -43,14 +50,21 @@
                             <div class="hero-overlay-scrim"></div>
                         </div>
                         <div class="hero-content">
-                            <span class="hero-tagline"><i class="fa-solid fa-crown"></i> Exclusive Heritage Collection</span>
-                            <h1 class="hero-title">Experience True Elegance</h1>
-                            <p class="hero-subtitle">Discover our exclusive collections of Pattu and Cotton Sarees</p>
+                            <span class="hero-tagline"><i class="fa-solid fa-sparkles"></i> Radiate Elegance Every Day</span>
+                            <h1 class="hero-title">Timeless Handloom Sarees for Every Occasion</h1>
+                            <p class="hero-subtitle">Discover handcrafted pure silk, soft cotton &amp; bridal handlooms direct from Elampillai master weavers.</p>
                             <div class="hero-btn-wrap">
                                 <a href="<?= base_url('collections/new-arrivals') ?>" class="hero-btn hero-explore-btn">
-                                    <i class="fa-solid fa-compass"></i> Explore New Arrivals <i class="fa-solid fa-arrow-right"></i>
+                                    Shop Now <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                                <a href="<?= base_url('collections') ?>" class="hero-secondary-btn">
+                                    Explore Categories <i class="fa-solid fa-table-cells-large"></i>
                                 </a>
                             </div>
+                        </div>
+                        <div class="hero-floating-badge">
+                            <div class="badge-val">100%</div>
+                            <div class="badge-label">Original Weaves</div>
                         </div>
                     </div>
                 <?php endif; ?>
@@ -176,30 +190,30 @@
             if ($trustCardsVisible):
                 $defaultTrustCards = [
                     [
-                        'icon' => 'fa-solid fa-landmark',
-                        'title' => 'Established in 2010',
-                        'desc' => 'Over a decade of cherished heritage, delivering authentic sarees with enduring craftsmanship and tradition.',
+                        'icon' => 'fa-solid fa-award',
+                        'title' => '100% Original',
+                        'desc' => 'Authentic & trusted weaves',
                         'order' => 1,
                         'visible' => 1
                     ],
                     [
-                        'icon' => 'fa-solid fa-award',
-                        'title' => '15+ Years of Experience',
-                        'desc' => 'Masterful weaving expertise, unmatched quality standards, and dedicated commitment to our valued patrons.',
+                        'icon' => 'fa-solid fa-certificate',
+                        'title' => 'Expert Approved',
+                        'desc' => 'Silk Mark verified weaves',
                         'order' => 2,
                         'visible' => 1
                     ],
                     [
-                        'icon' => 'fa-solid fa-earth-americas',
-                        'title' => 'Worldwide Customers',
-                        'desc' => 'Bridging distances with worldwide shipping, bringing beloved Indian weaves to saree lovers across the globe.',
+                        'icon' => 'fa-solid fa-truck-fast',
+                        'title' => 'Fast Delivery',
+                        'desc' => 'Express delivery to doorstep',
                         'order' => 3,
                         'visible' => 1
                     ],
                     [
-                        'icon' => 'fa-solid fa-star',
-                        'title' => '5-Star Customer Experience',
-                        'desc' => 'Loved by thousands of happy customers for seamless service, pristine packaging, and exceptional satisfaction.',
+                        'icon' => 'fa-solid fa-arrows-rotate',
+                        'title' => 'Easy Returns',
+                        'desc' => 'Hassle-free exchanges',
                         'order' => 4,
                         'visible' => 1
                     ]
@@ -249,71 +263,98 @@
             endif; 
         ?>
 
-        <!-- Live Collections Section (Matching ssptex.com mobile swipe carousel) -->
-        <?php if(($settings['module_live_collections'] ?? '1') === '1'): ?>
-        <section class="collection-section live-collections-section">
-            <h2 class="section-title"><i class="fa-solid fa-circle live-pulse-dot" style="color: #e11d48; font-size: 0.8em; margin-bottom: 3px;"></i> <?= esc($settings['home_live_collections_title'] ?? 'Live Collections') ?></h2>
-            <div class="circular-list-container">
-                <div class="circular-list" id="liveCollectionsList">
-                    <?php if(!empty($live_collections)): ?>
-                        <?php foreach($live_collections as $item): ?>
-                            <a href="<?= base_url('product/' . esc($item['slug'])) ?>" style="text-decoration: none; color: inherit;">
-                                <div class="circle-item">
-                                    <div class="circle-img-wrapper">
-                                    <?php 
-                                        $imgUrl = base_url('assets/images/placeholder.jpg');
-                                        if(!empty($item['image_url'])) {
-                                            if(strpos($item['image_url'], 'http') === 0) {
-                                                $imgUrl = $item['image_url'];
-                                            } elseif(file_exists(FCPATH . ltrim($item['image_url'], '/'))) {
-                                                $imgUrl = base_url(ltrim($item['image_url'], '/'));
-                                            }
-                                        }
-                                    ?>
-                                    <img src="<?= $imgUrl ?>" alt="<?= esc($item['name']) ?>">
-                                    </div>
-                                    <p class="circle-title"><?= esc($item['name']) ?></p>
-                                </div>
-                            </a>
-                        <?php endforeach; ?>
-                    <?php else: ?>
-                        <p style="text-align: center; width: 100%; color: var(--text-muted);">No live collections available at the moment.</p>
-                    <?php endif; ?>
-                </div>
-                <div class="circular-carousel-dots" id="liveCollectionsDots"></div>
+        <!-- Shop by Category Section (Matching Glow Modern Theme) -->
+        <?php if(!empty($categories)): ?>
+        <section class="shop-by-category-section" style="margin: 30px auto 45px auto; max-width: 1380px;">
+            <div class="section-header-modern">
+                <h2 class="section-title-modern">Shop by Category</h2>
+                <a href="<?= base_url('collections') ?>" class="section-view-all-link">
+                    View All Categories <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="category-showcase-grid">
+                <?php foreach($categories as $cat): 
+                    $catImg = !empty($cat['image_url']) ? base_url($cat['image_url']) : base_url('assets/images/placeholder.jpg');
+                    $catSlug = !empty($cat['slug']) ? $cat['slug'] : url_title($cat['name'], '-', true);
+                ?>
+                    <a href="<?= base_url('category/' . esc($catSlug)) ?>" class="category-modern-card">
+                        <div class="category-img-wrapper">
+                            <img src="<?= $catImg ?>" alt="<?= esc($cat['name']) ?>" onerror="this.onerror=null;this.src='<?= base_url('assets/images/placeholder.jpg') ?>';">
+                        </div>
+                        <h3 class="category-card-name"><?= esc($cat['name']) ?></h3>
+                        <span class="category-card-count">Explore Weaves &rarr;</span>
+                    </a>
+                <?php endforeach; ?>
             </div>
         </section>
         <?php endif; ?>
 
-        <!-- Best Sellers Section (Matching ssptex.com mobile swipe carousel) -->
-        <section class="collection-section best-sellers-section" style="background-color: #f9f9f9;">
-            <h2 class="section-title"><i class="fa-solid fa-fire" style="color: #ff6a00;"></i> Best Sellers</h2>
-            <div class="circular-list-container">
-                <div class="circular-list" id="bestSellersList">
-                    <?php if(!empty($best_sellers)): foreach($best_sellers as $item): ?>
-                        <a href="<?= base_url('product/' . esc($item['slug'])) ?>" style="text-decoration: none; color: inherit;">
-                            <div class="circle-item">
-                                <div class="circle-img-wrapper">
-                                    <?php 
-                                        $imgUrl = base_url('assets/images/placeholder.jpg');
-                                        if(!empty($item['image_url'])) {
-                                            if(strpos($item['image_url'], 'http') === 0) {
-                                                $imgUrl = $item['image_url'];
-                                            } elseif(file_exists(FCPATH . ltrim($item['image_url'], '/'))) {
-                                                $imgUrl = base_url(ltrim($item['image_url'], '/'));
-                                            }
-                                        }
-                                    ?>
-                                    <img src="<?= $imgUrl ?>" alt="<?= esc($item['name']) ?>">
-                                </div>
-                                <p class="circle-title"><?= esc($item['name']) ?></p>
-                            </div>
-                        </a>
-                    <?php endforeach; else: ?>
-                        <p style="text-align: center; width: 100%; color: var(--text-muted);">No best sellers found.</p>
-                    <?php endif; ?>
+        <!-- Limited Time Festive Offer Banner (Matching Reference Design) -->
+        <section class="promo-festive-banner">
+            <div class="promo-banner-inner">
+                <div>
+                    <span class="promo-banner-badge"><i class="fa-solid fa-clock"></i> Limited Time Festive Offer</span>
+                    <h2 class="promo-banner-title">Up to 30% OFF</h2>
+                    <p class="promo-banner-subtitle">On Pure Silk, Soft Silk &amp; Festive Wedding Sarees</p>
                 </div>
-                <div class="circular-carousel-dots" id="bestSellersDots"></div>
+                <a href="<?= base_url('collections/new-arrivals') ?>" class="promo-banner-btn">
+                    Shop the Sale <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- Best Sellers Section (Modern Grid matching Reference Image) -->
+        <section class="collection-section best-sellers-section" style="margin-bottom: 50px; background: transparent;">
+            <div class="section-header-modern">
+                <h2 class="section-title-modern">Best Sellers</h2>
+                <a href="<?= base_url('collections/best-sellers') ?>" class="section-view-all-link">
+                    View All Products <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="product-grid-modern">
+                <?php if(!empty($best_sellers)): foreach($best_sellers as $item): 
+                    $imgUrl = base_url('assets/images/placeholder.jpg');
+                    if(!empty($item['image_url'])) {
+                        $imgUrl = (strpos($item['image_url'], 'http') === 0) ? $item['image_url'] : base_url(ltrim($item['image_url'], '/'));
+                    }
+                    $salePrice = Number($item['price'] || 0);
+                    $origPrice = Number($item['original_price'] || 0);
+                    if ($origPrice <= $salePrice) $origPrice = round($salePrice * 1.3);
+                    $discountPct = round((($origPrice - $salePrice) / $origPrice) * 100);
+                ?>
+                    <div class="product-card-modern">
+                        <div class="product-img-wrap">
+                            <a href="<?= base_url('product/' . esc($item['slug'])) ?>">
+                                <img src="<?= $imgUrl ?>" alt="<?= esc($item['name']) ?>" onerror="this.onerror=null;this.src='<?= base_url('assets/images/placeholder.jpg') ?>';">
+                            </a>
+                            <?php if($discountPct > 0): ?>
+                                <span class="product-badge-discount"><?= $discountPct ?>% OFF</span>
+                            <?php endif; ?>
+                        </div>
+                        <a href="<?= base_url('product/' . esc($item['slug'])) ?>" class="product-card-title">
+                            <?= esc($item['name']) ?>
+                        </a>
+                        <div class="product-card-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                            <span>(<?= rand(80, 320) ?>)</span>
+                        </div>
+                        <div class="product-card-prices">
+                            <span class="product-price-current">₹<?= number_format($salePrice, 2) ?></span>
+                            <?php if($origPrice > $salePrice): ?>
+                                <span class="product-price-original">₹<?= number_format($origPrice, 2) ?></span>
+                            <?php endif; ?>
+                        </div>
+                        <button type="button" class="btn-add-cart-pill" onclick="quickAddToCart(<?= (int)$item['id'] ?>)">
+                            <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+                        </button>
+                    </div>
+                <?php endforeach; else: ?>
+                    <p style="text-align: center; grid-column: 1/-1; color: var(--theme-text-muted);">No best sellers found.</p>
+                <?php endif; ?>
             </div>
         </section>
 
@@ -2692,5 +2733,40 @@
         <!-- Dynamic Frequently Asked Questions Section -->
         <?= view('user/faq_section', ['settings' => $settings]) ?>
     </main>
+
+    <script>
+    async function quickAddToCart(productId) {
+        try {
+            var btn = (window.event && window.event.currentTarget) ? window.event.currentTarget : null;
+            if (btn) {
+                btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Adding...';
+                btn.disabled = true;
+            }
+            var res = await fetch('<?= base_url('cart/add') ?>', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ product_id: productId, quantity: 1 })
+            });
+            var data = await res.json();
+            if (data.status === 'success') {
+                var badges = document.querySelectorAll('.cart-count-badge, .header-cart-badge, .cart-badge');
+                badges.forEach(function(b) {
+                    b.innerText = data.summary?.totalItems || (parseInt(b.innerText || '0') + 1);
+                });
+                if (btn) {
+                    btn.innerHTML = '<i class="fa-solid fa-check"></i> Added!';
+                    btn.style.background = '#059669';
+                    setTimeout(function() {
+                        btn.innerHTML = '<i class="fa-solid fa-bag-shopping"></i> Add to Cart';
+                        btn.style.background = '';
+                        btn.disabled = false;
+                    }, 2000);
+                }
+            }
+        } catch (err) {
+            console.error('Add to cart error:', err);
+        }
+    }
+    </script>
 
 <?= view('user/footer') ?>

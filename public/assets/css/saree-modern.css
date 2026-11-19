@@ -1,0 +1,812 @@
+/* ==========================================================================
+   GLOW & ROSE MODERN SAREE THEME (Matching User Reference Image)
+   ========================================================================== */
+
+:root {
+    --theme-primary: #e11d48;
+    --theme-primary-hover: #be123c;
+    --theme-primary-light: #fff1f2;
+    --theme-primary-glow: rgba(225, 29, 72, 0.15);
+    --theme-gradient: linear-gradient(135deg, #e11d48 0%, #f43f5e 35%, #fb7185 70%, #fce7f3 100%);
+    --theme-hero-gradient: linear-gradient(135deg, #e11d48 0%, #f43f5e 45%, #fda4af 80%, #fff1f2 100%);
+    --theme-card-bg: #ffffff;
+    --theme-bg-soft: #fff5f7;
+    --theme-text-dark: #0f172a;
+    --theme-text-muted: #64748b;
+    --theme-border: #f1f5f9;
+    --theme-radius-pill: 9999px;
+    --theme-radius-card: 20px;
+    --theme-radius-hero: 28px;
+    --theme-shadow-soft: 0 4px 20px -2px rgba(225, 29, 72, 0.06), 0 2px 6px -1px rgba(0, 0, 0, 0.04);
+    --theme-shadow-hover: 0 12px 30px -4px rgba(225, 29, 72, 0.15), 0 4px 10px -2px rgba(0, 0, 0, 0.06);
+}
+
+/* --------------------------------------------------------------------------
+   GLOBAL OVERRIDES & TYPOGRAPHY
+   -------------------------------------------------------------------------- */
+body {
+    background-color: #fafafa !important;
+    color: var(--theme-text-dark) !important;
+    font-family: 'Outfit', 'Inter', -apple-system, sans-serif !important;
+}
+
+/* --------------------------------------------------------------------------
+   MODERN HEADER
+   -------------------------------------------------------------------------- */
+.header-wrapper, .site-header, .header-container {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border-bottom: 1px solid #f1f5f9 !important;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.03) !important;
+}
+
+/* Announcement Bar */
+.announcement-bar, .top-announcement-bar {
+    background: var(--theme-gradient) !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.3px !important;
+    padding: 8px 16px !important;
+}
+
+/* Pill Search Bar */
+.header-search-bar, .search-container, .desktop-search-form {
+    border-radius: var(--theme-radius-pill) !important;
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    transition: all 0.25s ease !important;
+    overflow: hidden !important;
+}
+
+.header-search-bar:focus-within, .search-container:focus-within {
+    border-color: var(--theme-primary) !important;
+    box-shadow: 0 0 0 4px var(--theme-primary-light) !important;
+    background: #ffffff !important;
+}
+
+.header-search-input, .search-input {
+    border: none !important;
+    outline: none !important;
+    background: transparent !important;
+    padding: 10px 18px !important;
+    font-size: 14px !important;
+    color: var(--theme-text-dark) !important;
+}
+
+.header-search-btn, .search-submit-btn {
+    background: transparent !important;
+    color: var(--theme-text-muted) !important;
+    border: none !important;
+    padding: 0 16px !important;
+    transition: color 0.2s ease !important;
+}
+
+.header-search-btn:hover {
+    color: var(--theme-primary) !important;
+}
+
+/* Header Action Icons & Badges */
+.header-action-btn, .header-icon-link {
+    color: var(--theme-text-dark) !important;
+    transition: all 0.2s ease !important;
+    border-radius: 50% !important;
+}
+
+.header-action-btn:hover {
+    color: var(--theme-primary) !important;
+    background: var(--theme-primary-light) !important;
+}
+
+.cart-count-badge, .header-cart-badge, .cart-badge {
+    background: var(--theme-primary) !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    font-size: 11px !important;
+    border-radius: var(--theme-radius-pill) !important;
+    border: 2px solid #ffffff !important;
+    box-shadow: 0 2px 6px rgba(225, 29, 72, 0.4) !important;
+}
+
+/* Navigation Links */
+.nav-link, .nav-category-link {
+    color: var(--theme-text-dark) !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    border-radius: var(--theme-radius-pill) !important;
+    padding: 8px 16px !important;
+    transition: all 0.2s ease !important;
+}
+
+.nav-link:hover, .nav-category-link:hover, .nav-link.active {
+    color: var(--theme-primary) !important;
+    background: var(--theme-primary-light) !important;
+}
+
+/* --------------------------------------------------------------------------
+   MODERN HERO SECTION (Pink Gradient & Floating Badges)
+   -------------------------------------------------------------------------- */
+.hero-section {
+    position: relative !important;
+    max-width: 1380px !important;
+    margin: 16px auto !important;
+    border-radius: var(--theme-radius-hero) !important;
+    overflow: hidden !important;
+    background: var(--theme-hero-gradient) !important;
+    box-shadow: 0 10px 40px -10px rgba(225, 29, 72, 0.25) !important;
+    padding: 0 !important;
+}
+
+.hero-slide {
+    display: flex !important;
+    align-items: center !important;
+    min-height: 520px !important;
+    position: relative !important;
+    padding: 40px 60px !important;
+}
+
+.hero-content {
+    position: relative !important;
+    z-index: 5 !important;
+    max-width: 620px !important;
+    text-align: left !important;
+}
+
+/* Tagline Badge */
+.hero-tagline {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    background: rgba(255, 255, 255, 0.3) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    font-size: 12.5px !important;
+    letter-spacing: 0.5px !important;
+    padding: 6px 16px !important;
+    border-radius: var(--theme-radius-pill) !important;
+    margin-bottom: 18px !important;
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+}
+
+/* Hero Title & Subtitle */
+.hero-title {
+    font-size: 46px !important;
+    font-weight: 800 !important;
+    color: #ffffff !important;
+    line-height: 1.15 !important;
+    margin-bottom: 16px !important;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+}
+
+.hero-subtitle {
+    font-size: 16px !important;
+    color: rgba(255, 255, 255, 0.92) !important;
+    line-height: 1.6 !important;
+    margin-bottom: 30px !important;
+    max-width: 480px !important;
+}
+
+/* Dual CTA Buttons */
+.hero-btn-wrap {
+    display: flex !important;
+    align-items: center !important;
+    gap: 16px !important;
+    flex-wrap: wrap !important;
+}
+
+.hero-btn, .hero-explore-btn, .btn-primary-pill {
+    background: #ffffff !important;
+    color: var(--theme-primary) !important;
+    font-weight: 700 !important;
+    font-size: 14.5px !important;
+    padding: 13px 30px !important;
+    border-radius: var(--theme-radius-pill) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12) !important;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    text-decoration: none !important;
+    border: none !important;
+}
+
+.hero-btn:hover, .btn-primary-pill:hover {
+    transform: translateY(-2px) scale(1.02) !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18) !important;
+    color: var(--theme-primary-hover) !important;
+}
+
+.hero-secondary-btn, .btn-outline-pill {
+    background: rgba(255, 255, 255, 0.2) !important;
+    color: #ffffff !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.7) !important;
+    backdrop-filter: blur(8px) !important;
+    font-weight: 700 !important;
+    font-size: 14.5px !important;
+    padding: 12px 28px !important;
+    border-radius: var(--theme-radius-pill) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    transition: all 0.25s ease !important;
+    text-decoration: none !important;
+}
+
+.hero-secondary-btn:hover {
+    background: #ffffff !important;
+    color: var(--theme-primary) !important;
+    border-color: #ffffff !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Floating 100% Authentic Badge */
+.hero-floating-badge {
+    position: absolute !important;
+    right: 80px !important;
+    bottom: 50px !important;
+    z-index: 6 !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(12px) !important;
+    border-radius: 50% !important;
+    width: 105px !important;
+    height: 105px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12) !important;
+    border: 2px solid rgba(255, 255, 255, 0.8) !important;
+    text-align: center !important;
+    animation: floatingBob 3s ease-in-out infinite !important;
+}
+
+.hero-floating-badge .badge-val {
+    font-size: 19px !important;
+    font-weight: 900 !important;
+    color: var(--theme-primary) !important;
+    line-height: 1 !important;
+}
+
+.hero-floating-badge .badge-label {
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    color: var(--theme-text-dark) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    margin-top: 2px !important;
+}
+
+@keyframes floatingBob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+/* --------------------------------------------------------------------------
+   TRUST PROPOSITIONS BAR (4 Rounded Pill Cards)
+   -------------------------------------------------------------------------- */
+.trust-highlights-section, .trust-features-bar {
+    max-width: 1380px !important;
+    margin: 20px auto 40px auto !important;
+    padding: 0 15px !important;
+}
+
+.trust-features-grid, .trust-highlights-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 16px !important;
+}
+
+.trust-item, .trust-feature-card {
+    background: #ffffff !important;
+    border: 1px solid #f1f5f9 !important;
+    border-radius: var(--theme-radius-card) !important;
+    padding: 18px 20px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 14px !important;
+    box-shadow: var(--theme-shadow-soft) !important;
+    transition: all 0.25s ease !important;
+}
+
+.trust-item:hover, .trust-feature-card:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: var(--theme-shadow-hover) !important;
+    border-color: var(--theme-primary-light) !important;
+}
+
+.trust-icon-box {
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 12px !important;
+    background: var(--theme-primary-light) !important;
+    color: var(--theme-primary) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 18px !important;
+    flex-shrink: 0 !important;
+}
+
+.trust-title {
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    color: var(--theme-text-dark) !important;
+    margin-bottom: 2px !important;
+}
+
+.trust-desc {
+    font-size: 12px !important;
+    color: var(--theme-text-muted) !important;
+    margin: 0 !important;
+}
+
+/* --------------------------------------------------------------------------
+   SHOP BY CATEGORY CARDS
+   -------------------------------------------------------------------------- */
+.section-header-modern {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    max-width: 1380px !important;
+    margin: 0 auto 24px auto !important;
+    padding: 0 15px !important;
+}
+
+.section-title-modern {
+    font-size: 26px !important;
+    font-weight: 800 !important;
+    color: var(--theme-text-dark) !important;
+    letter-spacing: -0.3px !important;
+}
+
+.section-view-all-link {
+    color: var(--theme-primary) !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    transition: all 0.2s ease !important;
+}
+
+.section-view-all-link:hover {
+    gap: 10px !important;
+    color: var(--theme-primary-hover) !important;
+}
+
+.category-showcase-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)) !important;
+    gap: 20px !important;
+    max-width: 1380px !important;
+    margin: 0 auto 50px auto !important;
+    padding: 0 15px !important;
+}
+
+.category-modern-card {
+    background: #ffffff !important;
+    border-radius: var(--theme-radius-card) !important;
+    border: 1px solid #f1f5f9 !important;
+    padding: 20px 16px !important;
+    text-align: center !important;
+    box-shadow: var(--theme-shadow-soft) !important;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    text-decoration: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+.category-modern-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: var(--theme-shadow-hover) !important;
+    border-color: var(--theme-primary-light) !important;
+}
+
+.category-img-wrapper {
+    width: 130px !important;
+    height: 130px !important;
+    border-radius: 50% !important;
+    background: var(--theme-bg-soft) !important;
+    overflow: hidden !important;
+    margin-bottom: 14px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border: 3px solid #ffffff !important;
+    box-shadow: 0 4px 15px rgba(225, 29, 72, 0.1) !important;
+    transition: transform 0.3s ease !important;
+}
+
+.category-modern-card:hover .category-img-wrapper {
+    transform: scale(1.08) !important;
+}
+
+.category-img-wrapper img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+}
+
+.category-card-name {
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    color: var(--theme-text-dark) !important;
+    margin-bottom: 4px !important;
+}
+
+.category-card-count {
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    color: var(--theme-primary) !important;
+    background: var(--theme-primary-light) !important;
+    padding: 3px 10px !important;
+    border-radius: var(--theme-radius-pill) !important;
+    display: inline-block !important;
+}
+
+/* --------------------------------------------------------------------------
+   PROMOTIONAL FESTIVE BANNER (Rose Gradient)
+   -------------------------------------------------------------------------- */
+.promo-festive-banner {
+    max-width: 1380px !important;
+    margin: 20px auto 50px auto !important;
+    padding: 0 15px !important;
+}
+
+.promo-banner-inner {
+    background: var(--theme-gradient) !important;
+    border-radius: var(--theme-radius-card) !important;
+    padding: 40px 50px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    color: #ffffff !important;
+    box-shadow: 0 10px 35px -5px rgba(225, 29, 72, 0.3) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.promo-banner-badge {
+    display: inline-block !important;
+    background: rgba(255, 255, 255, 0.25) !important;
+    backdrop-filter: blur(8px) !important;
+    color: #ffffff !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    padding: 4px 14px !important;
+    border-radius: var(--theme-radius-pill) !important;
+    margin-bottom: 12px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+}
+
+.promo-banner-title {
+    font-size: 32px !important;
+    font-weight: 800 !important;
+    color: #ffffff !important;
+    margin-bottom: 8px !important;
+}
+
+.promo-banner-subtitle {
+    font-size: 15px !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    margin: 0 !important;
+}
+
+.promo-banner-btn {
+    background: #ffffff !important;
+    color: var(--theme-primary) !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    padding: 12px 28px !important;
+    border-radius: var(--theme-radius-pill) !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.2s ease !important;
+}
+
+.promo-banner-btn:hover {
+    transform: translateY(-2px) scale(1.02) !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.16) !important;
+}
+
+/* --------------------------------------------------------------------------
+   MODERN PRODUCT CARDS (Pink Pill Add to Cart)
+   -------------------------------------------------------------------------- */
+.product-grid-modern, .product-grid, .products-slider {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)) !important;
+    gap: 22px !important;
+    max-width: 1380px !important;
+    margin: 0 auto 50px auto !important;
+    padding: 0 15px !important;
+}
+
+.product-card, .product-card-modern {
+    background: #ffffff !important;
+    border-radius: var(--theme-radius-card) !important;
+    border: 1px solid #f1f5f9 !important;
+    padding: 14px !important;
+    box-shadow: var(--theme-shadow-soft) !important;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.product-card:hover, .product-card-modern:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: var(--theme-shadow-hover) !important;
+    border-color: var(--theme-primary-light) !important;
+}
+
+.product-img-wrap, .product-card-image {
+    width: 100% !important;
+    aspect-ratio: 3/4 !important;
+    border-radius: 14px !important;
+    overflow: hidden !important;
+    background: #f8fafc !important;
+    margin-bottom: 12px !important;
+    position: relative !important;
+}
+
+.product-img-wrap img, .product-card-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    transition: transform 0.4s ease !important;
+}
+
+.product-card:hover .product-img-wrap img {
+    transform: scale(1.06) !important;
+}
+
+/* Discount Badge */
+.product-badge-discount, .badge-sale {
+    position: absolute !important;
+    top: 10px !important;
+    left: 10px !important;
+    background: var(--theme-primary) !important;
+    color: #ffffff !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    padding: 3px 9px !important;
+    border-radius: var(--theme-radius-pill) !important;
+    box-shadow: 0 2px 6px rgba(225, 29, 72, 0.35) !important;
+}
+
+.product-card-title, .product-title {
+    font-size: 14.5px !important;
+    font-weight: 700 !important;
+    color: var(--theme-text-dark) !important;
+    margin-bottom: 6px !important;
+    line-height: 1.35 !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+    text-decoration: none !important;
+}
+
+.product-card-rating {
+    display: flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    color: #f59e0b !important;
+    font-size: 12px !important;
+    margin-bottom: 8px !important;
+}
+
+.product-card-rating span {
+    color: var(--theme-text-muted) !important;
+    font-weight: 500 !important;
+    font-size: 11.5px !important;
+}
+
+.product-card-prices {
+    display: flex !important;
+    align-items: baseline !important;
+    gap: 8px !important;
+    margin-bottom: 12px !important;
+    margin-top: auto !important;
+}
+
+.product-price-current, .price-sale {
+    font-size: 17px !important;
+    font-weight: 800 !important;
+    color: var(--theme-primary) !important;
+}
+
+.product-price-original, .price-original {
+    font-size: 13px !important;
+    color: var(--theme-text-muted) !important;
+    text-decoration: line-through !important;
+}
+
+/* Pink Pill Add to Cart Button */
+.btn-add-cart-pill, .product-add-to-cart-btn, .btn-add-to-cart {
+    width: 100% !important;
+    background: var(--theme-primary) !important;
+    color: #ffffff !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    padding: 10px 16px !important;
+    border-radius: var(--theme-radius-pill) !important;
+    border: none !important;
+    cursor: pointer !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    box-shadow: 0 4px 12px rgba(225, 29, 72, 0.25) !important;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    text-decoration: none !important;
+}
+
+.btn-add-cart-pill:hover, .product-add-to-cart-btn:hover {
+    background: var(--theme-primary-hover) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 18px rgba(225, 29, 72, 0.35) !important;
+    color: #ffffff !important;
+}
+
+/* --------------------------------------------------------------------------
+   BOTTOM GUARANTEES FOOTER STRIP
+   -------------------------------------------------------------------------- */
+.bottom-guarantees-strip {
+    background: var(--theme-bg-soft) !important;
+    border-top: 1px solid var(--theme-primary-light) !important;
+    border-bottom: 1px solid var(--theme-primary-light) !important;
+    padding: 30px 20px !important;
+    margin-top: 50px !important;
+}
+
+.bottom-guarantees-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 20px !important;
+    max-width: 1380px !important;
+    margin: 0 auto !important;
+}
+
+.guarantee-item {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+}
+
+.guarantee-icon {
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+    background: #ffffff !important;
+    color: var(--theme-primary) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 16px !important;
+    box-shadow: 0 2px 8px rgba(225, 29, 72, 0.12) !important;
+    flex-shrink: 0 !important;
+}
+
+.guarantee-text h4 {
+    font-size: 13.5px !important;
+    font-weight: 700 !important;
+    color: var(--theme-text-dark) !important;
+    margin: 0 0 2px 0 !important;
+}
+
+.guarantee-text p {
+    font-size: 11.5px !important;
+    color: var(--theme-text-muted) !important;
+    margin: 0 !important;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE DESIGN
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+    .trust-features-grid, .bottom-guarantees-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    .hero-title {
+        font-size: 36px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-slide {
+        padding: 30px 20px !important;
+        min-height: 420px !important;
+    }
+    .hero-title {
+        font-size: 28px !important;
+    }
+    .hero-floating-badge {
+        display: none !important;
+    }
+    .promo-banner-inner {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 20px !important;
+        padding: 30px 20px !important;
+    }
+    .trust-features-grid, .bottom-guarantees-grid {
+        grid-template-columns: 1fr !important;
+    }
+    .category-showcase-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+    }
+    .product-grid-modern, .product-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+    }
+}
+
+/* ==========================================================================
+   FOOTER TRUST GUARANTEES STRIP OVERRIDES
+   ========================================================================== */
+.footer-trust-strip {
+    background: #fff5f7 !important;
+    border-top: 1px solid #ffe4e6 !important;
+    border-bottom: 1px solid #ffe4e6 !important;
+    padding: 24px 15px !important;
+}
+
+.footer-trust-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 16px !important;
+    max-width: 1380px !important;
+    margin: 0 auto !important;
+}
+
+.trust-strip-item {
+    display: flex !important;
+    align-items: center !important;
+    gap: 14px !important;
+}
+
+.trust-strip-icon {
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 50% !important;
+    background: #ffffff !important;
+    color: var(--theme-primary) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 18px !important;
+    box-shadow: 0 2px 10px rgba(225, 29, 72, 0.1) !important;
+    flex-shrink: 0 !important;
+}
+
+.trust-strip-text strong {
+    font-size: 13.5px !important;
+    font-weight: 700 !important;
+    color: var(--theme-text-dark) !important;
+    display: block !important;
+}
+
+.trust-strip-text span {
+    font-size: 11.5px !important;
+    color: var(--theme-text-muted) !important;
+}
+
+@media (max-width: 900px) {
+    .footer-trust-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+@media (max-width: 500px) {
+    .footer-trust-grid {
+        grid-template-columns: 1fr !important;
+    }
+}

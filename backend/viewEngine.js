@@ -80,6 +80,8 @@ function compileAndExecute(phpCode, data, viewName = 'unknown') {
         ceil: (n) => Math.ceil(Number(n || 0)),
         floor: (n) => Math.floor(Number(n || 0)),
         abs: (n) => Math.abs(Number(n || 0)),
+        rand: (min = 0, max = 100) => Math.floor(Math.random() * (max - min + 1)) + min,
+        mt_rand: (min = 0, max = 100) => Math.floor(Math.random() * (max - min + 1)) + min,
         reset: (arr) => Array.isArray(arr) ? arr[0] : (arr && typeof arr === 'object' ? Object.values(arr)[0] : null),
         end: (arr) => Array.isArray(arr) ? arr[arr.length - 1] : (arr && typeof arr === 'object' ? Object.values(arr).slice(-1)[0] : null),
         current: (arr) => Array.isArray(arr) ? arr[0] : (arr && typeof arr === 'object' ? Object.values(arr)[0] : null),
