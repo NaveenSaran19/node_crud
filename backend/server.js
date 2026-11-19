@@ -507,6 +507,12 @@ app.post('/checkout/process', async (req, res) => {
         // Clear cart
         req.session.cart = {};
 
+        // Trigger automated WhatsApp notification if enabled
+        if (settings.whatsapp_enabled === '1' && settings.whatsapp_notify_order === '1' && customer_phone) {
+            const waMsg = `🌸 *Selvi Tex - Order Confirmed!* 🌸\n\nHello *${customer_name}*,\nThank you for ordering with Selvi Tex! Your order has been placed.\n\n📦 *Order No:* ${orderNumber}\n💰 *Amount:* ₹${summary.total}\n📍 *Shipping to:* ${shipping_city}, ${shipping_state}\n\nWe will notify you once your package is dispatched with eCart logistics tracking details!`;
+            sendWhatsAppMessage(customer_phone, waMsg).catch(e => console.log('WhatsApp send err:', e.message));
+        }
+
         res.redirect(`/order-confirmation/${orderNumber}`);
     } catch (err) {
         console.error('Checkout error:', err);
@@ -848,6 +854,145 @@ app.post('/admin/orders/update-status/:id', requireAdmin, async (req, res) => {
     const { order_status } = req.body;
     await models.dbPromise.query('UPDATE orders SET order_status = ? WHERE id = ?', [order_status, req.params.id]);
     res.redirect('/admin/orders');
+});
+
+// Helper to save settings keys
+async function saveSettings(settingsObj) {
+    for (const [key, value] of Object.entries(settingsObj)) {
+        await models.dbPromise.query(`
+            INSERT INTO settings (\`key\`, \`value\`) VALUES (?, ?)
+            ON DUPLICATE KEY UPDATE \`value\` = VALUES(\`value\`)
+        `, [key, String(value || '')]);
+    }
+}
+
+// WhatsApp Dispatch Helper
+async function sendWhatsAppMessage(toPhone, message) {
+    const settings = await models.getSettings();
+    const token = settings.whatsapp_api_token;
+    const phoneId = settings.whatsapp_phone_number_id;
+
+    if (!token || !phoneId) {
+        return { success: false, message: 'WhatsApp Token or Phone Number ID not configured.' };
+    }
+
+    const cleanPhone = String(toPhone || '').replace(/[^0-9]/g, '');
+    const formattedPhone = cleanPhone.startsWith('91') ? cleanPhone : '91' + cleanPhone;
+
+    try {
+        const url = `https://graph.facebook.com/v19.0/${phoneId}/messages`;
+        const res = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                messaging_product: 'whatsapp',
+                to: formattedPhone,
+                type: 'text',
+                text: { body: message }
+            })
+        });
+        const json = await res.json();
+        if (json.messages && json.messages.length > 0) {
+            return { success: true, messageId: json.messages[0].id };
+        }
+        return { success: false, message: json.error?.message || 'WhatsApp API request failed' };
+    } catch (err) {
+        return { success: false, message: err.message };
+    }
+}
+
+// ==========================================
+// eCART LOGISTICS & WHATSAPP SETTINGS ROUTES
+// ==========================================
+
+// eCart Settings View
+app.get('/admin/settings/ecart', requireAdmin, async (req, res) => {
+    try {
+        const common = await commonViewData(req);
+        res.send(renderView('admin/settings/ecart', common));
+    } catch (err) {
+        res.status(500).send('Error: ' + err.message);
+    }
+});
+
+// Update eCart Settings
+app.post('/admin/settings/ecart/update', requireAdmin, async (req, res) => {
+    try {
+        const {
+            ecart_enabled, ecart_env, ecart_merchant_id, ecart_api_key,
+            ecart_api_url, ecart_pickup_pincode, ecart_auto_waybill, ecart_pickup_address
+        } = req.body;
+
+        await saveSettings({
+            ecart_enabled: ecart_enabled ?? '1',
+            ecart_env: ecart_env ?? 'production',
+            ecart_merchant_id: ecart_merchant_id ?? '',
+            ecart_api_key: ecart_api_key ?? '',
+            ecart_api_url: ecart_api_url ?? 'https://api.ekartlogistics.com/v1',
+            ecart_pickup_pincode: ecart_pickup_pincode ?? '637502',
+            ecart_auto_waybill: ecart_auto_waybill ?? '1',
+            ecart_pickup_address: ecart_pickup_address ?? ''
+        });
+
+        req.session.flash_success = 'eCart Logistics settings saved successfully!';
+        res.redirect('/admin/settings/ecart');
+    } catch (err) {
+        res.status(500).send('Error saving eCart settings: ' + err.message);
+    }
+});
+
+// WhatsApp Settings View
+app.get('/admin/settings/whatsapp', requireAdmin, async (req, res) => {
+    try {
+        const common = await commonViewData(req);
+        res.send(renderView('admin/settings/whatsapp', common));
+    } catch (err) {
+        res.status(500).send('Error: ' + err.message);
+    }
+});
+
+// Update WhatsApp Settings
+app.post('/admin/settings/whatsapp/update', requireAdmin, async (req, res) => {
+    try {
+        const {
+            whatsapp_enabled, whatsapp_provider, whatsapp_phone_number_id,
+            whatsapp_waba_id, whatsapp_api_token, whatsapp_support_number, whatsapp_notify_order
+        } = req.body;
+
+        await saveSettings({
+            whatsapp_enabled: whatsapp_enabled ?? '1',
+            whatsapp_provider: whatsapp_provider ?? 'meta_cloud',
+            whatsapp_phone_number_id: whatsapp_phone_number_id ?? '',
+            whatsapp_waba_id: whatsapp_waba_id ?? '',
+            whatsapp_api_token: whatsapp_api_token ?? '',
+            whatsapp_support_number: whatsapp_support_number ?? '919789296751',
+            whatsapp_notify_order: whatsapp_notify_order ?? '1'
+        });
+
+        req.session.flash_success = 'WhatsApp Business API settings saved successfully!';
+        res.redirect('/admin/settings/whatsapp');
+    } catch (err) {
+        res.status(500).send('Error saving WhatsApp settings: ' + err.message);
+    }
+});
+
+// Test WhatsApp Message
+app.post('/admin/settings/whatsapp/test', requireAdmin, async (req, res) => {
+    const { phone } = req.body;
+    if (!phone) return res.status(400).json({ status: 'error', message: 'Phone number is required.' });
+
+    const msg = `🌸 *Selvi Tex - Test WhatsApp Alert* 🌸\n\nYour WhatsApp API integration is connected and working perfectly!\n\nWebsite: http://localhost:3000\nSupport: +91 9789296751`;
+    const result = await sendWhatsAppMessage(phone, msg);
+
+    if (result.success) {
+        res.json({ status: 'success', message: `WhatsApp message sent successfully to +${phone}! (Message ID: ${result.messageId})` });
+    } else {
+        // If API key is dummy/test, explain clearly
+        res.json({ status: 'info', message: `Test triggered for ${phone}. Result: ${result.message}` });
+    }
 });
 
 // Legacy / REST API Product CRUD

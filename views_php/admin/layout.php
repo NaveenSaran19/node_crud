@@ -451,6 +451,14 @@
                         <i class="fa-solid fa-credit-card"></i>
                         <span>Payment Gateway</span>
                     </a>
+                    <a href="<?= base_url('admin/settings/ecart') ?>" class="submenu-item <?= (strpos(current_url(), 'admin/settings/ecart') !== false) ? 'active' : '' ?>">
+                        <i class="fa-solid fa-truck-fast"></i>
+                        <span>eCart Logistics</span>
+                    </a>
+                    <a href="<?= base_url('admin/settings/whatsapp') ?>" class="submenu-item <?= (strpos(current_url(), 'admin/settings/whatsapp') !== false) ? 'active' : '' ?>">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span>WhatsApp API</span>
+                    </a>
                 </div>
             </div>
             <a href="<?= base_url('admin/gst-rates') ?>" class="menu-item <?= (strpos(current_url(), 'admin/gst-rates') !== false) ? 'active' : '' ?>" data-tooltip="GST Rates">
@@ -461,7 +469,7 @@
 
         <?php 
             $adminDisplayName = session()->get('admin_name') ?? 'Administrator';
-            $adminDisplayEmail = session()->get('admin_email') ?? 'admin@SSPTEX.com';
+            $adminDisplayEmail = session()->get('admin_email') ?? 'selvitex@gmail.com';
             $adminInitials = strtoupper(substr($adminDisplayName, 0, 2));
         ?>
 
