@@ -1,0 +1,569 @@
+/* ==========================================================================
+   Selvi Tex - Split-Screen Modern Admin Login Stylesheet
+   Left: Brand Showcase & Content | Right: Modern Sign-In Form
+   ========================================================================== */
+
+:root {
+    --primary-maroon: #7a1530;
+    --primary-dark: #4a0d1d;
+    --primary-deep: #24050d;
+    --primary-light: #9e1d3e;
+    --gold-accent: #d4af37;
+    --gold-light: #f7d070;
+    
+    --text-dark: #0f172a;
+    --text-body: #334155;
+    --text-muted: #64748b;
+    --text-light: #f8fafc;
+    
+    --bg-page: #f8fafc;
+    --card-border: #f1e4e8;
+    
+    --font-heading: 'Cinzel', 'Georgia', serif;
+    --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: var(--font-body);
+    background: radial-gradient(circle at 20% 20%, #2f0612 0%, #150207 60%, #0d0104 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Ambient Subtle Lighting Glows */
+.ambient-glow {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(120px);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.ambient-glow-1 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(122, 21, 48, 0.45) 0%, rgba(122, 21, 48, 0) 70%);
+    top: -140px;
+    left: -140px;
+}
+
+.ambient-glow-2 {
+    width: 460px;
+    height: 460px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.2) 0%, rgba(212, 175, 55, 0) 70%);
+    bottom: -120px;
+    right: -120px;
+}
+
+/* Background Texture */
+.bg-overlay-pattern {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(rgba(212, 175, 55, 0.06) 1px, transparent 1px),
+        linear-gradient(to right, rgba(255, 255, 255, 0.012) 1px, transparent 1px);
+    background-size: 32px 32px, 64px 64px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Split Screen Card Wrapper */
+.login-wrapper {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 1060px;
+    margin: auto;
+}
+
+.login-split-card {
+    display: flex;
+    background: #ffffff;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 25px 70px -15px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.08);
+    min-height: 580px;
+    animation: loginCardFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes loginCardFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(18px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ==========================================================================
+   LEFT SIDE: Brand Showcase & Content
+   ========================================================================== */
+.login-brand-panel {
+    flex: 1.05;
+    background: linear-gradient(145deg, #4a0d1e 0%, #26050e 55%, #130107 100%);
+    padding: 52px 46px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    color: #ffffff;
+    border-right: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+/* Decorative Gold Silk Wave Accents */
+.brand-panel-decor {
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.brand-panel-decor-bottom {
+    position: absolute;
+    bottom: -60px;
+    left: -60px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(158, 29, 62, 0.25) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.brand-panel-top {
+    position: relative;
+    z-index: 2;
+}
+
+/* Logo & Emblem */
+.brand-logo-container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 36px;
+}
+
+.brand-logo-img {
+    height: 64px;
+    width: 64px;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 2px solid rgba(212, 175, 55, 0.5);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+    background: #ffffff;
+}
+
+.brand-logo-fallback {
+    width: 62px;
+    height: 62px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #7a1530 0%, #9e1d3e 100%);
+    border: 2px solid #d4af37;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f7d070;
+    font-size: 26px;
+    box-shadow: 0 6px 20px rgba(122, 21, 48, 0.35);
+    flex-shrink: 0;
+}
+
+.brand-name-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-main-title {
+    font-family: var(--font-heading);
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+    line-height: 1.15;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.brand-tagline-badge {
+    font-size: 11px;
+    font-weight: 700;
+    color: #f7d070;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    margin-top: 4px;
+}
+
+/* Content Showcase Description */
+.brand-content-body {
+    position: relative;
+    z-index: 2;
+    margin: 10px 0 24px 0;
+}
+
+.brand-statement {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #ffffff;
+    margin-bottom: 12px;
+    letter-spacing: -0.2px;
+}
+
+.brand-statement span {
+    color: #f7d070;
+}
+
+.brand-lead-desc {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.78);
+    margin-bottom: 28px;
+}
+
+/* Feature Highlights List */
+.brand-features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.brand-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 10px 14px;
+    border-radius: 10px;
+    backdrop-filter: blur(4px);
+    transition: background 0.2s ease;
+}
+
+.brand-feature-item:hover {
+    background: rgba(255, 255, 255, 0.09);
+    border-color: rgba(212, 175, 55, 0.25);
+}
+
+.brand-feature-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: rgba(212, 175, 55, 0.16);
+    color: #f7d070;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    flex-shrink: 0;
+}
+
+.brand-feature-text {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+/* Brand Panel Footer */
+.brand-panel-footer {
+    position: relative;
+    z-index: 2;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 11.5px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.brand-footer-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(212, 175, 55, 0.12);
+    color: #f7d070;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+/* ==========================================================================
+   RIGHT SIDE: Modern Sign-In Form Panel
+   ========================================================================== */
+.login-form-panel {
+    flex: 1;
+    background: #ffffff;
+    padding: 52px 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-panel-header {
+    margin-bottom: 28px;
+}
+
+.form-welcome-title {
+    font-size: 26px;
+    font-weight: 800;
+    color: #1e293b;
+    margin-bottom: 6px;
+    letter-spacing: -0.5px;
+}
+
+.form-welcome-subtitle {
+    font-size: 13.5px;
+    color: #64748b;
+    line-height: 1.5;
+}
+
+/* Alerts */
+.login-alert {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 16px;
+    border-radius: 12px;
+    font-size: 13.5px;
+    font-weight: 600;
+    margin-bottom: 22px;
+    animation: alertSlideDown 0.25s ease;
+}
+
+@keyframes alertSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-alert.alert-error {
+    background: #fef2f2;
+    border: 1.5px solid #fecaca;
+    color: #dc2626;
+}
+
+.login-alert.alert-success {
+    background: #f0fdf4;
+    border: 1.5px solid #bbf7d0;
+    color: #16a34a;
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: block;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 8px;
+    letter-spacing: -0.2px;
+}
+
+.input-icon-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon-prefix {
+    position: absolute;
+    left: 16px;
+    color: #94a3b8;
+    font-size: 15px;
+    pointer-events: none;
+    transition: color 0.2s ease;
+}
+
+.form-control {
+    width: 100%;
+    padding: 13px 44px 13px 44px;
+    font-size: 14.5px;
+    font-weight: 600;
+    color: #1e293b;
+    background: #ffffff;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 12px;
+    outline: none;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.form-control:focus {
+    border-color: #7a1530;
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(122, 21, 48, 0.1);
+}
+
+.input-icon-wrapper:focus-within .input-icon-prefix {
+    color: #7a1530;
+}
+
+.input-eye-toggle {
+    position: absolute;
+    right: 14px;
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    font-size: 15px;
+    padding: 6px;
+    border-radius: 6px;
+    transition: color 0.2s ease;
+}
+
+.input-eye-toggle:hover {
+    color: #7a1530;
+}
+
+/* Form Options (Remember Me & Forgot Password) */
+.form-options-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    font-size: 13px;
+}
+
+.remember-checkbox-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    color: #475569;
+    font-weight: 600;
+    user-select: none;
+}
+
+.remember-checkbox-label input[type="checkbox"] {
+    accent-color: #7a1530;
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.forgot-hint-btn {
+    color: #7a1530;
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.2s ease;
+}
+
+.forgot-hint-btn:hover {
+    color: #4a0d1d;
+    text-decoration: underline;
+}
+
+/* Submit Button */
+.login-btn {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #ffffff;
+    background: linear-gradient(135deg, #7a1530 0%, #9e1d3e 100%);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(122, 21, 48, 0.3);
+    transition: all 0.25s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.login-btn:hover {
+    background: linear-gradient(135deg, #641026 0%, #871633 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 22px rgba(122, 21, 48, 0.42);
+}
+
+.login-btn:active {
+    transform: translateY(0);
+}
+
+/* Return to Storefront */
+.footer-links-wrap {
+    margin-top: 24px;
+    text-align: center;
+}
+
+.return-store-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #64748b;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.return-store-link:hover {
+    color: #7a1530;
+    background: #fdf2f4;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 900px) {
+    .login-split-card {
+        flex-direction: column;
+        border-radius: 20px;
+    }
+    
+    .login-brand-panel {
+        padding: 36px 30px;
+        border-right: none;
+        border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+    }
+    
+    .brand-content-body {
+        margin: 12px 0 16px 0;
+    }
+    
+    .brand-statement {
+        font-size: 18px;
+    }
+    
+    .brand-lead-desc {
+        margin-bottom: 16px;
+    }
+    
+    .login-form-panel {
+        padding: 36px 30px;
+    }
+}
