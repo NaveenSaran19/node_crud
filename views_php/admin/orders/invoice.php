@@ -25,7 +25,7 @@
 
     <style>
         :root {
-            --brand-primary: #7a1530;
+            --brand-primary: #e11d48;
             --brand-gold: #c59b27;
             --text-dark: #1e293b;
             --text-muted: #64748b;

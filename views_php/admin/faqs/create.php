@@ -32,7 +32,7 @@
                 <label for="question" style="display: block; font-weight: 700; color: #1e293b; margin-bottom: 8px; font-size: 14px;">
                     Question <span style="color: #dc2626;">*</span>
                 </label>
-                <input type="text" id="question" name="question" value="<?= old('question') ?>" required placeholder="e.g. How do I place an order for Elampillai handlooms?" style="width: 100%; padding: 12px 16px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 15px; color: #0f172a; outline: none; transition: border-color 0.2s;" onfocus="this.style.borderColor='#7a1530'" onblur="this.style.borderColor='#cbd5e1'">
+                <input type="text" id="question" name="question" value="<?= old('question') ?>" required placeholder="e.g. How do I place an order for Elampillai handlooms?" style="width: 100%; padding: 12px 16px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 15px; color: #0f172a; outline: none; transition: border-color 0.2s;" onfocus="this.style.borderColor='#e11d48'" onblur="this.style.borderColor='#cbd5e1'">
             </div>
 
             <!-- Category & Display Order Grid -->
@@ -41,7 +41,7 @@
                     <label for="category" style="display: block; font-weight: 700; color: #1e293b; margin-bottom: 8px; font-size: 14px;">
                         Category
                     </label>
-                    <input type="text" id="category" name="category" value="<?= old('category', 'Ordering & Delivery') ?>" list="faq_categories" placeholder="e.g. Ordering, Payments, Shipping, Quality" style="width: 100%; padding: 12px 16px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 15px; color: #0f172a; outline: none;" onfocus="this.style.borderColor='#7a1530'" onblur="this.style.borderColor='#cbd5e1'">
+                    <input type="text" id="category" name="category" value="<?= old('category', 'Ordering & Delivery') ?>" list="faq_categories" placeholder="e.g. Ordering, Payments, Shipping, Quality" style="width: 100%; padding: 12px 16px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 15px; color: #0f172a; outline: none;" onfocus="this.style.borderColor='#e11d48'" onblur="this.style.borderColor='#cbd5e1'">
                     <datalist id="faq_categories">
                         <option value="Ordering">
                         <option value="Payments">
@@ -55,7 +55,7 @@
                     <label for="display_order" style="display: block; font-weight: 700; color: #1e293b; margin-bottom: 8px; font-size: 14px;">
                         Display Order Number
                     </label>
-                    <input type="number" id="display_order" name="display_order" value="<?= old('display_order', $nextOrder ?? 1) ?>" min="0" style="width: 100%; padding: 12px 16px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 15px; color: #0f172a; outline: none;" onfocus="this.style.borderColor='#7a1530'" onblur="this.style.borderColor='#cbd5e1'">
+                    <input type="number" id="display_order" name="display_order" value="<?= old('display_order', $nextOrder ?? 1) ?>" min="0" style="width: 100%; padding: 12px 16px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 15px; color: #0f172a; outline: none;" onfocus="this.style.borderColor='#e11d48'" onblur="this.style.borderColor='#cbd5e1'">
                     <small style="display: block; color: #64748b; margin-top: 5px;">Lower numbers appear first on the storefront.</small>
                 </div>
             </div>
@@ -75,7 +75,7 @@
                         </button>
                     </div>
                 </div>
-                <textarea id="answer" name="answer" rows="7" required placeholder="Write a clear, detailed explanation in plain text..." style="width: 100%; padding: 14px 16px; border: 1.5px solid #cbd5e1; border-radius: 8px; font-size: 14.5px; color: #0f172a; line-height: 1.7; outline: none; transition: border-color 0.2s;" onfocus="this.style.borderColor='#7a1530'" onblur="this.style.borderColor='#cbd5e1'"><?= old('answer') ?></textarea>
+                <textarea id="answer" name="answer" rows="7" required placeholder="Write a clear, detailed explanation in plain text..." style="width: 100%; padding: 14px 16px; border: 1.5px solid #cbd5e1; border-radius: 8px; font-size: 14.5px; color: #0f172a; line-height: 1.7; outline: none; transition: border-color 0.2s;" onfocus="this.style.borderColor='#e11d48'" onblur="this.style.borderColor='#cbd5e1'"><?= old('answer') ?></textarea>
                 <small style="display: block; color: #64748b; margin-top: 6px; font-size: 13px;">
                     <i class="fa-solid fa-circle-check" style="color: #16a34a; margin-right: 4px;"></i> Plain text only. Line breaks and bullet points (•) will be formatted automatically.
                 </small>
@@ -111,7 +111,7 @@
                     <span style="font-size: 13px; color: #64748b;">When enabled, this question and answer will appear live in the frontend FAQ section.</span>
                 </div>
                 <div>
-                    <input type="checkbox" id="is_active" name="is_active" value="1" <?= old('is_active', '1') == '1' ? 'checked' : '' ?> style="width: 20px; height: 20px; accent-color: #7a1530; cursor: pointer;">
+                    <input type="checkbox" id="is_active" name="is_active" value="1" <?= old('is_active', '1') == '1' ? 'checked' : '' ?> style="width: 20px; height: 20px; accent-color: #e11d48; cursor: pointer;">
                 </div>
             </div>
 
@@ -120,7 +120,7 @@
                 <a href="<?= base_url('admin/faqs') ?>" class="btn" style="padding: 12px 24px; background: #f1f5f9; color: #475569; border-radius: 8px; font-weight: 600; text-decoration: none; border: 1px solid #cbd5e1;">
                     Cancel
                 </a>
-                <button type="submit" class="btn btn-primary" style="padding: 12px 28px; background: #7a1530; color: #fff; border-radius: 8px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(122,21,48,0.25);">
+                <button type="submit" class="btn btn-primary" style="padding: 12px 28px; background: #e11d48; color: #fff; border-radius: 8px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(225, 29, 72,0.25);">
                     <i class="fa-solid fa-check"></i> Save FAQ Question
                 </button>
             </div>

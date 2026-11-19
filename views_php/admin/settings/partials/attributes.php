@@ -67,7 +67,7 @@ if (!is_array($sizesList) || empty($sizesList)) {
         <div style="margin-bottom: 22px; padding-bottom: 18px; border-bottom: 1.5px solid #f1f5f9; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 15px;">
             <div>
                 <h3 style="font-size: 19px; font-weight: 800; color: #1e293b; margin: 0 0 6px; display: flex; align-items: center; gap: 9px;">
-                    <i class="fa-solid fa-palette" style="color: #7a1530;"></i> Color & Size Attribute Manager
+                    <i class="fa-solid fa-palette" style="color: #e11d48;"></i> Color & Size Attribute Manager
                 </h3>
                 <p style="font-size: 13.5px; color: #64748b; margin: 0; max-width: 720px;">
                     Create and manage standard <strong>Color</strong> palettes and <strong>Size / Dhoti</strong> dimensions. These attributes automatically populate the Product Add/Edit variant dropdowns, datalists, and the customer storefront sidebar filters.
@@ -79,9 +79,9 @@ if (!is_array($sizesList) || empty($sizesList)) {
         </div>
 
         <!-- Interactive Sliding Switch between 1. Color Attributes and 2. Size & Dimension Attributes -->
-        <div class="attr-swipe-switch-wrapper" style="margin-bottom: 25px; background: #fffdfa; border: 1.5px solid #f1e5d1; border-radius: 14px; padding: 18px 22px; box-shadow: 0 4px 15px rgba(122,21,48,0.03); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px;">
+        <div class="attr-swipe-switch-wrapper" style="margin-bottom: 25px; background: #fffdfa; border: 1.5px solid #f1e5d1; border-radius: 14px; padding: 18px 22px; box-shadow: 0 4px 15px rgba(225, 29, 72,0.03); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px;">
             <div style="display: flex; align-items: center; gap: 12px;">
-                <div style="width: 42px; height: 42px; border-radius: 10px; background: linear-gradient(135deg, #7a1530, #a11c40); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 18px; box-shadow: 0 4px 10px rgba(122,21,48,0.25);">
+                <div style="width: 42px; height: 42px; border-radius: 10px; background: linear-gradient(135deg, #e11d48, #a11c40); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 18px; box-shadow: 0 4px 10px rgba(225, 29, 72,0.25);">
                     <i class="fa-solid fa-sliders"></i>
                 </div>
                 <div>
@@ -92,7 +92,7 @@ if (!is_array($sizesList) || empty($sizesList)) {
 
             <!-- Swipe Switch Capsule -->
             <div class="attr-swipe-switch" id="attrSwipeSwitch" role="group" aria-label="Attribute Switcher" style="position: relative; display: inline-flex; align-items: center; background: #eef2f6; padding: 4px; border-radius: 40px; border: 1px solid #cbd5e1; user-select: none; box-shadow: inset 0 2px 4px rgba(0,0,0,0.04); isolation: isolate;">
-                <div class="attr-switch-glider" id="attrSwitchGlider" style="position: absolute; top: 4px; left: 0; height: calc(100% - 8px); width: 0; background: linear-gradient(135deg, #7a1530 0%, #4a0818 100%); border-radius: 35px; box-shadow: 0 4px 12px rgba(122,21,48,0.32); transition: transform 0.32s cubic-bezier(0.25, 1, 0.5, 1), width 0.32s cubic-bezier(0.25, 1, 0.5, 1), background 0.3s ease, box-shadow 0.3s ease; z-index: 1; pointer-events: none; opacity: 0;"></div>
+                <div class="attr-switch-glider" id="attrSwitchGlider" style="position: absolute; top: 4px; left: 0; height: calc(100% - 8px); width: 0; background: linear-gradient(135deg, #e11d48 0%, #4a0818 100%); border-radius: 35px; box-shadow: 0 4px 12px rgba(225, 29, 72,0.32); transition: transform 0.32s cubic-bezier(0.25, 1, 0.5, 1), width 0.32s cubic-bezier(0.25, 1, 0.5, 1), background 0.3s ease, box-shadow 0.3s ease; z-index: 1; pointer-events: none; opacity: 0;"></div>
                 
                 <button type="button" class="attr-switch-btn active" id="attrBtnColor" onclick="switchAttributeTab('color')" style="position: relative; z-index: 2; display: inline-flex; align-items: center; gap: 8px; padding: 9px 20px; border-radius: 35px; border: none; background: transparent; color: #ffffff; font-size: 13.5px; font-weight: 700; cursor: pointer; transition: color 0.25s ease, transform 0.15s ease; outline: none;">
                     <i class="fa-solid fa-droplet" style="font-size: 14px;"></i>
@@ -119,7 +119,7 @@ if (!is_array($sizesList) || empty($sizesList)) {
                         <p style="font-size: 12.5px; color: #64748b; margin: 0;">Specify Color Name, HEX color picker, and check if swatch needs white/light checkmark.</p>
                     </div>
                     <div style="display: flex; gap: 8px;">
-                        <button type="button" class="btn-sm" onclick="addColorAttributeRow()" style="background: #7a1530; color: #fff; border: none; border-radius: 8px; padding: 7px 14px; font-size: 12.5px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
+                        <button type="button" class="btn-sm" onclick="addColorAttributeRow()" style="background: #e11d48; color: #fff; border: none; border-radius: 8px; padding: 7px 14px; font-size: 12.5px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
                             <i class="fa-solid fa-plus"></i> Add Color
                         </button>
                     </div>
@@ -139,7 +139,7 @@ if (!is_array($sizesList) || empty($sizesList)) {
                         </thead>
                         <tbody id="attributeColorsTableBody">
                             <?php foreach($colorsList as $idx => $c): 
-                                $cHex = !empty($c['code']) ? $c['code'] : '#7a1530';
+                                $cHex = !empty($c['code']) ? $c['code'] : '#e11d48';
                                 $cName = $c['name'] ?? '';
                                 $isDark = !empty($c['dark']);
                             ?>
@@ -176,7 +176,7 @@ if (!is_array($sizesList) || empty($sizesList)) {
                 </div>
 
                 <div style="margin-top: 14px;">
-                    <button type="button" onclick="addColorAttributeRow()" style="background: #f8fafc; border: 1.5px dashed #cbd5e1; color: #7a1530; font-weight: 700; font-size: 13px; padding: 10px 18px; border-radius: 8px; cursor: pointer; width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.2s;">
+                    <button type="button" onclick="addColorAttributeRow()" style="background: #f8fafc; border: 1.5px dashed #cbd5e1; color: #e11d48; font-weight: 700; font-size: 13px; padding: 10px 18px; border-radius: 8px; cursor: pointer; width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.2s;">
                         <i class="fa-solid fa-circle-plus"></i> Add Another Color Attribute
                     </button>
                 </div>
@@ -255,10 +255,10 @@ if (!is_array($sizesList) || empty($sizesList)) {
         </div>
 
         <!-- === LIVE ATTRIBUTE DISPLAY PREVIEW PANEL === -->
-        <div id="attr-live-preview-panel" style="margin-top: 28px; background: linear-gradient(135deg, #fdfcfb 0%, #fff9f5 100%); border: 1.5px solid #f1e5d1; border-radius: 16px; padding: 24px 26px; box-shadow: 0 6px 24px rgba(122,21,48,0.05);">
+        <div id="attr-live-preview-panel" style="margin-top: 28px; background: linear-gradient(135deg, #fdfcfb 0%, #fff9f5 100%); border: 1.5px solid #f1e5d1; border-radius: 16px; padding: 24px 26px; box-shadow: 0 6px 24px rgba(225, 29, 72,0.05);">
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; flex-wrap: wrap; gap: 10px;">
                 <div style="display: flex; align-items: center; gap: 10px;">
-                    <div style="width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, #7a1530, #a11c40); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 15px; box-shadow: 0 3px 8px rgba(122,21,48,0.25);">
+                    <div style="width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, #e11d48, #a11c40); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 15px; box-shadow: 0 3px 8px rgba(225, 29, 72,0.25);">
                         <i class="fa-solid fa-eye"></i>
                     </div>
                     <div>
@@ -273,13 +273,13 @@ if (!is_array($sizesList) || empty($sizesList)) {
 
             <!-- Color Preview Strip -->
             <div style="margin-bottom: 22px;">
-                <div style="font-size: 11.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; color: #7a1530; margin-bottom: 12px; display: flex; align-items: center; gap: 7px;">
+                <div style="font-size: 11.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; color: #e11d48; margin-bottom: 12px; display: flex; align-items: center; gap: 7px;">
                     <i class="fa-solid fa-droplet"></i> Color Palette
                     <span style="background: #fef2f2; border: 1px solid #fecaca; color: #b91c1c; padding: 1px 7px; border-radius: 10px; font-size: 10.5px;"><?= count($colorsList) ?> Colors</span>
                 </div>
                 <div id="preview-color-swatches" style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center;">
                     <?php foreach($colorsList as $ci => $cItem): 
-                        $cItemHex = !empty($cItem['code']) ? $cItem['code'] : '#7a1530';
+                        $cItemHex = !empty($cItem['code']) ? $cItem['code'] : '#e11d48';
                         $cItemName = $cItem['name'] ?? '';
                         $cItemDark = !empty($cItem['dark']);
                     ?>
@@ -382,8 +382,8 @@ function updateAttrGlider(immediate = false) {
         glider.style.background = 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)';
         glider.style.boxShadow = '0 4px 14px rgba(37, 99, 235, 0.35)';
     } else {
-        glider.style.background = 'linear-gradient(135deg, #7a1530 0%, #4a0818 100%)';
-        glider.style.boxShadow = '0 4px 12px rgba(122, 21, 48, 0.32)';
+        glider.style.background = 'linear-gradient(135deg, #e11d48 0%, #4a0818 100%)';
+        glider.style.boxShadow = '0 4px 12px rgba(225, 29, 72, 0.32)';
     }
 
     if (immediate) {
@@ -450,7 +450,7 @@ window.addEventListener('resize', function() { updateAttrGlider(true); });
 function addColorAttributeRow() {
     var tbody = document.getElementById('attributeColorsTableBody');
     var idx = attrColorNextIdx++;
-    var defaultHex = '#7a1530';
+    var defaultHex = '#e11d48';
 
     var tr = document.createElement('tr');
     tr.className = 'attr-color-row';

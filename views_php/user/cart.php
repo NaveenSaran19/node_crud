@@ -81,7 +81,7 @@
 
 .cart-item-variant {
     font-size: 13px;
-    color: #7a1530;
+    color: #e11d48;
     font-weight: 600;
     margin-bottom: 6px;
     display: inline-flex;
@@ -119,7 +119,7 @@
 .cart-item-subtotal-val {
     font-size: 18px;
     font-weight: 800;
-    color: #7a1530;
+    color: #e11d48;
 }
 
 .cart-btn-individual-checkout {
@@ -184,7 +184,7 @@
 .cart-checkout-all-btn {
     width: 100%;
     height: 48px;
-    background: #7a1530;
+    background: #e11d48;
     color: #ffffff !important;
     text-decoration: none;
     font-size: 15px;
@@ -195,7 +195,7 @@
     justify-content: center;
     gap: 8px;
     margin-top: 20px;
-    box-shadow: 0 4px 12px rgba(122,21,48,0.25);
+    box-shadow: 0 4px 12px rgba(225, 29, 72,0.25);
     transition: all 0.25s;
 }
 
@@ -229,12 +229,12 @@
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 15px;">
             <div>
                 <h1 class="cart-header-title">
-                    <i class="fa-solid fa-cart-shopping" style="color: #7a1530;"></i>
+                    <i class="fa-solid fa-cart-shopping" style="color: #e11d48;"></i>
                     Your Shopping Cart
                 </h1>
                 <p style="color: #64748b; font-size: 14px; margin: 0;">Review your selected sarees or checkout each item individually</p>
             </div>
-            <a href="<?= base_url('collections') ?>" style="font-size: 14px; font-weight: 700; color: #7a1530; text-decoration: none; display: flex; align-items: center; gap: 6px;">
+            <a href="<?= base_url('collections') ?>" style="font-size: 14px; font-weight: 700; color: #e11d48; text-decoration: none; display: flex; align-items: center; gap: 6px;">
                 <i class="fa-solid fa-arrow-left"></i> Continue Shopping
             </a>
         </div>
@@ -350,7 +350,7 @@
 
                         <div style="display: flex; justify-content: space-between; padding-top: 16px; border-top: 2px solid #0f172a; margin-top: 14px; font-size: 18px; font-weight: 900; color: #0f172a;">
                             <span class="cart-summary-total-label">Total</span>
-                            <span class="cart-summary-total" data-base-price="<?= $total ?>" style="color: #7a1530; font-size: 20px;">₹<?= number_format($total, 2) ?></span>
+                            <span class="cart-summary-total" data-base-price="<?= $total ?>" style="color: #e11d48; font-size: 20px;">₹<?= number_format($total, 2) ?></span>
                         </div>
 
                         <!-- Checkout Full Cart -->

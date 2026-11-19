@@ -177,12 +177,12 @@
 .about-story-text h2 {
     font-size: 32px;
     font-weight: 800;
-    color: #1a050b;
+    color: #0f172a;
     margin: 0 0 20px;
     line-height: 1.25;
     position: relative;
     padding-left: 16px;
-    border-left: 4px solid #7a1530;
+    border-left: 4px solid #e11d48;
 }
 .about-story-text p {
     font-size: 16px;
@@ -208,7 +208,7 @@
 .about-main-img-card {
     border-radius: 18px;
     overflow: hidden;
-    box-shadow: 0 18px 45px rgba(122, 21, 48, 0.12);
+    box-shadow: 0 18px 45px rgba(225, 29, 72, 0.12);
     border: 3px solid #ffffff;
     position: relative;
 }
@@ -239,7 +239,7 @@
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #7a1530 0%, #5a0e23 100%);
+    background: linear-gradient(135deg, #e11d48 0%, #5a0e23 100%);
     color: #ffd700;
     display: flex;
     align-items: center;
@@ -278,7 +278,7 @@
 .section-center-head .head-tag {
     font-size: 12.5px;
     font-weight: 800;
-    color: #7a1530;
+    color: #e11d48;
     letter-spacing: 1.5px;
     text-transform: uppercase;
     margin-bottom: 8px;
@@ -311,7 +311,7 @@
 }
 .value-card-premium:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 28px rgba(122,21,48,0.08);
+    box-shadow: 0 12px 28px rgba(225, 29, 72,0.08);
     border-color: #d4af37;
     background: #ffffff;
 }
@@ -320,7 +320,7 @@
     height: 50px;
     border-radius: 12px;
     background: #fdf2f4;
-    color: #7a1530;
+    color: #e11d48;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -378,14 +378,14 @@
     box-shadow: 0 2px 6px rgba(0,0,0,0.03);
 }
 .about-loc-tab:hover {
-    border-color: #7a1530;
-    color: #7a1530;
+    border-color: #e11d48;
+    color: #e11d48;
 }
 .about-loc-tab.active {
-    background: linear-gradient(135deg, #7a1530 0%, #5a0e23 100%);
-    border-color: #7a1530;
+    background: linear-gradient(135deg, #e11d48 0%, #5a0e23 100%);
+    border-color: #e11d48;
     color: #ffffff;
-    box-shadow: 0 6px 18px rgba(122,21,48,0.25);
+    box-shadow: 0 6px 18px rgba(225, 29, 72,0.25);
 }
 
 /* Showroom Content Grid: Details Card on Left + Interactive Map on Right */
@@ -412,7 +412,7 @@
     align-items: center;
     gap: 6px;
     background: #fdf2f4;
-    color: #7a1530;
+    color: #e11d48;
     font-size: 11.5px;
     font-weight: 800;
     padding: 4px 12px;
@@ -420,7 +420,7 @@
     letter-spacing: 0.5px;
     text-transform: uppercase;
     margin-bottom: 12px;
-    border: 1px solid rgba(122,21,48,0.15);
+    border: 1px solid rgba(225, 29, 72,0.15);
 }
 .showroom-panel-title {
     font-size: 24px;
@@ -452,7 +452,7 @@
 .showroom-row-icon.red { background: #fee2e2; color: #dc2626; }
 .showroom-row-icon.teal { background: #ccfbf1; color: #0d9488; }
 .showroom-row-icon.green { background: #dcfce7; color: #16a34a; }
-.showroom-row-icon.maroon { background: #fdf2f4; color: #7a1530; }
+.showroom-row-icon.maroon { background: #fdf2f4; color: #e11d48; }
 
 .showroom-row-content {
     flex: 1;
@@ -477,7 +477,7 @@
     transition: color 0.2s;
 }
 .showroom-row-val a:hover {
-    color: #7a1530;
+    color: #e11d48;
 }
 
 /* Action Buttons */
@@ -492,7 +492,7 @@
 .btn-action-directions {
     flex: 1 1 0;
     min-width: 0;
-    background: #7a1530;
+    background: #e11d48;
     color: #ffffff;
     font-size: 13px;
     font-weight: 700;
@@ -503,7 +503,7 @@
     align-items: center;
     justify-content: center;
     gap: 6px;
-    box-shadow: 0 4px 12px rgba(122,21,48,0.2);
+    box-shadow: 0 4px 12px rgba(225, 29, 72,0.2);
     transition: all 0.2s ease;
     white-space: nowrap;
 }
@@ -569,8 +569,8 @@
     }
 }
 .btn-action-call:hover {
-    border-color: #7a1530;
-    color: #7a1530;
+    border-color: #e11d48;
+    color: #e11d48;
 }
 
 /* Interactive Map Container */
@@ -597,7 +597,7 @@
     color: #475569;
 }
 .map-panel-header a {
-    color: #7a1530;
+    color: #e11d48;
     text-decoration: none;
     display: inline-flex;
     align-items: center;
@@ -621,7 +621,7 @@
 
 /* Callout Strip */
 .about-visit-strip {
-    background: linear-gradient(135deg, #7a1530 0%, #5a0e23 100%);
+    background: linear-gradient(135deg, #e11d48 0%, #5a0e23 100%);
     border-radius: 14px;
     padding: 30px 36px;
     margin-top: 45px;
@@ -631,7 +631,7 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 20px;
-    box-shadow: 0 10px 30px rgba(122,21,48,0.25);
+    box-shadow: 0 10px 30px rgba(225, 29, 72,0.25);
 }
 .about-visit-strip h3 {
     font-size: 21px;
@@ -646,7 +646,7 @@
 }
 .btn-video-call {
     background: #ffffff;
-    color: #7a1530;
+    color: #e11d48;
     font-size: 14px;
     font-weight: 800;
     padding: 12px 24px;
@@ -661,7 +661,7 @@
 }
 .btn-video-call:hover {
     background: #ffd700;
-    color: #1a050b;
+    color: #0f172a;
     transform: translateY(-2px);
 }
 
@@ -888,11 +888,11 @@
 
                             <!-- Social Channels Container -->
                             <div class="showroom-panel-row" style="background: #faf8f5; border: 1px solid #ebdcd0; border-radius: 10px; padding: 12px 14px; margin-top: 4px;">
-                                <div class="showroom-row-icon maroon" style="background: #fdf2f4; color: #7a1530;">
+                                <div class="showroom-row-icon maroon" style="background: #fdf2f4; color: #e11d48;">
                                     <i class="fa-solid fa-share-nodes"></i>
                                 </div>
                                 <div class="showroom-row-content">
-                                    <div class="showroom-row-label" style="color: #7a1530;">Connect On Social Media</div>
+                                    <div class="showroom-row-label" style="color: #e11d48;">Connect On Social Media</div>
                                     <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 6px;">
                                         <a href="https://wa.me/<?= $formatWaNumber($activeLoc['whatsapp'] ?? $whatsappNo) ?>" target="_blank" style="width: 34px; height: 34px; border-radius: 8px; background: #25D366; color: white; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; font-size: 16px;" title="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                                         <a href="<?= esc(!empty($settings['youtube_link']) ? $settings['youtube_link'] : 'https://youtube.com/@srisakthiselvitex') ?>" target="_blank" style="width: 34px; height: 34px; border-radius: 8px; background: #FF0000; color: white; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; font-size: 16px;" title="YouTube Channel"><i class="fa-brands fa-youtube"></i></a>
@@ -918,7 +918,7 @@
                         </a>
 
                         <a href="tel:<?= preg_replace('/[^0-9+]/', '', $activeLoc['phone'] ?? $phoneNo) ?>" id="about-btn-call" class="btn-action-call">
-                            <i class="fa-solid fa-phone" style="color: #7a1530;"></i>
+                            <i class="fa-solid fa-phone" style="color: #e11d48;"></i>
                             <span>Call Now</span>
                         </a>
                     </div>
@@ -927,7 +927,7 @@
                 <!-- Right: Interactive Live Google Maps Iframe -->
                 <div class="showroom-map-panel">
                     <div class="map-panel-header">
-                        <span><i class="fa-solid fa-map" style="color: #7a1530; margin-right: 6px;"></i> Live Google Maps Location</span>
+                        <span><i class="fa-solid fa-map" style="color: #e11d48; margin-right: 6px;"></i> Live Google Maps Location</span>
                         <a href="<?= esc($activeLoc['map_link'] ?? 'https://maps.google.com') ?>" target="_blank" id="about-map-external-link">
                             <span>Open in Google Maps</span> <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 11px;"></i>
                         </a>

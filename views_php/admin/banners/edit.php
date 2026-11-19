@@ -47,7 +47,7 @@
                 <!-- Banner Title -->
                 <div class="banner-form-group">
                     <label class="banner-form-label" for="bannerTitle">
-                        <i class="fa-solid fa-heading" style="color: #7a1530;"></i>
+                        <i class="fa-solid fa-heading" style="color: #e11d48;"></i>
                         <span>Banner Title</span>
                         <span class="required-star">*</span>
                     </label>
@@ -73,7 +73,7 @@
                 <!-- Banner Position -->
                 <div class="banner-form-group">
                     <label class="banner-form-label" for="bannerPositionSelect">
-                        <i class="fa-solid fa-layer-group" style="color: #7a1530;"></i>
+                        <i class="fa-solid fa-layer-group" style="color: #e11d48;"></i>
                         <span>Banner Position</span>
                         <span class="required-star">*</span>
                     </label>
@@ -109,7 +109,7 @@
                 <!-- Banner Media (Image or Video) Redesign -->
                 <div class="banner-form-group">
                     <label class="banner-form-label">
-                        <i class="fa-solid fa-photo-film" style="color: #7a1530;"></i>
+                        <i class="fa-solid fa-photo-film" style="color: #e11d48;"></i>
                         <span>Banner Media (Image or Video)</span>
                         <span class="banner-label-badge">Optional on edit</span>
                     </label>

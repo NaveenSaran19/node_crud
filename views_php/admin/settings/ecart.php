@@ -7,7 +7,7 @@
 <div class="settings-container">
     <div class="settings-header">
         <h2>
-            <i class="fa-solid fa-truck-fast" style="margin-right: 10px; color: #7a1530;"></i> eCart Logistics &amp; Shipping Settings
+            <i class="fa-solid fa-truck-fast" style="margin-right: 10px; color: #e11d48;"></i> eCart Logistics &amp; Shipping Settings
         </h2>
         <p>Configure automated order dispatch, AWB waybill generation, and shipment tracking.</p>
     </div>
@@ -21,7 +21,7 @@
     <div class="premium-card" style="background: #fff; padding: 25px; border-radius: 12px; border: 1px solid #e2e8f0; margin-bottom: 25px;">
         <form action="<?= base_url('admin/settings/ecart/update') ?>" method="POST">
             <h3 style="font-size: 16px; font-weight: 700; color: #0f172a; margin-bottom: 20px; display: flex; align-items: center; gap: 8px;">
-                <i class="fa-solid fa-sliders" style="color: #7a1530;"></i> API &amp; Account Credentials
+                <i class="fa-solid fa-sliders" style="color: #e11d48;"></i> API &amp; Account Credentials
             </h3>
 
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
@@ -60,7 +60,7 @@
             <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 25px 0;">
 
             <h3 style="font-size: 16px; font-weight: 700; color: #0f172a; margin-bottom: 20px; display: flex; align-items: center; gap: 8px;">
-                <i class="fa-solid fa-location-dot" style="color: #7a1530;"></i> Warehouse &amp; Pickup Address
+                <i class="fa-solid fa-location-dot" style="color: #e11d48;"></i> Warehouse &amp; Pickup Address
             </h3>
 
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
@@ -83,7 +83,7 @@
                 </div>
             </div>
 
-            <button type="submit" style="background: #7a1530; color: #fff; padding: 12px 28px; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; transition: 0.2s;">
+            <button type="submit" style="background: #e11d48; color: #fff; padding: 12px 28px; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; transition: 0.2s;">
                 <i class="fa-solid fa-save"></i> Save eCart Configuration
             </button>
         </form>
@@ -92,7 +92,7 @@
     <!-- Live AWB Tracking Lookup -->
     <div class="premium-card" style="background: #fff; padding: 25px; border-radius: 12px; border: 1px solid #e2e8f0;">
         <h3 style="font-size: 16px; font-weight: 700; color: #0f172a; margin-bottom: 15px; display: flex; align-items: center; gap: 8px;">
-            <i class="fa-solid fa-magnifying-glass" style="color: #7a1530;"></i> Live eCart Shipment Tracking Lookup
+            <i class="fa-solid fa-magnifying-glass" style="color: #e11d48;"></i> Live eCart Shipment Tracking Lookup
         </h3>
         <p style="color: #64748b; font-size: 13.5px; margin-bottom: 20px;">Enter an AWB or Tracking Number to test live status retrieval from eCart logistics.</p>
 

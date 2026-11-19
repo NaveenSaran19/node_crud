@@ -239,7 +239,7 @@
 }
 
 .page-main-title .title-icon {
-    color: #7a1530;
+    color: #e11d48;
     font-size: 26px;
 }
 
@@ -338,7 +338,7 @@
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background: linear-gradient(135deg, #7a1530 0%, #aa1a40 100%);
+    background: linear-gradient(135deg, #e11d48 0%, #aa1a40 100%);
     color: #ffffff;
     font-size: 32px;
     font-weight: 800;
@@ -346,7 +346,7 @@
     align-items: center;
     justify-content: center;
     border: 3px solid #d4af37;
-    box-shadow: 0 8px 20px rgba(122, 21, 48, 0.25);
+    box-shadow: 0 8px 20px rgba(225, 29, 72, 0.25);
     letter-spacing: 1px;
 }
 
@@ -373,8 +373,8 @@
     align-items: center;
     gap: 6px;
     padding: 4px 12px;
-    background: rgba(122, 21, 48, 0.1);
-    color: #7a1530;
+    background: rgba(225, 29, 72, 0.1);
+    color: #e11d48;
     border-radius: 20px;
     font-size: 12px;
     font-weight: 700;
@@ -410,7 +410,7 @@
 
 .meta-item i {
     width: 16px;
-    color: #7a1530;
+    color: #e11d48;
     text-align: center;
     font-size: 13px;
 }
@@ -426,7 +426,7 @@
 .checklist-title {
     font-size: 12px;
     font-weight: 800;
-    color: #7a1530;
+    color: #e11d48;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     margin-bottom: 10px;
@@ -481,9 +481,9 @@
 .header-icon-box {
     width: 42px;
     height: 42px;
-    background: rgba(122, 21, 48, 0.1);
-    border: 1px solid rgba(122, 21, 48, 0.2);
-    color: #7a1530;
+    background: rgba(225, 29, 72, 0.1);
+    border: 1px solid rgba(225, 29, 72, 0.2);
+    color: #e11d48;
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -579,12 +579,12 @@
 
 .profile-form-control:focus {
     background: #ffffff;
-    border-color: #7a1530;
-    box-shadow: 0 0 0 3px rgba(122, 21, 48, 0.12);
+    border-color: #e11d48;
+    box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.12);
 }
 
 .profile-input-wrapper:focus-within .field-icon {
-    color: #7a1530;
+    color: #e11d48;
 }
 
 .field-hint {
@@ -642,7 +642,7 @@
 
 .btn-profile-primary {
     padding: 10px 24px;
-    background: linear-gradient(135deg, #7a1530 0%, #580c21 100%);
+    background: linear-gradient(135deg, #e11d48 0%, #580c21 100%);
     border: 1px solid #580c21;
     color: #ffffff;
     border-radius: 8px;
@@ -652,13 +652,13 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    box-shadow: 0 4px 12px rgba(122, 21, 48, 0.25);
+    box-shadow: 0 4px 12px rgba(225, 29, 72, 0.25);
     transition: all 0.2s ease;
 }
 
 .btn-profile-primary:hover {
     background: linear-gradient(135deg, #580c21 0%, #400717 100%);
-    box-shadow: 0 6px 16px rgba(122, 21, 48, 0.35);
+    box-shadow: 0 6px 16px rgba(225, 29, 72, 0.35);
     transform: translateY(-1px);
 }
 

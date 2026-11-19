@@ -7,7 +7,7 @@
     padding: 35px 20px 45px 20px;
     background: linear-gradient(180deg, #fdfbf7 0%, #fffdfa 100%);
     position: relative;
-    border-bottom: 1px solid rgba(122, 21, 48, 0.08);
+    border-bottom: 1px solid rgba(225, 29, 72, 0.08);
 }
 
 .trust-highlights-container {
@@ -23,7 +23,7 @@
 
 .trust-card {
     background: #ffffff;
-    border: 1px solid rgba(122, 21, 48, 0.12);
+    border: 1px solid rgba(225, 29, 72, 0.12);
     border-radius: 14px;
     padding: 26px 20px 24px 20px;
     display: flex;
@@ -31,7 +31,7 @@
     align-items: center;
     text-align: center;
     position: relative;
-    box-shadow: 0 4px 18px rgba(122, 21, 48, 0.04);
+    box-shadow: 0 4px 18px rgba(225, 29, 72, 0.04);
     transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
     overflow: hidden;
 }
@@ -52,8 +52,8 @@
 
 .trust-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 14px 30px rgba(122, 21, 48, 0.1);
-    border-color: rgba(122, 21, 48, 0.28);
+    box-shadow: 0 14px 30px rgba(225, 29, 72, 0.1);
+    border-color: rgba(225, 29, 72, 0.28);
 }
 
 .trust-card:hover::before {
@@ -67,24 +67,24 @@
     width: 64px;
     height: 64px;
     border-radius: 50%;
-    background: linear-gradient(135deg, rgba(122, 21, 48, 0.07) 0%, rgba(212, 175, 55, 0.12) 100%);
+    background: linear-gradient(135deg, rgba(225, 29, 72, 0.07) 0%, rgba(212, 175, 55, 0.12) 100%);
     border: 1.5px solid rgba(212, 175, 55, 0.35);
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 16px;
-    color: var(--primary-color, #7a1530);
+    color: var(--primary-color, #e11d48);
     font-size: 24px;
     transition: all 0.35s ease;
     flex-shrink: 0;
 }
 
 .trust-card:hover .trust-icon-wrapper {
-    background: linear-gradient(135deg, var(--primary-color, #7a1530) 0%, #a01d40 100%);
+    background: linear-gradient(135deg, var(--primary-color, #e11d48) 0%, #a01d40 100%);
     color: #ffffff;
     border-color: #d4af37;
     transform: scale(1.08) rotate(2deg);
-    box-shadow: 0 6px 16px rgba(122, 21, 48, 0.22);
+    box-shadow: 0 6px 16px rgba(225, 29, 72, 0.22);
 }
 
 /* Prominent Heading */
@@ -92,7 +92,7 @@
     font-family: inherit;
     font-size: 17px;
     font-weight: 700;
-    color: var(--primary-color, #7a1530);
+    color: var(--primary-color, #e11d48);
     margin: 0 0 8px 0;
     line-height: 1.35;
     letter-spacing: -0.2px;

@@ -82,7 +82,7 @@
     <div class="form-header">
         <h2><i class="fa-solid fa-pen-to-square" style="margin-right: 10px;"></i> Edit Product</h2>
         <div style="display: flex; gap: 10px; align-items: center;">
-            <a href="<?= base_url('product/' . esc($product['slug'])) ?>" target="_blank" class="btn-outline" style="background: #fdfbf7; border-color: #d4af37; color: #7a1530; font-weight: 700;">
+            <a href="<?= base_url('product/' . esc($product['slug'])) ?>" target="_blank" class="btn-outline" style="background: #fdfbf7; border-color: #d4af37; color: #e11d48; font-weight: 700;">
                 <i class="fa-solid fa-arrow-up-right-from-square"></i> View Live on Website
             </a>
             <a href="<?= base_url('admin/products') . (!empty($product['is_combo']) ? '?tab=combos#combos' : '?tab=products#products') ?>" class="btn-outline" id="headerBackBtn">
@@ -116,7 +116,7 @@
         <div class="product-type-slider-wrapper">
             <div class="product-type-slider-header">
                 <div class="slider-main-title">
-                    <i class="fa-solid fa-layer-group" style="color: #7a1530;"></i>
+                    <i class="fa-solid fa-layer-group" style="color: #e11d48;"></i>
                     <span>Product Type</span>
                 </div>
                 <div class="slider-main-desc">Slide to switch whether this item is a Single Product or a Combo Pack</div>
@@ -199,7 +199,7 @@
             <div style="display: grid; grid-template-columns: <?= $sku_enabled ? '1.4fr 1.2fr 0.9fr' : '1.4fr 1.2fr' ?>; gap: 20px;">
                 <div class="form-group">
                     <label class="form-label" style="display: flex; align-items: center; gap: 6px;">
-                        <i class="fa-solid fa-shirt" style="color: #7a1530; font-size: 13px;"></i>
+                        <i class="fa-solid fa-shirt" style="color: #e11d48; font-size: 13px;"></i>
                         <span>Product Name</span>
                         <span style="color: #dc2626;">*</span>
                     </label>
@@ -211,7 +211,7 @@
                 </div>
                 <div class="form-group">
                     <label class="form-label" style="display: flex; align-items: center; gap: 6px;">
-                        <i class="fa-solid fa-layer-group" style="color: #7a1530; font-size: 13px;"></i>
+                        <i class="fa-solid fa-layer-group" style="color: #e11d48; font-size: 13px;"></i>
                         <span>Subcategory</span>
                         <span style="color: #dc2626;">*</span>
                     </label>
@@ -239,7 +239,7 @@
                 <?php if ($sku_enabled): ?>
                 <div class="form-group">
                     <label class="form-label" style="display: flex; align-items: center; gap: 6px;">
-                        <i class="fa-solid fa-barcode" style="color: #7a1530; font-size: 13px;"></i>
+                        <i class="fa-solid fa-barcode" style="color: #e11d48; font-size: 13px;"></i>
                         <span>SKU</span>
                         <small style="color: #94a3b8; font-weight: 500;">(Optional)</small>
                     </label>
@@ -303,7 +303,7 @@
                     <div class="pricing-field-col">
                         <div class="pricing-label-row">
                             <label class="form-label">
-                                <i class="fa-solid fa-receipt" style="color: #7a1530;"></i>
+                                <i class="fa-solid fa-receipt" style="color: #e11d48;"></i>
                                 GST Rate
                             </label>
                             <span class="price-chip-tag tax-tag">Tax</span>
@@ -350,7 +350,7 @@
                     <div style="display: flex; gap: 6px;">
                         <button type="button" class="btn btn-sm btn-outline-secondary" onclick="insertDescFormat('desc-textarea', '**', '**')" style="padding: 2px 8px; font-size: 11px; font-weight: 700; border-radius: 4px; border: 1px solid #cbd5e1; background: #fff; cursor: pointer;"><strong>B</strong> Bold</button>
                         <button type="button" class="btn btn-sm btn-outline-secondary" onclick="insertDescFormat('desc-textarea', '- ', '')" style="padding: 2px 8px; font-size: 11px; font-weight: 700; border-radius: 4px; border: 1px solid #cbd5e1; background: #fff; cursor: pointer;">• Bullet</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary" onclick="insertDescExample('desc-textarea')" style="padding: 2px 8px; font-size: 11px; font-weight: 700; border-radius: 4px; border: 1px solid #cbd5e1; background: #fff; cursor: pointer; color: #7a1530;">+ Load Template</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary" onclick="insertDescExample('desc-textarea')" style="padding: 2px 8px; font-size: 11px; font-weight: 700; border-radius: 4px; border: 1px solid #cbd5e1; background: #fff; cursor: pointer; color: #e11d48;">+ Load Template</button>
                     </div>
                 </div>
                 <textarea id="desc-textarea" name="description" class="premium-input" rows="6" placeholder="Example format:&#10;**Special Discount Channel Offer on Trendy Designer Fancy Silk Saree**&#10;&#10;- Premium Quality Product&#10;- Fast Delivery Available&#10;- Blouse Attached (0.8 Meters)"><?= old('description', $product['description'] ?? '') ?></textarea>
@@ -372,7 +372,7 @@
         <div class="premium-card">
             <div class="card-section-header">
                 <div class="card-section-title-wrap">
-                    <span class="card-section-icon-badge" style="background: linear-gradient(135deg, #fdfbf7 0%, #fef3c7 100%); color: #7a1530; border-color: #f3ebd9;">
+                    <span class="card-section-icon-badge" style="background: linear-gradient(135deg, #fdfbf7 0%, #fef3c7 100%); color: #e11d48; border-color: #f3ebd9;">
                         <i class="fa-solid fa-ruler-combined"></i>
                     </span>
                     <div>
@@ -380,8 +380,8 @@
                         <p>Drape dimensions, blouse attachment specifications, highlights, and size chart</p>
                     </div>
                 </div>
-                <span class="required-indicator-pill" style="color: #7a1530; background: #fff5f7; border-color: #fecdd3;">
-                    <i class="fa-solid fa-circle-info" style="color: #7a1530;"></i> Product Detail Specs
+                <span class="required-indicator-pill" style="color: #e11d48; background: #fff5f7; border-color: #fecdd3;">
+                    <i class="fa-solid fa-circle-info" style="color: #e11d48;"></i> Product Detail Specs
                 </span>
             </div>
 
@@ -389,7 +389,7 @@
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px; margin-bottom: 20px;">
                 <div>
                     <label class="form-label" style="font-size: 12px; font-weight: 700; color: #334155; margin-bottom: 5px;">
-                        <i class="fa-solid fa-arrows-left-right" style="color: #7a1530; margin-right: 4px;"></i> Saree Length
+                        <i class="fa-solid fa-arrows-left-right" style="color: #e11d48; margin-right: 4px;"></i> Saree Length
                     </label>
                     <input type="text" name="saree_length" class="premium-input" value="<?= old('saree_length', $product['saree_length'] ?? '6.30 Meters (Including Blouse)') ?>" placeholder="e.g. 6.30 Meters (Including Blouse)">
                     <small style="font-size: 11px; color: #64748b; margin-top: 4px; display: block;">e.g. 6.30 Meters (Including Blouse)</small>
@@ -397,7 +397,7 @@
 
                 <div>
                     <label class="form-label" style="font-size: 12px; font-weight: 700; color: #334155; margin-bottom: 5px;">
-                        <i class="fa-solid fa-arrows-up-down" style="color: #7a1530; margin-right: 4px;"></i> Height
+                        <i class="fa-solid fa-arrows-up-down" style="color: #e11d48; margin-right: 4px;"></i> Height
                     </label>
                     <input type="text" name="saree_height" class="premium-input" value="<?= old('saree_height', $product['saree_height'] ?? '44 to 47 inches') ?>" placeholder="e.g. 44 to 47 inches">
                     <small style="font-size: 11px; color: #64748b; margin-top: 4px; display: block;">e.g. 44 to 47 inches</small>
@@ -405,7 +405,7 @@
 
                 <div id="dhoti_field_wrapper" style="display: <?= $isCombo ? 'block' : 'none' ?>;">
                     <label class="form-label" style="font-size: 12px; font-weight: 700; color: #334155; margin-bottom: 5px;">
-                        <i class="fa-solid fa-vest" style="color: #7a1530; margin-right: 4px;"></i> Dhoti Dimensions / Option
+                        <i class="fa-solid fa-vest" style="color: #e11d48; margin-right: 4px;"></i> Dhoti Dimensions / Option
                         <span style="font-size: 10px; color: #d97706; background: #fef3c7; border: 1px solid #fde68a; padding: 1px 6px; border-radius: 4px; margin-left: 4px; font-weight: 700;">Combo Only</span>
                     </label>
                     <input type="text" name="dhoti_length" list="dhoti-preset-options" class="premium-input" value="<?= old('dhoti_length', $product['dhoti_length'] ?? '') ?>" placeholder="e.g. 8 Muzham (Double Dhoti)">
@@ -428,7 +428,7 @@
                 ?>
                 <div>
                     <label class="form-label" style="font-size: 12px; font-weight: 700; color: #334155; margin-bottom: 5px;">
-                        <i class="fa-solid fa-scissors" style="color: #7a1530; margin-right: 4px;"></i> Blouse Attached Meter
+                        <i class="fa-solid fa-scissors" style="color: #e11d48; margin-right: 4px;"></i> Blouse Attached Meter
                     </label>
                     <select id="blouse_dropdown_selector" class="premium-input" onchange="handleBlouseDropdownChange(this.value)" style="cursor: pointer; font-weight: 600; font-size: 13px;">
                         <option value="0.8 Meters" <?= ($currentBlouse === '0.8 Meters' || ($isBlouseAttached && strpos($currentBlouse, '0.8') !== false)) ? 'selected' : '' ?>>Attached (0.8 Meters)</option>
@@ -462,7 +462,7 @@
                 <div class="form-group" style="margin-bottom: 0;">
                     <label class="form-label" style="font-size: 13px; font-weight: 700; color: #1e293b; display: flex; align-items: center; justify-content: space-between;">
                         <span>
-                            <i class="fa-solid fa-scissors" style="color: #7a1530; margin-right: 6px;"></i> Blouse Measurement Chart
+                            <i class="fa-solid fa-scissors" style="color: #e11d48; margin-right: 6px;"></i> Blouse Measurement Chart
                         </span>
                     </label>
                     <?php if(!empty($product['blouse_measurement_image'])): ?>
@@ -482,7 +482,7 @@
                 <div class="form-group" id="dhoti_chart_wrapper" style="margin-bottom: 0; display: <?= $isCombo ? 'block' : 'none' ?>;">
                     <label class="form-label" style="font-size: 13px; font-weight: 700; color: #1e293b; display: flex; align-items: center; justify-content: space-between;">
                         <span>
-                            <i class="fa-solid fa-vest" style="color: #7a1530; margin-right: 6px;"></i> Dhoti Size / Measurement Chart Image
+                            <i class="fa-solid fa-vest" style="color: #e11d48; margin-right: 6px;"></i> Dhoti Size / Measurement Chart Image
                             <span style="font-size: 10px; color: #d97706; background: #fef3c7; border: 1px solid #fde68a; padding: 1px 6px; border-radius: 4px; margin-left: 4px; font-weight: 700;">Combo Only</span>
                         </span>
                     </label>
@@ -528,9 +528,9 @@
             <div class="attribute-presets-palette" style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 14px 18px; margin-bottom: 18px;">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 8px;">
                     <span style="font-size: 12.5px; font-weight: 800; color: #1e293b; text-transform: uppercase; letter-spacing: 0.5px; display: inline-flex; align-items: center; gap: 6px;">
-                        <i class="fa-solid fa-swatchbook" style="color: #7a1530;"></i> Color &amp; Size Attribute Presets
+                        <i class="fa-solid fa-swatchbook" style="color: #e11d48;"></i> Color &amp; Size Attribute Presets
                     </span>
-                    <a href="<?= base_url('admin/settings?section=attributes') ?>" target="_blank" style="font-size: 12px; color: #7a1530; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">
+                    <a href="<?= base_url('admin/settings?section=attributes') ?>" target="_blank" style="font-size: 12px; color: #e11d48; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">
                         <i class="fa-solid fa-gear"></i> Manage Attributes in Settings <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 10px;"></i>
                     </a>
                 </div>
@@ -549,7 +549,7 @@
                                     style="display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 20px; background: #ffffff; border: 1.5px solid #cbd5e1; font-size: 12px; font-weight: 700; color: #1e293b; cursor: pointer; transition: all 0.2s; box-shadow: 0 1px 3px rgba(0,0,0,0.04);">
                                 <span style="width: 13px; height: 13px; border-radius: 50%; background-color: <?= esc($cOpt['code']) ?>; border: 1px solid rgba(0,0,0,0.2); display: inline-block;"></span>
                                 <span><?= esc($cOpt['name']) ?></span>
-                                <i class="fa-solid fa-plus" style="font-size: 9px; color: #7a1530;"></i>
+                                <i class="fa-solid fa-plus" style="font-size: 9px; color: #e11d48;"></i>
                             </button>
                         <?php endforeach; ?>
                     </div>
@@ -560,7 +560,7 @@
             <div class="variant-cards-container" id="variants-container">
                 <?php if(!empty($variants)): ?>
                     <?php foreach($variants as $idx => $v): 
-                        $cCode = !empty($v['color_code']) ? $v['color_code'] : '#7a1530';
+                        $cCode = !empty($v['color_code']) ? $v['color_code'] : '#e11d48';
                         $cName = $v['color_name'] ?? '';
                         $curSize = $v['size'] ?? '';
                         $vImages = !empty($v['images']) ? $v['images'] : [];
@@ -937,7 +937,7 @@
                         <i class="fa-brands fa-youtube" style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: #ef4444; font-size: 17px; pointer-events: none;"></i>
                     </div>
                     <span style="font-size: 12px; color: #94a3b8; margin-top: 5px; display: block;">
-                        Options are loaded dynamically from <a href="<?= base_url('admin/settings/channel-tabs') ?>" target="_blank" style="color: #7a1530; font-weight: 700; text-decoration: underline;">Save Channel Tabs</a> settings.
+                        Options are loaded dynamically from <a href="<?= base_url('admin/settings/channel-tabs') ?>" target="_blank" style="color: #e11d48; font-weight: 700; text-decoration: underline;">Save Channel Tabs</a> settings.
                     </span>
                 </div>
 
@@ -1001,7 +1001,7 @@
                         <i class="fa-brands fa-instagram" style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: #e1306c; font-size: 18px; pointer-events: none;"></i>
                     </div>
                     <span style="font-size: 12px; color: #94a3b8; margin-top: 5px; display: block;">
-                        Options are loaded dynamically from <a href="<?= base_url('admin/settings/channel-tabs') ?>" target="_blank" style="color: #7a1530; font-weight: 700; text-decoration: underline;">Save Channel Tabs</a> settings.
+                        Options are loaded dynamically from <a href="<?= base_url('admin/settings/channel-tabs') ?>" target="_blank" style="color: #e11d48; font-weight: 700; text-decoration: underline;">Save Channel Tabs</a> settings.
                     </span>
                 </div>
 
@@ -1072,7 +1072,7 @@
                         <i class="fa-brands fa-facebook" style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: #1877f2; font-size: 18px; pointer-events: none;"></i>
                     </div>
                     <span style="font-size: 12px; color: #94a3b8; margin-top: 5px; display: block;">
-                        Options are loaded dynamically from <a href="<?= base_url('admin/settings/channel-tabs') ?>" target="_blank" style="color: #7a1530; font-weight: 700; text-decoration: underline;">Save Channel Tabs</a> settings.
+                        Options are loaded dynamically from <a href="<?= base_url('admin/settings/channel-tabs') ?>" target="_blank" style="color: #e11d48; font-weight: 700; text-decoration: underline;">Save Channel Tabs</a> settings.
                     </span>
                 </div>
 
@@ -1206,7 +1206,7 @@
                     <div class="vmodal-subtitle">
                         Managing photos for: 
                         <span class="vmodal-color-tag">
-                            <span class="vmodal-swatch-dot" id="modal-swatch-dot" style="background-color: #7a1530;"></span>
+                            <span class="vmodal-swatch-dot" id="modal-swatch-dot" style="background-color: #e11d48;"></span>
                             <strong id="modal-variant-name">Color Option</strong>
                         </span>
                         <span class="vmodal-photo-counter" id="modal-photo-counter">0 photos</span>

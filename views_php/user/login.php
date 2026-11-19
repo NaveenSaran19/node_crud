@@ -30,7 +30,7 @@
 }
 .customer-login-brand {
     flex: 1;
-    background: radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.18) 0%, transparent 45%), linear-gradient(145deg, #7a1530 0%, #3e0716 100%);
+    background: radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.18) 0%, transparent 45%), linear-gradient(145deg, #e11d48 0%, #3e0716 100%);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -259,7 +259,7 @@
                     <input type="email" name="email" value="" placeholder="name@example.com" required style="width: 100%; padding: 12px 14px; border: 1px solid #cbd5e1; border-radius: 8px; outline: none; font-size: 14px; box-sizing: border-box; transition: border-color 0.2s;">
                 </div>
 
-                <button type="submit" style="width: 100%; background: #7a1530; color: white; border: none; padding: 14px; font-size: 15px; font-weight: 700; border-radius: 8px; cursor: pointer; transition: background 0.2s; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                <button type="submit" style="width: 100%; background: #e11d48; color: white; border: none; padding: 14px; font-size: 15px; font-weight: 700; border-radius: 8px; cursor: pointer; transition: background 0.2s; display: flex; align-items: center; justify-content: center; gap: 8px;">
                     <i class="fa-solid fa-arrow-right-to-bracket"></i> Enter Customer Dashboard
                 </button>
             </form>

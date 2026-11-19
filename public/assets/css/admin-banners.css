@@ -39,13 +39,13 @@
     width: 48px;
     height: 48px;
     border-radius: 14px;
-    background: linear-gradient(135deg, #7a1530 0%, #4a0d1d 100%);
+    background: linear-gradient(135deg, #e11d48 0%, #4a0d1d 100%);
     color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 20px;
-    box-shadow: 0 4px 16px rgba(122, 21, 48, 0.25);
+    box-shadow: 0 4px 16px rgba(225, 29, 72, 0.25);
     flex-shrink: 0;
 }
 
@@ -92,7 +92,7 @@
     background: #ffffff;
     border-radius: 18px;
     border: 1.5px solid #f1e4e8;
-    box-shadow: 0 10px 30px rgba(122, 21, 48, 0.05), 0 1px 3px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 10px 30px rgba(225, 29, 72, 0.05), 0 1px 3px rgba(0, 0, 0, 0.03);
     overflow: hidden;
 }
 
@@ -130,7 +130,7 @@
     font-weight: 700;
     text-transform: uppercase;
     background: #fdf2f4;
-    color: #7a1530;
+    color: #e11d48;
     border: 1px solid #f9d6dd;
     padding: 2px 8px;
     border-radius: 6px;
@@ -168,14 +168,14 @@
 }
 
 .banner-form-input:focus {
-    border-color: #7a1530;
+    border-color: #e11d48;
     background: #fff;
-    box-shadow: 0 0 0 4px rgba(122, 21, 48, 0.1);
+    box-shadow: 0 0 0 4px rgba(225, 29, 72, 0.1);
 }
 
 .banner-form-input:focus + .banner-input-icon,
 .banner-input-wrapper:focus-within .banner-input-icon {
-    color: #7a1530;
+    color: #e11d48;
 }
 
 .banner-form-select {
@@ -196,8 +196,8 @@
 }
 
 .banner-form-select:focus {
-    border-color: #7a1530;
-    box-shadow: 0 0 0 4px rgba(122, 21, 48, 0.1);
+    border-color: #e11d48;
+    box-shadow: 0 0 0 4px rgba(225, 29, 72, 0.1);
 }
 
 .banner-form-help {
@@ -212,7 +212,7 @@
 
 .banner-form-help i {
     font-size: 12px;
-    color: #7a1530;
+    color: #e11d48;
 }
 
 /* Position Helper Cards / Information Grid */
@@ -240,8 +240,8 @@
 
 .banner-pos-card.active {
     background: #fff8f9;
-    border-color: #7a1530;
-    box-shadow: 0 2px 8px rgba(122, 21, 48, 0.08);
+    border-color: #e11d48;
+    box-shadow: 0 2px 8px rgba(225, 29, 72, 0.08);
 }
 
 .banner-pos-num {
@@ -259,7 +259,7 @@
 }
 
 .banner-pos-card.active .banner-pos-num {
-    background: #7a1530;
+    background: #e11d48;
     color: #ffffff;
 }
 
@@ -292,9 +292,9 @@
 
 .banner-upload-dropzone:hover,
 .banner-upload-dropzone.drag-over {
-    border-color: #7a1530;
+    border-color: #e11d48;
     background: linear-gradient(135deg, #fffbfb 0%, #fff5f7 100%);
-    box-shadow: 0 4px 16px rgba(122, 21, 48, 0.06);
+    box-shadow: 0 4px 16px rgba(225, 29, 72, 0.06);
 }
 
 .banner-upload-icon-circle {
@@ -302,13 +302,13 @@
     height: 60px;
     border-radius: 50%;
     background: #ffffff;
-    color: #7a1530;
+    color: #e11d48;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 26px;
     margin: 0 auto 14px auto;
-    box-shadow: 0 4px 16px rgba(122, 21, 48, 0.12);
+    box-shadow: 0 4px 16px rgba(225, 29, 72, 0.12);
     transition: transform 0.25s ease;
 }
 
@@ -354,7 +354,7 @@
 
 .banner-tag-badge.badge-image {
     background: #fdf2f4;
-    color: #7a1530;
+    color: #e11d48;
     border: 1px solid #f9d6dd;
 }
 
@@ -603,7 +603,7 @@
 }
 
 .banner-toggle-switch input:checked + .banner-toggle-slider {
-    background-color: #7a1530;
+    background-color: #e11d48;
 }
 
 .banner-toggle-switch input:checked + .banner-toggle-slider:before {
@@ -631,7 +631,7 @@
 }
 
 .banner-footer-left i {
-    color: #7a1530;
+    color: #e11d48;
 }
 
 .banner-footer-actions {
@@ -665,18 +665,18 @@
     font-size: 14px;
     font-weight: 700;
     color: #ffffff;
-    background: linear-gradient(135deg, #7a1530 0%, #9e1d3e 100%);
+    background: linear-gradient(135deg, #e11d48 0%, #9e1d3e 100%);
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    box-shadow: 0 4px 14px rgba(122, 21, 48, 0.3);
+    box-shadow: 0 4px 14px rgba(225, 29, 72, 0.3);
     transition: all 0.25s ease;
 }
 
 .btn-banner-submit:hover {
     background: linear-gradient(135deg, #641026 0%, #871633 100%);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(122, 21, 48, 0.4);
+    box-shadow: 0 6px 20px rgba(225, 29, 72, 0.4);
 }
 
 .btn-banner-submit:active {

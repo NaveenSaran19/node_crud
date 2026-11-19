@@ -26,8 +26,8 @@
 .stat-card:hover,
 .quick-action-card:hover,
 .availability-card:hover {
-    border-color: #7a1530 !important;
-    box-shadow: 0 8px 24px rgba(122, 21, 48, 0.09) !important;
+    border-color: #e11d48 !important;
+    box-shadow: 0 8px 24px rgba(225, 29, 72, 0.09) !important;
     transform: translateY(-2px);
 }
 
@@ -84,7 +84,7 @@
 
 .availability-card:hover {
     background: #ffffff;
-    border-color: #7a1530 !important;
+    border-color: #e11d48 !important;
 }
 
 .avail-header {
@@ -147,7 +147,7 @@
 .avail-footer-link {
     font-size: 12px;
     font-weight: 700;
-    color: #7a1530;
+    color: #e11d48;
     display: inline-flex;
     align-items: center;
     gap: 6px;
@@ -193,7 +193,7 @@
     <div class="section-title-wrap" style="margin-bottom: 16px;">
         <div class="title-left">
             <h2 class="section-heading" style="font-size: 17px; font-weight: 800; color: #0f172a; display: flex; align-items: center; gap: 8px;">
-                <i class="fa-solid fa-chart-pie" style="color: #7a1530;"></i> Sales Revenue Breakdown
+                <i class="fa-solid fa-chart-pie" style="color: #e11d48;"></i> Sales Revenue Breakdown
             </h2>
             <p class="section-subtext" style="font-size: 13px; color: #64748b; margin: 2px 0 0;">
                 Track completed online &amp; COD revenue across daily, weekly, monthly and yearly intervals.
@@ -233,7 +233,7 @@
         </div>
 
         <!-- Monthly Sales (Current Month) -->
-        <div class="stat-card" style="border-top: 4px solid #7a1530 !important;">
+        <div class="stat-card" style="border-top: 4px solid #e11d48 !important;">
             <div class="stat-header">
                 <span class="stat-label">Monthly Sales</span>
                 <div class="stat-icon-badge icon-maroon">
@@ -336,7 +336,7 @@
     <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; border-bottom: 1.5px solid #e2e8f0; padding-bottom: 16px;">
         <div>
             <h2 style="font-size: 18px; font-weight: 800; color: #0f172a; margin: 0 0 4px; display: flex; align-items: center; gap: 10px;">
-                <i class="fa-solid fa-cubes-stacked" style="color: #7a1530;"></i> Product Availability Summary
+                <i class="fa-solid fa-cubes-stacked" style="color: #e11d48;"></i> Product Availability Summary
             </h2>
             <p style="font-size: 13px; color: #64748b; margin: 0;">
                 Live distribution of catalog tags, featured collections, and special showcase badges across your storefront.

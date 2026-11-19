@@ -88,7 +88,7 @@
 
                         <!-- Dynamic Input for New Header Category -->
                         <div class="cat-input-wrapper" id="new_main_category_wrapper" style="display: <?= old('parent_category_id') === 'NEW' ? 'flex' : 'none' ?>;">
-                            <i class="fa-solid fa-plus-circle cat-input-icon" style="color: #7a1530;"></i>
+                            <i class="fa-solid fa-plus-circle cat-input-icon" style="color: #e11d48;"></i>
                             <input type="text" name="new_main_category" id="new_main_category" class="cat-form-input" placeholder="Type new header category name..." value="<?= old('new_main_category') ?>">
                         </div>
                     </div>
@@ -102,7 +102,7 @@
                 <!-- 2. Subcategory Name -->
                 <div class="cat-form-group">
                     <label class="cat-form-label" for="subcategory_name">
-                        <i class="fa-solid fa-tag" style="color: #7a1530;"></i>
+                        <i class="fa-solid fa-tag" style="color: #e11d48;"></i>
                         <span>Subcategory Name</span>
                         <span class="required-star">*</span>
                     </label>

@@ -9,7 +9,7 @@
     <!-- Drawer Header -->
     <div class="cart-drawer-header">
         <div class="cart-drawer-title-wrap">
-            <i class="fa-solid fa-bag-shopping" style="color: #7a1530; font-size: 19px;"></i>
+            <i class="fa-solid fa-bag-shopping" style="color: #e11d48; font-size: 19px;"></i>
             <h2 class="cart-drawer-title">Your Cart</h2>
             <span class="cart-drawer-count-badge" id="cart-drawer-count-badge">0</span>
         </div>
@@ -156,7 +156,7 @@
 }
 
 .cart-drawer-count-badge {
-    background: #7a1530;
+    background: #e11d48;
     color: #ffffff;
     font-size: 11px;
     font-weight: 700;
@@ -195,7 +195,7 @@
 .cart-drawer-shipping-label {
     font-size: 12px;
     font-weight: 700;
-    color: #7a1530;
+    color: #e11d48;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -216,7 +216,7 @@
 
 .cart-drawer-progress-fill {
     height: 100%;
-    background: linear-gradient(90deg, #d4af37 0%, #7a1530 100%);
+    background: linear-gradient(90deg, #d4af37 0%, #e11d48 100%);
     border-radius: 6px;
     transition: width 0.4s ease;
 }
@@ -291,12 +291,12 @@
     color: inherit;
 }
 .cart-drawer-item-title a:hover {
-    color: #7a1530;
+    color: #e11d48;
 }
 
 .cart-drawer-item-variant {
     font-size: 12px;
-    color: #7a1530;
+    color: #e11d48;
     font-weight: 600;
     margin-bottom: 6px;
     display: flex;
@@ -354,7 +354,7 @@
 
 .cart-drawer-qty-btn:hover {
     background: #f1f5f9;
-    color: #7a1530;
+    color: #e11d48;
 }
 
 .cart-drawer-qty-num {
@@ -394,7 +394,7 @@
     width: 68px;
     height: 68px;
     background: #fdf2f4;
-    color: #7a1530;
+    color: #e11d48;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -422,7 +422,7 @@
     align-items: center;
     justify-content: center;
     padding: 11px 26px;
-    background: #7a1530;
+    background: #e11d48;
     color: #ffffff;
     font-size: 13px;
     font-weight: 700;
@@ -461,7 +461,7 @@
 .cart-drawer-subtotal-row .subtotal-amount {
     font-size: 20px;
     font-weight: 900;
-    color: #7a1530;
+    color: #e11d48;
 }
 
 .cart-drawer-tax-note {
@@ -473,7 +473,7 @@
 .cart-drawer-checkout-btn {
     width: 100%;
     height: 48px;
-    background: #7a1530;
+    background: #e11d48;
     color: #ffffff !important;
     text-decoration: none;
     font-size: 15px;
@@ -483,7 +483,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
-    box-shadow: 0 4px 14px rgba(122, 21, 48, 0.28);
+    box-shadow: 0 4px 14px rgba(225, 29, 72, 0.28);
     transition: all 0.2s ease;
     cursor: pointer;
     border: none;
@@ -492,7 +492,7 @@
 .cart-drawer-checkout-btn:hover {
     background: #5d0f23;
     transform: translateY(-1px);
-    box-shadow: 0 6px 18px rgba(122, 21, 48, 0.35);
+    box-shadow: 0 6px 18px rgba(225, 29, 72, 0.35);
 }
 
 .cart-drawer-secondary-actions {
@@ -504,7 +504,7 @@
 }
 
 .cart-drawer-view-cart-link {
-    color: #7a1530;
+    color: #e11d48;
     font-weight: 700;
     text-decoration: none;
     display: inline-flex;

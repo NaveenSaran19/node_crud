@@ -75,7 +75,7 @@
                 <!-- SEO Metadata Card -->
                 <div class="card" style="padding: 28px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); background: #fff;">
                     <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 1px solid #e2e8f0;">
-                        <i class="fa-solid fa-magnifying-glass-chart" style="color: #7a1530; font-size: 18px;"></i>
+                        <i class="fa-solid fa-magnifying-glass-chart" style="color: #e11d48; font-size: 18px;"></i>
                         <h3 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0;">Search Engine Optimization (SEO)</h3>
                     </div>
 
@@ -111,7 +111,7 @@
                     </div>
 
                     <div style="display: flex; flex-direction: column; gap: 10px;">
-                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 12px; background: #7a1530; color: #fff; border-radius: 8px; font-weight: 700; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 12px rgba(122,21,48,0.25);">
+                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 12px; background: #e11d48; color: #fff; border-radius: 8px; font-weight: 700; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 12px rgba(225, 29, 72,0.25);">
                             <i class="fa-solid fa-check"></i> Save &amp; Publish Page
                         </button>
                         <a href="<?= base_url('admin/pages') ?>" class="btn" style="text-align: center; padding: 10px; background: #f1f5f9; color: #475569; border-radius: 8px; font-weight: 600; text-decoration: none; border: 1px solid #cbd5e1;">
@@ -123,13 +123,13 @@
                 <!-- Hero Header Background Image Card -->
                 <div class="card" style="padding: 24px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); background: #fff; margin-bottom: 24px;">
                     <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
-                        <i class="fa-solid fa-panorama" style="color: #7a1530; font-size: 16px;"></i>
+                        <i class="fa-solid fa-panorama" style="color: #e11d48; font-size: 16px;"></i>
                         <h3 style="font-size: 15px; font-weight: 700; color: #0f172a; margin: 0;">Hero Header Background Image</h3>
                     </div>
                     <p style="font-size: 12.5px; color: #64748b; margin: 0 0 16px; line-height: 1.5;">Wide background banner displayed behind the top title and breadcrumbs section.</p>
 
                     <div style="border: 2px dashed #cbd5e1; border-radius: 8px; padding: 18px; text-align: center; background: #f8fafc; cursor: pointer; transition: all 0.2s;" onclick="document.getElementById('banner_image').click();">
-                        <i class="fa-solid fa-image" style="font-size: 26px; color: #7a1530; margin-bottom: 6px;"></i>
+                        <i class="fa-solid fa-image" style="font-size: 26px; color: #e11d48; margin-bottom: 6px;"></i>
                         <div style="font-size: 13px; font-weight: 600; color: #334155;">Click to upload Header BG Image</div>
                         <div style="font-size: 11px; color: #94a3b8; margin-top: 3px;">Landscape recommended (e.g. 1920x600, JPG/WEBP)</div>
                         <input type="file" id="banner_image" name="banner_image" accept="image/*" style="display: none;" onchange="previewBannerImage(this)">
@@ -143,7 +143,7 @@
                 <!-- Featured / Content Body Image Card -->
                 <div class="card" style="padding: 24px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); background: #fff;">
                     <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
-                        <i class="fa-solid fa-newspaper" style="color: #7a1530; font-size: 16px;"></i>
+                        <i class="fa-solid fa-newspaper" style="color: #e11d48; font-size: 16px;"></i>
                         <h3 style="font-size: 15px; font-weight: 700; color: #0f172a; margin: 0;">Featured / Body Image</h3>
                     </div>
                     <p style="font-size: 12.5px; color: #64748b; margin: 0 0 16px; line-height: 1.5;">Showcase photo displayed prominently inside the page content card.</p>

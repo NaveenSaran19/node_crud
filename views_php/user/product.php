@@ -86,12 +86,12 @@
                 if (!isset($distinctColors[$colorKey])) {
                     $distinctColors[$colorKey] = [
                         'color_name' => $cName ?: 'Option',
-                        'color_code' => $cCode ?: '#7a1530',
+                        'color_code' => $cCode ?: '#e11d48',
                         'images' => $vImages
                     ];
                 } else {
                     // Enrich existing swatch with non-empty code or images if missing
-                    if ((empty($distinctColors[$colorKey]['color_code']) || $distinctColors[$colorKey]['color_code'] === '#7a1530') && !empty($cCode)) {
+                    if ((empty($distinctColors[$colorKey]['color_code']) || $distinctColors[$colorKey]['color_code'] === '#e11d48') && !empty($cCode)) {
                         $distinctColors[$colorKey]['color_code'] = $cCode;
                     }
                     if (empty($distinctColors[$colorKey]['images']) && !empty($vImages)) {
@@ -372,7 +372,7 @@
         <?php if(!empty($product['blouse_measurement_image'])): ?>
             <div style="margin-top: 24px; padding: 15px; background: #fff; border: 1px solid #f1f5f9; border-radius: 8px;">
                 <h4 style="margin: 0 0 10px 0; font-size: 14px; font-weight: 700; color: #1e293b; text-transform: uppercase;">
-                    <i class="fa-solid fa-file-image" style="color: #7a1530;"></i> Blouse Measurement Chart
+                    <i class="fa-solid fa-file-image" style="color: #e11d48;"></i> Blouse Measurement Chart
                 </h4>
                 <a href="<?= base_url(ltrim($product['blouse_measurement_image'], '/')) ?>" target="_blank" style="display: inline-block;">
                     <img src="<?= base_url(ltrim($product['blouse_measurement_image'], '/')) ?>" style="max-width: 140px; border: 1px solid #e2e8f0; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
@@ -479,7 +479,7 @@
             <div class="detail-option-group modern-option-group">
                 <div class="option-header-row">
                     <span class="option-title">
-                        <i class="fa-solid fa-palette" style="color: #7a1530;"></i> Color Shade: <strong id="selected-color-name"><?= esc($distinctColorsList[0]['color_name'] ?? '') ?></strong>
+                        <i class="fa-solid fa-palette" style="color: #e11d48;"></i> Color Shade: <strong id="selected-color-name"><?= esc($distinctColorsList[0]['color_name'] ?? '') ?></strong>
                     </span>
                     <span class="option-count-badge"><?= count($distinctColorsList) ?> Colors</span>
                 </div>
@@ -517,7 +517,7 @@
             <div class="detail-option-group modern-option-group">
                 <div class="option-header-row">
                     <span class="option-title">
-                        <i class="fa-solid fa-ruler-horizontal" style="color: #7a1530;"></i> Size / Option: <strong id="selected-size-name"><?= esc($validSizes[0]) ?></strong>
+                        <i class="fa-solid fa-ruler-horizontal" style="color: #e11d48;"></i> Size / Option: <strong id="selected-size-name"><?= esc($validSizes[0]) ?></strong>
                     </span>
                     <span class="option-count-badge"><?= count($validSizes) ?> Options</span>
                 </div>
@@ -647,7 +647,7 @@
         <!-- Product Description -->
         <div class="modern-description-card">
             <div class="description-header">
-                <i class="fa-solid fa-align-left" style="color: #7a1530;"></i> Product Description &amp; Details
+                <i class="fa-solid fa-align-left" style="color: #e11d48;"></i> Product Description &amp; Details
             </div>
             <div class="description-body">
                 <?= renderProductDescriptionSafe($product['description'] ?? '') ?>
@@ -815,7 +815,7 @@
 
             <div style="margin-top: 14px; margin-bottom: 8px;">
                 <label style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: #475569; cursor: pointer; user-select: none;">
-                    <input type="checkbox" name="subscribe_newsletter" value="1" checked style="accent-color: #7a1530; width: 16px; height: 16px;">
+                    <input type="checkbox" name="subscribe_newsletter" value="1" checked style="accent-color: #e11d48; width: 16px; height: 16px;">
                     <span>Add me to Selvi Tex family newsletter to receive early weaver drops &amp; festive discounts</span>
                 </label>
             </div>
@@ -995,7 +995,7 @@
                         <div class="product-card-swatches">
                             <?php $cIdx = 0; foreach($rpColorVariants as $cv): 
                                 $cvImg = !empty($cv['images'][0]['media_url']) ? base_url(ltrim($cv['images'][0]['media_url'], '/')) : '';
-                                $cvHex = !empty($cv['color_code']) ? $cv['color_code'] : '#7a1530';
+                                $cvHex = !empty($cv['color_code']) ? $cv['color_code'] : '#e11d48';
                                 $cvName = $cv['color_name'] ?: 'Option';
                                 $cvSale = !empty($cv['sale_price']) ? (float)$cv['sale_price'] : (float)$rp['price'];
                                 $cvOrig = !empty($cv['original_price']) ? (float)$cv['original_price'] : (!empty($rp['original_price']) ? (float)$rp['original_price'] : 0);
@@ -1067,7 +1067,7 @@
                             data-product-id="<?= (int)$rp['id'] ?>" 
                             data-variant-id="<?= !empty($rpVariants[0]['id']) ? (int)$rpVariants[0]['id'] : '' ?>"
                             title="Add to Cart"
-                            style="flex: 1; background: #ffffff; color: #7a1530; border: 1.5px solid #7a1530; padding: 8px 6px; border-radius: 6px; font-weight: 700; font-size: 12px; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 4px; transition: all 0.2s;">
+                            style="flex: 1; background: #ffffff; color: #e11d48; border: 1.5px solid #e11d48; padding: 8px 6px; border-radius: 6px; font-weight: 700; font-size: 12px; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 4px; transition: all 0.2s;">
                         <i class="fa-solid fa-cart-shopping"></i> <span class="btn-text">Add Cart</span>
                     </button>
                     <a href="<?= base_url('checkout?product_id=' . $rp['id'] . (!empty($rpVariants[0]['id']) ? '&variant_id=' . (int)$rpVariants[0]['id'] : '')) ?>" 
@@ -1075,7 +1075,7 @@
                        data-product-id="<?= (int)$rp['id'] ?>"
                        data-variant-id="<?= !empty($rpVariants[0]['id']) ? (int)$rpVariants[0]['id'] : '' ?>"
                        title="Checkout this product individually"
-                       style="flex: 1; background: #7a1530; color: #ffffff; text-align: center; padding: 8px 6px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 12px; display: flex; justify-content: center; align-items: center; gap: 4px; transition: all 0.2s;">
+                       style="flex: 1; background: #e11d48; color: #ffffff; text-align: center; padding: 8px 6px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 12px; display: flex; justify-content: center; align-items: center; gap: 4px; transition: all 0.2s;">
                         <i class="fa-solid fa-bolt"></i> <span class="btn-text">Buy Now</span>
                     </a>
                     <a href="https://wa.me/<?= esc($whatsappPhone) ?>?text=<?= urlencode("Hello Selvi Tex, I am interested in " . $rp['name'] . " (" . base_url('product/' . $rp['slug']) . ")") ?>" target="_blank" class="card-whatsapp-btn" style="width: 36px; height: 36px; background: #25D366; color: white; display: flex; justify-content: center; align-items: center; border-radius: 6px; text-decoration: none; flex-shrink: 0;" title="Product Enquiry on WhatsApp">
@@ -1144,7 +1144,7 @@
 <div id="measurement-chart-modal" style="display: none; position: fixed; inset: 0; z-index: 100000; background: rgba(0,0,0,0.85); align-items: center; justify-content: center; padding: 15px; backdrop-filter: blur(4px);">
     <div style="background: #ffffff; border-radius: 12px; max-width: 650px; width: 100%; max-height: 90vh; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.35); position: relative;">
         <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 18px; border-bottom: 1px solid #e2e8f0; background: #fafafa;">
-            <div style="font-weight: 800; color: #7a1530; font-size: 15px; display: flex; align-items: center; gap: 8px;">
+            <div style="font-weight: 800; color: #e11d48; font-size: 15px; display: flex; align-items: center; gap: 8px;">
                 <i class="fa-solid fa-ruler-combined"></i>
                 <span id="measurement-modal-title">Size &amp; Measurement Chart</span>
             </div>
@@ -1156,7 +1156,7 @@
             <img id="measurement-modal-img" src="" alt="Size Chart" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
         </div>
         <div style="padding: 10px 18px; border-top: 1px solid #f1f5f9; text-align: right; background: #fafafa;">
-            <button type="button" onclick="closeMeasurementChartModal()" style="background: #7a1530; color: #ffffff; border: none; padding: 8px 18px; border-radius: 6px; font-weight: 700; font-size: 13px; cursor: pointer;">Close</button>
+            <button type="button" onclick="closeMeasurementChartModal()" style="background: #e11d48; color: #ffffff; border: none; padding: 8px 18px; border-radius: 6px; font-weight: 700; font-size: 13px; cursor: pointer;">Close</button>
         </div>
     </div>
 </div>
@@ -1278,8 +1278,8 @@ document.addEventListener('keydown', function(e) {
 }
 
 .gallery-thumbnail-item.active {
-    border-color: #7a1530;
-    box-shadow: 0 0 0 2px rgba(122, 21, 48, 0.2), 0 4px 10px rgba(122, 21, 48, 0.25);
+    border-color: #e11d48;
+    box-shadow: 0 0 0 2px rgba(225, 29, 72, 0.2), 0 4px 10px rgba(225, 29, 72, 0.25);
     transform: translateY(-2px);
 }
 
@@ -1308,7 +1308,7 @@ document.addEventListener('keydown', function(e) {
 }
 
 .product-breadcrumb-strip a:hover {
-    color: #7a1530;
+    color: #e11d48;
 }
 
 .breadcrumb-sep {
@@ -1419,7 +1419,7 @@ document.addEventListener('keydown', function(e) {
 
 .rating-read-link {
     font-size: 13px;
-    color: #7a1530;
+    color: #e11d48;
     text-decoration: none;
     font-weight: 700;
     display: inline-flex;
@@ -1440,7 +1440,7 @@ document.addEventListener('keydown', function(e) {
     border-radius: 12px;
     padding: 16px 20px;
     margin-bottom: 18px;
-    box-shadow: 0 2px 8px rgba(122, 21, 48, 0.04);
+    box-shadow: 0 2px 8px rgba(225, 29, 72, 0.04);
 }
 
 .price-main-row {
@@ -1454,13 +1454,13 @@ document.addEventListener('keydown', function(e) {
 .currency-symbol {
     font-size: 24px;
     font-weight: 800;
-    color: #7a1530;
+    color: #e11d48;
 }
 
 .main-price-val {
     font-size: 32px;
     font-weight: 900;
-    color: #7a1530;
+    color: #e11d48;
     letter-spacing: -0.5px;
 }
 
@@ -1580,7 +1580,7 @@ document.addEventListener('keydown', function(e) {
 }
 
 .option-title strong {
-    color: #7a1530;
+    color: #e11d48;
 }
 
 .option-count-badge {
@@ -1647,11 +1647,11 @@ document.addEventListener('keydown', function(e) {
 
 .modern-swatch-btn:hover .swatch-circle-holder {
     transform: scale(1.1);
-    box-shadow: 0 0 0 2px #7a1530, 0 5px 12px rgba(122, 21, 48, 0.2);
+    box-shadow: 0 0 0 2px #e11d48, 0 5px 12px rgba(225, 29, 72, 0.2);
 }
 
 .modern-swatch-btn.active .swatch-circle-holder {
-    box-shadow: 0 0 0 2px #ffffff, 0 0 0 4.5px #7a1530, 0 6px 14px rgba(122, 21, 48, 0.35);
+    box-shadow: 0 0 0 2px #ffffff, 0 0 0 4.5px #e11d48, 0 6px 14px rgba(225, 29, 72, 0.35);
     transform: scale(1.08);
 }
 
@@ -1672,7 +1672,7 @@ document.addEventListener('keydown', function(e) {
 }
 
 .modern-swatch-btn.active .swatch-color-label {
-    color: #7a1530;
+    color: #e11d48;
     font-weight: 800;
 }
 
@@ -1699,17 +1699,17 @@ document.addEventListener('keydown', function(e) {
 }
 
 .modern-size-btn:hover {
-    border-color: #7a1530;
-    color: #7a1530;
+    border-color: #e11d48;
+    color: #e11d48;
     background: #fff5f7;
     transform: translateY(-1px);
 }
 
 .modern-size-btn.active {
-    border-color: #7a1530;
-    background: #7a1530;
+    border-color: #e11d48;
+    background: #e11d48;
     color: #ffffff;
-    box-shadow: 0 3px 10px rgba(122, 21, 48, 0.3);
+    box-shadow: 0 3px 10px rgba(225, 29, 72, 0.3);
     transform: translateY(-1px);
 }
 
@@ -1720,7 +1720,7 @@ document.addEventListener('keydown', function(e) {
     border-radius: 14px;
     padding: 18px 20px;
     margin-bottom: 24px;
-    box-shadow: 0 2px 10px rgba(122, 21, 48, 0.04);
+    box-shadow: 0 2px 10px rgba(225, 29, 72, 0.04);
 }
 
 .specs-card-header {
@@ -1742,7 +1742,7 @@ document.addEventListener('keydown', function(e) {
     width: 34px;
     height: 34px;
     border-radius: 8px;
-    background: #7a1530;
+    background: #e11d48;
     color: #ffffff;
     display: flex;
     align-items: center;
@@ -1770,7 +1770,7 @@ document.addEventListener('keydown', function(e) {
 .specs-badge-pill {
     font-size: 11px;
     background: #fff5f7;
-    color: #7a1530;
+    color: #e11d48;
     border: 1px solid #fecdd3;
     padding: 3px 10px;
     border-radius: 20px;
@@ -1808,7 +1808,7 @@ document.addEventListener('keydown', function(e) {
 }
 
 .spec-stat-label i {
-    color: #7a1530;
+    color: #e11d48;
 }
 
 .spec-stat-val {
@@ -1828,8 +1828,8 @@ document.addEventListener('keydown', function(e) {
 
 .btn-specs-chart {
     background: #ffffff;
-    border: 1.5px solid #7a1530;
-    color: #7a1530;
+    border: 1.5px solid #e11d48;
+    color: #e11d48;
     padding: 8px 16px;
     border-radius: 8px;
     font-weight: 700;
@@ -1843,10 +1843,10 @@ document.addEventListener('keydown', function(e) {
 }
 
 .btn-specs-chart:hover {
-    background: #7a1530;
+    background: #e11d48;
     color: #ffffff;
     transform: translateY(-1px);
-    box-shadow: 0 4px 10px rgba(122, 21, 48, 0.25);
+    box-shadow: 0 4px 10px rgba(225, 29, 72, 0.25);
 }
 
 /* Highlights Box */
@@ -1963,7 +1963,7 @@ document.addEventListener('keydown', function(e) {
 }
 
 .modern-qty-picker .qty-btn:hover {
-    color: #7a1530;
+    color: #e11d48;
 }
 
 .modern-qty-picker .qty-input {
@@ -1982,8 +1982,8 @@ document.addEventListener('keydown', function(e) {
     min-width: 140px;
     height: 50px;
     background: #ffffff !important;
-    color: #7a1530 !important;
-    border: 2px solid #7a1530 !important;
+    color: #e11d48 !important;
+    border: 2px solid #e11d48 !important;
     border-radius: 10px !important;
     font-size: 14.5px !important;
     font-weight: 800 !important;
@@ -1993,20 +1993,20 @@ document.addEventListener('keydown', function(e) {
     justify-content: center;
     gap: 8px;
     transition: all 0.25s ease;
-    box-shadow: 0 2px 8px rgba(122, 21, 48, 0.12);
+    box-shadow: 0 2px 8px rgba(225, 29, 72, 0.12);
 }
 
 .modern-add-cart-btn:hover {
     background: #fff5f7 !important;
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(122, 21, 48, 0.2);
+    box-shadow: 0 6px 16px rgba(225, 29, 72, 0.2);
 }
 
 .modern-buy-now-btn {
     flex: 1.5;
     min-width: 150px;
     height: 50px;
-    background: linear-gradient(135deg, #7a1530 0%, #9c1b3f 100%) !important;
+    background: linear-gradient(135deg, #e11d48 0%, #9c1b3f 100%) !important;
     color: #ffffff !important;
     border: none !important;
     border-radius: 10px !important;
@@ -2018,13 +2018,13 @@ document.addEventListener('keydown', function(e) {
     justify-content: center;
     gap: 8px;
     transition: all 0.25s ease;
-    box-shadow: 0 4px 16px rgba(122, 21, 48, 0.35);
+    box-shadow: 0 4px 16px rgba(225, 29, 72, 0.35);
 }
 
 .modern-buy-now-btn:hover {
     background: linear-gradient(135deg, #8d1a37 0%, #b22047 100%) !important;
     transform: translateY(-2px);
-    box-shadow: 0 8px 22px rgba(122, 21, 48, 0.45);
+    box-shadow: 0 8px 22px rgba(225, 29, 72, 0.45);
 }
 
 .modern-wishlist-btn {
@@ -2100,7 +2100,7 @@ document.addEventListener('keydown', function(e) {
     border-radius: 50%;
     background: #ffffff;
     border: 1px solid #e2e8f0;
-    color: #7a1530;
+    color: #e11d48;
     display: flex;
     align-items: center;
     justify-content: center;

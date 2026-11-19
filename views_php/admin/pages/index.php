@@ -9,7 +9,7 @@
             <p style="font-size: 14px; color: #64748b; margin: 0;">Create and customize website pages, about story, company policies, and SEO metadata.</p>
         </div>
         <div style="display: flex; gap: 10px;">
-            <a href="<?= base_url('admin/pages/create') ?>" class="btn btn-primary" style="background: #7a1530; color: #fff; font-weight: 600; padding: 10px 20px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; border: none; box-shadow: 0 4px 12px rgba(122,21,48,0.25);">
+            <a href="<?= base_url('admin/pages/create') ?>" class="btn btn-primary" style="background: #e11d48; color: #fff; font-weight: 600; padding: 10px 20px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; border: none; box-shadow: 0 4px 12px rgba(225, 29, 72,0.25);">
                 <i class="fa-solid fa-plus"></i> Create New Page
             </a>
         </div>

@@ -88,7 +88,7 @@
                 <!-- SEO Metadata Card -->
                 <div class="card" style="padding: 28px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); background: #fff;">
                     <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 1px solid #e2e8f0;">
-                        <i class="fa-solid fa-magnifying-glass-chart" style="color: #7a1530; font-size: 18px;"></i>
+                        <i class="fa-solid fa-magnifying-glass-chart" style="color: #e11d48; font-size: 18px;"></i>
                         <h3 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0;">Search Engine Optimization (SEO)</h3>
                     </div>
 
@@ -134,7 +134,7 @@
                     </div>
 
                     <div style="display: flex; flex-direction: column; gap: 10px;">
-                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 12px; background: #7a1530; color: #fff; border-radius: 8px; font-weight: 700; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 12px rgba(122,21,48,0.25);">
+                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 12px; background: #e11d48; color: #fff; border-radius: 8px; font-weight: 700; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 12px rgba(225, 29, 72,0.25);">
                             <i class="fa-solid fa-check"></i> Update Blog Post
                         </button>
                         <a href="<?= base_url('admin/blogs') ?>" class="btn" style="text-align: center; padding: 10px; background: #f1f5f9; color: #475569; border-radius: 8px; font-weight: 600; text-decoration: none; border: 1px solid #cbd5e1;">

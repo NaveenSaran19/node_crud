@@ -47,7 +47,7 @@
             <div style="display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; background: #f8fafc; border-radius: 12px; padding: 18px 24px; text-align: left; margin-top: 10px;">
                 <div>
                     <div style="font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase;">Order Number</div>
-                    <div style="font-size: 16px; font-weight: 800; color: #7a1530; margin-top: 2px;">#<?= esc($order['order_number']) ?></div>
+                    <div style="font-size: 16px; font-weight: 800; color: #e11d48; margin-top: 2px;">#<?= esc($order['order_number']) ?></div>
                 </div>
                 <div>
                     <div style="font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase;">Order Date</div>
@@ -75,7 +75,7 @@
             <!-- Left: Purchased Items -->
             <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
                 <h3 style="font-size: 16px; font-weight: 800; color: #1e293b; margin: 0 0 16px 0; display: flex; align-items: center; gap: 8px;">
-                    <i class="fa-solid fa-bag-shopping" style="color: #7a1530;"></i> Purchased Items
+                    <i class="fa-solid fa-bag-shopping" style="color: #e11d48;"></i> Purchased Items
                 </h3>
 
                 <div style="display: flex; flex-direction: column; gap: 14px; margin-bottom: 20px;">
@@ -122,7 +122,7 @@
                     <?php endif; ?>
                     <div style="display: flex; justify-content: space-between; padding-top: 12px; border-top: 2px solid #0f172a; font-size: 18px; font-weight: 900; color: #0f172a; margin-top: 4px;">
                         <span id="order-final-total-label">Final Total</span>
-                        <span class="order-summary-final-total" data-base-price="<?= $order['total_amount'] ?>" style="color: #7a1530;">₹<?= number_format($order['total_amount'], 2) ?></span>
+                        <span class="order-summary-final-total" data-base-price="<?= $order['total_amount'] ?>" style="color: #e11d48;">₹<?= number_format($order['total_amount'], 2) ?></span>
                     </div>
                 </div>
             </div>
@@ -131,7 +131,7 @@
             <div style="display: flex; flex-direction: column; gap: 20px;">
                 <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 22px; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
                     <h3 style="font-size: 15px; font-weight: 800; color: #1e293b; margin: 0 0 12px 0; display: flex; align-items: center; gap: 8px;">
-                        <i class="fa-solid fa-location-dot" style="color: #7a1530;"></i> Delivery Address
+                        <i class="fa-solid fa-location-dot" style="color: #e11d48;"></i> Delivery Address
                     </h3>
                     <div style="font-size: 14px; font-weight: 700; color: #0f172a;"><?= esc($order['customer_name']) ?></div>
                     <div style="font-size: 13px; color: #475569; margin-top: 4px; line-height: 1.5;">
@@ -147,7 +147,7 @@
 
                 <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 22px; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
                     <h3 style="font-size: 15px; font-weight: 800; color: #1e293b; margin: 0 0 12px 0; display: flex; align-items: center; gap: 8px;">
-                        <i class="fa-solid fa-truck" style="color: #7a1530;"></i> Shipping &amp; Payment
+                        <i class="fa-solid fa-truck" style="color: #e11d48;"></i> Shipping &amp; Payment
                     </h3>
                     <div style="font-size: 13px; color: #475569; line-height: 1.6;">
                         <strong>Method:</strong> Standard Direct Express Delivery<br>
@@ -161,10 +161,10 @@
 
         <!-- Action Buttons -->
         <div style="margin-top: 36px; text-align: center; display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
-            <a href="<?= base_url('collections') ?>" style="display: inline-flex; align-items: center; gap: 8px; background: #7a1530; color: #ffffff; padding: 12px 24px; border-radius: 8px; font-size: 14px; font-weight: 700; text-decoration: none; box-shadow: 0 4px 10px rgba(122,21,48,0.25);">
+            <a href="<?= base_url('collections') ?>" style="display: inline-flex; align-items: center; gap: 8px; background: #e11d48; color: #ffffff; padding: 12px 24px; border-radius: 8px; font-size: 14px; font-weight: 700; text-decoration: none; box-shadow: 0 4px 10px rgba(225, 29, 72,0.25);">
                 <i class="fa-solid fa-arrow-left"></i> Continue Shopping
             </a>
-            <a href="<?= base_url('order/invoice/' . (int)$order['id']) ?>" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; background: #ffffff; color: #7a1530; border: 1.5px solid #d4af37; padding: 12px 22px; border-radius: 8px; font-size: 14px; font-weight: 700; text-decoration: none; box-shadow: 0 4px 10px rgba(212,175,55,0.15);">
+            <a href="<?= base_url('order/invoice/' . (int)$order['id']) ?>" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; background: #ffffff; color: #e11d48; border: 1.5px solid #d4af37; padding: 12px 22px; border-radius: 8px; font-size: 14px; font-weight: 700; text-decoration: none; box-shadow: 0 4px 10px rgba(212,175,55,0.15);">
                 <i class="fa-solid fa-print" style="color: #d4af37;"></i> Print Bill A4
             </a>
             <?php 

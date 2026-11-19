@@ -142,7 +142,7 @@
             background: rgba(255, 255, 255, 0.95);
             border: 1px solid rgba(212, 175, 55, 0.4);
             border-radius: 20px;
-            box-shadow: 0 16px 40px rgba(122, 21, 48, 0.12), 0 2px 10px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 16px 40px rgba(225, 29, 72, 0.12), 0 2px 10px rgba(0, 0, 0, 0.05);
             max-width: 360px;
         }
         #adminPreloader .preloader-logo-wrap {
@@ -167,7 +167,7 @@
             inset: -6px;
             border-radius: 50%;
             border: 3px solid transparent;
-            border-top-color: #7a1530;
+            border-top-color: #e11d48;
             border-right-color: #d4af37;
             animation: adminPreloaderSpin 1.1s cubic-bezier(0.5, 0.1, 0.5, 0.9) infinite;
         }
@@ -183,7 +183,7 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 20px;
             font-weight: 800;
-            color: #7a1530;
+            color: #e11d48;
             letter-spacing: 1.5px;
             text-transform: uppercase;
             margin-bottom: 3px;
@@ -209,7 +209,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, #d4af37 0%, #7a1530 50%, #d4af37 100%);
+            background: linear-gradient(90deg, #d4af37 0%, #e11d48 50%, #d4af37 100%);
             border-radius: 4px;
             animation: adminPreloaderBar 1.25s ease-in-out infinite;
         }

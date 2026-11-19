@@ -11,7 +11,7 @@
         <a href="<?= base_url('blogs/news') ?>" target="_blank" class="btn" style="padding: 10px 18px; background: #f8fafc; color: #334155; border: 1px solid #cbd5e1; border-radius: 8px; font-weight: 600; text-decoration: none; font-size: 13.5px; display: inline-flex; align-items: center; gap: 8px;">
             <i class="fa-solid fa-arrow-up-right-from-square"></i> View Live Blogs
         </a>
-        <a href="<?= base_url('admin/blogs/create') ?>" class="btn btn-primary" style="padding: 10px 20px; background: #7a1530; color: #fff; border-radius: 8px; font-weight: 600; text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(122,21,48,0.25);">
+        <a href="<?= base_url('admin/blogs/create') ?>" class="btn btn-primary" style="padding: 10px 20px; background: #e11d48; color: #fff; border-radius: 8px; font-weight: 600; text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(225, 29, 72,0.25);">
             <i class="fa-solid fa-plus"></i> Add New Blog Post
         </a>
     </div>
@@ -33,13 +33,13 @@
 
 <!-- Filters -->
 <div style="margin-bottom: 20px; display: flex; gap: 8px;">
-    <a href="<?= base_url('admin/blogs') ?>" style="padding: 8px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; text-decoration: none; <?= ($currentStatus === 'all') ? 'background: #7a1530; color: #fff;' : 'background: #f1f5f9; color: #475569;' ?>">
+    <a href="<?= base_url('admin/blogs') ?>" style="padding: 8px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; text-decoration: none; <?= ($currentStatus === 'all') ? 'background: #e11d48; color: #fff;' : 'background: #f1f5f9; color: #475569;' ?>">
         All Posts (<?= count($blogs) ?>)
     </a>
-    <a href="<?= base_url('admin/blogs?status=published') ?>" style="padding: 8px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; text-decoration: none; <?= ($currentStatus === 'published') ? 'background: #7a1530; color: #fff;' : 'background: #f1f5f9; color: #475569;' ?>">
+    <a href="<?= base_url('admin/blogs?status=published') ?>" style="padding: 8px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; text-decoration: none; <?= ($currentStatus === 'published') ? 'background: #e11d48; color: #fff;' : 'background: #f1f5f9; color: #475569;' ?>">
         Published
     </a>
-    <a href="<?= base_url('admin/blogs?status=draft') ?>" style="padding: 8px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; text-decoration: none; <?= ($currentStatus === 'draft') ? 'background: #7a1530; color: #fff;' : 'background: #f1f5f9; color: #475569;' ?>">
+    <a href="<?= base_url('admin/blogs?status=draft') ?>" style="padding: 8px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; text-decoration: none; <?= ($currentStatus === 'draft') ? 'background: #e11d48; color: #fff;' : 'background: #f1f5f9; color: #475569;' ?>">
         Drafts
     </a>
 </div>
@@ -119,7 +119,7 @@
                 <tr>
                     <td colspan="6" style="padding: 40px; text-align: center; color: #94a3b8;">
                         <i class="fa-solid fa-newspaper" style="font-size: 36px; margin-bottom: 12px; display: block; color: #cbd5e1;"></i>
-                        No blog posts found. <a href="<?= base_url('admin/blogs/create') ?>" style="color: #7a1530; font-weight: 600;">Create your first post</a>
+                        No blog posts found. <a href="<?= base_url('admin/blogs/create') ?>" style="color: #e11d48; font-weight: 600;">Create your first post</a>
                     </td>
                 </tr>
             <?php endif; ?>

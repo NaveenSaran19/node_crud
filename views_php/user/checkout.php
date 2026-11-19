@@ -287,7 +287,7 @@
                         <div class="payment-option-card selected" id="card-rzp-option">
                             <div class="payment-option-header" onclick="selectPaymentOption('Razorpay Secure')">
                                 <label>
-                                    <input type="radio" name="payment_method" value="Razorpay Secure" checked style="accent-color: #7a1530;">
+                                    <input type="radio" name="payment_method" value="Razorpay Secure" checked style="accent-color: #e11d48;">
                                     <span>Razorpay Secure</span>
                                 </label>
                                 <div class="payment-badge-icons">
@@ -310,7 +310,7 @@
                         <div class="payment-option-card" id="card-cod-option">
                             <div class="payment-option-header" onclick="selectPaymentOption('Cash on Delivery')">
                                 <label>
-                                    <input type="radio" name="payment_method" value="Cash on Delivery" style="accent-color: #7a1530;">
+                                    <input type="radio" name="payment_method" value="Cash on Delivery" style="accent-color: #e11d48;">
                                     <span>Cash on Delivery (COD)</span>
                                 </label>
                                 <i class="fa-solid fa-hand-holding-dollar" style="color: #64748b; font-size: 18px;"></i>
@@ -428,7 +428,7 @@
                                             if(!empty($cleanVariant)): 
                                         ?>
                                             <div class="summary-item-meta">
-                                                <i class="fa-solid fa-palette" style="color: #7a1530; font-size: 11px;"></i> <?= esc($cleanVariant) ?>
+                                                <i class="fa-solid fa-palette" style="color: #e11d48; font-size: 11px;"></i> <?= esc($cleanVariant) ?>
                                             </div>
                                         <?php endif; ?>
                                         <div class="summary-item-meta">Qty: <strong><?= (int)$item['quantity'] ?></strong></div>
@@ -479,7 +479,7 @@
                                 </div>
                             </div>
                             <div style="text-align: right;">
-                                <span id="summary-grand-total" style="font-size: 22px; font-weight: 900; color: #7a1530;">₹<?= number_format($subtotalVal + $shippingVal, 2) ?></span>
+                                <span id="summary-grand-total" style="font-size: 22px; font-weight: 900; color: #e11d48;">₹<?= number_format($subtotalVal + $shippingVal, 2) ?></span>
                                 <div id="summary-inr-subtext" style="display: none; font-size: 12px; color: #64748b; font-weight: 700; margin-top: 3px;"></div>
                             </div>
                         </div>

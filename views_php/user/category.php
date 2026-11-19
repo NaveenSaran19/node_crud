@@ -82,9 +82,9 @@
             
             <div class="sort-dropdown sort-dropdown-custom-wrap" style="position: relative; display: flex; align-items: center; gap: 8px;">
                 <label for="sort-custom-btn" class="sort-label" style="font-size: 13.5px; color: #333; font-weight: 600; white-space: nowrap;">Sort by:</label>
-                <button type="button" id="sort-custom-btn" onclick="toggleCustomSortMenu(event)" style="display: inline-flex; align-items: center; justify-content: space-between; gap: 10px; background: #fff; border: 1.5px solid #d4af37; border-radius: 8px; padding: 7px 12px; font-size: 13.5px; font-weight: 600; color: #1a050b; cursor: pointer; min-width: 165px; max-width: 100%; box-sizing: border-box; box-shadow: 0 2px 6px rgba(0,0,0,0.04);">
+                <button type="button" id="sort-custom-btn" onclick="toggleCustomSortMenu(event)" style="display: inline-flex; align-items: center; justify-content: space-between; gap: 10px; background: #fff; border: 1.5px solid #d4af37; border-radius: 8px; padding: 7px 12px; font-size: 13.5px; font-weight: 600; color: #0f172a; cursor: pointer; min-width: 165px; max-width: 100%; box-sizing: border-box; box-shadow: 0 2px 6px rgba(0,0,0,0.04);">
                     <span id="sort-selected-label">Date, new to old</span>
-                    <i class="fa-solid fa-chevron-down sort-chevron" style="font-size: 11px; color: #7a1530; transition: transform 0.2s;"></i>
+                    <i class="fa-solid fa-chevron-down sort-chevron" style="font-size: 11px; color: #e11d48; transition: transform 0.2s;"></i>
                 </button>
                 <select id="sort-by" class="sort-select" style="display: none;">
                     <option value="featured">Featured</option>
@@ -97,37 +97,37 @@
                     <option value="date-asc">Date, old to new</option>
                 </select>
                 <div id="sort-custom-menu" class="sort-custom-menu" style="display: none; position: absolute; top: calc(100% + 6px); right: 0; min-width: 210px; max-width: calc(100vw - 32px); background: #ffffff; border: 1.5px solid #d4af37; border-radius: 10px; box-shadow: 0 10px 25px rgba(0,0,0,0.12); z-index: 99999; overflow: hidden; padding: 6px 0;">
-                    <div class="sort-option-item active" data-value="date-desc" onclick="selectCustomSort('date-desc', 'Date, new to old')" style="padding: 9px 16px; font-size: 13.5px; color: #7a1530; font-weight: 700; background: #fdf6ec; cursor: pointer; display: flex; align-items: center; justify-content: space-between;">
+                    <div class="sort-option-item active" data-value="date-desc" onclick="selectCustomSort('date-desc', 'Date, new to old')" style="padding: 9px 16px; font-size: 13.5px; color: #e11d48; font-weight: 700; background: #fdf6ec; cursor: pointer; display: flex; align-items: center; justify-content: space-between;">
                         <span>Date, new to old</span>
-                        <i class="fa-solid fa-check sort-check" style="font-size: 12px; color: #7a1530;"></i>
+                        <i class="fa-solid fa-check sort-check" style="font-size: 12px; color: #e11d48;"></i>
                     </div>
                     <div class="sort-option-item" data-value="date-asc" onclick="selectCustomSort('date-asc', 'Date, old to new')" style="padding: 9px 16px; font-size: 13.5px; color: #334155; font-weight: 500; cursor: pointer; display: flex; align-items: center; justify-content: space-between;">
                         <span>Date, old to new</span>
-                        <i class="fa-solid fa-check sort-check" style="display: none; font-size: 12px; color: #7a1530;"></i>
+                        <i class="fa-solid fa-check sort-check" style="display: none; font-size: 12px; color: #e11d48;"></i>
                     </div>
                     <div class="sort-option-item" data-value="featured" onclick="selectCustomSort('featured', 'Featured')" style="padding: 9px 16px; font-size: 13.5px; color: #334155; font-weight: 500; cursor: pointer; display: flex; align-items: center; justify-content: space-between;">
                         <span>Featured</span>
-                        <i class="fa-solid fa-check sort-check" style="display: none; font-size: 12px; color: #7a1530;"></i>
+                        <i class="fa-solid fa-check sort-check" style="display: none; font-size: 12px; color: #e11d48;"></i>
                     </div>
                     <div class="sort-option-item" data-value="best-selling" onclick="selectCustomSort('best-selling', 'Best selling')" style="padding: 9px 16px; font-size: 13.5px; color: #334155; font-weight: 500; cursor: pointer; display: flex; align-items: center; justify-content: space-between;">
                         <span>Best selling</span>
-                        <i class="fa-solid fa-check sort-check" style="display: none; font-size: 12px; color: #7a1530;"></i>
+                        <i class="fa-solid fa-check sort-check" style="display: none; font-size: 12px; color: #e11d48;"></i>
                     </div>
                     <div class="sort-option-item" data-value="alpha-asc" onclick="selectCustomSort('alpha-asc', 'Alphabetically, A-Z')" style="padding: 9px 16px; font-size: 13.5px; color: #334155; font-weight: 500; cursor: pointer; display: flex; align-items: center; justify-content: space-between;">
                         <span>Alphabetically, A-Z</span>
-                        <i class="fa-solid fa-check sort-check" style="display: none; font-size: 12px; color: #7a1530;"></i>
+                        <i class="fa-solid fa-check sort-check" style="display: none; font-size: 12px; color: #e11d48;"></i>
                     </div>
                     <div class="sort-option-item" data-value="alpha-desc" onclick="selectCustomSort('alpha-desc', 'Alphabetically, Z-A')" style="padding: 9px 16px; font-size: 13.5px; color: #334155; font-weight: 500; cursor: pointer; display: flex; align-items: center; justify-content: space-between;">
                         <span>Alphabetically, Z-A</span>
-                        <i class="fa-solid fa-check sort-check" style="display: none; font-size: 12px; color: #7a1530;"></i>
+                        <i class="fa-solid fa-check sort-check" style="display: none; font-size: 12px; color: #e11d48;"></i>
                     </div>
                     <div class="sort-option-item" data-value="price-asc" onclick="selectCustomSort('price-asc', 'Price, low to high')" style="padding: 9px 16px; font-size: 13.5px; color: #334155; font-weight: 500; cursor: pointer; display: flex; align-items: center; justify-content: space-between;">
                         <span>Price, low to high</span>
-                        <i class="fa-solid fa-check sort-check" style="display: none; font-size: 12px; color: #7a1530;"></i>
+                        <i class="fa-solid fa-check sort-check" style="display: none; font-size: 12px; color: #e11d48;"></i>
                     </div>
                     <div class="sort-option-item" data-value="price-desc" onclick="selectCustomSort('price-desc', 'Price, high to low')" style="padding: 9px 16px; font-size: 13.5px; color: #334155; font-weight: 500; cursor: pointer; display: flex; align-items: center; justify-content: space-between;">
                         <span>Price, high to low</span>
-                        <i class="fa-solid fa-check sort-check" style="display: none; font-size: 12px; color: #7a1530;"></i>
+                        <i class="fa-solid fa-check sort-check" style="display: none; font-size: 12px; color: #e11d48;"></i>
                     </div>
                 </div>
             </div>
@@ -261,7 +261,7 @@
                                 <?php elseif (!empty($product['is_combo'])): ?>
                                     <span style="position: absolute; top: 22px; left: 22px; background: linear-gradient(135deg, #d97706 0%, #b45309 100%); color: white; padding: 4px 10px; font-size: 11px; font-weight: 800; z-index: 2; border-radius: 4px; box-shadow: 0 2px 6px rgba(217,119,6,0.3);"><i class="fa-solid fa-gifts"></i> COMBO</span>
                                 <?php elseif (!empty($product['is_new_arrival'])): ?>
-                                    <span style="position: absolute; top: 22px; left: 22px; background: #7a1530; color: white; padding: 4px 10px; font-size: 11px; font-weight: bold; z-index: 2; border-radius: 4px;">NEW</span>
+                                    <span style="position: absolute; top: 22px; left: 22px; background: #e11d48; color: white; padding: 4px 10px; font-size: 11px; font-weight: bold; z-index: 2; border-radius: 4px;">NEW</span>
                                 <?php elseif (!empty($product['is_best_seller'])): ?>
                                     <span style="position: absolute; top: 22px; left: 22px; background: #f59e0b; color: white; padding: 4px 10px; font-size: 11px; font-weight: bold; z-index: 2; border-radius: 4px;">HOT</span>
                                 <?php elseif ($displayOrigPrice > $displayPrice): ?>
@@ -316,7 +316,7 @@
                                         <div class="product-card-swatches">
                                             <?php $cIdx = 0; foreach($colorVariants as $cv): 
                                                 $cvImg = !empty($cv['images'][0]['media_url']) ? base_url(ltrim($cv['images'][0]['media_url'], '/')) : '';
-                                                $cvHex = !empty($cv['color_code']) ? $cv['color_code'] : '#7a1530';
+                                                $cvHex = !empty($cv['color_code']) ? $cv['color_code'] : '#e11d48';
                                                 $cvName = $cv['color_name'] ?: 'Option';
                                                 $cvSale = !empty($cv['sale_price']) ? (float)$cv['sale_price'] : (float)$product['price'];
                                                 $cvOrig = !empty($cv['original_price']) ? (float)$cv['original_price'] : (!empty($product['original_price']) ? (float)$product['original_price'] : 0);
@@ -413,7 +413,7 @@
                         <i class="fa-solid fa-box-open category-empty-icon"></i>
                         <h3 class="category-empty-title">No Products Found</h3>
                         <p class="category-empty-text">We are currently adding beautiful products to the <?= esc($category_name) ?> collection. Please check back soon!</p>
-                        <a href="<?= base_url('/') ?>" class="btn btn-primary" style="margin-top: 20px; display: inline-block; padding: 10px 25px; background-color: #7a1530; color: white; text-decoration: none; border-radius: 4px; font-weight: bold;">Continue Shopping</a>
+                        <a href="<?= base_url('/') ?>" class="btn btn-primary" style="margin-top: 20px; display: inline-block; padding: 10px 25px; background-color: #e11d48; color: white; text-decoration: none; border-radius: 4px; font-weight: bold;">Continue Shopping</a>
                     </div>
                 <?php endif; ?>
             </div>

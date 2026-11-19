@@ -12,7 +12,7 @@
             <a href="<?= base_url('faq') ?>" target="_blank" class="btn" style="background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; font-weight: 600; padding: 10px 18px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
                 <i class="fa-solid fa-arrow-up-right-from-square"></i> Preview Frontend FAQs
             </a>
-            <a href="<?= base_url('admin/faqs/create') ?>" class="btn btn-primary" style="background: #7a1530; color: #fff; font-weight: 600; padding: 10px 20px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; border: none; box-shadow: 0 4px 12px rgba(122,21,48,0.25);">
+            <a href="<?= base_url('admin/faqs/create') ?>" class="btn btn-primary" style="background: #e11d48; color: #fff; font-weight: 600; padding: 10px 20px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; border: none; box-shadow: 0 4px 12px rgba(225, 29, 72,0.25);">
                 <i class="fa-solid fa-plus"></i> Add New FAQ
             </a>
         </div>

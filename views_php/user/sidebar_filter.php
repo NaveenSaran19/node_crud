@@ -17,19 +17,19 @@ $showFilters = isset($showFilters) ? (bool)$showFilters : true;
 <aside class="catalog-filter-sidebar" id="catalog-filter-sidebar" style="width: 260px; min-width: 240px; flex-shrink: 0; padding-right: 25px; border-right: 1.5px solid #eaeaea;">
     
     <!-- Mobile Filter Section Toggle Header (Only displays on mobile) -->
-    <div class="mobile-filter-drawer-toggle" onclick="toggleMobileFilterSidebar(this)" style="display: none; align-items: center; justify-content: space-between; padding: 12px 16px; background: #fffdfa; border: 1.5px solid #d4af37; border-radius: 10px; cursor: pointer; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(122,21,48,0.06);">
-        <span style="font-weight: 700; color: #7a1530; font-size: 14px; display: inline-flex; align-items: center; gap: 8px;">
+    <div class="mobile-filter-drawer-toggle" onclick="toggleMobileFilterSidebar(this)" style="display: none; align-items: center; justify-content: space-between; padding: 12px 16px; background: #fffdfa; border: 1.5px solid #d4af37; border-radius: 10px; cursor: pointer; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(225, 29, 72,0.06);">
+        <span style="font-weight: 700; color: #e11d48; font-size: 14px; display: inline-flex; align-items: center; gap: 8px;">
             <i class="fa-solid fa-sliders" style="color: #d4af37;"></i> Filter Products (In Stock, Price, Color)
         </span>
-        <i class="fa-solid fa-chevron-down mobile-filter-chevron" style="color: #7a1530; font-size: 13px; transition: transform 0.25s ease;"></i>
+        <i class="fa-solid fa-chevron-down mobile-filter-chevron" style="color: #e11d48; font-size: 13px; transition: transform 0.25s ease;"></i>
     </div>
 
     <div class="filter-sections-inner-wrapper" id="filter-sections-inner-wrapper">
     <?php if ($showFilters): ?>
     <!-- Active Filters Reset Header (shown when any filter is active) -->
     <div id="filter-active-summary" style="display: none; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px 14px; background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0;">
-        <span style="font-size: 13px; font-weight: 700; color: #1e293b;"><i class="fa-solid fa-sliders" style="margin-right: 6px; color: #7a1530;"></i> Filtered</span>
-        <button type="button" onclick="resetAllCatalogFilters()" style="background: none; border: none; color: #7a1530; font-size: 12px; font-weight: 700; cursor: pointer; text-decoration: underline; padding: 0;">Clear all</button>
+        <span style="font-size: 13px; font-weight: 700; color: #1e293b;"><i class="fa-solid fa-sliders" style="margin-right: 6px; color: #e11d48;"></i> Filtered</span>
+        <button type="button" onclick="resetAllCatalogFilters()" style="background: none; border: none; color: #e11d48; font-size: 12px; font-weight: 700; cursor: pointer; text-decoration: underline; padding: 0;">Clear all</button>
     </div>
 
     <!-- 1. Availability Section -->
@@ -68,7 +68,7 @@ $showFilters = isset($showFilters) ? (bool)$showFilters : true;
             <!-- Dual Range Track with Circular Knobs Matching Design -->
             <div class="price-range-slider-wrap" id="price-range-slider-wrap" style="position: relative; height: 32px; display: flex; align-items: center; margin-bottom: 18px; touch-action: none; cursor: pointer;">
                 <div class="price-track-base" style="position: absolute; width: 100%; height: 4px; background: #e2e8f0; border-radius: 2px;"></div>
-                <div id="price-track-highlight" style="position: absolute; left: 0%; right: 0%; height: 4px; background: #7a1530; border-radius: 2px; transition: left 0.05s ease, right 0.05s ease;"></div>
+                <div id="price-track-highlight" style="position: absolute; left: 0%; right: 0%; height: 4px; background: #e11d48; border-radius: 2px; transition: left 0.05s ease, right 0.05s ease;"></div>
                 <input type="range" id="price-slider-min" min="0" max="<?= $maxFilterPrice ?>" value="0" step="10" oninput="onPriceSliderSync('min')" onchange="runCatalogFilter()" class="dual-range-input" style="position: absolute; width: 100%; appearance: none; background: transparent; -webkit-appearance: none; z-index: 3; margin: 0; outline: none;">
                 <input type="range" id="price-slider-max" min="0" max="<?= $maxFilterPrice ?>" value="<?= $maxFilterPrice ?>" step="10" oninput="onPriceSliderSync('max')" onchange="runCatalogFilter()" class="dual-range-input" style="position: absolute; width: 100%; appearance: none; background: transparent; -webkit-appearance: none; z-index: 4; margin: 0; outline: none;">
             </div>
@@ -76,12 +76,12 @@ $showFilters = isset($showFilters) ? (bool)$showFilters : true;
             <!-- Price Inputs: [ ₹ 0 ] to [ ₹ 3000 ] -->
             <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px;">
                 <div class="price-input-container" style="display: flex; align-items: center; border: 1.5px solid #cbd5e1; border-radius: 6px; padding: 6px 10px; width: 105px; background: #ffffff; transition: all 0.2s; box-sizing: border-box;">
-                    <span style="color: #7a1530; font-size: 13px; font-weight: 700; margin-right: 4px;">₹</span>
+                    <span style="color: #e11d48; font-size: 13px; font-weight: 700; margin-right: 4px;">₹</span>
                     <input type="number" id="price-box-min" value="0" min="0" max="<?= $maxFilterPrice ?>" step="any" oninput="onPriceBoxInputDebounced()" onchange="onPriceBoxSync()" onkeydown="if(event.key==='Enter') applyCatalogFilter(true)" style="border: none; outline: none; width: 100%; font-size: 13.5px; font-weight: 600; color: #1e293b; background: transparent;">
                 </div>
                 <span style="color: #64748b; font-size: 13px; font-weight: 600;">to</span>
                 <div class="price-input-container" style="display: flex; align-items: center; border: 1.5px solid #cbd5e1; border-radius: 6px; padding: 6px 10px; width: 105px; background: #ffffff; transition: all 0.2s; box-sizing: border-box;">
-                    <span style="color: #7a1530; font-size: 13px; font-weight: 700; margin-right: 4px;">₹</span>
+                    <span style="color: #e11d48; font-size: 13px; font-weight: 700; margin-right: 4px;">₹</span>
                     <input type="number" id="price-box-max" value="<?= $maxFilterPrice ?>" min="0" max="<?= $maxFilterPrice ?>" step="any" oninput="onPriceBoxInputDebounced()" onchange="onPriceBoxSync()" onkeydown="if(event.key==='Enter') applyCatalogFilter(true)" style="border: none; outline: none; width: 100%; font-size: 13.5px; font-weight: 600; color: #1e293b; background: transparent;">
                 </div>
             </div>
@@ -93,7 +93,7 @@ $showFilters = isset($showFilters) ? (bool)$showFilters : true;
         <div class="filter-accordion-header" onclick="toggleCatalogFilter('filter-color-content', this)" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer; user-select: none;">
             <div style="display: flex; align-items: center; gap: 8px;">
                 <span style="font-size: 15px; font-weight: 700; color: #1e293b; letter-spacing: 0.2px;">Color</span>
-                <span id="selected-color-counter" style="display: none; background: #7a1530; color: #fff; font-size: 11px; font-weight: 700; padding: 1px 7px; border-radius: 10px;">0</span>
+                <span id="selected-color-counter" style="display: none; background: #e11d48; color: #fff; font-size: 11px; font-weight: 700; padding: 1px 7px; border-radius: 10px;">0</span>
             </div>
             <i class="fa-solid fa-chevron-up filter-accordion-chevron" style="font-size: 12px; color: #475569; transition: transform 0.25s ease;"></i>
         </div>
@@ -244,7 +244,7 @@ if (!empty($filterColorsList)) {
                 <li class="sidebar-cat-item">
                     <div style="display: flex; justify-content: space-between; align-items: center; padding: 2px 0;">
                         <a href="<?= base_url('category/' . esc($catItem['slug'])) ?>" style="color: #334155; text-decoration: none; font-size: 14px; font-weight: 600; display: flex; align-items: center; gap: 7px; transition: color 0.2s;">
-                            <span style="width: 5px; height: 5px; border-radius: 50%; background: #7a1530; display: inline-block;"></span>
+                            <span style="width: 5px; height: 5px; border-radius: 50%; background: #e11d48; display: inline-block;"></span>
                             <?= esc($catItem['name']) ?>
                         </a>
                         <?php if ($hasSubs): ?>
@@ -361,11 +361,11 @@ if (!empty($filterColorsList)) {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background-color: #7a1530;
+    background-color: #e11d48;
     border: 2.5px solid #ffffff;
     cursor: pointer;
     pointer-events: auto;
-    box-shadow: 0 2px 6px rgba(122,21,48,0.35);
+    box-shadow: 0 2px 6px rgba(225, 29, 72,0.35);
     transition: transform 0.15s ease, background-color 0.15s ease;
 }
 .dual-range-input::-webkit-slider-thumb:hover,
@@ -377,11 +377,11 @@ if (!empty($filterColorsList)) {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background-color: #7a1530;
+    background-color: #e11d48;
     border: 2.5px solid #ffffff;
     cursor: pointer;
     pointer-events: auto;
-    box-shadow: 0 2px 6px rgba(122,21,48,0.35);
+    box-shadow: 0 2px 6px rgba(225, 29, 72,0.35);
 }
 
 /* Quick Price Pills */
@@ -398,13 +398,13 @@ if (!empty($filterColorsList)) {
 }
 .quick-price-pill:hover {
     border-color: #d4af37;
-    color: #7a1530;
+    color: #e11d48;
 }
 .quick-price-pill.active {
-    background: #7a1530 !important;
+    background: #e11d48 !important;
     color: #ffffff !important;
-    border-color: #7a1530 !important;
-    box-shadow: 0 2px 6px rgba(122,21,48,0.25);
+    border-color: #e11d48 !important;
+    box-shadow: 0 2px 6px rgba(225, 29, 72,0.25);
 }
 
 /* Color Swatches Checkmark - strictly hidden by default */
@@ -416,7 +416,7 @@ if (!empty($filterColorsList)) {
 
 /* Color Swatches Active State */
 .color-filter-swatch.active {
-    box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #7a1530 !important;
+    box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #e11d48 !important;
     transform: scale(1.1);
 }
 .color-filter-swatch:hover {
@@ -429,19 +429,19 @@ if (!empty($filterColorsList)) {
 }
 
 .price-input-container:focus-within {
-    border-color: #7a1530 !important;
-    box-shadow: 0 0 0 2px rgba(122,21,48,0.1);
+    border-color: #e11d48 !important;
+    box-shadow: 0 0 0 2px rgba(225, 29, 72,0.1);
 }
 
 .sidebar-cat-item a:hover {
-    color: #7a1530 !important;
+    color: #e11d48 !important;
 }
 
 /* Apply & Reset Buttons Styling */
 .btn-apply-filters {
     width: 100%;
     padding: 12px 18px;
-    background: linear-gradient(135deg, #7a1530 0%, #901738 100%);
+    background: linear-gradient(135deg, #e11d48 0%, #901738 100%);
     color: #ffffff;
     border: 1.5px solid #d4af37;
     border-radius: 8px;
@@ -453,14 +453,14 @@ if (!empty($filterColorsList)) {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    box-shadow: 0 4px 12px rgba(122, 21, 48, 0.25);
+    box-shadow: 0 4px 12px rgba(225, 29, 72, 0.25);
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     user-select: none;
     outline: none;
 }
 .btn-apply-filters:hover {
     background: linear-gradient(135deg, #901738 0%, #a81c42 100%);
-    box-shadow: 0 6px 16px rgba(122, 21, 48, 0.35);
+    box-shadow: 0 6px 16px rgba(225, 29, 72, 0.35);
     transform: translateY(-1px);
 }
 .btn-apply-filters:active {
@@ -468,7 +468,7 @@ if (!empty($filterColorsList)) {
 }
 .btn-apply-filters.has-pending-changes {
     border-color: #f59e0b;
-    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.4), 0 4px 14px rgba(122, 21, 48, 0.35);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.4), 0 4px 14px rgba(225, 29, 72, 0.35);
 }
 .apply-filter-badge {
     background: #d4af37;
@@ -669,7 +669,7 @@ var priceDebounceTimer = null;
 var COLOR_SYNONYMS = {
     'pink': ['pink', 'rose', 'baby pink', 'rani', 'magenta', 'light pink', '#ffc0cb', '#ec4899', '#f472b6', '#db2777', '#fbcfe8'],
     'red': ['red', 'crimson', 'scarlet', 'dark red', '#dc2626', '#ef4444', '#b91c1c'],
-    'maroon': ['maroon', 'wine', 'burgundy', 'rust', '#800020', '#7a1530', '#831843', '#500724'],
+    'maroon': ['maroon', 'wine', 'burgundy', 'rust', '#800020', '#e11d48', '#831843', '#500724'],
     'blue': ['blue', 'sky', 'royal blue', 'light blue', '#2563eb', '#3b82f6', '#124bce', '#0284c7', '#60a5fa'],
     'navy': ['navy', 'dark blue', 'midnight blue', '#1e3a8a', '#1e40af', '#172554'],
     'green': ['green', 'olive', 'emerald', 'mint', 'bottle green', 'pista', '#16a34a', '#22c55e', '#15803d'],
@@ -1082,7 +1082,7 @@ function runCatalogFilter() {
         var totalActive = (inStockOnly ? 1 : 0) + ((minPrice > 0 || maxPrice < catalogTotalMaxPrice) ? 1 : 0) + activeSelectedColors.length + activeSelectedSizes.length;
         if (titleSpan) {
             if (totalActive > 0) {
-                titleSpan.innerHTML = '<i class="fa-solid fa-sliders" style="color: #d4af37;"></i> Filter Products <span style="background: #7a1530; color: #fff; font-size: 11px; padding: 1px 7px; border-radius: 10px; margin-left: 6px;">' + totalActive + ' active</span>';
+                titleSpan.innerHTML = '<i class="fa-solid fa-sliders" style="color: #d4af37;"></i> Filter Products <span style="background: #e11d48; color: #fff; font-size: 11px; padding: 1px 7px; border-radius: 10px; margin-left: 6px;">' + totalActive + ' active</span>';
             } else {
                 titleSpan.innerHTML = '<i class="fa-solid fa-sliders" style="color: #d4af37;"></i> Filter Products (In Stock, Price, Color)';
             }
@@ -1175,10 +1175,10 @@ function runCatalogFilter() {
                 alertDiv.style.border = '1.5px dashed #d4af37';
                 alertDiv.style.borderRadius = '12px';
                 alertDiv.style.margin = '20px 0';
-                alertDiv.innerHTML = '<i class="fa-solid fa-filter-circle-xmark" style="font-size: 32px; color: #7a1530; margin-bottom: 12px; display: block;"></i>' +
+                alertDiv.innerHTML = '<i class="fa-solid fa-filter-circle-xmark" style="font-size: 32px; color: #e11d48; margin-bottom: 12px; display: block;"></i>' +
                     '<h4 style="font-size: 16px; font-weight: 700; color: #1e293b; margin: 0 0 6px;">No products match your filter</h4>' +
                     '<p style="font-size: 13.5px; color: #64748b; margin: 0 0 14px;">Try expanding your price range or clearing selected colors.</p>' +
-                    '<button type="button" onclick="resetAllCatalogFilters()" style="background: #7a1530; color: #fff; border: none; border-radius: 6px; padding: 8px 18px; font-weight: 700; font-size: 13px; cursor: pointer;">Reset all filters</button>';
+                    '<button type="button" onclick="resetAllCatalogFilters()" style="background: #e11d48; color: #fff; border: none; border-radius: 6px; padding: 8px 18px; font-weight: 700; font-size: 13px; cursor: pointer;">Reset all filters</button>';
                 grid.appendChild(alertDiv);
             }
         } else {
@@ -1410,7 +1410,7 @@ function toggleMobileFilterSidebar(el) {
         chevron.style.transform = isExp ? 'rotate(180deg)' : 'none';
     }
     if (el) {
-        el.style.borderColor = isExp ? '#7a1530' : '#d4af37';
+        el.style.borderColor = isExp ? '#e11d48' : '#d4af37';
         el.style.background = isExp ? '#fdf6ec' : '#fffdfa';
     }
 }
@@ -1456,7 +1456,7 @@ function selectCustomSort(val, labelText) {
     if (activeItem) {
         activeItem.classList.add('active');
         activeItem.style.fontWeight = '700';
-        activeItem.style.color = '#7a1530';
+        activeItem.style.color = '#e11d48';
         activeItem.style.background = '#fdf6ec';
         var chk = activeItem.querySelector('.sort-check');
         if (chk) chk.style.display = 'inline-block';

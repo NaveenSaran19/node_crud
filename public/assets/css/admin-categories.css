@@ -39,13 +39,13 @@
     width: 48px;
     height: 48px;
     border-radius: 14px;
-    background: linear-gradient(135deg, #7a1530 0%, #4a0d1d 100%);
+    background: linear-gradient(135deg, #e11d48 0%, #4a0d1d 100%);
     color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 20px;
-    box-shadow: 0 4px 16px rgba(122, 21, 48, 0.25);
+    box-shadow: 0 4px 16px rgba(225, 29, 72, 0.25);
     flex-shrink: 0;
 }
 
@@ -92,7 +92,7 @@
     background: #ffffff;
     border-radius: 18px;
     border: 1.5px solid #f1e4e8;
-    box-shadow: 0 10px 30px rgba(122, 21, 48, 0.05), 0 1px 3px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 10px 30px rgba(225, 29, 72, 0.05), 0 1px 3px rgba(0, 0, 0, 0.03);
     overflow: hidden;
 }
 
@@ -168,14 +168,14 @@
 }
 
 .cat-form-input:focus {
-    border-color: #7a1530;
+    border-color: #e11d48;
     background: #fff;
-    box-shadow: 0 0 0 4px rgba(122, 21, 48, 0.1);
+    box-shadow: 0 0 0 4px rgba(225, 29, 72, 0.1);
 }
 
 .cat-form-input:focus + .cat-input-icon,
 .cat-input-wrapper:focus-within .cat-input-icon {
-    color: #7a1530;
+    color: #e11d48;
 }
 
 .cat-form-select {
@@ -196,8 +196,8 @@
 }
 
 .cat-form-select:focus {
-    border-color: #7a1530;
-    box-shadow: 0 0 0 4px rgba(122, 21, 48, 0.1);
+    border-color: #e11d48;
+    box-shadow: 0 0 0 4px rgba(225, 29, 72, 0.1);
 }
 
 .cat-form-help {
@@ -228,7 +228,7 @@
 }
 
 .cat-upload-container:hover {
-    border-color: #7a1530;
+    border-color: #e11d48;
     background: linear-gradient(135deg, #fffbfb 0%, #fff5f7 100%);
 }
 
@@ -237,13 +237,13 @@
     height: 52px;
     border-radius: 50%;
     background: #ffffff;
-    color: #7a1530;
+    color: #e11d48;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 22px;
     margin: 0 auto 12px auto;
-    box-shadow: 0 4px 12px rgba(122, 21, 48, 0.1);
+    box-shadow: 0 4px 12px rgba(225, 29, 72, 0.1);
     transition: transform 0.25s ease;
 }
 
@@ -340,7 +340,7 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
-    background: linear-gradient(135deg, #7a1530 0%, #a01d40 100%);
+    background: linear-gradient(135deg, #e11d48 0%, #a01d40 100%);
     color: #ffffff;
     border: none;
     padding: 13px 28px;
@@ -348,14 +348,14 @@
     font-size: 15px;
     font-weight: 700;
     cursor: pointer;
-    box-shadow: 0 4px 16px rgba(122, 21, 48, 0.28);
+    box-shadow: 0 4px 16px rgba(225, 29, 72, 0.28);
     transition: all 0.28s ease;
 }
 
 .btn-cat-save:hover {
     background: linear-gradient(135deg, #8a1937 0%, #b5224a 100%);
     transform: translateY(-2px);
-    box-shadow: 0 6px 22px rgba(122, 21, 48, 0.38);
+    box-shadow: 0 6px 22px rgba(225, 29, 72, 0.38);
     color: #ffffff;
 }
 

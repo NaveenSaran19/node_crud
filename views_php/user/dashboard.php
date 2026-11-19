@@ -2,7 +2,7 @@
 
 <style>
 :root {
-    --cust-primary: #7a1530;
+    --cust-primary: #e11d48;
     --cust-primary-dark: #5a0e22;
     --cust-gold: #c59b27;
     --cust-bg: #f8fafc;
@@ -24,7 +24,7 @@
 
 /* Profile Welcome Banner */
 .cust-welcome-banner {
-    background: linear-gradient(135deg, #7a1530 0%, #4a0d1e 100%);
+    background: linear-gradient(135deg, #e11d48 0%, #4a0d1e 100%);
     border-radius: 16px;
     padding: 30px 35px;
     color: #ffffff;
@@ -34,7 +34,7 @@
     flex-wrap: wrap;
     gap: 20px;
     margin-bottom: 35px;
-    box-shadow: 0 10px 25px rgba(122, 21, 48, 0.15);
+    box-shadow: 0 10px 25px rgba(225, 29, 72, 0.15);
     position: relative;
     overflow: hidden;
 }
@@ -218,7 +218,7 @@
     gap: 6px;
     background: #fffdfa;
     border: 1.5px solid #d4af37;
-    color: #7a1530;
+    color: #e11d48;
     padding: 7px 14px;
     border-radius: 8px;
     font-size: 13px;
@@ -228,11 +228,11 @@
     transition: all 0.2s ease;
 }
 .cust-print-invoice-btn:hover {
-    background: #7a1530;
+    background: #e11d48;
     color: #ffffff;
-    border-color: #7a1530;
+    border-color: #e11d48;
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(122, 21, 48, 0.25);
+    box-shadow: 0 4px 12px rgba(225, 29, 72, 0.25);
 }
 .cust-print-invoice-btn:hover i {
     color: #ffffff !important;
@@ -286,7 +286,7 @@
     background: var(--cust-primary);
     color: #ffffff;
     border-color: var(--cust-primary);
-    box-shadow: 0 2px 8px rgba(122, 21, 48, 0.25);
+    box-shadow: 0 2px 8px rgba(225, 29, 72, 0.25);
 }
 .cust-filter-tab.active i {
     color: #ffffff !important;

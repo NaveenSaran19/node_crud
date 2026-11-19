@@ -283,214 +283,217 @@
 
 <style>
 /* ==========================================================================
-   Storefront Modern Redesigned Footer Styling
+   Storefront Modern Redesigned Footer Styling (GlowCare Luxury Rose Theme)
    ========================================================================== */
 .storefront-modern-footer {
-    background: #1a050b;
-    color: #e2e8f0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    position: relative;
-    border-top: 3px solid #d4af37;
-    margin-top: auto;
+    background: #ffffff !important;
+    color: #475569 !important;
+    font-family: 'Outfit', 'Inter', -apple-system, sans-serif !important;
+    position: relative !important;
+    border-top: 1px solid #fecdd3 !important;
+    box-shadow: 0 -4px 30px rgba(225, 29, 72, 0.04) !important;
+    margin-top: auto !important;
 }
 
 /* 1. Heritage Trust Strip */
 .footer-trust-strip {
-    background: #2b0812;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-    padding: 24px 0;
+    background: #fff5f7 !important;
+    border-bottom: 1px solid #ffe4e6 !important;
+    padding: 24px 0 !important;
 }
 
 .footer-trust-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 20px !important;
 }
 
 .trust-strip-item {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 0 10px;
+    display: flex !important;
+    align-items: center !important;
+    gap: 14px !important;
+    padding: 0 10px !important;
 }
 
 .trust-strip-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: rgba(212, 175, 55, 0.12);
-    border: 1.5px solid #d4af37;
-    color: #ffd700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    flex-shrink: 0;
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 50% !important;
+    background: #ffffff !important;
+    border: 1.5px solid #fecdd3 !important;
+    color: #e11d48 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 18px !important;
+    flex-shrink: 0 !important;
+    box-shadow: 0 2px 8px rgba(225, 29, 72, 0.12) !important;
 }
 
 .trust-strip-text {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2px !important;
 }
 
 .trust-strip-text strong {
-    font-size: 13.5px;
-    font-weight: 700;
-    color: #ffffff;
-    letter-spacing: -0.1px;
+    font-size: 13.5px !important;
+    font-weight: 700 !important;
+    color: #0f172a !important;
+    letter-spacing: -0.1px !important;
 }
 
 .trust-strip-text span {
-    font-size: 12px;
-    color: #cbd5e1;
+    font-size: 12px !important;
+    color: #64748b !important;
 }
 
 /* 2. Main Footer Body */
 .main-footer-body {
-    padding-top: 50px;
-    padding-bottom: 30px;
+    padding-top: 50px !important;
+    padding-bottom: 30px !important;
 }
 
 .footer-main-grid {
-    display: grid;
-    grid-template-columns: 2fr 1.1fr 1.1fr 1.6fr;
-    gap: 40px;
-    margin-bottom: 45px;
+    display: grid !important;
+    grid-template-columns: 2fr 1.1fr 1.1fr 1.6fr !important;
+    gap: 40px !important;
+    margin-bottom: 45px !important;
 }
 
 /* Brand Column */
 .footer-brand-logo-link {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
-    margin-bottom: 16px;
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    text-decoration: none !important;
+    margin-bottom: 16px !important;
 }
 
 .footer-brand-logo {
-    height: 52px;
-    width: auto;
-    object-fit: contain;
-    border-radius: 6px;
+    height: 46px !important;
+    width: auto !important;
+    object-fit: contain !important;
+    border-radius: 8px !important;
 }
 
 .footer-brand-name {
-    font-family: 'Times New Roman', serif;
-    font-size: 24px;
-    font-weight: 800;
-    color: #ffd700;
-    letter-spacing: 0.5px;
+    font-family: 'Outfit', -apple-system, sans-serif !important;
+    font-size: 22px !important;
+    font-weight: 800 !important;
+    color: #0f172a !important;
+    letter-spacing: -0.2px !important;
 }
 
 .footer-brand-desc {
-    font-size: 13.5px;
-    line-height: 1.7;
-    color: #cbd5e1;
-    margin: 0 0 20px 0;
-    max-width: 420px;
+    font-size: 13.5px !important;
+    line-height: 1.7 !important;
+    color: #64748b !important;
+    margin: 0 0 20px 0 !important;
+    max-width: 420px !important;
 }
 
 .footer-contact-details {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 22px;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    margin-bottom: 22px !important;
 }
 
 .footer-contact-line {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    font-size: 13px;
-    color: #cbd5e1;
-    line-height: 1.6;
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+    font-size: 13px !important;
+    color: #475569 !important;
+    line-height: 1.6 !important;
 }
 
 .footer-contact-line i {
-    color: #d4af37;
-    font-size: 15px;
-    margin-top: 3px;
-    width: 20px;
-    text-align: center;
-    flex-shrink: 0;
+    color: #e11d48 !important;
+    font-size: 15px !important;
+    margin-top: 3px !important;
+    width: 20px !important;
+    text-align: center !important;
+    flex-shrink: 0 !important;
 }
 
 .footer-contact-line a {
-    color: #cbd5e1;
-    text-decoration: none;
-    transition: color 0.2s;
+    color: #475569 !important;
+    text-decoration: none !important;
+    transition: color 0.2s !important;
 }
 
 .footer-contact-line a:hover {
-    color: #ffd700;
+    color: #e11d48 !important;
 }
 
 .footer-gst-tag {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 4px 10px;
-    border-radius: 4px;
-    border-left: 3px solid #d4af37;
-    width: fit-content;
+    background: #fff1f2 !important;
+    padding: 4px 10px !important;
+    border-radius: 6px !important;
+    border-left: 3px solid #e11d48 !important;
+    width: fit-content !important;
+    color: #0f172a !important;
 }
 
 .footer-social-strip {
-    display: flex;
-    gap: 10px;
+    display: flex !important;
+    gap: 10px !important;
 }
 
 .social-icon-btn {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    color: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    text-decoration: none;
-    transition: all 0.25s ease;
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 50% !important;
+    background: #fff1f2 !important;
+    border: 1px solid #ffe4e6 !important;
+    color: #e11d48 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 15px !important;
+    text-decoration: none !important;
+    transition: all 0.25s ease !important;
 }
 
 .social-icon-btn:hover {
-    background: #d4af37;
-    color: #1a050b;
-    transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.35);
+    background: #e11d48 !important;
+    color: #ffffff !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 4px 12px rgba(225, 29, 72, 0.3) !important;
 }
 
 /* Nav Columns */
 .footer-col-title {
-    font-size: 16px;
-    font-weight: 800;
-    color: #ffffff;
-    margin: 0 0 20px 0;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    position: relative;
-    padding-bottom: 10px;
+    font-size: 15px !important;
+    font-weight: 800 !important;
+    color: #0f172a !important;
+    margin: 0 0 20px 0 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.6px !important;
+    position: relative !important;
+    padding-bottom: 10px !important;
 }
 
 .footer-col-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 35px;
-    height: 2px;
-    background: #d4af37;
-    border-radius: 2px;
+    content: '' !important;
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 32px !important;
+    height: 3px !important;
+    background: #e11d48 !important;
+    border-radius: 9999px !important;
 }
 
 .footer-nav-list {
     list-style: none !important;
     padding: 0 !important;
     margin: 0 !important;
-    display: flex;
-    flex-direction: column;
-    gap: 11px;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 11px !important;
 }
 
 .footer-nav-list li {
@@ -499,181 +502,178 @@
 }
 
 .footer-nav-list a {
-    color: #cbd5e1;
-    text-decoration: none;
-    font-size: 13.5px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: all 0.2s ease;
+    color: #64748b !important;
+    text-decoration: none !important;
+    font-size: 13.5px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    transition: all 0.2s ease !important;
 }
 
 .footer-nav-list a i {
-    font-size: 10px;
-    color: #d4af37;
-    transition: transform 0.2s;
+    font-size: 10px !important;
+    color: #e11d48 !important;
+    transition: transform 0.2s !important;
 }
 
 .footer-nav-list a:hover {
-    color: #ffd700;
-    transform: translateX(4px);
+    color: #e11d48 !important;
+    transform: translateX(4px) !important;
 }
 
 .footer-nav-list a:hover i {
-    transform: translateX(2px);
+    transform: translateX(2px) !important;
 }
 
 /* Newsletter Column */
 .footer-newsletter-text {
-    font-size: 13.5px;
-    color: #cbd5e1;
-    line-height: 1.6;
-    margin: 0 0 16px 0;
+    font-size: 13.5px !important;
+    color: #64748b !important;
+    line-height: 1.6 !important;
+    margin: 0 0 16px 0 !important;
 }
 
 .footer-newsletter-box {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 14px;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    margin-bottom: 14px !important;
 }
 
 .footer-input-wrap {
-    position: relative;
-    width: 100%;
+    position: relative !important;
+    width: 100% !important;
 }
 
 .footer-input-wrap i {
-    position: absolute;
-    left: 14px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #94a3b8;
-    font-size: 14px;
+    position: absolute !important;
+    left: 16px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    color: #94a3b8 !important;
+    font-size: 14px !important;
 }
 
 .footer-input-wrap input {
-    width: 100%;
-    height: 44px;
-    padding: 0 16px 0 42px;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1.5px solid rgba(255, 255, 255, 0.16);
-    border-radius: 6px;
-    color: #ffffff;
-    font-size: 13.5px;
-    outline: none;
-    box-sizing: border-box;
-    transition: all 0.2s ease;
+    width: 100% !important;
+    height: 44px !important;
+    padding: 0 16px 0 44px !important;
+    background: #f8fafc !important;
+    border: 1.5px solid #e2e8f0 !important;
+    border-radius: 9999px !important;
+    color: #0f172a !important;
+    font-size: 13.5px !important;
+    outline: none !important;
+    box-sizing: border-box !important;
+    transition: all 0.2s ease !important;
 }
 
 .footer-input-wrap input:focus {
-    background: rgba(255, 255, 255, 0.14);
-    border-color: #d4af37;
-    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.18);
+    background: #ffffff !important;
+    border-color: #e11d48 !important;
+    box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.12) !important;
 }
 
 .footer-subscribe-btn {
-    width: 100%;
-    height: 44px;
-    background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
-    color: #1a050b;
-    border: none;
-    border-radius: 6px;
-    font-size: 14px;
-    font-weight: 800;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.28);
-    transition: all 0.25s ease;
+    width: 100% !important;
+    height: 44px !important;
+    background: linear-gradient(135deg, #e11d48 0%, #be123c 100%) !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 9999px !important;
+    font-size: 13.5px !important;
+    font-weight: 700 !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    box-shadow: 0 4px 12px rgba(225, 29, 72, 0.28) !important;
+    transition: all 0.25s ease !important;
 }
 
 .footer-subscribe-btn:hover {
-    background: linear-gradient(135deg, #ffd700 0%, #d4af37 100%);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(212, 175, 55, 0.4);
+    background: linear-gradient(135deg, #be123c 0%, #9f1239 100%) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 16px rgba(225, 29, 72, 0.38) !important;
 }
 
 .footer-secure-guarantee {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 11.5px;
-    color: #94a3b8;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    font-size: 11.5px !important;
+    color: #94a3b8 !important;
 }
 
 .footer-secure-guarantee i {
-    color: #22c55e;
+    color: #10b981 !important;
 }
 
 /* 3. Bottom Strip */
 .footer-bottom-strip {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 16px;
+    border-top: 1px solid #f1f5f9 !important;
+    padding-top: 24px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 16px !important;
 }
 
 .footer-copyright-text {
-    font-size: 13px;
-    color: #94a3b8;
+    font-size: 13px !important;
+    color: #94a3b8 !important;
 }
 
 .footer-copyright-text strong {
-    color: #ffd700;
+    color: #0f172a !important;
 }
 
 .footer-payment-badges {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-wrap: wrap;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    flex-wrap: wrap !important;
 }
 
 .payment-shield-label {
-    font-size: 12px;
-    color: #cbd5e1;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    margin-right: 4px;
+    font-size: 12px !important;
+    color: #64748b !important;
+    font-weight: 600 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    margin-right: 4px !important;
 }
 
 .payment-icon-pill {
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    color: #ffffff;
-    font-size: 11px;
-    font-weight: 700;
-    padding: 4px 8px;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    gap: 4px;
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    color: #334155 !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    padding: 5px 9px !important;
+    border-radius: 6px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 4px !important;
 }
 
 .payment-icon-pill i {
-    font-size: 16px;
-    color: #ffd700;
+    font-size: 15px !important;
+    color: #e11d48 !important;
 }
 
-/* ==========================================================================
-   Mobile Bottom App Navigation Bar (STRICTLY MOBILE & TABLET RESPONSIVE)
-   ========================================================================== */
+/* Mobile Bottom App Navigation Bar */
 .mobile-bottom-app-bar {
-    display: none !important; /* STRICTLY HIDDEN ON DESKTOP SCREENS */
+    display: none !important;
 }
 
 @media (max-width: 991px) {
-    /* Reveal sticky fixed bottom app bar on mobile & tablet screens */
     .mobile-bottom-app-bar {
         display: flex !important;
         position: fixed !important;
@@ -685,15 +685,14 @@
         background: rgba(255, 255, 255, 0.98) !important;
         backdrop-filter: blur(12px) !important;
         -webkit-backdrop-filter: blur(12px) !important;
-        border-top: 1.5px solid rgba(212, 175, 55, 0.4) !important;
-        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1) !important;
+        border-top: 1px solid #fecdd3 !important;
+        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08) !important;
         z-index: 999999 !important;
         justify-content: space-around !important;
         align-items: center !important;
         padding: 0 4px !important;
         margin: 0 !important;
         box-sizing: border-box !important;
-        transform: translateZ(0) !important;
         padding-bottom: env(safe-area-inset-bottom, 0px) !important;
     }
 
@@ -711,60 +710,24 @@
         font-size: 11px !important;
         font-weight: 600 !important;
         transition: all 0.2s ease !important;
-        border: none !important;
         background: transparent !important;
         padding: 4px 0 !important;
     }
 
     .mobile-bar-tab i {
         font-size: 18px !important;
-        transition: transform 0.2s ease !important;
     }
 
     .mobile-bar-tab.active,
     .mobile-bar-tab:hover {
-        color: #7a1530 !important;
-    }
-
-    .mobile-bar-call-tab i {
-        color: #0284c7 !important;
-        font-size: 18px !important;
-    }
-
-    .mobile-bar-call-tab:hover {
-        color: #0369a1 !important;
-    }
-
-    .mobile-bar-chat-tab i {
-        color: #25D366 !important;
-        font-size: 20px !important;
-    }
-
-    .mobile-bar-chat-tab:hover {
-        color: #128C7E !important;
-    }
-
-    /* Hide obstructive floating contact container on mobile to prevent blocking content */
-    .floating-contact-container {
-        display: none !important;
-    }
-
-    .mobile-bar-tab.active i {
-        transform: scale(1.1) !important;
-    }
-
-    .mobile-bar-cart-icon-wrap {
-        position: relative !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
+        color: #e11d48 !important;
     }
 
     .mobile-bar-cart-badge {
         position: absolute !important;
         top: -6px !important;
         right: -10px !important;
-        background: #7a1530 !important;
+        background: #e11d48 !important;
         color: #ffffff !important;
         font-size: 10px !important;
         font-weight: 800 !important;
@@ -777,6 +740,7 @@
         padding: 0 3px !important;
         border: 1.5px solid #ffffff !important;
     }
+}
 
     /* Add padding to page bottom so sticky bottom bar doesn't overlay content */
     body {

@@ -347,7 +347,7 @@
             background: rgba(255, 255, 255, 0.96);
             border: 1.5px solid rgba(212, 175, 55, 0.5);
             border-radius: 24px;
-            box-shadow: 0 20px 50px rgba(122, 21, 48, 0.16), 0 4px 14px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 20px 50px rgba(225, 29, 72, 0.16), 0 4px 14px rgba(0, 0, 0, 0.06);
             max-width: 380px;
             width: 100%;
             margin: auto !important;
@@ -376,7 +376,7 @@
             inset: -6px;
             border-radius: 50%;
             border: 3.5px solid transparent;
-            border-top-color: #7a1530;
+            border-top-color: #e11d48;
             border-right-color: #d4af37;
             animation: preloaderSpin 1.05s cubic-bezier(0.5, 0.1, 0.5, 0.9) infinite;
         }
@@ -393,11 +393,11 @@
             font-family: 'Cinzel', 'Playfair Display', Georgia, serif;
             font-size: 22px;
             font-weight: 800;
-            color: #7a1530;
+            color: #e11d48;
             letter-spacing: 2.2px;
             text-transform: uppercase;
             margin-bottom: 5px;
-            text-shadow: 0 1px 3px rgba(122, 21, 48, 0.12);
+            text-shadow: 0 1px 3px rgba(225, 29, 72, 0.12);
         }
         #sitePreloader .preloader-brand-sub {
             font-size: 11.5px;
@@ -420,7 +420,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, #d4af37 0%, #7a1530 50%, #d4af37 100%);
+            background: linear-gradient(90deg, #d4af37 0%, #e11d48 50%, #d4af37 100%);
             border-radius: 4px;
             animation: preloaderBar 1.25s ease-in-out infinite;
         }
@@ -810,7 +810,7 @@
         <div class="country-currency-card">
             <div class="country-currency-header">
                 <div class="country-currency-title-wrap">
-                    <i class="fa-solid fa-earth-americas" style="color: #7a1530; font-size: 19px;"></i>
+                    <i class="fa-solid fa-earth-americas" style="color: #e11d48; font-size: 19px;"></i>
                     <span class="country-currency-title">Select Country & Currency</span>
                 </div>
                 <button type="button" class="country-currency-close" id="countryCurrencyCloseBtn" aria-label="Close Country Selector">&times;</button>

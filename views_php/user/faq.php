@@ -2,7 +2,7 @@
 
 <main style="flex-grow: 1; background-color: #fafafa; padding-bottom: 60px;">
     <!-- Breadcrumb Header -->
-    <div style="background: linear-gradient(135deg, #1e050c 0%, #2b0812 100%); padding: 40px 20px 50px; text-align: center; color: #fff; border-bottom: 2px solid #d4af37;">
+    <div style="background: linear-gradient(135deg, #1e050c 0%, #1e293b 100%); padding: 40px 20px 50px; text-align: center; color: #fff; border-bottom: 2px solid #d4af37;">
         <div style="max-width: 800px; margin: 0 auto;">
             <div style="font-size: 13px; color: #cbd5e1; margin-bottom: 12px; display: flex; align-items: center; justify-content: center; gap: 8px;">
                 <a href="<?= base_url() ?>" style="color: #f1f5f9; text-decoration: none;">Home</a>

@@ -37,7 +37,7 @@
                 <label for="title" style="display: block; font-weight: 700; color: #1e293b; margin-bottom: 8px; font-size: 14px;">
                     Link Title / Label <span style="color: #dc2626;">*</span>
                 </label>
-                <input type="text" id="title" name="title" value="<?= old('title', $link['title']) ?>" required placeholder="e.g. About Our Story" style="width: 100%; padding: 12px 16px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 15px; color: #0f172a; outline: none;" onfocus="this.style.borderColor='#7a1530'" onblur="this.style.borderColor='#cbd5e1'">
+                <input type="text" id="title" name="title" value="<?= old('title', $link['title']) ?>" required placeholder="e.g. About Our Story" style="width: 100%; padding: 12px 16px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 15px; color: #0f172a; outline: none;" onfocus="this.style.borderColor='#e11d48'" onblur="this.style.borderColor='#cbd5e1'">
             </div>
 
             <!-- Destination URL -->
@@ -45,7 +45,7 @@
                 <label for="url" style="display: block; font-weight: 700; color: #1e293b; margin-bottom: 8px; font-size: 14px;">
                     Destination URL <span style="color: #dc2626;">*</span>
                 </label>
-                <input type="text" id="url" name="url" value="<?= old('url', $link['url']) ?>" required placeholder="e.g. /pages/about-selvi-tex or /policies/contact-information or https://..." style="width: 100%; padding: 12px 16px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 15px; color: #0f172a; outline: none; font-family: monospace;" onfocus="this.style.borderColor='#7a1530'" onblur="this.style.borderColor='#cbd5e1'">
+                <input type="text" id="url" name="url" value="<?= old('url', $link['url']) ?>" required placeholder="e.g. /pages/about-selvi-tex or /policies/contact-information or https://..." style="width: 100%; padding: 12px 16px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 15px; color: #0f172a; outline: none; font-family: monospace;" onfocus="this.style.borderColor='#e11d48'" onblur="this.style.borderColor='#cbd5e1'">
                 <small style="display: block; color: #64748b; margin-top: 5px;">
                     Supports relative internal paths (e.g. <code>/pages/about-selvi-tex</code>, <code>/policies/shipping-policy</code>, <code>/blogs/news</code>) or external URLs (e.g. <code>https://instagram.com/...</code>).
                 </small>
@@ -84,7 +84,7 @@
                         <span style="font-size: 12.5px; color: #64748b;">Show this link in footer navigation</span>
                     </div>
                     <div>
-                        <input type="checkbox" id="is_active" name="is_active" value="1" <?= old('is_active', (string)$link['is_active']) == '1' ? 'checked' : '' ?> style="width: 20px; height: 20px; accent-color: #7a1530; cursor: pointer;">
+                        <input type="checkbox" id="is_active" name="is_active" value="1" <?= old('is_active', (string)$link['is_active']) == '1' ? 'checked' : '' ?> style="width: 20px; height: 20px; accent-color: #e11d48; cursor: pointer;">
                     </div>
                 </div>
 
@@ -96,7 +96,7 @@
                         <span style="font-size: 12.5px; color: #64748b;">Adds target="_blank" (useful for external links)</span>
                     </div>
                     <div>
-                        <input type="checkbox" id="open_in_new_tab" name="open_in_new_tab" value="1" <?= old('open_in_new_tab', (string)$link['open_in_new_tab']) == '1' ? 'checked' : '' ?> style="width: 20px; height: 20px; accent-color: #7a1530; cursor: pointer;">
+                        <input type="checkbox" id="open_in_new_tab" name="open_in_new_tab" value="1" <?= old('open_in_new_tab', (string)$link['open_in_new_tab']) == '1' ? 'checked' : '' ?> style="width: 20px; height: 20px; accent-color: #e11d48; cursor: pointer;">
                     </div>
                 </div>
             </div>
@@ -106,7 +106,7 @@
                 <a href="<?= base_url('admin/footer-links') ?>" class="btn" style="padding: 12px 24px; background: #f1f5f9; color: #475569; border-radius: 8px; font-weight: 600; text-decoration: none; border: 1px solid #cbd5e1;">
                     Cancel
                 </a>
-                <button type="submit" class="btn btn-primary" style="padding: 12px 28px; background: #7a1530; color: #fff; border-radius: 8px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(122,21,48,0.25);">
+                <button type="submit" class="btn btn-primary" style="padding: 12px 28px; background: #e11d48; color: #fff; border-radius: 8px; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(225, 29, 72,0.25);">
                     <i class="fa-solid fa-check"></i> Save Changes
                 </button>
             </div>

@@ -69,7 +69,7 @@
         </div>
 
         <div style="display: flex; gap: 8px;">
-            <button type="submit" style="height: 40px; padding: 0 18px; background: #7a1530; color: #fff; border: none; border-radius: 6px; font-size: 13px; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 6px;">
+            <button type="submit" style="height: 40px; padding: 0 18px; background: #e11d48; color: #fff; border: none; border-radius: 6px; font-size: 13px; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 6px;">
                 <i class="fa-solid fa-filter"></i> Apply
             </button>
             <a href="<?= base_url('admin/reviews') ?>" style="height: 40px; padding: 0 14px; background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 13px; font-weight: 600; text-decoration: none; display: flex; align-items: center;">Reset</a>
@@ -102,7 +102,7 @@
                                     <?= esc($rev['product_name'] ?? 'Product #' . $rev['product_id']) ?>
                                 </div>
                                 <?php if(!empty($rev['product_slug'])): ?>
-                                    <a href="<?= base_url('product/' . esc($rev['product_slug'])) ?>" target="_blank" style="font-size: 11px; color: #7a1530; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; margin-top: 4px;">
+                                    <a href="<?= base_url('product/' . esc($rev['product_slug'])) ?>" target="_blank" style="font-size: 11px; color: #e11d48; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; margin-top: 4px;">
                                         View Product <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 9px;"></i>
                                     </a>
                                 <?php endif; ?>

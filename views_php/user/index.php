@@ -621,7 +621,7 @@
                     ?>
                     <a href="<?= $itemLink ?>" class="best-of-card-link" style="text-decoration: none; color: inherit; flex-shrink: 0; display: inline-block;">
                         <div class="circle-item" style="animation: none; margin: 0 10px;">
-                            <div class="circle-img-wrapper" style="border: 2.5px solid #fff; box-shadow: 0 6px 18px rgba(122, 21, 48, 0.12); width: 155px; height: 155px; border-radius: 50%; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; position: relative;">
+                            <div class="circle-img-wrapper" style="border: 2.5px solid #fff; box-shadow: 0 6px 18px rgba(225, 29, 72, 0.12); width: 155px; height: 155px; border-radius: 50%; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; position: relative;">
                                 <img src="<?= esc($itemImgUrl) ?>" alt="<?= esc($item['name']) ?>" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
                             </div>
                             <p class="circle-title" style="font-size: 13.5px; font-weight: 700; color: #1e293b; text-align: center; margin: 10px 0 0; white-space: nowrap; max-width: 155px; overflow: hidden; text-overflow: ellipsis;"><?= esc($item['name']) ?></p>
@@ -727,7 +727,7 @@
                 left: 0;
                 right: 0;
                 height: 5px;
-                background: linear-gradient(90deg, #d4af37, #7a1530, #eab308, #7a1530, #d4af37);
+                background: linear-gradient(90deg, #d4af37, #e11d48, #eab308, #e11d48, #d4af37);
                 background-size: 200% 100%;
                 animation: shimmerGold 8s linear infinite;
             }
@@ -841,11 +841,11 @@
             }
             .showroom-thumb-card:hover {
                 transform: translateY(-3px);
-                box-shadow: 0 8px 18px rgba(122, 21, 48, 0.2);
+                box-shadow: 0 8px 18px rgba(225, 29, 72, 0.2);
             }
             .showroom-thumb-card.active {
                 border-color: #d4af37;
-                box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.4), 0 8px 18px rgba(122, 21, 48, 0.25);
+                box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.4), 0 8px 18px rgba(225, 29, 72, 0.25);
             }
             .showroom-feature-pills {
                 display: grid;
@@ -865,7 +865,7 @@
             }
             .showroom-feature-pill-item i {
                 font-size: 15px;
-                color: #7a1530;
+                color: #e11d48;
                 flex-shrink: 0;
             }
             .showroom-feature-pill-item span {
@@ -881,9 +881,9 @@
                 display: inline-flex;
                 align-items: center;
                 gap: 8px;
-                background: rgba(122, 21, 48, 0.08);
-                border: 1px solid rgba(122, 21, 48, 0.18);
-                color: #7a1530;
+                background: rgba(225, 29, 72, 0.08);
+                border: 1px solid rgba(225, 29, 72, 0.18);
+                color: #e11d48;
                 font-size: 11.5px;
                 font-weight: 800;
                 padding: 6px 16px;
@@ -896,9 +896,9 @@
                 display: inline-flex;
                 align-items: center;
                 gap: 8px;
-                background: linear-gradient(135deg, rgba(122, 21, 48, 0.08) 0%, rgba(212, 175, 55, 0.12) 100%);
-                border: 1px solid rgba(122, 21, 48, 0.2);
-                color: #7a1530;
+                background: linear-gradient(135deg, rgba(225, 29, 72, 0.08) 0%, rgba(212, 175, 55, 0.12) 100%);
+                border: 1px solid rgba(225, 29, 72, 0.2);
+                color: #e11d48;
                 font-size: 11px;
                 font-weight: 800;
                 padding: 6px 18px;
@@ -906,7 +906,7 @@
                 letter-spacing: 2px;
                 text-transform: uppercase;
                 margin-bottom: 14px;
-                box-shadow: 0 2px 8px rgba(122, 21, 48, 0.04);
+                box-shadow: 0 2px 8px rgba(225, 29, 72, 0.04);
             }
             .showroom-heading {
                 font-size: 34px;
@@ -944,7 +944,7 @@
             .showroom-info-card:hover {
                 border-color: #d4af37;
                 transform: translateY(-2px);
-                box-shadow: 0 10px 24px rgba(122, 21, 48, 0.08);
+                box-shadow: 0 10px 24px rgba(225, 29, 72, 0.08);
             }
             .showroom-card-icon {
                 width: 46px;
@@ -963,7 +963,7 @@
             }
             .showroom-card-icon.maroon {
                 background: linear-gradient(135deg, #fdf2f4 0%, #fbe8ec 100%);
-                color: #7a1530;
+                color: #e11d48;
                 border: 1px solid #f7d2da;
             }
             .showroom-card-icon.green {
@@ -1026,15 +1026,15 @@
                 gap: 5px;
                 font-size: 11.5px;
                 font-weight: 700;
-                color: #7a1530;
+                color: #e11d48;
                 text-decoration: none;
-                background: rgba(122, 21, 48, 0.06);
+                background: rgba(225, 29, 72, 0.06);
                 padding: 3px 9px;
                 border-radius: 6px;
                 transition: all 0.2s ease;
             }
             .showroom-quick-link:hover {
-                background: #7a1530;
+                background: #e11d48;
                 color: #ffffff;
             }
             .showroom-phone-touch-link {
@@ -1061,7 +1061,7 @@
             .btn-showroom-directions {
                 flex: 1 1 0;
                 min-width: 0;
-                background: linear-gradient(135deg, #7a1530 0%, #4e0b1c 100%);
+                background: linear-gradient(135deg, #e11d48 0%, #4e0b1c 100%);
                 color: #ffffff !important;
                 padding: 13px 14px;
                 border-radius: 12px;
@@ -1072,14 +1072,14 @@
                 align-items: center;
                 justify-content: center;
                 gap: 7px;
-                box-shadow: 0 6px 18px rgba(122, 21, 48, 0.3);
+                box-shadow: 0 6px 18px rgba(225, 29, 72, 0.3);
                 transition: all 0.25s ease;
                 border: 1px solid rgba(255,255,255,0.15);
                 white-space: nowrap;
             }
             .btn-showroom-directions:hover {
                 transform: translateY(-2px);
-                box-shadow: 0 10px 24px rgba(122, 21, 48, 0.4);
+                box-shadow: 0 10px 24px rgba(225, 29, 72, 0.4);
                 background: linear-gradient(135deg, #8f1938 0%, #5d0d22 100%);
             }
             .btn-showroom-whatsapp {
@@ -1177,15 +1177,15 @@
                 box-shadow: 0 2px 6px rgba(0,0,0,0.03);
             }
             .showroom-loc-tab:hover {
-                border-color: #7a1530;
-                color: #7a1530;
+                border-color: #e11d48;
+                color: #e11d48;
                 transform: translateY(-1px);
             }
             .showroom-loc-tab.active {
-                background: linear-gradient(135deg, #7a1530 0%, #4a0d1d 100%);
-                border-color: #7a1530;
+                background: linear-gradient(135deg, #e11d48 0%, #4a0d1d 100%);
+                border-color: #e11d48;
                 color: #ffffff;
-                box-shadow: 0 4px 14px rgba(122, 21, 48, 0.25);
+                box-shadow: 0 4px 14px rgba(225, 29, 72, 0.25);
             }
             .showroom-loc-tab.active i {
                 color: #facc15;
@@ -1248,7 +1248,7 @@
 
                         <?php else: ?>
                             <!-- Fallback Luxury Card when no images uploaded yet -->
-                            <div class="showroom-main-display" style="background: linear-gradient(135deg, #7a1530 0%, #3e0714 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; padding: 32px; text-align: center;">
+                            <div class="showroom-main-display" style="background: linear-gradient(135deg, #e11d48 0%, #3e0714 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; padding: 32px; text-align: center;">
                                 <div style="width: 76px; height: 76px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; font-size: 32px; margin-bottom: 16px; border: 2px solid rgba(212, 175, 55, 0.4); box-shadow: 0 8px 24px rgba(0,0,0,0.25);">
                                     <i class="fa-solid fa-store" style="color: #facc15;"></i>
                                 </div>
@@ -1380,7 +1380,7 @@
                             </a>
 
                             <a href="tel:<?= esc($phoneNo) ?>" id="showroom-btn-call" class="btn-showroom-call">
-                                <i class="fa-solid fa-phone" style="color: #7a1530;"></i>
+                                <i class="fa-solid fa-phone" style="color: #e11d48;"></i>
                                 <span>Call Showroom</span>
                             </a>
                         </div>
@@ -1585,8 +1585,8 @@
                     transform: scale(1.08);
                 }
                 .shorts-subcat-card.active .shorts-subcat-img-wrap {
-                    border-color: var(--primary-color, #7a1530);
-                    box-shadow: 0 0 0 4px rgba(122, 21, 48, 0.22), 0 10px 25px rgba(122, 21, 48, 0.28);
+                    border-color: var(--primary-color, #e11d48);
+                    box-shadow: 0 0 0 4px rgba(225, 29, 72, 0.22), 0 10px 25px rgba(225, 29, 72, 0.28);
                     transform: scale(1.05);
                 }
                 .shorts-subcat-yt-badge {
@@ -1621,7 +1621,7 @@
                     max-width: 170px;
                 }
                 .shorts-subcat-card.active .shorts-subcat-title {
-                    color: var(--primary-color, #7a1530);
+                    color: var(--primary-color, #e11d48);
                     font-weight: 800;
                 }
                 .shorts-subcat-active-pill {
@@ -1630,12 +1630,12 @@
                     font-weight: 800;
                     padding: 3px 12px;
                     border-radius: 12px;
-                    background: var(--primary-color, #7a1530);
+                    background: var(--primary-color, #e11d48);
                     color: #ffffff;
                     letter-spacing: 0.5px;
                     display: none;
                     text-transform: uppercase;
-                    box-shadow: 0 2px 6px rgba(122, 21, 48, 0.3);
+                    box-shadow: 0 2px 6px rgba(225, 29, 72, 0.3);
                 }
                 .shorts-subcat-card.active .shorts-subcat-active-pill {
                     display: inline-block;
@@ -2140,7 +2140,7 @@
                             <?php endif; ?>
 
                             <div style="display: flex; gap: 10px; align-items: baseline; margin-bottom: 15px;">
-                                <span class="card-sale-price" data-base-price="<?= $sp['price'] ?>" style="color: var(--primary-color, #7a1530); font-weight: 800; font-size: 19px;">₹ <?= number_format($sp['price'], 2) ?></span>
+                                <span class="card-sale-price" data-base-price="<?= $sp['price'] ?>" style="color: var(--primary-color, #e11d48); font-weight: 800; font-size: 19px;">₹ <?= number_format($sp['price'], 2) ?></span>
                                 <?php if(!empty($sp['original_price']) && $sp['original_price'] > $sp['price']): ?>
                                     <span class="card-original-price" data-base-price="<?= $sp['original_price'] ?>" style="text-decoration: line-through; color: #94a3b8; font-size: 13px; font-weight: 600;">₹ <?= number_format($sp['original_price'], 2) ?></span>
                                 <?php endif; ?>
@@ -2151,14 +2151,14 @@
                                         class="card-add-cart-btn" 
                                         data-product-id="<?= (int)$sp['id'] ?>"
                                         title="Add to Shopping Cart"
-                                        style="flex: 1; background: #ffffff; color: #7a1530; border: 1.5px solid #7a1530; padding: 8px 6px; border-radius: 6px; font-weight: 700; font-size: 12px; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 4px; transition: all 0.2s;">
+                                        style="flex: 1; background: #ffffff; color: #e11d48; border: 1.5px solid #e11d48; padding: 8px 6px; border-radius: 6px; font-weight: 700; font-size: 12px; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 4px; transition: all 0.2s;">
                                     <i class="fa-solid fa-cart-shopping"></i> <span class="btn-text">Add Cart</span>
                                 </button>
                                 <a href="<?= base_url('checkout?product_id=' . $sp['id']) ?>" 
                                    class="card-buy-now-btn"
                                    data-product-id="<?= (int)$sp['id'] ?>"
                                    title="Checkout this product individually"
-                                   style="flex: 1; background: #7a1530; color: #ffffff; text-align: center; padding: 8px 6px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 12px; display: flex; justify-content: center; align-items: center; gap: 4px; transition: all 0.2s;">
+                                   style="flex: 1; background: #e11d48; color: #ffffff; text-align: center; padding: 8px 6px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 12px; display: flex; justify-content: center; align-items: center; gap: 4px; transition: all 0.2s;">
                                     <i class="fa-solid fa-bolt"></i> <span class="btn-text">Buy Now</span>
                                 </a>
                                 <?php if($hasVideo): ?>
@@ -2196,12 +2196,12 @@
                     </div>
                     <h3 id="empty-channel-title" style="font-size: 20px; font-weight: 800; color: #1e293b; margin-bottom: 8px;">New Videos Coming Soon</h3>
                     <p style="font-size: 14px; color: #64748b; max-width: 520px; margin: 0 auto 20px auto; line-height: 1.6;">We upload fresh product videos and reels daily from our weaving center in Elampillai. Stay tuned or browse our exclusive collection catalog!</p>
-                    <a href="<?= base_url('collections') ?>" style="display: inline-block; padding: 11px 26px; background: var(--primary-color, #7a1530); color: white; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;">Browse Collections</a>
+                    <a href="<?= base_url('collections') ?>" style="display: inline-block; padding: 11px 26px; background: var(--primary-color, #e11d48); color: white; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;">Browse Collections</a>
                 </div>
             </div>
             
             <div style="text-align: center; margin-top: 45px;">
-                <a href="<?= esc($settings['home_shorts_btn_link'] ?? base_url('collections')) ?>" style="display: inline-block; padding: 13px 38px; background-color: var(--primary-color, #7a1530); color: white; font-weight: 700; text-decoration: none; border-radius: 6px; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.8px; box-shadow: 0 4px 14px rgba(122, 21, 48, 0.25);"><?= esc($settings['home_shorts_btn_text'] ?? 'VIEW ALL') ?></a>
+                <a href="<?= esc($settings['home_shorts_btn_link'] ?? base_url('collections')) ?>" style="display: inline-block; padding: 13px 38px; background-color: var(--primary-color, #e11d48); color: white; font-weight: 700; text-decoration: none; border-radius: 6px; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.8px; box-shadow: 0 4px 14px rgba(225, 29, 72, 0.25);"><?= esc($settings['home_shorts_btn_text'] ?? 'VIEW ALL') ?></a>
             </div>
 
             <!-- Lightbox Video, YouTube Shorts & Instagram/Facebook Modal Player -->
@@ -2216,13 +2216,13 @@
                     <div class="shorts-modal-footer">
                         <div style="flex: 1; overflow: hidden; padding-right: 10px;">
                             <h4 id="shortsModalTitle" style="margin: 0 0 4px 0; font-size: 14px; font-weight: 700; color: #1e293b; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Product Name</h4>
-                            <div id="shortsModalPrice" style="font-size: 16px; font-weight: 800; color: var(--primary-color, #7a1530);">₹ 0.00</div>
+                            <div id="shortsModalPrice" style="font-size: 16px; font-weight: 800; color: var(--primary-color, #e11d48);">₹ 0.00</div>
                         </div>
                         <div style="display: flex; gap: 8px;">
-                            <a id="shortsModalProductLink" href="#" style="background: #ffffff; color: var(--primary-color, #7a1530); border: 1.5px solid var(--primary-color, #7a1530); padding: 8px 12px; border-radius: 6px; font-weight: 700; font-size: 12px; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                            <a id="shortsModalProductLink" href="#" style="background: #ffffff; color: var(--primary-color, #e11d48); border: 1.5px solid var(--primary-color, #e11d48); padding: 8px 12px; border-radius: 6px; font-weight: 700; font-size: 12px; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
                                 Details
                             </a>
-                            <a id="shortsModalBuyBtn" href="#" style="background: var(--primary-color, #7a1530); color: #ffffff; padding: 8px 14px; border-radius: 6px; font-weight: 700; font-size: 12px; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                            <a id="shortsModalBuyBtn" href="#" style="background: var(--primary-color, #e11d48); color: #ffffff; padding: 8px 14px; border-radius: 6px; font-weight: 700; font-size: 12px; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
                                 <i class="fa-solid fa-bolt"></i> Buy Now
                             </a>
                         </div>
@@ -2624,8 +2624,8 @@
 
                 <div class="why-choose-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-bottom: 40px;">
                     <!-- Card 1 -->
-                    <div class="why-choose-card" style="background: #ffffff; border: 1px solid #f1e6da; border-radius: 14px; padding: 30px 24px; text-align: center; box-shadow: 0 4px 20px rgba(122, 21, 48, 0.04); transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                        <div style="width: 65px; height: 65px; margin: 0 auto 20px; border-radius: 50%; background: linear-gradient(135deg, #fdf2f4 0%, #fae8eb 100%); border: 2px solid #fbcfe8; display: flex; align-items: center; justify-content: center; color: #7a1530; font-size: 24px;">
+                    <div class="why-choose-card" style="background: #ffffff; border: 1px solid #f1e6da; border-radius: 14px; padding: 30px 24px; text-align: center; box-shadow: 0 4px 20px rgba(225, 29, 72, 0.04); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <div style="width: 65px; height: 65px; margin: 0 auto 20px; border-radius: 50%; background: linear-gradient(135deg, #fdf2f4 0%, #fae8eb 100%); border: 2px solid #fbcfe8; display: flex; align-items: center; justify-content: center; color: #e11d48; font-size: 24px;">
                             <i class="fa-solid fa-gem"></i>
                         </div>
                         <h3 style="font-size: 17px; font-weight: 700; color: #1e293b; margin: 0 0 10px 0;">
@@ -2637,7 +2637,7 @@
                     </div>
 
                     <!-- Card 2 -->
-                    <div class="why-choose-card" style="background: #ffffff; border: 1px solid #f1e6da; border-radius: 14px; padding: 30px 24px; text-align: center; box-shadow: 0 4px 20px rgba(122, 21, 48, 0.04); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <div class="why-choose-card" style="background: #ffffff; border: 1px solid #f1e6da; border-radius: 14px; padding: 30px 24px; text-align: center; box-shadow: 0 4px 20px rgba(225, 29, 72, 0.04); transition: transform 0.3s ease, box-shadow 0.3s ease;">
                         <div style="width: 65px; height: 65px; margin: 0 auto 20px; border-radius: 50%; background: linear-gradient(135deg, #fefce8 0%, #fef9c3 100%); border: 2px solid #fef08a; display: flex; align-items: center; justify-content: center; color: #b45309; font-size: 24px;">
                             <i class="fa-solid fa-tags"></i>
                         </div>
@@ -2650,7 +2650,7 @@
                     </div>
 
                     <!-- Card 3 -->
-                    <div class="why-choose-card" style="background: #ffffff; border: 1px solid #f1e6da; border-radius: 14px; padding: 30px 24px; text-align: center; box-shadow: 0 4px 20px rgba(122, 21, 48, 0.04); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <div class="why-choose-card" style="background: #ffffff; border: 1px solid #f1e6da; border-radius: 14px; padding: 30px 24px; text-align: center; box-shadow: 0 4px 20px rgba(225, 29, 72, 0.04); transition: transform 0.3s ease, box-shadow 0.3s ease;">
                         <div style="width: 65px; height: 65px; margin: 0 auto 20px; border-radius: 50%; background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border: 2px solid #bbf7d0; display: flex; align-items: center; justify-content: center; color: #15803d; font-size: 24px;">
                             <i class="fa-solid fa-shield-halved"></i>
                         </div>
@@ -2663,7 +2663,7 @@
                     </div>
 
                     <!-- Card 4 -->
-                    <div class="why-choose-card" style="background: #ffffff; border: 1px solid #f1e6da; border-radius: 14px; padding: 30px 24px; text-align: center; box-shadow: 0 4px 20px rgba(122, 21, 48, 0.04); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <div class="why-choose-card" style="background: #ffffff; border: 1px solid #f1e6da; border-radius: 14px; padding: 30px 24px; text-align: center; box-shadow: 0 4px 20px rgba(225, 29, 72, 0.04); transition: transform 0.3s ease, box-shadow 0.3s ease;">
                         <div style="width: 65px; height: 65px; margin: 0 auto 20px; border-radius: 50%; background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border: 2px solid #bfdbfe; display: flex; align-items: center; justify-content: center; color: #1d4ed8; font-size: 24px;">
                             <i class="fa-solid fa-plane-departure"></i>
                         </div>
@@ -2677,7 +2677,7 @@
                 </div>
 
                 <!-- Trust Strip Ribbon -->
-                <div style="background: linear-gradient(135deg, #7a1530 0%, #4a0d1d 100%); border-radius: 14px; padding: 25px 35px; color: white; display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 20px; box-shadow: 0 10px 25px rgba(122, 21, 48, 0.2);">
+                <div style="background: linear-gradient(135deg, #e11d48 0%, #4a0d1d 100%); border-radius: 14px; padding: 25px 35px; color: white; display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 20px; box-shadow: 0 10px 25px rgba(225, 29, 72, 0.2);">
                     <div style="display: flex; align-items: center; gap: 14px;">
                         <i class="fa-solid fa-award" style="font-size: 28px; color: #d4af37;"></i>
                         <div>

@@ -73,14 +73,14 @@
                 <img src="<?= base_url($review['review_image']) ?>" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px; border: 1px solid #cbd5e1;">
                 <div>
                     <div style="font-size: 13px; font-weight: 700; color: #1e293b;">Uploaded Review Photo</div>
-                    <a href="<?= base_url($review['review_image']) ?>" target="_blank" style="font-size: 12px; color: #7a1530; text-decoration: none;">View Full Resolution</a>
+                    <a href="<?= base_url($review['review_image']) ?>" target="_blank" style="font-size: 12px; color: #e11d48; text-decoration: none;">View Full Resolution</a>
                 </div>
             </div>
         <?php endif; ?>
 
         <div style="display: flex; justify-content: flex-end; gap: 12px; border-top: 1px solid #f1f5f9; padding-top: 20px;">
             <a href="<?= base_url('admin/reviews') ?>" class="btn" style="padding: 10px 20px; background: #f1f5f9; color: #475569; border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: 600;">Cancel</a>
-            <button type="submit" class="btn" style="padding: 10px 24px; background: #7a1530; color: #fff; border: none; border-radius: 6px; font-size: 14px; font-weight: 700; cursor: pointer;">Save Changes</button>
+            <button type="submit" class="btn" style="padding: 10px 24px; background: #e11d48; color: #fff; border: none; border-radius: 6px; font-size: 14px; font-weight: 700; cursor: pointer;">Save Changes</button>
         </div>
     </form>
 </div>

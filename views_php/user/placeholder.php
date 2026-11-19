@@ -1,8 +1,8 @@
 <?= view('user/header') ?>
 <main style="flex-grow: 1; padding: 100px 40px; text-align: center; background-color: #fdf5e6;">
-    <div style="max-width: 600px; margin: 0 auto; background: white; padding: 60px 40px; border-radius: 12px; box-shadow: 0 15px 40px rgba(122, 21, 48, 0.08); border-top: 6px solid #7a1530;">
+    <div style="max-width: 600px; margin: 0 auto; background: white; padding: 60px 40px; border-radius: 12px; box-shadow: 0 15px 40px rgba(225, 29, 72, 0.08); border-top: 6px solid #e11d48;">
         
-        <h1 style="color: #7a1530; font-size: 36px; font-weight: 900; margin-bottom: 25px; font-family: 'Georgia', serif; letter-spacing: 0.5px;">
+        <h1 style="color: #e11d48; font-size: 36px; font-weight: 900; margin-bottom: 25px; font-family: 'Georgia', serif; letter-spacing: 0.5px;">
             <?= isset($title) ? esc($title) : 'Placeholder Page' ?>
         </h1>
         

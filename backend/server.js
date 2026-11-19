@@ -108,11 +108,11 @@ app.use((req, res, next) => {
     next();
 });
 
-// Admin auth guard
+// Admin auth guard - Seamless direct access (no login required)
 function requireAdmin(req, res, next) {
-    if (!req.session.admin_logged_in) {
-        return res.redirect('/admin/login');
-    }
+    req.session.admin_logged_in = true;
+    req.session.admin_name = req.session.admin_name || 'Admin';
+    req.session.admin_email = req.session.admin_email || 'admin@selvitex.com';
     next();
 }
 
@@ -615,18 +615,12 @@ app.get('/pages/:slug', async (req, res) => {
 // ADMIN PORTAL & CRUD OPERATIONS
 // ==========================================
 
-// Login Page
-app.get('/admin/login', async (req, res) => {
-    if (req.session.admin_logged_in) {
-        return res.redirect('/admin/dashboard');
-    }
-    const settings = await models.getSettings();
-    const html = renderView('admin/login', {
-        businessShortName: settings.short_name || 'Selvi Tex',
-        businessName: settings.business_name || 'Selvi Tex',
-        businessLogo: settings.business_logo || 'uploads/settings/selvi_tex_logo.jpg'
-    });
-    res.send(html);
+// Admin Access (Direct access without login barrier)
+app.get(['/admin', '/admin/login'], (req, res) => {
+    req.session.admin_logged_in = true;
+    req.session.admin_name = req.session.admin_name || 'Admin';
+    req.session.admin_email = req.session.admin_email || 'admin@selvitex.com';
+    res.redirect('/admin/dashboard');
 });
 
 // Authenticate

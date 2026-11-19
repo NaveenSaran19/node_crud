@@ -26,15 +26,15 @@
     transition: all 0.2s ease;
 }
 .customer-tab-btn:hover {
-    color: #7a1530;
+    color: #e11d48;
     border-color: #cbd5e1;
     background: #ffffff;
 }
 .customer-tab-btn.active {
     color: #ffffff;
-    background: #7a1530;
-    border-color: #7a1530;
-    box-shadow: 0 4px 12px rgba(122, 21, 48, 0.2);
+    background: #e11d48;
+    border-color: #e11d48;
+    box-shadow: 0 4px 12px rgba(225, 29, 72, 0.2);
 }
 .customer-tab-btn .tab-badge {
     background: rgba(255, 255, 255, 0.25);
@@ -63,7 +63,7 @@
 <div class="page-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
     <div>
         <h2 style="font-size: 22px; font-weight: 800; color: #1e293b; margin: 0;">
-            <i class="fa-solid fa-users" style="margin-right: 10px; color: #7a1530;"></i> Customers & Community
+            <i class="fa-solid fa-users" style="margin-right: 10px; color: #e11d48;"></i> Customers & Community
         </h2>
         <p style="font-size: 13px; color: #64748b; margin: 5px 0 0 0;">Manage customer testimonials, incoming contact enquiries, and newsletter subscribers.</p>
     </div>
@@ -97,7 +97,7 @@
     <div style="display: grid; grid-template-columns: 380px 1fr; gap: 25px; align-items: start;">
         <!-- Add Testimonial Card -->
         <div class="premium-card">
-            <h3 class="section-title"><i class="fa-solid fa-plus-circle" style="color: #7a1530;"></i> Add New Testimonial</h3>
+            <h3 class="section-title"><i class="fa-solid fa-plus-circle" style="color: #e11d48;"></i> Add New Testimonial</h3>
             <form action="<?= base_url('admin/testimonials/store') ?>" method="POST">
                 <div class="form-group">
                     <label class="form-label">Customer Name</label>
@@ -192,7 +192,7 @@
     <div class="premium-card">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
             <h3 class="section-title" style="margin-bottom: 0;">
-                <i class="fa-solid fa-envelope-open-text" style="color: #7a1530;"></i> Customer Contact Enquiries (<?= count($enquiries ?? []) ?>)
+                <i class="fa-solid fa-envelope-open-text" style="color: #e11d48;"></i> Customer Contact Enquiries (<?= count($enquiries ?? []) ?>)
             </h3>
         </div>
 
@@ -224,8 +224,8 @@
                                 </td>
                                 <td>
                                     <div style="font-size: 13px; display: flex; flex-direction: column; gap: 6px;">
-                                        <a href="mailto:<?= esc($enq['email']) ?>?subject=<?= urlencode('Reply from Selvi Tex - Regarding your enquiry') ?>" style="color: #7a1530; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 5px;">
-                                            <i class="fa-solid fa-envelope" style="font-size: 11px; color: #7a1530;"></i> <?= esc($enq['email']) ?>
+                                        <a href="mailto:<?= esc($enq['email']) ?>?subject=<?= urlencode('Reply from Selvi Tex - Regarding your enquiry') ?>" style="color: #e11d48; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 5px;">
+                                            <i class="fa-solid fa-envelope" style="font-size: 11px; color: #e11d48;"></i> <?= esc($enq['email']) ?>
                                         </a>
                                         <?php if(!empty($enq['phone'])): 
                                             $cleanPhone = preg_replace('/[^0-9]/', '', $enq['phone']);
@@ -277,7 +277,7 @@
     <div class="premium-card">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
             <h3 class="section-title" style="margin-bottom: 0;">
-                <i class="fa-solid fa-bell" style="color: #7a1530;"></i> Newsletter Subscribers (<?= count($subscribers ?? []) ?>)
+                <i class="fa-solid fa-bell" style="color: #e11d48;"></i> Newsletter Subscribers (<?= count($subscribers ?? []) ?>)
             </h3>
         </div>
 

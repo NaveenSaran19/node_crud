@@ -31,15 +31,15 @@
     <div class="settings-header">
         <h2>
             <?php if($currentSection === 'general'): ?>
-                <i class="fa-solid fa-sliders" style="margin-right: 10px; color: #7a1530;"></i> General Settings
+                <i class="fa-solid fa-sliders" style="margin-right: 10px; color: #e11d48;"></i> General Settings
             <?php elseif($currentSection === 'homepage'): ?>
-                <i class="fa-solid fa-house" style="margin-right: 10px; color: #7a1530;"></i> Home Page Settings
+                <i class="fa-solid fa-house" style="margin-right: 10px; color: #e11d48;"></i> Home Page Settings
             <?php elseif($currentSection === 'payment'): ?>
-                <i class="fa-solid fa-credit-card" style="margin-right: 10px; color: #7a1530;"></i> Payment Gateway Settings
+                <i class="fa-solid fa-credit-card" style="margin-right: 10px; color: #e11d48;"></i> Payment Gateway Settings
             <?php elseif($currentSection === 'attributes'): ?>
-                <i class="fa-solid fa-tags" style="margin-right: 10px; color: #7a1530;"></i> Attribute Settings (Color &amp; Size)
+                <i class="fa-solid fa-tags" style="margin-right: 10px; color: #e11d48;"></i> Attribute Settings (Color &amp; Size)
             <?php else: ?>
-                <i class="fa-solid fa-cubes" style="margin-right: 10px; color: #7a1530;"></i> Module Settings
+                <i class="fa-solid fa-cubes" style="margin-right: 10px; color: #e11d48;"></i> Module Settings
             <?php endif; ?>
         </h2>
     </div>
@@ -90,19 +90,19 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="form-label"><i class="fa-solid fa-location-arrow" style="color: #7a1530; margin-right: 5px;"></i> Google Maps Navigation Link</label>
+                        <label class="form-label"><i class="fa-solid fa-location-arrow" style="color: #e11d48; margin-right: 5px;"></i> Google Maps Navigation Link</label>
                         <input type="text" name="location_link" class="premium-input" placeholder="e.g. https://maps.app.goo.gl/..." value="<?= esc($settings['location_link'] ?? '') ?>">
                     </div>
                 </div>
 
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                     <div class="form-group">
-                        <label class="form-label"><i class="fa-solid fa-envelope" style="color: #7a1530; margin-right: 5px;"></i> Contact / Support Email</label>
+                        <label class="form-label"><i class="fa-solid fa-envelope" style="color: #e11d48; margin-right: 5px;"></i> Contact / Support Email</label>
                         <input type="email" name="contact_email" class="premium-input" placeholder="e.g. support@ssptex.com" value="<?= esc($settings['contact_email'] ?? ($settings['support_email'] ?? '')) ?>">
                     </div>
 
                     <div class="form-group">
-                        <label class="form-label"><i class="fa-solid fa-phone" style="color: #7a1530; margin-right: 5px;"></i> Customer Care Phone</label>
+                        <label class="form-label"><i class="fa-solid fa-phone" style="color: #e11d48; margin-right: 5px;"></i> Customer Care Phone</label>
                         <input type="text" name="phone_no" class="premium-input" placeholder="e.g. +91 98765 43210" value="<?= esc($settings['phone_no'] ?? '') ?>">
                     </div>
 
@@ -112,13 +112,13 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="form-label"><i class="fa-regular fa-clock" style="color: #7a1530; margin-right: 5px;"></i> Business Working Hours</label>
+                        <label class="form-label"><i class="fa-regular fa-clock" style="color: #e11d48; margin-right: 5px;"></i> Business Working Hours</label>
                         <input type="text" name="business_hours" class="premium-input" placeholder="e.g. Mon-Sat, 9:00 AM to 8:00 PM" value="<?= esc($settings['business_hours'] ?? 'Mon-Sat, 9:00 AM to 8:00 PM') ?>">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="form-label"><i class="fa-solid fa-map-location-dot" style="color: #7a1530; margin-right: 5px;"></i> Google Maps Location Embed (Iframe or Embed URL)</label>
+                    <label class="form-label"><i class="fa-solid fa-map-location-dot" style="color: #e11d48; margin-right: 5px;"></i> Google Maps Location Embed (Iframe or Embed URL)</label>
                     <textarea name="google_map_embed" class="premium-input" rows="3" placeholder="Paste Google Maps embed <iframe> code or embed link to display interactive map on Contact Us page..."><?= esc($settings['google_map_embed'] ?? '') ?></textarea>
                     <small style="color: #64748b; font-size: 12px; margin-top: 4px; display: block;">Displays interactive Google Map on the Contact Us page. You can copy embed code directly from Google Maps &gt; Share &gt; Embed a map.</small>
                 </div>
@@ -138,7 +138,7 @@
                     <div class="branding-upload-card">
                         <div class="branding-card-header">
                             <span class="branding-card-title">
-                                <i class="fa-solid fa-gem" style="color: #7a1530;"></i> Storefront Business Logo
+                                <i class="fa-solid fa-gem" style="color: #e11d48;"></i> Storefront Business Logo
                             </span>
                             <span class="branding-badge" id="logoStatusBadge">Current Saved Logo</span>
                         </div>
@@ -176,7 +176,7 @@
                     <div class="branding-upload-card">
                         <div class="branding-card-header">
                             <span class="branding-card-title">
-                                <i class="fa-solid fa-window-maximize" style="color: #7a1530;"></i> Favicon (Browser Tab Icon)
+                                <i class="fa-solid fa-window-maximize" style="color: #e11d48;"></i> Favicon (Browser Tab Icon)
                             </span>
                             <span class="branding-badge" id="faviconStatusBadge">Current Saved Favicon</span>
                         </div>
@@ -251,9 +251,9 @@
                 <div class="branding-upload-card" style="margin-top: 20px; margin-bottom: 25px; border: 1.5px solid #cbd5e1; border-radius: 14px; padding: 24px; background: #ffffff;">
                     <div class="branding-card-header" style="border-bottom: 1px solid #e2e8f0; padding-bottom: 12px; margin-bottom: 18px;">
                         <span class="branding-card-title" style="font-size: 15px; font-weight: 800; color: #0f172a;">
-                            <i class="fa-solid fa-font" style="color: #7a1530; font-size: 17px;"></i> Global Website Typography &amp; Trending Font Selection
+                            <i class="fa-solid fa-font" style="color: #e11d48; font-size: 17px;"></i> Global Website Typography &amp; Trending Font Selection
                         </span>
-                        <span class="branding-badge" id="fontBadgeDisplay" style="background: #fdf2f4; color: #7a1530; font-weight: 700; border: 1px solid rgba(122,21,48,0.2);">
+                        <span class="branding-badge" id="fontBadgeDisplay" style="background: #fdf2f4; color: #e11d48; font-weight: 700; border: 1px solid rgba(225, 29, 72,0.2);">
                             <?= esc($curGlobalFont) ?> + <?= esc($curHeadingFont) ?>
                         </span>
                     </div>
@@ -287,7 +287,7 @@
                         <!-- Headings & Titles Font -->
                         <div class="form-group" style="margin-bottom: 0;">
                             <label class="form-label" style="font-weight: 700; font-size: 13.5px; color: #1e293b; display: flex; align-items: center; gap: 6px;">
-                                <i class="fa-solid fa-heading" style="color: #7a1530;"></i> Headings &amp; Section Titles Font
+                                <i class="fa-solid fa-heading" style="color: #e11d48;"></i> Headings &amp; Section Titles Font
                             </label>
                             <select name="heading_font_family" id="heading_font_family" class="premium-input" style="font-weight: 600; cursor: pointer;" onchange="updateDynamicFontPreview()">
                                 <option value="inherit" <?= ($curHeadingFont === 'inherit') ? 'selected' : '' ?>>Same as Global Font (Unified Modern Style)</option>
@@ -310,15 +310,15 @@
                     <!-- Live Interactive Typography Simulator -->
                     <div id="fontLivePreviewBox" style="background: #fdfbf7; border: 1.5px solid #d4af37; border-radius: 12px; padding: 22px 24px; position: relative;">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                            <span style="font-size: 11px; font-weight: 800; color: #7a1530; text-transform: uppercase; letter-spacing: 0.8px;">
+                            <span style="font-size: 11px; font-weight: 800; color: #e11d48; text-transform: uppercase; letter-spacing: 0.8px;">
                                 <i class="fa-solid fa-eye"></i> Live Interactive Typography Simulator
                             </span>
-                            <span id="activeFontPreviewPill" style="font-size: 11px; background: #ffffff; border: 1px solid #d4af37; color: #7a1530; padding: 2px 8px; border-radius: 6px; font-weight: 700;">
+                            <span id="activeFontPreviewPill" style="font-size: 11px; background: #ffffff; border: 1px solid #d4af37; color: #e11d48; padding: 2px 8px; border-radius: 6px; font-weight: 700;">
                                 Previewing: <?= esc($curGlobalFont) ?>
                             </span>
                         </div>
 
-                        <div id="simSampleHeading" style="font-size: 26px; font-weight: 800; color: #1a050b; margin-bottom: 6px; line-height: 1.3;">
+                        <div id="simSampleHeading" style="font-size: 26px; font-weight: 800; color: #0f172a; margin-bottom: 6px; line-height: 1.3;">
                             Sri Sakthi Selvi Tex — Master Weavers of Salem
                         </div>
                         <div id="simSampleSubheading" style="font-size: 14.5px; font-weight: 600; color: #b45309; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px;">
@@ -328,7 +328,7 @@
                             Experience the timeless art of handloom weaving directly from master artisans. Every weave tells an authentic story of heritage, culture, direct loom pricing, and unmatched elegance.
                         </div>
                         <div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center; padding-top: 14px; border-top: 1px dashed #cbd5e1; font-size: 13px; color: #64748b;">
-                            <span id="simSampleBadge" style="background: #7a1530; color: #ffffff; padding: 6px 16px; border-radius: 20px; font-weight: 700; font-size: 13px; display: inline-flex; align-items: center; gap: 6px;">
+                            <span id="simSampleBadge" style="background: #e11d48; color: #ffffff; padding: 6px 16px; border-radius: 20px; font-weight: 700; font-size: 13px; display: inline-flex; align-items: center; gap: 6px;">
                                 <i class="fa-solid fa-bag-shopping"></i> Shop Now &bull; ₹ 4,599
                             </span>
                             <span id="simSampleAlphabet" style="font-size: 12.5px; font-weight: 500; color: #334155;">
@@ -429,16 +429,16 @@
                     <!-- Environment Selector -->
                     <div style="padding: 20px 24px; background: #f8fafc; border-bottom: 1px solid #e2e8f0;">
                         <label class="form-label" style="font-size: 13px; font-weight: 800; color: #1e293b; margin-bottom: 10px; display: block;">
-                            <i class="fa-solid fa-toggle-on" style="color: #7a1530; margin-right: 5px;"></i> Active Environment / Gateway Mode
+                            <i class="fa-solid fa-toggle-on" style="color: #e11d48; margin-right: 5px;"></i> Active Environment / Gateway Mode
                         </label>
                         <div style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
-                            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; padding: 10px 18px; background: #ffffff; border: 1.5px solid <?= ($settings['razorpay_env'] ?? 'test') === 'test' ? '#7a1530' : '#cbd5e1' ?>; border-radius: 8px; font-size: 13.5px; font-weight: 700;">
-                                <input type="radio" name="razorpay_env" value="test" <?= ($settings['razorpay_env'] ?? 'test') === 'test' ? 'checked' : '' ?> onchange="switchRzpEnv('test')" style="accent-color: #7a1530;">
+                            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; padding: 10px 18px; background: #ffffff; border: 1.5px solid <?= ($settings['razorpay_env'] ?? 'test') === 'test' ? '#e11d48' : '#cbd5e1' ?>; border-radius: 8px; font-size: 13.5px; font-weight: 700;">
+                                <input type="radio" name="razorpay_env" value="test" <?= ($settings['razorpay_env'] ?? 'test') === 'test' ? 'checked' : '' ?> onchange="switchRzpEnv('test')" style="accent-color: #e11d48;">
                                 <i class="fa-solid fa-vial" style="color: #f59e0b;"></i> Test Mode (Sandbox Simulation)
                             </label>
 
-                            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; padding: 10px 18px; background: #ffffff; border: 1.5px solid <?= ($settings['razorpay_env'] ?? 'test') === 'live' ? '#7a1530' : '#cbd5e1' ?>; border-radius: 8px; font-size: 13.5px; font-weight: 700;">
-                                <input type="radio" name="razorpay_env" value="live" <?= ($settings['razorpay_env'] ?? 'test') === 'live' ? 'checked' : '' ?> onchange="switchRzpEnv('live')" style="accent-color: #7a1530;">
+                            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; padding: 10px 18px; background: #ffffff; border: 1.5px solid <?= ($settings['razorpay_env'] ?? 'test') === 'live' ? '#e11d48' : '#cbd5e1' ?>; border-radius: 8px; font-size: 13.5px; font-weight: 700;">
+                                <input type="radio" name="razorpay_env" value="live" <?= ($settings['razorpay_env'] ?? 'test') === 'live' ? 'checked' : '' ?> onchange="switchRzpEnv('live')" style="accent-color: #e11d48;">
                                 <i class="fa-solid fa-shield-halved" style="color: #10b981;"></i> Live Mode (Real Customer Payments)
                             </label>
                         </div>
@@ -595,7 +595,7 @@
 
                     <!-- Bottom Quick Pills Bar -->
                     <div class="display-section-pills-bar">
-                        <span class="pills-bar-label"><i class="fa-solid fa-compass" style="margin-right: 4px; color: #7a1530;"></i> Quick Jump:</span>
+                        <span class="pills-bar-label"><i class="fa-solid fa-compass" style="margin-right: 4px; color: #e11d48;"></i> Quick Jump:</span>
                         <div class="display-section-pills">
                             <button type="button" class="display-section-pill" data-section="all" onclick="switchHeaderDisplaySection('all')">
                                 <i class="fa-solid fa-border-all"></i> All Sections
@@ -654,14 +654,14 @@
                         <!-- Announcement Text / Offers Input -->
                         <div class="form-group" style="margin-bottom: 20px;">
                             <label class="form-label" style="font-size: 13.5px; font-weight: 700; color: #1e293b; margin-bottom: 8px; display: flex; align-items: center; gap: 7px;">
-                                <i class="fa-solid fa-message" style="color: #7a1530;"></i> Announcement Text / Storefront Offers
+                                <i class="fa-solid fa-message" style="color: #e11d48;"></i> Announcement Text / Storefront Offers
                             </label>
                             <textarea id="announcement-bar-text-input" name="announcement_bar_text" class="premium-input" rows="3" oninput="updateAnnouncementPreview()" style="width: 100%; resize: vertical; line-height: 1.6; font-size: 13.5px; padding: 12px 14px;" placeholder="Free Shipping above Rs.1000/- Purchases.       Hurry Most Beautiful collections On its way!       Diwali Sale is Live       Free Shipping above Rs.1000/- Purchases."><?= esc($settings['announcement_bar_text'] ?? 'Free Shipping above Rs.1000/- Purchases.       Hurry Most Beautiful collections On its way!       Diwali Sale is Live       Free Shipping above Rs.1000/- Purchases.') ?></textarea>
                             
                             <!-- Quick Offer Preset Chips -->
                             <div style="margin-top: 10px;">
                                 <div style="font-size: 11.5px; font-weight: 700; color: #64748b; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px;">
-                                    <i class="fa-solid fa-wand-magic-sparkles" style="color: #7a1530; margin-right: 4px;"></i> Quick-Add Offer Presets (Click to Insert)
+                                    <i class="fa-solid fa-wand-magic-sparkles" style="color: #e11d48; margin-right: 4px;"></i> Quick-Add Offer Presets (Click to Insert)
                                 </div>
                                 <div class="quick-preset-chips">
                                     <span class="quick-preset-chip" onclick="insertOfferPreset('Free Shipping above Rs.1000/- Purchases.')">
@@ -674,7 +674,7 @@
                                         <i class="fa-solid fa-fire" style="color: #ef4444;"></i> Diwali Sale is Live
                                     </span>
                                     <span class="quick-preset-chip" onclick="insertOfferPreset('Limited Time Offer: Extra 10% Off on Pure Silk Sarees')">
-                                        <i class="fa-solid fa-tag" style="color: #7a1530;"></i> Extra 10% Off Pure Silk
+                                        <i class="fa-solid fa-tag" style="color: #e11d48;"></i> Extra 10% Off Pure Silk
                                     </span>
                                     <span class="quick-preset-chip" onclick="insertOfferPreset(' • ')">
                                         <i class="fa-solid fa-star" style="color: #eab308;"></i> Star Divider ( • )
@@ -696,7 +696,7 @@
                                 </div>
                                 <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; padding: 10px 12px; background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 8px; font-size: 13px; font-weight: 700; color: #1e293b; user-select: none;">
                                     <input type="hidden" name="announcement_bar_bold" value="0">
-                                    <input type="checkbox" id="announcement-bold-toggle" name="announcement_bar_bold" value="1" <?= ($settings['announcement_bar_bold'] ?? '1') === '1' ? 'checked' : '' ?> onchange="updateAnnouncementPreview()" style="width: 18px; height: 18px; accent-color: #7a1530; cursor: pointer;">
+                                    <input type="checkbox" id="announcement-bold-toggle" name="announcement_bar_bold" value="1" <?= ($settings['announcement_bar_bold'] ?? '1') === '1' ? 'checked' : '' ?> onchange="updateAnnouncementPreview()" style="width: 18px; height: 18px; accent-color: #e11d48; cursor: pointer;">
                                     <span>Make Text Bold (700)</span>
                                 </label>
                             </div>
@@ -731,7 +731,7 @@
                                 <div class="color-swatches-row">
                                     <span class="color-swatch-dot" style="background: #444444;" title="Default Charcoal (#444444)" onclick="setAnnouncementColor('#444444', 'text')"></span>
                                     <span class="color-swatch-dot" style="background: #ffffff;" title="Pure White (#ffffff)" onclick="setAnnouncementColor('#ffffff', 'text')"></span>
-                                    <span class="color-swatch-dot" style="background: #7a1530;" title="Royal Maroon (#7a1530)" onclick="setAnnouncementColor('#7a1530', 'text')"></span>
+                                    <span class="color-swatch-dot" style="background: #e11d48;" title="Royal Maroon (#e11d48)" onclick="setAnnouncementColor('#e11d48', 'text')"></span>
                                     <span class="color-swatch-dot" style="background: #d97706;" title="Warm Amber (#d97706)" onclick="setAnnouncementColor('#d97706', 'text')"></span>
                                     <span class="color-swatch-dot" style="background: #0f172a;" title="Slate Navy (#0f172a)" onclick="setAnnouncementColor('#0f172a', 'text')"></span>
                                 </div>
@@ -749,7 +749,7 @@
                                 </div>
                                 <div class="color-swatches-row">
                                     <span class="color-swatch-dot" style="background: #e2e2e2;" title="Default Light Gray (#e2e2e2)" onclick="setAnnouncementColor('#e2e2e2', 'bg')"></span>
-                                    <span class="color-swatch-dot" style="background: #7a1530;" title="Royal Maroon (#7a1530)" onclick="setAnnouncementColor('#7a1530', 'bg')"></span>
+                                    <span class="color-swatch-dot" style="background: #e11d48;" title="Royal Maroon (#e11d48)" onclick="setAnnouncementColor('#e11d48', 'bg')"></span>
                                     <span class="color-swatch-dot" style="background: #fff5f7;" title="Pastel Rose (#fff5f7)" onclick="setAnnouncementColor('#fff5f7', 'bg')"></span>
                                     <span class="color-swatch-dot" style="background: #1e293b;" title="Midnight Slate (#1e293b)" onclick="setAnnouncementColor('#1e293b', 'bg')"></span>
                                     <span class="color-swatch-dot" style="background: #fef3c7;" title="Festive Gold (#fef3c7)" onclick="setAnnouncementColor('#fef3c7', 'bg')"></span>
@@ -760,7 +760,7 @@
                         <!-- Storefront Mockup Live Preview -->
                         <div>
                             <label class="form-label" style="font-size: 12px; font-weight: 800; color: #64748b; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.6px; display: flex; align-items: center; gap: 6px;">
-                                <i class="fa-solid fa-desktop" style="color: #7a1530;"></i> Real-Time Storefront Header Preview
+                                <i class="fa-solid fa-desktop" style="color: #e11d48;"></i> Real-Time Storefront Header Preview
                             </label>
                             
                             <div class="storefront-preview-frame">
@@ -852,7 +852,7 @@
                             </button>
                             <?php if(!empty($combinedCats)): ?>
                             <div style="margin-left: auto; display: flex; align-items: center; gap: 8px;">
-                                <label style="font-size: 12px; font-weight: 700; color: #64748b;"><i class="fa-solid fa-tags" style="color: #7a1530;"></i> Category Banners:</label>
+                                <label style="font-size: 12px; font-weight: 700; color: #64748b;"><i class="fa-solid fa-tags" style="color: #e11d48;"></i> Category Banners:</label>
                                 <select class="premium-input" onchange="switchBannerPageTab(this.value, null)" style="width: auto; padding: 7px 12px; font-size: 12.5px; font-weight: 700; background: #fff; cursor: pointer;">
                                     <option value="">-- Choose Category --</option>
                                     <?php foreach($combinedCats as $cSlug => $cName): ?>
@@ -883,7 +883,7 @@
                         <!-- 1. NEW ARRIVALS CONFIG PANEL -->
                         <div id="banner-config-new_arrivals" class="banner-page-panel" style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 14px; padding: 22px; margin-bottom: 25px;">
                             <div style="border-bottom: 1px solid #e2e8f0; padding-bottom: 12px; margin-bottom: 18px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
-                                <h3 style="font-size: 16px; font-weight: 800; color: #7a1530; margin: 0; display: flex; align-items: center; gap: 8px;">
+                                <h3 style="font-size: 16px; font-weight: 800; color: #e11d48; margin: 0; display: flex; align-items: center; gap: 8px;">
                                     <i class="fa-solid fa-sparkles"></i> New Arrivals Page Banners & Text Overlay
                                 </h3>
                                 <span class="page-panel-badge-url">URL: /collections/new-arrivals</span>
@@ -892,7 +892,7 @@
                             <!-- Image Uploader Section -->
                             <div class="form-group" style="margin-bottom: 22px;">
                                 <label class="form-label" style="font-weight: 700; color: #1e293b; margin-bottom: 8px;">
-                                    <i class="fa-regular fa-images" style="color: #7a1530; margin-right: 6px;"></i> Upload Banner Images
+                                    <i class="fa-regular fa-images" style="color: #e11d48; margin-right: 6px;"></i> Upload Banner Images
                                 </label>
                                 <div class="premium-file-upload" style="padding: 18px;">
                                     <div class="upload-icon" style="font-size: 24px; margin-bottom: 6px;"><i class="fa-solid fa-cloud-arrow-up"></i></div>
@@ -926,7 +926,7 @@
                                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 10px;">
                                     <div>
                                         <label class="form-label" style="font-size: 14px; font-weight: 700; color: #1e293b; margin-bottom: 2px;">
-                                            <i class="fa-solid fa-quote-left" style="color: #7a1530; margin-right: 6px;"></i> Banner Text Overlay
+                                            <i class="fa-solid fa-quote-left" style="color: #e11d48; margin-right: 6px;"></i> Banner Text Overlay
                                         </label>
                                         <p style="font-size: 12px; color: #64748b; margin: 0;">Show quote & heading over this page's banner. Toggle off for clean images only.</p>
                                     </div>
@@ -956,7 +956,7 @@
                         <!-- 2. BEST SELLERS CONFIG PANEL -->
                         <div id="banner-config-best_sellers" class="banner-page-panel" style="display: none; background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 14px; padding: 22px; margin-bottom: 25px;">
                             <div style="border-bottom: 1px solid #e2e8f0; padding-bottom: 12px; margin-bottom: 18px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
-                                <h3 style="font-size: 16px; font-weight: 800; color: #7a1530; margin: 0; display: flex; align-items: center; gap: 8px;">
+                                <h3 style="font-size: 16px; font-weight: 800; color: #e11d48; margin: 0; display: flex; align-items: center; gap: 8px;">
                                     <i class="fa-solid fa-fire"></i> Best Sellers Page Banners & Text Overlay
                                 </h3>
                                 <span class="page-panel-badge-url">URL: /collections/best-sellers</span>
@@ -965,7 +965,7 @@
                             <!-- Image Uploader Section -->
                             <div class="form-group" style="margin-bottom: 22px;">
                                 <label class="form-label" style="font-weight: 700; color: #1e293b; margin-bottom: 8px;">
-                                    <i class="fa-regular fa-images" style="color: #7a1530; margin-right: 6px;"></i> Upload Banner Images
+                                    <i class="fa-regular fa-images" style="color: #e11d48; margin-right: 6px;"></i> Upload Banner Images
                                 </label>
                                 <div class="premium-file-upload" style="padding: 18px;">
                                     <div class="upload-icon" style="font-size: 24px; margin-bottom: 6px;"><i class="fa-solid fa-cloud-arrow-up"></i></div>
@@ -999,7 +999,7 @@
                                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 10px;">
                                     <div>
                                         <label class="form-label" style="font-size: 14px; font-weight: 700; color: #1e293b; margin-bottom: 2px;">
-                                            <i class="fa-solid fa-quote-left" style="color: #7a1530; margin-right: 6px;"></i> Banner Text Overlay
+                                            <i class="fa-solid fa-quote-left" style="color: #e11d48; margin-right: 6px;"></i> Banner Text Overlay
                                         </label>
                                         <p style="font-size: 12px; color: #64748b; margin: 0;">Show quote & heading over this page's banner. Toggle off for clean images only.</p>
                                     </div>
@@ -1029,7 +1029,7 @@
                         <!-- 3. ALL COLLECTIONS CONFIG PANEL -->
                         <div id="banner-config-all_collections" class="banner-page-panel" style="display: none; background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 14px; padding: 22px; margin-bottom: 25px;">
                             <div style="border-bottom: 1px solid #e2e8f0; padding-bottom: 12px; margin-bottom: 18px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
-                                <h3 style="font-size: 16px; font-weight: 800; color: #7a1530; margin: 0; display: flex; align-items: center; gap: 8px;">
+                                <h3 style="font-size: 16px; font-weight: 800; color: #e11d48; margin: 0; display: flex; align-items: center; gap: 8px;">
                                     <i class="fa-solid fa-layer-group"></i> All Collections Page Banners & Text Overlay
                                 </h3>
                                 <span class="page-panel-badge-url">URL: /collections</span>
@@ -1038,7 +1038,7 @@
                             <!-- Image Uploader Section -->
                             <div class="form-group" style="margin-bottom: 22px;">
                                 <label class="form-label" style="font-weight: 700; color: #1e293b; margin-bottom: 8px;">
-                                    <i class="fa-regular fa-images" style="color: #7a1530; margin-right: 6px;"></i> Upload Banner Images
+                                    <i class="fa-regular fa-images" style="color: #e11d48; margin-right: 6px;"></i> Upload Banner Images
                                 </label>
                                 <div class="premium-file-upload" style="padding: 18px;">
                                     <div class="upload-icon" style="font-size: 24px; margin-bottom: 6px;"><i class="fa-solid fa-cloud-arrow-up"></i></div>
@@ -1072,7 +1072,7 @@
                                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 10px;">
                                     <div>
                                         <label class="form-label" style="font-size: 14px; font-weight: 700; color: #1e293b; margin-bottom: 2px;">
-                                            <i class="fa-solid fa-quote-left" style="color: #7a1530; margin-right: 6px;"></i> Banner Text Overlay
+                                            <i class="fa-solid fa-quote-left" style="color: #e11d48; margin-right: 6px;"></i> Banner Text Overlay
                                         </label>
                                         <p style="font-size: 12px; color: #64748b; margin: 0;">Show quote & heading over this page's banner. Toggle off for clean images only.</p>
                                     </div>
@@ -1102,7 +1102,7 @@
                         <!-- 4. CONTACT US CONFIG PANEL -->
                         <div id="banner-config-contact_us" class="banner-page-panel" style="display: none; background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 14px; padding: 22px; margin-bottom: 25px;">
                             <div style="border-bottom: 1px solid #e2e8f0; padding-bottom: 12px; margin-bottom: 18px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
-                                <h3 style="font-size: 16px; font-weight: 800; color: #7a1530; margin: 0; display: flex; align-items: center; gap: 8px;">
+                                <h3 style="font-size: 16px; font-weight: 800; color: #e11d48; margin: 0; display: flex; align-items: center; gap: 8px;">
                                     <i class="fa-solid fa-envelope-open-text"></i> Contact Us Page Banners &amp; Text Overlay
                                 </h3>
                                 <span class="page-panel-badge-url">URL: /contact-us</span>
@@ -1111,7 +1111,7 @@
                             <!-- Image Uploader Section -->
                             <div class="form-group" style="margin-bottom: 22px;">
                                 <label class="form-label" style="font-weight: 700; color: #1e293b; margin-bottom: 8px;">
-                                    <i class="fa-regular fa-images" style="color: #7a1530; margin-right: 6px;"></i> Upload Banner Images for Contact Us
+                                    <i class="fa-regular fa-images" style="color: #e11d48; margin-right: 6px;"></i> Upload Banner Images for Contact Us
                                 </label>
                                 <div class="premium-file-upload" style="padding: 18px;">
                                     <div class="upload-icon" style="font-size: 24px; margin-bottom: 6px;"><i class="fa-solid fa-cloud-arrow-up"></i></div>
@@ -1145,7 +1145,7 @@
                                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 10px;">
                                     <div>
                                         <label class="form-label" style="font-size: 14px; font-weight: 700; color: #1e293b; margin-bottom: 2px;">
-                                            <i class="fa-solid fa-quote-left" style="color: #7a1530; margin-right: 6px;"></i> Banner Text Overlay
+                                            <i class="fa-solid fa-quote-left" style="color: #e11d48; margin-right: 6px;"></i> Banner Text Overlay
                                         </label>
                                         <p style="font-size: 12px; color: #64748b; margin: 0;">Show quote &amp; heading over this page's banner. Toggle off for clean images only.</p>
                                     </div>
@@ -1181,7 +1181,7 @@
                             ?>
                             <div id="banner-config-cat_<?= esc($catSlug) ?>" class="banner-page-panel" style="display: none; background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 14px; padding: 22px; margin-bottom: 25px;">
                                 <div style="border-bottom: 1px solid #e2e8f0; padding-bottom: 12px; margin-bottom: 18px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
-                                    <h3 style="font-size: 16px; font-weight: 800; color: #7a1530; margin: 0; display: flex; align-items: center; gap: 8px;">
+                                    <h3 style="font-size: 16px; font-weight: 800; color: #e11d48; margin: 0; display: flex; align-items: center; gap: 8px;">
                                         <i class="fa-solid fa-tag"></i> <?= esc($catName) ?> Page Banners & Text Overlay
                                     </h3>
                                     <span class="page-panel-badge-url">URL: /category/<?= esc($catSlug) ?></span>
@@ -1190,7 +1190,7 @@
                                 <!-- Image Uploader Section -->
                                 <div class="form-group" style="margin-bottom: 22px;">
                                     <label class="form-label" style="font-weight: 700; color: #1e293b; margin-bottom: 8px;">
-                                        <i class="fa-regular fa-images" style="color: #7a1530; margin-right: 6px;"></i> Upload Banner Images for <?= esc($catName) ?>
+                                        <i class="fa-regular fa-images" style="color: #e11d48; margin-right: 6px;"></i> Upload Banner Images for <?= esc($catName) ?>
                                     </label>
                                     <div class="premium-file-upload" style="padding: 18px;">
                                         <div class="upload-icon" style="font-size: 24px; margin-bottom: 6px;"><i class="fa-solid fa-cloud-arrow-up"></i></div>
@@ -1221,7 +1221,7 @@
                                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 10px;">
                                         <div>
                                             <label class="form-label" style="font-size: 14px; font-weight: 700; color: #1e293b; margin-bottom: 2px;">
-                                                <i class="fa-solid fa-quote-left" style="color: #7a1530; margin-right: 6px;"></i> Banner Text Overlay for <?= esc($catName) ?>
+                                                <i class="fa-solid fa-quote-left" style="color: #e11d48; margin-right: 6px;"></i> Banner Text Overlay for <?= esc($catName) ?>
                                             </label>
                                             <p style="font-size: 12px; color: #64748b; margin: 0;">Show quote & heading over <?= esc($catName) ?>'s banner. Toggle off for clean images only.</p>
                                         </div>
@@ -1297,7 +1297,7 @@
                                     <i class="fa-solid fa-plus"></i> Add Category
                                 </button>
                                 <input type="file" id="bulk-category-upload" multiple accept="image/*" style="display: none;" onchange="handleBulkCategoryUpload(this)">
-                                <button type="button" class="btn-add" onclick="document.getElementById('bulk-category-upload').click()" style="background: #fff5f7; border: 1.5px solid #7a1530; color: #7a1530; font-weight: 700; padding: 9px 16px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px;">
+                                <button type="button" class="btn-add" onclick="document.getElementById('bulk-category-upload').click()" style="background: #fff5f7; border: 1.5px solid #e11d48; color: #e11d48; font-weight: 700; padding: 9px 16px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px;">
                                     <i class="fa-solid fa-images"></i> Bulk Images
                                 </button>
                             </div>
@@ -1323,7 +1323,7 @@
                                             <td style="text-align: center; vertical-align: middle;">
                                                 <div style="display: flex; align-items: center; justify-content: center; gap: 6px;">
                                                     <i class="fa-solid fa-grip-vertical cat-row-handle" title="Category Position" style="color: #94a3b8; cursor: grab;"></i>
-                                                    <span class="cat-row-index" style="font-weight: 700; font-size: 13px; color: #7a1530; background: #fff5f7; width: 28px; height: 28px; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center;"><?= $index + 1 ?></span>
+                                                    <span class="cat-row-index" style="font-weight: 700; font-size: 13px; color: #e11d48; background: #fff5f7; width: 28px; height: 28px; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center;"><?= $index + 1 ?></span>
                                                 </div>
                                             </td>
                                             <td style="text-align: center; vertical-align: middle; padding: 8px 10px;">
@@ -1425,7 +1425,7 @@
                         <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
                             <?php foreach($pagesList as $key => $name): ?>
                                 <div class="seo-page-config" id="seo-config-<?= $key ?>" style="display: <?= $key === 'home' ? 'block' : 'none' ?>;">
-                                    <h4 style="font-size: 15px; color: #7a1530; margin-top: 0; margin-bottom: 15px;">Configure SEO for: <?= esc($name) ?></h4>
+                                    <h4 style="font-size: 15px; color: #e11d48; margin-top: 0; margin-bottom: 15px;">Configure SEO for: <?= esc($name) ?></h4>
                                     <div class="form-group" style="margin-bottom: 15px;">
                                         <label class="form-label">Meta Title</label>
                                         <input type="text" name="seo_pages[<?= $key ?>][title]" class="premium-input" value="<?= esc($seoSettings[$key]['title'] ?? '') ?>">
@@ -1500,7 +1500,7 @@
 
                         <!-- Bottom Quick Pills Bar -->
                         <div class="homepage-section-pills-bar">
-                            <span class="pills-bar-label"><i class="fa-solid fa-compass" style="margin-right: 4px; color: #7a1530;"></i> Quick Jump:</span>
+                            <span class="pills-bar-label"><i class="fa-solid fa-compass" style="margin-right: 4px; color: #e11d48;"></i> Quick Jump:</span>
                             <div class="homepage-section-pills">
                                 <button type="button" class="homepage-section-pill" data-section="all" onclick="switchHomepageSection('all')">
                                     <i class="fa-solid fa-border-all"></i> All Sections
@@ -1608,10 +1608,10 @@
                                     <div class="trust-card-admin-row homepage-sub-card">
                                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid #edf2f7; padding-bottom: 8px;">
                                             <div style="display: flex; align-items: center; gap: 10px;">
-                                                <span style="font-weight: 700; color: #7a1530; font-size: 13px;"><i class="fa-solid fa-layer-group"></i> Card #<span class="card-num"><?= $idx + 1 ?></span></span>
+                                                <span style="font-weight: 700; color: #e11d48; font-size: 13px;"><i class="fa-solid fa-layer-group"></i> Card #<span class="card-num"><?= $idx + 1 ?></span></span>
                                                 <div style="display: inline-flex; align-items: center; gap: 6px; margin-left: 10px;">
                                                     <label style="font-size: 12px; color: #64748b; font-weight: 600;">Visible:</label>
-                                                    <input type="checkbox" name="trust_cards[<?= $idx ?>][visible]" value="1" <?= (!isset($tCard['visible']) || $tCard['visible'] == 1 || $tCard['visible'] === '1') ? 'checked' : '' ?> style="accent-color: #7a1530; cursor: pointer;">
+                                                    <input type="checkbox" name="trust_cards[<?= $idx ?>][visible]" value="1" <?= (!isset($tCard['visible']) || $tCard['visible'] == 1 || $tCard['visible'] === '1') ? 'checked' : '' ?> style="accent-color: #e11d48; cursor: pointer;">
                                                 </div>
                                             </div>
                                             <button type="button" class="btn-danger-icon" onclick="this.closest('.trust-card-admin-row').remove(); renumberTrustCards();" title="Remove Card">
@@ -1623,7 +1623,7 @@
                                                 <label class="form-label" style="font-size: 11px;">Font Awesome Icon</label>
                                                 <div style="display: flex; gap: 8px; align-items: center;">
                                                     <input type="text" name="trust_cards[<?= $idx ?>][icon]" class="premium-input trust-icon-input" value="<?= esc($tCard['icon'] ?? 'fa-solid fa-star') ?>" placeholder="e.g. fa-solid fa-landmark" oninput="updateTrustIconPreview(this)" style="padding: 10px 12px; font-size: 13px;">
-                                                    <span class="trust-icon-preview" style="width: 38px; height: 38px; border-radius: 8px; background: #fff; border: 1px solid #cbd5e1; display: flex; align-items: center; justify-content: center; color: #7a1530; font-size: 16px; flex-shrink: 0;">
+                                                    <span class="trust-icon-preview" style="width: 38px; height: 38px; border-radius: 8px; background: #fff; border: 1px solid #cbd5e1; display: flex; align-items: center; justify-content: center; color: #e11d48; font-size: 16px; flex-shrink: 0;">
                                                         <i class="<?= esc($tCard['icon'] ?? 'fa-solid fa-star') ?>"></i>
                                                     </span>
                                                 </div>
@@ -1799,7 +1799,7 @@
                             ?>
 
                             <label class="form-label" style="font-size: 13.5px; font-weight: 700; color: #1e293b; margin: 16px 0 12px 0; display: block;">
-                                <i class="fa-solid fa-tags" style="color: #7a1530; margin-right: 6px;"></i> Budget Tiers & Price Brackets
+                                <i class="fa-solid fa-tags" style="color: #e11d48; margin-right: 6px;"></i> Budget Tiers & Price Brackets
                             </label>
                             
                             <div id="budget-tiers-container" style="display: flex; flex-direction: column; gap: 14px;">
@@ -1807,10 +1807,10 @@
                                     <div class="budget-tier-admin-row homepage-sub-card">
                                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid #edf2f7; padding-bottom: 8px;">
                                             <div style="display: flex; align-items: center; gap: 10px;">
-                                                <span style="font-weight: 700; color: #7a1530; font-size: 13px;"><i class="fa-solid fa-wallet"></i> Tier #<span class="tier-num"><?= $bIdx + 1 ?></span></span>
+                                                <span style="font-weight: 700; color: #e11d48; font-size: 13px;"><i class="fa-solid fa-wallet"></i> Tier #<span class="tier-num"><?= $bIdx + 1 ?></span></span>
                                                 <div style="display: inline-flex; align-items: center; gap: 6px; margin-left: 10px;">
                                                     <label style="font-size: 12px; color: #64748b; font-weight: 600;">Visible:</label>
-                                                    <input type="checkbox" name="budget_tiers[<?= $bIdx ?>][visible]" value="1" <?= (!isset($bTier['visible']) || $bTier['visible'] == 1 || $bTier['visible'] === '1') ? 'checked' : '' ?> style="accent-color: #7a1530; cursor: pointer;">
+                                                    <input type="checkbox" name="budget_tiers[<?= $bIdx ?>][visible]" value="1" <?= (!isset($bTier['visible']) || $bTier['visible'] == 1 || $bTier['visible'] === '1') ? 'checked' : '' ?> style="accent-color: #e11d48; cursor: pointer;">
                                                 </div>
                                             </div>
                                             <button type="button" class="btn-danger-icon" onclick="this.closest('.budget-tier-admin-row').remove(); renumberBudgetTiers();" title="Remove Tier">
@@ -1895,7 +1895,7 @@
                             <div style="margin-top: 15px; padding-top: 20px; border-top: 1.5px solid #e2e8f0;">
                                 <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px;">
                                     <h4 style="font-size: 14px; font-weight: 700; color: #1e293b; margin: 0; display: flex; align-items: center; gap: 8px;">
-                                        <i class="fa-solid fa-images" style="color: #7a1530;"></i> Background Scrolling Collage Images (Left &amp; Right)
+                                        <i class="fa-solid fa-images" style="color: #e11d48;"></i> Background Scrolling Collage Images (Left &amp; Right)
                                     </h4>
                                     <span style="font-size: 12px; color: #64748b;">
                                         Left: <strong><?= count($diwaliLeftImgs) ?></strong> images | Right: <strong><?= count($diwaliRightImgs) ?></strong> images
@@ -2089,7 +2089,7 @@
                                                 <label style="font-size: 11px; font-weight: 700; color: #64748b; text-transform: uppercase; margin-bottom: 4px; display: block;">Channel Logo</label>
                                                 <input type="hidden" name="shorts_channels[<?= $idx ?>][image]" value="<?= esc($ch['image'] ?? '') ?>" class="channel-hidden-image">
                                                 <label style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 6px; padding: 5px 10px; font-size: 11.5px; font-weight: 700; color: #334155; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; transition: 0.2s;" onmouseover="this.style.background='#e2e8f0'" onmouseout="this.style.background='#f8fafc'">
-                                                    <i class="fa-solid fa-cloud-arrow-up" style="color: #7a1530;"></i> Upload Logo
+                                                    <i class="fa-solid fa-cloud-arrow-up" style="color: #e11d48;"></i> Upload Logo
                                                     <input type="file" name="shorts_channels_image[<?= $idx ?>]" accept="image/*" style="display: none;" onchange="previewShortsChannelThumb(this)" class="channel-file-input">
                                                 </label>
                                             </div>
@@ -2134,7 +2134,7 @@
 
                             <div style="margin-top: 14px; display: flex; justify-content: flex-start;">
                                 <button type="button" onclick="addShortsChannelRow()" style="background: #f1f5f9; color: #475569; border: 1.5px dashed #cbd5e1; border-radius: 8px; padding: 10px 18px; font-size: 13px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: 0.2s;" onmouseover="this.style.background='#e2e8f0';this.style.borderColor='#94a3b8';" onmouseout="this.style.background='#f1f5f9';this.style.borderColor='#cbd5e1';">
-                                    <i class="fa-solid fa-plus" style="color: var(--primary-color, #7a1530);"></i> Add Another Channel Tab
+                                    <i class="fa-solid fa-plus" style="color: var(--primary-color, #e11d48);"></i> Add Another Channel Tab
                                 </button>
                             </div>
 
@@ -2203,7 +2203,7 @@
                                     <label style="font-size: 11px; font-weight: 700; color: #64748b; text-transform: uppercase; margin-bottom: 4px; display: block;">Channel Logo</label>
                                     <input type="hidden" name="shorts_channels[${newIdx}][image]" value="" class="channel-hidden-image">
                                     <label style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 6px; padding: 5px 10px; font-size: 11.5px; font-weight: 700; color: #334155; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; transition: 0.2s;" onmouseover="this.style.background='#e2e8f0'" onmouseout="this.style.background='#f8fafc'">
-                                        <i class="fa-solid fa-cloud-arrow-up" style="color: #7a1530;"></i> Upload Logo
+                                        <i class="fa-solid fa-cloud-arrow-up" style="color: #e11d48;"></i> Upload Logo
                                         <input type="file" name="shorts_channels_image[${newIdx}]" accept="image/*" style="display: none;" onchange="previewShortsChannelThumb(this)" class="channel-file-input">
                                     </label>
                                 </div>
@@ -2304,25 +2304,25 @@
                             <div class="homepage-config-grid-4" style="margin-top: 14px;">
                                 <!-- Pillar 1 -->
                                 <div class="homepage-sub-card">
-                                    <label class="form-label" style="font-size: 12px; color: #7a1530; font-weight: 700;"><i class="fa-solid fa-gem" style="margin-right: 4px;"></i> 1. Direct From Loom</label>
+                                    <label class="form-label" style="font-size: 12px; color: #e11d48; font-weight: 700;"><i class="fa-solid fa-gem" style="margin-right: 4px;"></i> 1. Direct From Loom</label>
                                     <input type="text" name="why_choose_title_1" class="premium-input" value="<?= esc($settings['why_choose_title_1'] ?? 'Direct From Master Weavers') ?>" style="margin-bottom: 8px; font-size: 13px;" placeholder="Title">
                                     <textarea name="why_choose_desc_1" class="premium-input" rows="3" style="font-size: 12px; padding: 8px;" placeholder="Description"><?= esc($settings['why_choose_desc_1'] ?? 'Woven directly on authentic Elampillai looms, preserving century-old silk and cotton craftsmanship without middleman commissions.') ?></textarea>
                                 </div>
                                 <!-- Pillar 2 -->
                                 <div class="homepage-sub-card">
-                                    <label class="form-label" style="font-size: 12px; color: #7a1530; font-weight: 700;"><i class="fa-solid fa-tags" style="margin-right: 4px;"></i> 2. Wholesale Pricing</label>
+                                    <label class="form-label" style="font-size: 12px; color: #e11d48; font-weight: 700;"><i class="fa-solid fa-tags" style="margin-right: 4px;"></i> 2. Wholesale Pricing</label>
                                     <input type="text" name="why_choose_title_2" class="premium-input" value="<?= esc($settings['why_choose_title_2'] ?? 'Wholesale Price for Everyone') ?>" style="margin-bottom: 8px; font-size: 13px;" placeholder="Title">
                                     <textarea name="why_choose_desc_2" class="premium-input" rows="3" style="font-size: 12px; padding: 8px;" placeholder="Description"><?= esc($settings['why_choose_desc_2'] ?? 'Direct manufacturer rates whether purchasing a single celebratory saree or bulk bridal and uniform orders.') ?></textarea>
                                 </div>
                                 <!-- Pillar 3 -->
                                 <div class="homepage-sub-card">
-                                    <label class="form-label" style="font-size: 12px; color: #7a1530; font-weight: 700;"><i class="fa-solid fa-shield-halved" style="margin-right: 4px;"></i> 3. Quality Assurance</label>
+                                    <label class="form-label" style="font-size: 12px; color: #e11d48; font-weight: 700;"><i class="fa-solid fa-shield-halved" style="margin-right: 4px;"></i> 3. Quality Assurance</label>
                                     <input type="text" name="why_choose_title_3" class="premium-input" value="<?= esc($settings['why_choose_title_3'] ?? '100% Quality & Zari Guarantee') ?>" style="margin-bottom: 8px; font-size: 13px;" placeholder="Title">
                                     <textarea name="why_choose_desc_3" class="premium-input" rows="3" style="font-size: 12px; padding: 8px;" placeholder="Description"><?= esc($settings['why_choose_desc_3'] ?? 'Every piece undergoes multi-point inspection for authentic zari shine, soft drape, and durable texture.') ?></textarea>
                                 </div>
                                 <!-- Pillar 4 -->
                                 <div class="homepage-sub-card">
-                                    <label class="form-label" style="font-size: 12px; color: #7a1530; font-weight: 700;"><i class="fa-solid fa-plane-departure" style="margin-right: 4px;"></i> 4. Worldwide Shipping</label>
+                                    <label class="form-label" style="font-size: 12px; color: #e11d48; font-weight: 700;"><i class="fa-solid fa-plane-departure" style="margin-right: 4px;"></i> 4. Worldwide Shipping</label>
                                     <input type="text" name="why_choose_title_4" class="premium-input" value="<?= esc($settings['why_choose_title_4'] ?? 'Worldwide Express Delivery') ?>" style="margin-bottom: 8px; font-size: 13px;" placeholder="Title">
                                     <textarea name="why_choose_desc_4" class="premium-input" rows="3" style="font-size: 12px; padding: 8px;" placeholder="Description"><?= esc($settings['why_choose_desc_4'] ?? 'Fast, reliable door delivery across India and internationally with secure protective packaging and full tracking.') ?></textarea>
                                 </div>
@@ -2415,7 +2415,7 @@
                             
                             <div class="homepage-config-header">
                                 <div class="homepage-config-header-left">
-                                    <div class="homepage-config-icon" style="background: linear-gradient(135deg, #7a1530 0%, #4a0d1d 100%); color: #facc15;"><i class="fa-solid fa-store"></i></div>
+                                    <div class="homepage-config-icon" style="background: linear-gradient(135deg, #e11d48 0%, #4a0d1d 100%); color: #facc15;"><i class="fa-solid fa-store"></i></div>
                                     <div>
                                         <div style="display: flex; align-items: center; gap: 8px;">
                                             <h3 class="homepage-config-title">About SSSTex &amp; Visit Showroom Section</h3>
@@ -2439,7 +2439,7 @@
                                 <div class="homepage-sub-card" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 22px;">
                                     <div class="homepage-config-grid-2" style="margin-bottom: 16px;">
                                         <div>
-                                            <label class="form-label" style="font-size: 13px; font-weight: 700; color: #1e293b;"><i class="fa-solid fa-heading" style="color: #7a1530; margin-right: 6px;"></i> Section Title</label>
+                                            <label class="form-label" style="font-size: 13px; font-weight: 700; color: #1e293b;"><i class="fa-solid fa-heading" style="color: #e11d48; margin-right: 6px;"></i> Section Title</label>
                                             <input type="text" name="about_store_title" class="premium-input" value="<?= esc($settings['about_store_title'] ?? 'About Selvi Tex') ?>" placeholder="e.g. About Selvi Tex">
                                         </div>
                                         <div>
@@ -2479,11 +2479,11 @@
                                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
                                         <div>
                                             <label class="form-label" style="font-weight: 800; color: #1e293b; margin: 0; font-size: 14.5px; display: flex; align-items: center; gap: 8px;">
-                                                <i class="fa-solid fa-map-location-dot" style="color: #7a1530;"></i> Showroom Locations
+                                                <i class="fa-solid fa-map-location-dot" style="color: #e11d48;"></i> Showroom Locations
                                             </label>
                                             <p style="font-size: 12.5px; color: #64748b; margin: 3px 0 0 0;">Add multiple store branches or showroom addresses. Customers can toggle between them on the homepage and about page.</p>
                                         </div>
-                                        <button type="button" onclick="addShowroomLocationRow()" style="background: linear-gradient(135deg, #7a1530 0%, #5a0e23 100%); color: #fff; border: none; padding: 9px 18px; border-radius: 8px; font-size: 13px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 7px; box-shadow: 0 2px 8px rgba(122,21,48,0.25); transition: all 0.2s;">
+                                        <button type="button" onclick="addShowroomLocationRow()" style="background: linear-gradient(135deg, #e11d48 0%, #5a0e23 100%); color: #fff; border: none; padding: 9px 18px; border-radius: 8px; font-size: 13px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 7px; box-shadow: 0 2px 8px rgba(225, 29, 72,0.25); transition: all 0.2s;">
                                             <i class="fa-solid fa-plus"></i> Add Another Location
                                         </button>
                                     </div>
@@ -2493,7 +2493,7 @@
                                         <div class="showroom-location-card" style="background: #ffffff; border: 1.5px solid <?= $locIdx === 0 ? '#cbd5e1' : '#e2e8f0' ?>; border-radius: 12px; padding: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
                                             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 10px;">
                                                 <div style="display: flex; align-items: center; gap: 10px;">
-                                                    <span class="location-badge" style="background: <?= $locIdx === 0 ? '#7a1530' : '#0284c7' ?>; color: #fff; font-size: 11px; font-weight: 800; padding: 4px 10px; border-radius: 6px;">
+                                                    <span class="location-badge" style="background: <?= $locIdx === 0 ? '#e11d48' : '#0284c7' ?>; color: #fff; font-size: 11px; font-weight: 800; padding: 4px 10px; border-radius: 6px;">
                                                         <?= $locIdx === 0 ? 'Location #1 (Flagship)' : 'Location #' . ($locIdx + 1) ?>
                                                     </span>
                                                     <input type="text" name="about_store_locations[<?= $locIdx ?>][name]" value="<?= esc($loc['name'] ?? ($locIdx === 0 ? 'Flagship Showroom (Elampillai)' : 'Showroom Branch #' . ($locIdx + 1))) ?>" class="premium-input" style="font-weight: 700; font-size: 13.5px; padding: 6px 12px; width: 280px;" placeholder="Location Name (e.g. Flagship Store / Salem Branch)">
@@ -2533,7 +2533,7 @@
                                             </div>
 
                                             <div>
-                                                <label class="form-label" style="font-size: 12px; margin-bottom: 4px;"><i class="fa-solid fa-map-pin" style="color: #7a1530;"></i> Google Maps Location Embed (Iframe or Embed URL)</label>
+                                                <label class="form-label" style="font-size: 12px; margin-bottom: 4px;"><i class="fa-solid fa-map-pin" style="color: #e11d48;"></i> Google Maps Location Embed (Iframe or Embed URL)</label>
                                                 <textarea name="about_store_locations[<?= $locIdx ?>][map_embed]" class="premium-input" rows="2" style="width: 100%; font-size: 12px; font-family: monospace;" placeholder="Paste Google Maps <iframe> code or embed link (e.g. https://www.google.com/maps/embed?pb=...)"><?= esc($loc['map_embed'] ?? '') ?></textarea>
                                                 <small style="color: #64748b; font-size: 11.5px; display: block; margin-top: 3px;">Embeds an interactive Google Map on the About page and Homepage for this branch. If left blank, an interactive map is auto-generated from the physical address.</small>
                                             </div>
@@ -2546,7 +2546,7 @@
                                 <div class="homepage-sub-card" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 22px;">
                                     <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; flex-wrap: wrap; gap: 10px;">
                                         <div>
-                                            <label class="form-label" style="font-weight: 800; color: #7a1530; margin: 0; font-size: 14.5px; display: flex; align-items: center; gap: 8px;">
+                                            <label class="form-label" style="font-weight: 800; color: #e11d48; margin: 0; font-size: 14.5px; display: flex; align-items: center; gap: 8px;">
                                                 <i class="fa-solid fa-images"></i> Showroom &amp; Loom Gallery Photos
                                             </label>
                                             <p style="font-size: 12.5px; color: #64748b; margin: 3px 0 0 0;">Upload high-definition photos of your showroom, weaving looms, and trial area. Displays on homepage and about page.</p>
@@ -2565,7 +2565,7 @@
 
                                     <!-- Upload Dropzone -->
                                     <div class="premium-file-upload" style="padding: 24px 20px; border: 2px dashed #cbd5e1; border-radius: 12px; background: #fafafa; text-align: center; cursor: pointer; transition: all 0.2s ease;">
-                                        <div class="upload-icon" style="font-size: 32px; color: #7a1530; margin-bottom: 8px;"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+                                        <div class="upload-icon" style="font-size: 32px; color: #e11d48; margin-bottom: 8px;"><i class="fa-solid fa-cloud-arrow-up"></i></div>
                                         <div class="upload-text" style="font-size: 14px; font-weight: 700; color: #1e293b;">Click or Drag Photos of Showroom / Looms</div>
                                         <small style="color: #64748b; font-size: 12px;">Supports multiple JPG, PNG, WEBP high-resolution photos</small>
                                         <input type="file" name="about_store_images[]" accept="image/*" multiple onchange="previewNewBannerUploads(this, 'preview-about-store-images')">
@@ -2633,7 +2633,7 @@
                         <!-- Module: Product Creation Type (Single / Combo Slider) -->
                         <div class="module-card">
                             <div class="module-left">
-                                <div class="module-icon"><i class="fa-solid fa-layer-group" style="color: #7a1530;"></i></div>
+                                <div class="module-icon"><i class="fa-solid fa-layer-group" style="color: #e11d48;"></i></div>
                                 <div>
                                     <div class="module-title">Creation Type Switcher &mdash; Single / Combo Slider</div>
                                     <p class="module-desc">Show or hide the "Creation Type (Regular Product / Combo Pack)" swipe switcher on Add &amp; Edit Product pages.</p>

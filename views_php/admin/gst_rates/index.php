@@ -3,7 +3,7 @@
 
 
 <div style="max-width: 950px; margin: 0 auto;">
-    <h2 style="font-size: 24px; font-weight: 800; color: #7a1530; margin-bottom: 30px;"><i class="fa-solid fa-percent" style="margin-right: 10px;"></i> GST Settings</h2>
+    <h2 style="font-size: 24px; font-weight: 800; color: #e11d48; margin-bottom: 30px;"><i class="fa-solid fa-percent" style="margin-right: 10px;"></i> GST Settings</h2>
 
     <?php if(session()->getFlashdata('success')): ?>
         <div style="background: #f0fdf4; border: 1px solid #bbf7d0; color: #15803d; padding: 15px 20px; border-radius: 10px; margin-bottom: 25px; display: flex; align-items: center; gap: 10px;">

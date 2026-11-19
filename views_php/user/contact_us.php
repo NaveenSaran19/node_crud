@@ -72,14 +72,14 @@
             
             <!-- Store Address -->
             <div class="info-item">
-                <div class="info-icon" style="color: var(--primary-color, #7a1530);"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="info-icon" style="color: var(--primary-color, #e11d48);"><i class="fa-solid fa-location-dot"></i></div>
                 <div class="info-content" style="flex: 1;">
                     <h4>Visit Our Store</h4>
                     <p style="font-weight: 700; color: #1e293b; margin-bottom: 4px;"><?= esc($bizName) ?></p>
                     <p><?= nl2br(esc($bizAddress)) ?></p>
                     <?php if(!empty($mapLink)): ?>
                         <div style="margin-top: 8px;">
-                            <a href="<?= esc($mapLink) ?>" target="_blank" style="color: var(--primary-color, #7a1530); font-weight: 700; font-size: 13px; text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">
+                            <a href="<?= esc($mapLink) ?>" target="_blank" style="color: var(--primary-color, #e11d48); font-weight: 700; font-size: 13px; text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">
                                 <i class="fa-solid fa-diamond-turn-right"></i> Open in Google Maps
                             </a>
                         </div>
@@ -90,7 +90,7 @@
             <!-- Phone Support -->
             <?php if(!empty($phoneNo)): ?>
             <div class="info-item">
-                <div class="info-icon" style="color: var(--primary-color, #7a1530);"><i class="fa-solid fa-phone"></i></div>
+                <div class="info-icon" style="color: var(--primary-color, #e11d48);"><i class="fa-solid fa-phone"></i></div>
                 <div class="info-content">
                     <h4>Call Us</h4>
                     <p>
@@ -106,7 +106,7 @@
             <!-- Email Support -->
             <?php if(!empty($contactEmail)): ?>
             <div class="info-item">
-                <div class="info-icon" style="color: var(--primary-color, #7a1530);"><i class="fa-solid fa-envelope"></i></div>
+                <div class="info-icon" style="color: var(--primary-color, #e11d48);"><i class="fa-solid fa-envelope"></i></div>
                 <div class="info-content">
                     <h4>Email Us</h4>
                     <p>
@@ -134,10 +134,10 @@
             <?php endif; ?>
 
             <!-- Connect on Social Media -->
-            <div class="info-item" style="border-left: 4px solid #7a1530; background: #fffcfd;">
-                <div class="info-icon" style="color: #7a1530; background: #fdf2f4;"><i class="fa-solid fa-share-nodes"></i></div>
+            <div class="info-item" style="border-left: 4px solid #e11d48; background: #fffcfd;">
+                <div class="info-icon" style="color: #e11d48; background: #fdf2f4;"><i class="fa-solid fa-share-nodes"></i></div>
                 <div class="info-content">
-                    <h4 style="color: #7a1530;">Connect On Social Media</h4>
+                    <h4 style="color: #e11d48;">Connect On Social Media</h4>
                     <p style="color: #64748b; font-size: 13.5px; margin-bottom: 10px;">Follow our daily saree videos, new Elampillai weaves, and festive offers.</p>
                     <div style="display: flex; gap: 8px; flex-wrap: wrap;">
                         <a href="https://wa.me/<?= esc($cleanWhatsapp) ?>?text=<?= urlencode('Hello ' . $bizName . ', I have an inquiry about sarees.') ?>" target="_blank" style="width: 38px; height: 38px; border-radius: 8px; background: #25D366; color: white; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 17px;" title="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
@@ -185,7 +185,7 @@
                     <label for="message">Your Message <span style="color: #ef4444;">*</span></label>
                     <textarea id="message" name="message" rows="5" placeholder="How can we help you?" required></textarea>
                 </div>
-                <button type="submit" class="submit-btn" style="background-color: var(--primary-color, #7a1530);">
+                <button type="submit" class="submit-btn" style="background-color: var(--primary-color, #e11d48);">
                     <i class="fa-solid fa-paper-plane" style="margin-right: 8px;"></i> Send Message
                 </button>
             </form>
@@ -198,12 +198,12 @@
             <div style="padding: 20px 25px; background: #f8fafc; border-bottom: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
                 <div>
                     <h3 style="margin: 0; font-size: 18px; font-weight: 800; color: #1e293b; display: flex; align-items: center; gap: 8px;">
-                        <i class="fa-solid fa-map-location-dot" style="color: var(--primary-color, #7a1530);"></i> Locate Our Store on Google Maps
+                        <i class="fa-solid fa-map-location-dot" style="color: var(--primary-color, #e11d48);"></i> Locate Our Store on Google Maps
                     </h3>
                     <p style="margin: 4px 0 0 0; font-size: 13px; color: #64748b;"><?= esc($bizName) ?> • <?= esc($bizAddress) ?></p>
                 </div>
                 <?php if(!empty($mapLink)): ?>
-                    <a href="<?= esc($mapLink) ?>" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; background: var(--primary-color, #7a1530); color: #fff; padding: 9px 18px; border-radius: 6px; text-decoration: none; font-size: 13px; font-weight: 700;">
+                    <a href="<?= esc($mapLink) ?>" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; background: var(--primary-color, #e11d48); color: #fff; padding: 9px 18px; border-radius: 6px; text-decoration: none; font-size: 13px; font-weight: 700;">
                         <i class="fa-solid fa-diamond-turn-right"></i> Get Directions
                     </a>
                 <?php endif; ?>

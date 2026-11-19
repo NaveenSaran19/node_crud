@@ -10,7 +10,7 @@
     $heroBgUrl = $hasHeroBg ? (str_starts_with($bgImgPath, 'http') ? $bgImgPath : base_url($bgImgPath)) : '';
     $heroBgStyle = $hasHeroBg 
         ? "background: linear-gradient(rgba(15, 5, 8, 0.72), rgba(25, 7, 13, 0.88)), url('" . esc($heroBgUrl) . "') center/cover no-repeat;"
-        : "background: linear-gradient(135deg, #1a050b 0%, #2e0915 50%, #150308 100%);";
+        : "background: linear-gradient(135deg, #0f172a 0%, #2e0915 50%, #150308 100%);";
 
     $hasFeaturedImg = !empty($page['featured_image']);
     $featuredImgUrl = $hasFeaturedImg ? (str_starts_with($page['featured_image'], 'http') ? $page['featured_image'] : base_url($page['featured_image'])) : '';
@@ -59,7 +59,7 @@
                     <span style="font-weight: 600; color: #475569;">100% Authentic Elampillai Handloom &bull; Direct Loom Pricing</span>
                 </div>
                 <div>
-                    <a href="<?= base_url('contact-us') ?>" style="color: #7a1530; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+                    <a href="<?= base_url('contact-us') ?>" style="color: #e11d48; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
                         Need Assistance? Talk to Weavers <i class="fa-solid fa-arrow-right" style="font-size: 12px;"></i>
                     </a>
                 </div>
@@ -79,16 +79,16 @@
 .dynamic-page-html h2 {
     font-size: 26px;
     font-weight: 800;
-    color: #1a050b;
+    color: #0f172a;
     margin: 30px 0 16px;
     letter-spacing: -0.3px;
-    border-left: 4px solid #7a1530;
+    border-left: 4px solid #e11d48;
     padding-left: 14px;
 }
 .dynamic-page-html h3 {
     font-size: 20px;
     font-weight: 700;
-    color: #7a1530;
+    color: #e11d48;
     margin: 25px 0 12px;
 }
 .dynamic-page-html p {
@@ -105,7 +105,7 @@
     line-height: 1.7;
 }
 .dynamic-page-html a {
-    color: #7a1530;
+    color: #e11d48;
     text-decoration: underline;
     font-weight: 600;
 }

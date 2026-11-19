@@ -20,7 +20,7 @@
         <div class="products-nav-left">
             <div class="products-header-title-wrap">
                 <h2 id="activeTabHeading">
-                    <i class="fa-solid fa-box-open" id="headingIcon" style="color: #7a1530;"></i>
+                    <i class="fa-solid fa-box-open" id="headingIcon" style="color: #e11d48;"></i>
                     <span id="headingTitle">All Products</span>
                 </h2>
                 <div class="subtitle" id="headingSubtitle">Manage your single catalog sarees and products (<?= $regularCount ?> items)</div>
@@ -357,7 +357,7 @@
             headingTitle.textContent = 'All Products';
             headingSubtitle.textContent = 'Manage your single catalog sarees and products (' + regularCount + ' items)';
             headingIcon.className = 'fa-solid fa-box-open';
-            headingIcon.style.color = '#7a1530';
+            headingIcon.style.color = '#e11d48';
 
             // Update Dynamic Action Button
             dynamicAddBtn.href = '<?= base_url('admin/products/create') ?>';

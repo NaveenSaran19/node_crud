@@ -9,7 +9,7 @@
             <p style="font-size: 14px; color: #64748b; margin: 0;">Organize website footer links, menu sections, display ordering, and external page links.</p>
         </div>
         <div style="display: flex; gap: 10px;">
-            <a href="<?= base_url('admin/footer-links/create') ?>" class="btn btn-primary" style="background: #7a1530; color: #fff; font-weight: 600; padding: 10px 20px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; border: none; box-shadow: 0 4px 12px rgba(122,21,48,0.25);">
+            <a href="<?= base_url('admin/footer-links/create') ?>" class="btn btn-primary" style="background: #e11d48; color: #fff; font-weight: 600; padding: 10px 20px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; border: none; box-shadow: 0 4px 12px rgba(225, 29, 72,0.25);">
                 <i class="fa-solid fa-plus"></i> Add New Footer Link
             </a>
         </div>
@@ -17,13 +17,13 @@
 
     <!-- Section Filter Tabs -->
     <div style="display: flex; gap: 10px; margin-bottom: 22px; border-bottom: 1px solid #e2e8f0; padding-bottom: 12px; flex-wrap: wrap;">
-        <a href="<?= base_url('admin/footer-links') ?>" style="padding: 7px 16px; border-radius: 6px; font-size: 13.5px; font-weight: 600; text-decoration: none; <?= ($currentSection === 'all') ? 'background: #7a1530; color: #fff;' : 'background: #f1f5f9; color: #475569;' ?>">
+        <a href="<?= base_url('admin/footer-links') ?>" style="padding: 7px 16px; border-radius: 6px; font-size: 13.5px; font-weight: 600; text-decoration: none; <?= ($currentSection === 'all') ? 'background: #e11d48; color: #fff;' : 'background: #f1f5f9; color: #475569;' ?>">
             All Links (<?= count($links) ?>)
         </a>
-        <a href="<?= base_url('admin/footer-links?section=customer_care') ?>" style="padding: 7px 16px; border-radius: 6px; font-size: 13.5px; font-weight: 600; text-decoration: none; <?= ($currentSection === 'customer_care') ? 'background: #7a1530; color: #fff;' : 'background: #f1f5f9; color: #475569;' ?>">
+        <a href="<?= base_url('admin/footer-links?section=customer_care') ?>" style="padding: 7px 16px; border-radius: 6px; font-size: 13.5px; font-weight: 600; text-decoration: none; <?= ($currentSection === 'customer_care') ? 'background: #e11d48; color: #fff;' : 'background: #f1f5f9; color: #475569;' ?>">
             <i class="fa-solid fa-headset" style="margin-right: 5px;"></i> Customer Care
         </a>
-        <a href="<?= base_url('admin/footer-links?section=our_collections') ?>" style="padding: 7px 16px; border-radius: 6px; font-size: 13.5px; font-weight: 600; text-decoration: none; <?= ($currentSection === 'our_collections') ? 'background: #7a1530; color: #fff;' : 'background: #f1f5f9; color: #475569;' ?>">
+        <a href="<?= base_url('admin/footer-links?section=our_collections') ?>" style="padding: 7px 16px; border-radius: 6px; font-size: 13.5px; font-weight: 600; text-decoration: none; <?= ($currentSection === 'our_collections') ? 'background: #e11d48; color: #fff;' : 'background: #f1f5f9; color: #475569;' ?>">
             <i class="fa-solid fa-gem" style="margin-right: 5px;"></i> Our Collections
         </a>
     </div>
