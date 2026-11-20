@@ -8,6 +8,7 @@ const bcrypt = require('bcryptjs');
 const db = require('./db');
 const models = require('./models');
 const { renderView } = require('./viewEngine');
+const { autoMigrate } = require('./autoMigrate');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -1006,10 +1007,20 @@ app.post('/api/products', async (req, res) => {
 });
 
 // Start Server
-app.listen(PORT, () => {
-    console.log(`\n======================================================`);
-    console.log(`🚀 Selvi Tex Node.js Application is LIVE!`);
-    console.log(`🌐 Storefront: http://localhost:${PORT}`);
-    console.log(`🔐 Admin Panel: http://localhost:${PORT}/admin/login`);
-    console.log(`======================================================\n`);
-});
+async function startServer() {
+    try {
+        await autoMigrate();
+    } catch (err) {
+        console.error('[Startup] Auto-migration error:', err.message);
+    }
+
+    app.listen(PORT, () => {
+        console.log(`\n======================================================`);
+        console.log(`🚀 Selvi Tex Node.js Application is LIVE!`);
+        console.log(`🌐 Storefront: http://localhost:${PORT}`);
+        console.log(`🔐 Admin Panel: http://localhost:${PORT}/admin/login`);
+        console.log(`======================================================\n`);
+    });
+}
+
+startServer();
