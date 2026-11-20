@@ -675,17 +675,45 @@ app.get('/admin/logout', (req, res) => {
 app.get('/admin/dashboard', requireAdmin, async (req, res) => {
     try {
         const common = await commonViewData(req);
-        const [totalOrders] = await models.dbPromise.query('SELECT count(*) as count FROM orders');
-        const [totalRevenue] = await models.dbPromise.query('SELECT sum(total_amount) as total FROM orders');
-        const [totalProducts] = await models.dbPromise.query('SELECT count(*) as count FROM products');
-        const [recentOrders] = await models.dbPromise.query('SELECT * FROM orders ORDER BY id DESC LIMIT 5');
+        let totalOrdersCount = 0;
+        let totalRevenueSum = 0;
+        let totalProductsCount = 0;
+        let recentOrders = [];
+
+        try {
+            const [rows] = await models.dbPromise.query('SELECT count(*) as count FROM orders');
+            totalOrdersCount = rows[0]?.count || 0;
+        } catch (e) {
+            console.warn('[Dashboard Warning] orders count query:', e.message);
+        }
+
+        try {
+            const [rows] = await models.dbPromise.query('SELECT sum(total_amount) as total FROM orders');
+            totalRevenueSum = rows[0]?.total || 0;
+        } catch (e) {
+            console.warn('[Dashboard Warning] revenue sum query:', e.message);
+        }
+
+        try {
+            const [rows] = await models.dbPromise.query('SELECT count(*) as count FROM products');
+            totalProductsCount = rows[0]?.count || 0;
+        } catch (e) {
+            console.warn('[Dashboard Warning] products count query:', e.message);
+        }
+
+        try {
+            const [rows] = await models.dbPromise.query('SELECT * FROM orders ORDER BY id DESC LIMIT 5');
+            recentOrders = rows || [];
+        } catch (e) {
+            console.warn('[Dashboard Warning] recent orders query:', e.message);
+        }
 
         const html = renderView('admin/dashboard', {
             ...common,
-            total_orders: totalOrders[0]?.count || 0,
-            total_revenue: totalRevenue[0]?.total || 0,
-            total_products: totalProducts[0]?.count || 0,
-            recent_orders: recentOrders || [],
+            total_orders: totalOrdersCount,
+            total_revenue: totalRevenueSum,
+            total_products: totalProductsCount,
+            recent_orders: recentOrders,
             admin_name: req.session.admin_name || 'Admin'
         });
         res.send(html);

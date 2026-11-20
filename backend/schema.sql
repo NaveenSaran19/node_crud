@@ -19,7 +19,6 @@
 -- Table structure for table `banners`
 --
 
-DROP TABLE IF EXISTS `banners`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE IF NOT EXISTS `banners` (
@@ -50,7 +49,6 @@ INSERT INTO `banners` VALUES (8,'Kanchipuram Kotta Cotton Sarees – Timeless Tr
 -- Table structure for table `blogs`
 --
 
-DROP TABLE IF EXISTS `blogs`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE IF NOT EXISTS `blogs` (
@@ -87,7 +85,6 @@ INSERT INTO `blogs` VALUES (1,'The Grand Diwali Saree Collection Launch','grand-
 -- Table structure for table `categories`
 --
 
-DROP TABLE IF EXISTS `categories`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE IF NOT EXISTS `categories` (
@@ -119,7 +116,6 @@ INSERT INTO `categories` VALUES (4,'Silk','silk','2026-10-09 04:30:36','2026-10-
 -- Table structure for table `enquiries`
 --
 
-DROP TABLE IF EXISTS `enquiries`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE IF NOT EXISTS `enquiries` (
@@ -149,7 +145,6 @@ INSERT INTO `enquiries` VALUES (1,'Kavitha Devi','kavitha.devi@example.com','090
 -- Table structure for table `faqs`
 --
 
-DROP TABLE IF EXISTS `faqs`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE IF NOT EXISTS `faqs` (
@@ -179,7 +174,6 @@ INSERT INTO `faqs` VALUES (1,'How do I place an order?','Placing an order is sim
 -- Table structure for table `footer_links`
 --
 
-DROP TABLE IF EXISTS `footer_links`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE IF NOT EXISTS `footer_links` (
@@ -210,7 +204,6 @@ INSERT INTO `footer_links` VALUES (1,'About Our Story','/pages/about-selvi-tex',
 -- Table structure for table `gst_rates`
 --
 
-DROP TABLE IF EXISTS `gst_rates`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE IF NOT EXISTS `gst_rates` (
@@ -236,7 +229,6 @@ INSERT INTO `gst_rates` VALUES (1,0.00,'2026-10-10 16:10:20',NULL),(2,5.00,'2026
 -- Table structure for table `migrations`
 --
 
-DROP TABLE IF EXISTS `migrations`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE IF NOT EXISTS `migrations` (
@@ -265,7 +257,6 @@ INSERT INTO `migrations` VALUES (1,'2026-10-08-171259','App\\Database\\Migration
 -- Table structure for table `order_items`
 --
 
-DROP TABLE IF EXISTS `order_items`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE IF NOT EXISTS `order_items` (
@@ -299,7 +290,6 @@ INSERT INTO `order_items` VALUES (2,4,18,'Kanchipuram Kotta Cotton Traditional S
 -- Table structure for table `orders`
 --
 
-DROP TABLE IF EXISTS `orders`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE IF NOT EXISTS `orders` (
@@ -351,7 +341,6 @@ INSERT INTO `orders` VALUES (3,'ST-3B6EA243',2,4586.94,'Cash on Delivery','Proce
 -- Table structure for table `pages`
 --
 
-DROP TABLE IF EXISTS `pages`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE IF NOT EXISTS `pages` (
@@ -386,7 +375,6 @@ INSERT INTO `pages` VALUES (1,'About Selvi Tex','about-selvi-tex','<h2>Weaving D
 -- Table structure for table `product_media`
 --
 
-DROP TABLE IF EXISTS `product_media`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE IF NOT EXISTS `product_media` (
@@ -420,7 +408,6 @@ INSERT INTO `product_media` VALUES (23,18,NULL,'uploads/products/1792252931_4552
 -- Table structure for table `product_reviews`
 --
 
-DROP TABLE IF EXISTS `product_reviews`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE IF NOT EXISTS `product_reviews` (
@@ -454,7 +441,6 @@ INSERT INTO `product_reviews` VALUES (1,1,'Kavitha R.','kavitha@example.com',5,'
 -- Table structure for table `product_variants`
 --
 
-DROP TABLE IF EXISTS `product_variants`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE IF NOT EXISTS `product_variants` (
@@ -491,7 +477,6 @@ INSERT INTO `product_variants` VALUES (9,18,'blue / Free Size','blue','#124bce',
 -- Table structure for table `products`
 --
 
-DROP TABLE IF EXISTS `products`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE IF NOT EXISTS `products` (
@@ -551,7 +536,6 @@ INSERT INTO `products` VALUES (18,13,'Kanchipuram Kotta Cotton Traditional Saree
 -- Table structure for table `settings`
 --
 
-DROP TABLE IF EXISTS `settings`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE IF NOT EXISTS `settings` (
@@ -579,7 +563,6 @@ INSERT INTO `settings` VALUES (1,'business_name','Selvi Tex','2026-10-09 03:09:4
 -- Table structure for table `subcategories`
 --
 
-DROP TABLE IF EXISTS `subcategories`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE IF NOT EXISTS `subcategories` (
@@ -611,7 +594,6 @@ INSERT INTO `subcategories` VALUES (11,8,'silk cotton','silk-cotton','2026-10-17
 -- Table structure for table `subscribers`
 --
 
-DROP TABLE IF EXISTS `subscribers`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE IF NOT EXISTS `subscribers` (
@@ -637,7 +619,6 @@ INSERT INTO `subscribers` VALUES (1,'test_buyer_1791927308@example.com','2026-10
 -- Table structure for table `testimonials`
 --
 
-DROP TABLE IF EXISTS `testimonials`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE IF NOT EXISTS `testimonials` (
@@ -664,7 +645,6 @@ CREATE TABLE IF NOT EXISTS `testimonials` (
 -- Table structure for table `users`
 --
 
-DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE IF NOT EXISTS `users` (
