@@ -211,7 +211,9 @@
                             <?php 
                                 $grouped = [];
                                 foreach($subcategories as $s) {
-                                    $grouped[$s['main_category']][] = $s;
+                                    $mc = !empty($s['main_category']) ? $s['main_category'] : 'General';
+                                    if (!isset($grouped[$mc])) $grouped[$mc] = [];
+                                    array_push($grouped[$mc], $s);
                                 }
                                 foreach($grouped as $mainCat => $subs): 
                             ?>

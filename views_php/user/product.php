@@ -15,7 +15,7 @@
                 $trimmed = trim($line);
                 if ($trimmed === '') {
                     if ($inList) {
-                        $html .= '</ul>';
+                        $html = $html . '</ul>';
                         $inList = false;
                     }
                     continue;
@@ -23,25 +23,25 @@
 
                 if (preg_match('/^[-*•+]\s+(.*)$/u', $trimmed, $m)) {
                     if (!$inList) {
-                        $html .= '<ul class="product-desc-bullets">';
+                        $html = $html . '<ul class="product-desc-bullets">';
                         $inList = true;
                     }
                     $content = esc($m[1]);
                     $content = preg_replace('/\*\*(.*?)\*\*/', '<strong>$1</strong>', $content);
-                    $html .= '<li><i class="fa-solid fa-check"></i> <span>' . $content . '</span></li>';
+                    $html = $html . '<li><i class="fa-solid fa-check"></i> <span>' . $content . '</span></li>';
                 } else {
                     if ($inList) {
-                        $html .= '</ul>';
+                        $html = $html . '</ul>';
                         $inList = false;
                     }
                     $content = esc($trimmed);
                     $content = preg_replace('/\*\*(.*?)\*\*/', '<strong>$1</strong>', $content);
-                    $html .= '<p class="product-desc-para">' . $content . '</p>';
+                    $html = $html . '<p class="product-desc-para">' . $content . '</p>';
                 }
             }
 
             if ($inList) {
-                $html .= '</ul>';
+                $html = $html . '</ul>';
             }
 
             return $html;
@@ -92,10 +92,10 @@
                 } else {
                     // Enrich existing swatch with non-empty code or images if missing
                     if ((empty($distinctColors[$colorKey]['color_code']) || $distinctColors[$colorKey]['color_code'] === '#e11d48') && !empty($cCode)) {
-                        $distinctColors[$colorKey]['color_code'] = $cCode;
+                        $distinctColors[$colorKey] = array_merge($distinctColors[$colorKey], ['color_code' => $cCode]);
                     }
                     if (empty($distinctColors[$colorKey]['images']) && !empty($vImages)) {
-                        $distinctColors[$colorKey]['images'] = $vImages;
+                        $distinctColors[$colorKey] = array_merge($distinctColors[$colorKey], ['images' => $vImages]);
                     }
                 }
             }

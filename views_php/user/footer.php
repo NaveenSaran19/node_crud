@@ -80,9 +80,12 @@
             
             <!-- Column 1: Brand & Heritage Details -->
             <div class="footer-col footer-col-brand">
-                <a href="<?= base_url('/') ?>" class="footer-brand-logo-link">
-                    <img src="<?= $logoUrl ?>" alt="<?= esc($bizName) ?>" class="footer-brand-logo" onerror="this.onerror=null;this.src='<?= base_url('assets/images/logo.png') ?>';">
-                    <span class="footer-brand-name"><?= esc($bizName) ?></span>
+                <a href="<?= base_url('/') ?>" class="footer-brand-logo-link" aria-label="<?= esc($bizName) ?>">
+                    <?php if (!empty($settings['business_logo'])): ?>
+                        <img src="<?= $logoUrl ?>" alt="<?= esc($bizName) ?>" class="footer-brand-logo">
+                    <?php else: ?>
+                        <span class="footer-brand-name"><?= esc($bizName) ?></span>
+                    <?php endif; ?>
                 </a>
                 <p class="footer-brand-desc">
                     Preserving centuries of Elampillai handloom heritage. We craft exquisite pure silk, fancy cotton, and wedding festive sarees directly from our master weavers to your wardrobe.

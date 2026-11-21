@@ -307,7 +307,8 @@ if (!is_array($sizesList) || empty($sizesList)) {
                         $groupedSizes = [];
                         foreach($sizesList as $si => $sItem) {
                             $cat = !empty($sItem['category']) ? $sItem['category'] : 'General';
-                            $groupedSizes[$cat][] = $sItem['name'] ?? '';
+                            if (!isset($groupedSizes[$cat])) $groupedSizes[$cat] = [];
+                            array_push($groupedSizes[$cat], $sItem['name'] ?? '');
                         }
                         $catColors = [
                             'General' => ['bg' => '#f1f5f9', 'border' => '#cbd5e1', 'text' => '#475569'],

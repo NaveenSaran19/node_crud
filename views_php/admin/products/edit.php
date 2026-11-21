@@ -222,7 +222,9 @@
                             <?php 
                                 $grouped = [];
                                 foreach($subcategories as $s) {
-                                    $grouped[$s['main_category']][] = $s;
+                                    $mc = !empty($s['main_category']) ? $s['main_category'] : 'General';
+                                    if (!isset($grouped[$mc])) $grouped[$mc] = [];
+                                    array_push($grouped[$mc], $s);
                                 }
                                 foreach($grouped as $mainCat => $subs): 
                             ?>
@@ -634,7 +636,8 @@
                                                         $grouped = [];
                                                         foreach($configuredSizes as $s) {
                                                             $grp = !empty($s['category']) ? $s['category'] : 'General';
-                                                            $grouped[$grp][] = $s['name'];
+                                                            if (!isset($grouped[$grp])) $grouped[$grp] = [];
+                                                            array_push($grouped[$grp], $s['name']);
                                                         }
                                                         foreach($grouped as $grp => $items):
                                                             $icon = $grp === 'Apparel' ? '👔' : ($grp === 'Dhoti' ? '🥻' : ($grp === 'Saree' ? '📐' : '🏷️'));

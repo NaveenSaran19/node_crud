@@ -38,6 +38,20 @@ function compileAndExecute(phpCode, data, viewName = 'unknown') {
         empty: (val) => val == null || val === '' || val === false || (Array.isArray(val) && val.length === 0) || (typeof val === 'object' && Object.keys(val).length === 0),
         count: (val) => !val ? 0 : (Array.isArray(val) ? val.length : (typeof val === 'object' ? Object.keys(val).length : 0)),
         in_array: (needle, haystack) => Array.isArray(haystack) ? haystack.includes(needle) : false,
+        strtotime: (str) => {
+            if (!str) return 0;
+            const t = Date.parse(str);
+            return isNaN(t) ? 0 : Math.floor(t / 1000);
+        },
+        stripos: (h, n) => {
+            const idx = String(h || '').toLowerCase().indexOf(String(n || '').toLowerCase());
+            return idx === -1 ? false : idx;
+        },
+        lang: (k) => k,
+        array_push: (arr, ...items) => {
+            if (!Array.isArray(arr)) return 0;
+            return arr.push(...items);
+        },
         strpos: (h, n) => { const idx = String(h || '').indexOf(n); return idx === -1 ? false : idx; },
         time: () => Math.floor(Date.now() / 1000),
         trim: (s) => String(s || '').trim(),
@@ -55,6 +69,8 @@ function compileAndExecute(phpCode, data, viewName = 'unknown') {
             return s.replace(/[^a-z0-9]+/gi, sep).replace(new RegExp(`^\\${sep}+|\\${sep}+$`, 'g'), '');
         },
         file_exists: (fp) => typeof fp === 'string' && fs.existsSync(fp),
+        file_get_contents: (fp) => typeof fp === 'string' && fs.existsSync(fp) ? fs.readFileSync(fp, 'utf8') : '',
+        basename: (fp) => typeof fp === 'string' ? path.basename(fp) : '',
         FCPATH: path.join(__dirname, '../public/'),
         csrf_field: () => '',
         csrf_hash: () => '',
@@ -289,7 +305,7 @@ function compileAndExecute(phpCode, data, viewName = 'unknown') {
         const fn = new Function('scope', 'with(scope) { let out = "";\n' + compiledJs + '\nreturn out; }');
         return fn(scope);
     } catch (err) {
-        fs.writeFileSync(path.join(__dirname, `debug_${viewName.replace(/\//g, '_')}.js`), 'function test(scope) {\nwith(scope) {\nlet out = "";\n' + compiledJs + '\nreturn out;\n}\n}');
+        fs.writeFileSync(path.join(__dirname, `debug_${viewName.replace(/[\\/]/g, '_')}.js`), 'function test(scope) {\nwith(scope) {\nlet out = "";\n' + compiledJs + '\nreturn out;\n}\n}');
         console.error(`Compilation Error in view [${viewName}]:`, err.message);
         const lines = compiledJs.split('\n');
         for (let i = Math.max(0, 540); i < Math.min(lines.length, 570); i++) {
@@ -362,9 +378,9 @@ function makeSafeLookups(code) {
             if (depth === 0) {
                 const indexExpr = code.slice(i + match[0].length, j - 1);
                 const rest = code.slice(j);
-                const isAssign = /^\s*=(?!=)/.test(rest);
+                const isAssign = /^(?:\s*\[[^\]\r\n]*\])*\s*=(?!=)/.test(rest);
                 if (isAssign) {
-                    result += `if (typeof ${varName} === "undefined" || !${varName}) ${varName} = {}; ${varName}[${makeSafeLookups(indexExpr)}]`;
+                    result += `if (typeof ${varName} === "undefined" || !${varName}) ${varName} = {}; if (!${varName}[${indexExpr}]) ${varName}[${indexExpr}] = {}; ${varName}[${indexExpr}]`;
                 } else {
                     result += `${varName}?.[${makeSafeLookups(indexExpr)}]`;
                 }
@@ -385,7 +401,7 @@ function transformPhpExpr(expr) {
     s = s.replace(/\(string\)/g, 'String');
     s = s.replace(/\((?:bool|boolean)\)/g, 'Boolean');
     s = s.replace(/new\s+\\?App\\Models\\([a-zA-Z0-9_]+)\(\)/g, 'newModel("$1")');
-    s = s.replace(/\]\s*\[/g, ']?.[');
+    s = s.replace(/\]\s*\[(?![^;=\n]*=(?!=))/g, ']?.[');
     s = s.replace(/->/g, '.');
     s = s.replace(/\s+\.\s+/g, ' + ');
     s = s.replace(/\?:/g, '||');
@@ -546,22 +562,23 @@ function transformPhpStmt(stmt) {
     s = s.replace(/\bendif\s*;/g, '}');
 
     s = s.replace(/\bforeach\s*\((.*?)\s+as\s+&?(\$[a-zA-Z0-9_]+)\s*=>\s*&?(\$[a-zA-Z0-9_]+)\)\s*[:{]/g, 
-        'for (const [$2, $3] of Object.entries($1 || {})) {');
+        'for (const [$2, $3] of Object.entries(($1) || {})) {');
     s = s.replace(/\bforeach\s*\((.*?)\s+as\s+&?(\$[a-zA-Z0-9_]+)\)\s*[:{]/g, 
-        'for (const $2 of ($1 || [])) {');
+        'for (const $2 of (($1) || [])) {');
     s = s.replace(/\bendforeach\s*;/g, '}');
     s = s.replace(/\bunset\s*\((.*?)\)\s*;/g, '');
 
     s = s.replace(/\bfor\s*\((.*?)\)\s*:/g, 'for ($1) {');
     s = s.replace(/\bendfor\s*;/g, '}');
 
+    s = s.replace(/\s*\.=\s*/g, ' += ');
     s = s.replace(/(\$[a-zA-Z0-9_]+)\[\]\s*=\s*(.*?);\s*$/gm, '$1.push($2);');
     s = s.replace(/\((?:float|double|int|integer)\)/g, 'Number');
     s = s.replace(/\(string\)/g, 'String');
     s = s.replace(/\((?:bool|boolean)\)/g, 'Boolean');
     s = s.replace(/<=>/g, '-');
     s = s.replace(/new\s+\\?App\\Models\\([a-zA-Z0-9_]+)\(\)/g, 'newModel("$1")');
-    s = s.replace(/\]\s*\[/g, ']?.[');
+    s = s.replace(/\]\s*\[(?![^;=\n]*=(?!=))/g, ']?.[');
     s = s.replace(/->/g, '.');
     s = s.replace(/\s+\.\s+/g, ' + ');
     s = s.replace(/\?:/g, '||');

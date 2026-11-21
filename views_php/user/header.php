@@ -589,18 +589,18 @@
                 <button type="button" class="mobile-nav-toggle-btn" id="mobileNavToggleBtn" aria-label="Open Navigation Menu">
                     <i class="fa-solid fa-bars"></i>
                 </button>
-                <a href="<?= base_url('/') ?>" class="modern-brand-link">
+                <a href="<?= base_url('/') ?>" class="modern-brand-link" aria-label="<?= esc($headerBizName) ?>">
                     <?php if ($logoSetting && !empty($logoSetting['value'])): ?>
-                        <img src="<?= base_url($logoSetting['value']) ?>" alt="<?= esc($headerBizName) ?>" class="modern-brand-logo-img" onerror="this.style.display='none';">
+                        <img src="<?= base_url($logoSetting['value']) ?>" alt="<?= esc($headerBizName) ?>" class="modern-brand-logo-img">
                     <?php else: ?>
                         <div class="modern-brand-logo-circle">
                             <i class="fa-solid fa-spa"></i>
                         </div>
+                        <div class="modern-brand-text">
+                            <span class="modern-brand-title"><?= esc($headerBizName) ?></span>
+                            <span class="modern-brand-tagline">Pure Silk &amp; Handlooms</span>
+                        </div>
                     <?php endif; ?>
-                    <div class="modern-brand-text">
-                        <span class="modern-brand-title"><?= esc($headerBizName) ?></span>
-                        <span class="modern-brand-tagline">Pure Silk &amp; Handlooms</span>
-                    </div>
                 </a>
             </div>
 
@@ -750,13 +750,17 @@
         <nav class="main-nav modern-mobile-drawer" id="storefrontMainNav">
             <div class="mobile-nav-drawer-header">
                 <div class="mobile-nav-brand-wrap">
-                    <div class="modern-brand-logo-circle" style="width: 34px; height: 34px; font-size: 15px;">
-                        <i class="fa-solid fa-spa"></i>
-                    </div>
-                    <div>
-                        <div class="mobile-nav-drawer-title"><?= esc($headerBizName) ?></div>
-                        <div class="mobile-nav-drawer-sub">Pure Silk &amp; Handlooms</div>
-                    </div>
+                    <?php if ($logoSetting && !empty($logoSetting['value'])): ?>
+                        <img src="<?= base_url($logoSetting['value']) ?>" alt="<?= esc($headerBizName) ?>" style="max-height: 38px; width: auto; max-width: 150px; object-fit: contain;">
+                    <?php else: ?>
+                        <div class="modern-brand-logo-circle" style="width: 34px; height: 34px; font-size: 15px;">
+                            <i class="fa-solid fa-spa"></i>
+                        </div>
+                        <div>
+                            <div class="mobile-nav-drawer-title"><?= esc($headerBizName) ?></div>
+                            <div class="mobile-nav-drawer-sub">Pure Silk &amp; Handlooms</div>
+                        </div>
+                    <?php endif; ?>
                 </div>
                 <button type="button" class="mobile-nav-close-btn" id="mobileNavCloseBtn" aria-label="Close Navigation Menu">&times;</button>
             </div>

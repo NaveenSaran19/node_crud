@@ -77,9 +77,12 @@ header.main-header,
 }
 
 .modern-brand-logo-img {
-    height: 40px;
+    height: 44px;
+    max-height: 48px;
     width: auto;
+    max-width: 220px;
     object-fit: contain;
+    display: block;
 }
 
 .modern-brand-logo-circle {
@@ -791,7 +794,6 @@ header.main-header,
         visibility: hidden !important;
         pointer-events: none !important;
     }
-}
 }
 
 /* --------------------------------------------------------------------------
