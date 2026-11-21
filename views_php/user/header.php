@@ -178,8 +178,8 @@
             width: 24px;
             height: 24px;
             border-radius: 6px;
-            background: #fff1f2;
-            border: 1px solid rgba(225, 29, 72, 0.2);
+            background: #f5f3ff;
+            border: 1px solid rgba(124, 58, 237, 0.2);
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -203,9 +203,9 @@
             margin: 0 !important;
         }
         .nav-category-link:hover .nav-cat-icon-badge {
-            border-color: #e11d48;
+            border-color: #7c3aed;
             background: #ffffff;
-            box-shadow: 0 2px 6px rgba(225, 29, 72, 0.22);
+            box-shadow: 0 2px 6px rgba(124, 58, 237, 0.22);
             transform: translateY(-1px) scale(1.08);
         }
         .nav-cat-name {
@@ -221,7 +221,7 @@
         }
         .nav-menu-categories > li.has-dropdown:hover .nav-cat-caret {
             transform: rotate(180deg);
-            color: #e11d48;
+            color: #7c3aed;
         }
 
         /* Desktop Dropdown Hover Visibility */
@@ -347,7 +347,7 @@
             background: rgba(255, 255, 255, 0.96);
             border: 1.5px solid rgba(212, 175, 55, 0.5);
             border-radius: 24px;
-            box-shadow: 0 20px 50px rgba(225, 29, 72, 0.16), 0 4px 14px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 20px 50px rgba(124, 58, 237, 0.16), 0 4px 14px rgba(0, 0, 0, 0.06);
             max-width: 380px;
             width: 100%;
             margin: auto !important;
@@ -376,7 +376,7 @@
             inset: -6px;
             border-radius: 50%;
             border: 3.5px solid transparent;
-            border-top-color: #e11d48;
+            border-top-color: #7c3aed;
             border-right-color: #d4af37;
             animation: preloaderSpin 1.05s cubic-bezier(0.5, 0.1, 0.5, 0.9) infinite;
         }
@@ -393,11 +393,11 @@
             font-family: 'Cinzel', 'Playfair Display', Georgia, serif;
             font-size: 22px;
             font-weight: 800;
-            color: #e11d48;
+            color: #7c3aed;
             letter-spacing: 2.2px;
             text-transform: uppercase;
             margin-bottom: 5px;
-            text-shadow: 0 1px 3px rgba(225, 29, 72, 0.12);
+            text-shadow: 0 1px 3px rgba(124, 58, 237, 0.12);
         }
         #sitePreloader .preloader-brand-sub {
             font-size: 11.5px;
@@ -420,7 +420,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, #d4af37 0%, #e11d48 50%, #d4af37 100%);
+            background: linear-gradient(90deg, #d4af37 0%, #7c3aed 50%, #d4af37 100%);
             border-radius: 4px;
             animation: preloaderBar 1.25s ease-in-out infinite;
         }
@@ -580,7 +580,32 @@
         }
     ?>
     <!-- ==========================================================================
-         MODERN LUXURY STOREFRONT HEADER (Clean Single-Row GlowCare Architecture)
+         LUXURY PURPLE TOP UTILITY BAR (Matching Reference Mockup)
+         ========================================================================== -->
+    <div class="luxury-top-utility-bar">
+        <div class="luxury-top-utility-container">
+            <a href="<?= base_url('contact-us') ?>" class="top-contact-pill">
+                <i class="fa-regular fa-envelope"></i> CONTACT US
+            </a>
+            <div class="top-announcement-ticker">
+                <span>Free Express Shipping across India &bull; Pure Silk &amp; Authentic Elampillai Handlooms</span>
+            </div>
+            <div class="top-right-meta">
+                <?php if(!empty($headerPhone)): ?>
+                    <a href="tel:<?= preg_replace('/[^0-9+]/', '', $headerPhone) ?>" class="top-meta-link">
+                        <i class="fa-solid fa-phone"></i> +91 <?= esc($headerPhone) ?>
+                    </a>
+                <?php else: ?>
+                    <a href="<?= base_url('contact-us') ?>" class="top-meta-link">
+                        <i class="fa-solid fa-location-dot"></i> Showroom
+                    </a>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         MODERN LUXURY STOREFRONT HEADER (Clean Single-Row Architecture)
          ========================================================================== -->
     <header class="main-header modern-header-wrapper" id="siteModernHeader">
         <div class="modern-header-container">
@@ -775,8 +800,8 @@
 
                 <ul class="mobile-drawer-links">
                     <li><a href="<?= base_url('/') ?>" class="<?= $isHomeActive ? 'active' : '' ?>"><i class="fa-solid fa-house"></i> Home</a></li>
-                    <li><a href="<?= base_url('collections/new-arrivals') ?>" class="<?= $isNewArrivalsActive ? 'active' : '' ?>"><i class="fa-solid fa-sparkles" style="color: #e11d48;"></i> New Arrivals <span class="modern-badge-pill new">NEW</span></a></li>
-                    <li><a href="<?= base_url('collections/best-sellers') ?>" class="<?= $isBestSellerActive ? 'active' : '' ?>"><i class="fa-solid fa-fire" style="color: #e11d48;"></i> Best Sellers <span class="modern-badge-pill hot">HOT</span></a></li>
+                    <li><a href="<?= base_url('collections/new-arrivals') ?>" class="<?= $isNewArrivalsActive ? 'active' : '' ?>"><i class="fa-solid fa-sparkles" style="color: #7c3aed;"></i> New Arrivals <span class="modern-badge-pill new">NEW</span></a></li>
+                    <li><a href="<?= base_url('collections/best-sellers') ?>" class="<?= $isBestSellerActive ? 'active' : '' ?>"><i class="fa-solid fa-fire" style="color: #7c3aed;"></i> Best Sellers <span class="modern-badge-pill hot">HOT</span></a></li>
                     <li><a href="<?= base_url('collections') ?>" class="<?= $isCollectionsActive ? 'active' : '' ?>"><i class="fa-solid fa-layer-group"></i> All Collections</a></li>
                     <li><a href="<?= base_url('contact-us') ?>" class="<?= $isContactUsActive ? 'active' : '' ?>"><i class="fa-solid fa-envelope"></i> Contact Us</a></li>
                 </ul>
@@ -786,7 +811,7 @@
                     <?php foreach($topCategories as $topCat): ?>
                     <li>
                         <a href="<?= base_url('category/' . $topCat['slug']) ?>">
-                            <i class="fa-solid fa-chevron-right" style="font-size: 11px; color: #e11d48; margin-right: 8px;"></i>
+                            <i class="fa-solid fa-chevron-right" style="font-size: 11px; color: #7c3aed; margin-right: 8px;"></i>
                             <?= esc($topCat['name']) ?>
                         </a>
                     </li>
@@ -814,7 +839,7 @@
         <div class="country-currency-card">
             <div class="country-currency-header">
                 <div class="country-currency-title-wrap">
-                    <i class="fa-solid fa-earth-americas" style="color: #e11d48; font-size: 19px;"></i>
+                    <i class="fa-solid fa-earth-americas" style="color: #7c3aed; font-size: 19px;"></i>
                     <span class="country-currency-title">Select Country & Currency</span>
                 </div>
                 <button type="button" class="country-currency-close" id="countryCurrencyCloseBtn" aria-label="Close Country Selector">&times;</button>

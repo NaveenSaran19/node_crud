@@ -23,21 +23,24 @@
                                 <div class="hero-overlay-scrim"></div>
                             </div>
                             <div class="hero-content">
-                                <span class="hero-tagline"><i class="fa-solid fa-sparkles"></i> Radiate Elegance Every Day</span>
-                                <h1 class="hero-title"><?= esc($bTitle) ?></h1>
-                                <p class="hero-subtitle">Discover handcrafted pure silk, soft cotton &amp; bridal handloom sarees crafted with timeless artistry.</p>
+                                <span class="hero-tagline"><i class="fa-solid fa-sparkles"></i> NEW COLLECTION</span>
+                                <h1 class="hero-title">TIMELESS STYLE</h1>
+                                <p class="hero-subtitle">
+                                    <em class="hero-sub-italic">For Every Chapter</em><br>
+                                    Modern silhouettes, premium handloom fabrics and versatile weaves made for your everyday elegance.
+                                </p>
                                 <div class="hero-btn-wrap">
                                     <a href="<?= esc($bLink) ?>" class="hero-btn hero-explore-btn">
-                                        Shop Now <i class="fa-solid fa-arrow-right"></i>
+                                        SHOP THE COLLECTION <i class="fa-solid fa-arrow-right"></i>
                                     </a>
-                                    <a href="<?= base_url('collections') ?>" class="hero-secondary-btn">
-                                        Explore Categories <i class="fa-solid fa-table-cells-large"></i>
-                                    </a>
+                                </div>
+                                <div class="hero-pagination-dashes">
+                                    <span class="active">01</span> <span class="dash-line">&mdash;&mdash;</span> <span>02</span> <span>03</span>
                                 </div>
                             </div>
                             <div class="hero-floating-badge">
-                                <div class="badge-val">100%</div>
-                                <div class="badge-label">Original Weaves</div>
+                                <div class="badge-val"><i class="fa-solid fa-sparkles"></i></div>
+                                <div class="badge-label">SAREES THAT MOVE WITH YOU</div>
                             </div>
                         </div>
                     <?php endforeach; ?>
@@ -50,21 +53,24 @@
                             <div class="hero-overlay-scrim"></div>
                         </div>
                         <div class="hero-content">
-                            <span class="hero-tagline"><i class="fa-solid fa-sparkles"></i> Radiate Elegance Every Day</span>
-                            <h1 class="hero-title">Timeless Handloom Sarees for Every Occasion</h1>
-                            <p class="hero-subtitle">Discover handcrafted pure silk, soft cotton &amp; bridal handlooms direct from Elampillai master weavers.</p>
+                            <span class="hero-tagline"><i class="fa-solid fa-sparkles"></i> NEW COLLECTION</span>
+                            <h1 class="hero-title">TIMELESS STYLE</h1>
+                            <p class="hero-subtitle">
+                                <em class="hero-sub-italic">For Every Chapter</em><br>
+                                Modern silhouettes, premium handloom fabrics and versatile weaves made for your everyday elegance.
+                            </p>
                             <div class="hero-btn-wrap">
                                 <a href="<?= base_url('collections/new-arrivals') ?>" class="hero-btn hero-explore-btn">
-                                    Shop Now <i class="fa-solid fa-arrow-right"></i>
+                                    SHOP THE COLLECTION <i class="fa-solid fa-arrow-right"></i>
                                 </a>
-                                <a href="<?= base_url('collections') ?>" class="hero-secondary-btn">
-                                    Explore Categories <i class="fa-solid fa-table-cells-large"></i>
-                                </a>
+                            </div>
+                            <div class="hero-pagination-dashes">
+                                <span class="active">01</span> <span class="dash-line">&mdash;&mdash;</span> <span>02</span> <span>03</span>
                             </div>
                         </div>
                         <div class="hero-floating-badge">
-                            <div class="badge-val">100%</div>
-                            <div class="badge-label">Original Weaves</div>
+                            <div class="badge-val"><i class="fa-solid fa-sparkles"></i></div>
+                            <div class="badge-label">SAREES THAT MOVE WITH YOU</div>
                         </div>
                     </div>
                 <?php endif; ?>
@@ -289,26 +295,29 @@
         </section>
         <?php endif; ?>
 
-        <!-- Limited Time Festive Offer Banner (Matching Reference Design) -->
-        <section class="promo-festive-banner">
-            <div class="promo-banner-inner">
-                <div>
-                    <span class="promo-banner-badge"><i class="fa-solid fa-clock"></i> Limited Time Festive Offer</span>
-                    <h2 class="promo-banner-title">Up to 30% OFF</h2>
-                    <p class="promo-banner-subtitle">On Pure Silk, Soft Silk &amp; Festive Wedding Sarees</p>
+        <!-- Middle Promo Banner: THE AUTUMN EDIT (Matching Reference Mockup) -->
+        <section class="promo-festive-banner autumn-edit-banner-wrap">
+            <div class="promo-banner-inner autumn-edit-banner">
+                <div class="autumn-edit-content">
+                    <span class="autumn-badge"><i class="fa-solid fa-sparkles"></i> EXCLUSIVE EDIT</span>
+                    <h2 class="autumn-title">THE AUTUMN EDIT</h2>
+                    <p class="autumn-subtitle">Richer tones. Softer fabrics. A refined you.</p>
                 </div>
-                <a href="<?= base_url('collections/new-arrivals') ?>" class="promo-banner-btn">
-                    Shop the Sale <i class="fa-solid fa-arrow-right"></i>
+                <a href="<?= base_url('collections/new-arrivals') ?>" class="autumn-btn">
+                    EXPLORE NOW <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </div>
         </section>
 
-        <!-- Best Sellers Section (Modern Grid matching Reference Image) -->
+        <!-- Trending Now / Most Loved Looks (Matching Reference Mockup) -->
         <section class="collection-section best-sellers-section" style="margin-bottom: 50px; background: transparent;">
             <div class="section-header-modern">
-                <h2 class="section-title-modern">Best Sellers</h2>
+                <div>
+                    <span class="section-sub-tag">TRENDING NOW</span>
+                    <h2 class="section-title-modern">Most Loved Looks</h2>
+                </div>
                 <a href="<?= base_url('collections/best-sellers') ?>" class="section-view-all-link">
-                    View All Products <i class="fa-solid fa-arrow-right"></i>
+                    VIEW ALL <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </div>
             <div class="product-grid-modern">
@@ -327,6 +336,9 @@
                             <a href="<?= base_url('product/' . esc($item['slug'])) ?>">
                                 <img src="<?= $imgUrl ?>" alt="<?= esc($item['name']) ?>" onerror="this.onerror=null;this.src='<?= base_url('assets/images/placeholder.jpg') ?>';">
                             </a>
+                            <button type="button" class="product-card-wishlist-btn" aria-label="Add to Wishlist" onclick="this.classList.toggle('active'); this.querySelector('i').classList.toggle('fa-solid'); this.querySelector('i').classList.toggle('fa-regular');">
+                                <i class="fa-regular fa-heart"></i>
+                            </button>
                             <?php if($discountPct > 0): ?>
                                 <span class="product-badge-discount"><?= $discountPct ?>% OFF</span>
                             <?php endif; ?>
@@ -334,26 +346,24 @@
                         <a href="<?= base_url('product/' . esc($item['slug'])) ?>" class="product-card-title">
                             <?= esc($item['name']) ?>
                         </a>
-                        <div class="product-card-rating">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star-half-stroke"></i>
-                            <span>(<?= rand(80, 320) ?>)</span>
-                        </div>
                         <div class="product-card-prices">
                             <span class="product-price-current">₹<?= number_format($salePrice, 2) ?></span>
                             <?php if($origPrice > $salePrice): ?>
                                 <span class="product-price-original">₹<?= number_format($origPrice, 2) ?></span>
                             <?php endif; ?>
                         </div>
+                        <div class="product-swatch-dots">
+                            <span class="swatch-dot" style="background-color: #6d28d9;" title="Royal Violet"></span>
+                            <span class="swatch-dot" style="background-color: #c084fc;" title="Lilac"></span>
+                            <span class="swatch-dot" style="background-color: #ede9fe;" title="Lavender"></span>
+                            <span class="swatch-dot" style="background-color: #ffffff; border: 1px solid #cbd5e1;" title="White"></span>
+                        </div>
                         <button type="button" class="btn-add-cart-pill" onclick="quickAddToCart(<?= (int)$item['id'] ?>)">
                             <i class="fa-solid fa-bag-shopping"></i> Add to Cart
                         </button>
                     </div>
                 <?php endforeach; else: ?>
-                    <p style="text-align: center; grid-column: 1/-1; color: var(--theme-text-muted);">No best sellers found.</p>
+                    <p style="text-align: center; grid-column: 1/-1; color: var(--theme-text-muted);">No products found.</p>
                 <?php endif; ?>
             </div>
         </section>
@@ -956,15 +966,11 @@
                 font-size: 18px;
                 flex-shrink: 0;
             }
-            .showroom-card-icon.red {
-                background: linear-gradient(135deg, #fff1f2 0%, #ffe4e6 100%);
-                color: #e11d48;
-                border: 1px solid #fecdd3;
-            }
+            .showroom-card-icon.red,
             .showroom-card-icon.maroon {
-                background: linear-gradient(135deg, #fdf2f4 0%, #fbe8ec 100%);
-                color: #e11d48;
-                border: 1px solid #f7d2da;
+                background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+                color: #7c3aed;
+                border: 1px solid #ddd6fe;
             }
             .showroom-card-icon.green {
                 background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);

@@ -300,8 +300,8 @@
 
 /* 1. Heritage Trust Strip */
 .footer-trust-strip {
-    background: #fff5f7 !important;
-    border-bottom: 1px solid #ffe4e6 !important;
+    background: #faf5ff !important;
+    border-bottom: 1px solid #ede9fe !important;
     padding: 24px 0 !important;
 }
 
@@ -324,7 +324,7 @@
     border-radius: 50% !important;
     background: #ffffff !important;
     border: 1.5px solid #fecdd3 !important;
-    color: #e11d48 !important;
+    color: #7c3aed !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -413,7 +413,7 @@
 }
 
 .footer-contact-line i {
-    color: #e11d48 !important;
+    color: #7c3aed !important;
     font-size: 15px !important;
     margin-top: 3px !important;
     width: 20px !important;
@@ -428,14 +428,14 @@
 }
 
 .footer-contact-line a:hover {
-    color: #e11d48 !important;
+    color: #7c3aed !important;
 }
 
 .footer-gst-tag {
-    background: #fff1f2 !important;
+    background: #f5f3ff !important;
     padding: 4px 10px !important;
     border-radius: 6px !important;
-    border-left: 3px solid #e11d48 !important;
+    border-left: 3px solid #7c3aed !important;
     width: fit-content !important;
     color: #0f172a !important;
 }
@@ -449,9 +449,9 @@
     width: 38px !important;
     height: 38px !important;
     border-radius: 50% !important;
-    background: #fff1f2 !important;
-    border: 1px solid #ffe4e6 !important;
-    color: #e11d48 !important;
+    background: #f5f3ff !important;
+    border: 1px solid #ede9fe !important;
+    color: #7c3aed !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -461,7 +461,7 @@
 }
 
 .social-icon-btn:hover {
-    background: #e11d48 !important;
+    background: #7c3aed !important;
     color: #ffffff !important;
     transform: translateY(-3px) !important;
     box-shadow: 0 4px 12px rgba(225, 29, 72, 0.3) !important;
@@ -486,7 +486,7 @@
     left: 0 !important;
     width: 32px !important;
     height: 3px !important;
-    background: #e11d48 !important;
+    background: #7c3aed !important;
     border-radius: 9999px !important;
 }
 
@@ -516,12 +516,12 @@
 
 .footer-nav-list a i {
     font-size: 10px !important;
-    color: #e11d48 !important;
+    color: #7c3aed !important;
     transition: transform 0.2s !important;
 }
 
 .footer-nav-list a:hover {
-    color: #e11d48 !important;
+    color: #7c3aed !important;
     transform: translateX(4px) !important;
 }
 
@@ -574,14 +574,14 @@
 
 .footer-input-wrap input:focus {
     background: #ffffff !important;
-    border-color: #e11d48 !important;
+    border-color: #7c3aed !important;
     box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.12) !important;
 }
 
 .footer-subscribe-btn {
     width: 100% !important;
     height: 44px !important;
-    background: linear-gradient(135deg, #e11d48 0%, #be123c 100%) !important;
+    background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%) !important;
     color: #ffffff !important;
     border: none !important;
     border-radius: 9999px !important;
@@ -599,7 +599,7 @@
 }
 
 .footer-subscribe-btn:hover {
-    background: linear-gradient(135deg, #be123c 0%, #9f1239 100%) !important;
+    background: linear-gradient(135deg, #6d28d9 0%, #9f1239 100%) !important;
     transform: translateY(-2px) !important;
     box-shadow: 0 6px 16px rgba(225, 29, 72, 0.38) !important;
 }
@@ -668,7 +668,7 @@
 
 .payment-icon-pill i {
     font-size: 15px !important;
-    color: #e11d48 !important;
+    color: #7c3aed !important;
 }
 
 /* Mobile Bottom App Navigation Bar */
@@ -723,14 +723,14 @@
 
     .mobile-bar-tab.active,
     .mobile-bar-tab:hover {
-        color: #e11d48 !important;
+        color: #7c3aed !important;
     }
 
     .mobile-bar-cart-badge {
         position: absolute !important;
         top: -6px !important;
         right: -10px !important;
-        background: #e11d48 !important;
+        background: #7c3aed !important;
         color: #ffffff !important;
         font-size: 10px !important;
         font-weight: 800 !important;

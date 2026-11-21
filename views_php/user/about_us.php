@@ -452,7 +452,7 @@
 .showroom-row-icon.red { background: #fee2e2; color: #dc2626; }
 .showroom-row-icon.teal { background: #ccfbf1; color: #0d9488; }
 .showroom-row-icon.green { background: #dcfce7; color: #16a34a; }
-.showroom-row-icon.maroon { background: #fdf2f4; color: #e11d48; }
+.showroom-row-icon.maroon { background: #f5f3ff; color: #7c3aed; }
 
 .showroom-row-content {
     flex: 1;
@@ -888,7 +888,7 @@
 
                             <!-- Social Channels Container -->
                             <div class="showroom-panel-row" style="background: #faf8f5; border: 1px solid #ebdcd0; border-radius: 10px; padding: 12px 14px; margin-top: 4px;">
-                                <div class="showroom-row-icon maroon" style="background: #fdf2f4; color: #e11d48;">
+                                <div class="showroom-row-icon maroon" style="background: #f5f3ff; color: #7c3aed;">
                                     <i class="fa-solid fa-share-nodes"></i>
                                 </div>
                                 <div class="showroom-row-content">
